@@ -35,20 +35,20 @@
         <!-- 
         PRELOADER
         =============================================== -->
-        {{-- <div class="preloader">
+        <div class="preloader">
             <img src="images/preloader.gif" alt="">
-        </div> --}}
+        </div>
         <!-- END: PRELOADER -->
         
         <!-- 
         NAVBAR
         =============================================== -->
 
-        @include('layouts._nav')
+        @include('frontend.layouts._nav')
 
         @yield('content')
 
-        @include('layouts._footer')
+        @include('frontend.layouts._footer')
 
         <script src="{!! asset('assets/js/jquery.min.js') !!}"></script>
         <script src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
