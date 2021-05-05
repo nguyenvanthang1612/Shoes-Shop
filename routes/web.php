@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Route;
@@ -16,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+// trang bán hàng
 Route::get('/', [IndexController::class, 'index']);
+
+// trang admin
+Route::get('auth/login', [AuthenticateController::class, 'showLoginForm']);
