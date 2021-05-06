@@ -37,12 +37,12 @@
                             <ul class="list-btn-group">
                                 <li>
                                     <a href="#" data-toggle="modal" data-target="#myModal">
-                                        Sing up
+                                        Sign up
                                     </a>
                                 </li>
                                 <li>
                                     <a href="register-page.html">
-                                        <b>Sing in</b>
+                                        <b>Sign in</b>
                                     </a>
                                 </li>
                             </ul>

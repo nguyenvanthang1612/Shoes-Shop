@@ -178,7 +178,7 @@
                                    <a href="#">
                                     <div class="inbox-item">
                                         <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="" />
+                                            <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" alt="" />
                                         </div>
                                         
                                         <div class="inbox-item-info">
@@ -194,24 +194,7 @@
                                    <a href="#">
                                     <div class="inbox-item">
                                         <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-2.jpg" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-3.jpg" alt="" />
+                                            <img src="{{ asset('backend/assets/images/users/avatar-2.jpg') }}" alt="" />
                                         </div>
                                         
                                         <div class="inbox-item-info">
@@ -228,7 +211,24 @@
                                    <a href="#">
                                     <div class="inbox-item">
                                         <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-4.jpg" alt="" />
+                                            <img src="{{ asset('backend/assets/images/users/avatar-3.jpg') }}" alt="" />
+                                        </div>
+                                        
+                                        <div class="inbox-item-info">
+                                           <p class="author">John Doe</p>
+                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
+                                           <p class="inbox-date">13:34 PM</p>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="inbox-inner">
+                                   <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-img">
+                                            <img src="{{ asset('backend/assets/images/users/avatar-4.jpg') }}" alt="" />
                                         </div>
                                         
                                         <div class="inbox-item-info">
@@ -246,7 +246,7 @@
                                    <a href="#">
                                     <div class="inbox-item">
                                         <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-5.jpg" alt="" />
+                                            <img src="{{ asset('backend/assets/images/users/avatar-5.jpg') }}" alt="" />
                                         </div>
                                         
                                         <div class="inbox-item-info">
@@ -263,7 +263,7 @@
                                    <a href="#">
                                     <div class="inbox-item">
                                         <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-6.jpg" alt="" />
+                                            <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
                                         </div>
                                         
                                         <div class="inbox-item-info">
@@ -279,7 +279,7 @@
                                    <a href="#">
                                     <div class="inbox-item">
                                         <div class="inbox-img">
-                                            <img src="assets/images/users/avatar-3.jpg" alt="" />
+                                            <img src="{{ asset('backend/assets/images/users/avatar-3.jpg') }}" alt="" />
                                         </div>
                                         
                                         <div class="inbox-item-info">
@@ -305,7 +305,7 @@
                            <div class="chat-widget">
                               <ul  class="chat-scroll-list">
                                 <li class="left">
-                                   <img src="assets/images/users/avatar-6.jpg" alt="" />
+                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
                                     <div class="chat-info">
                                        <a class="name" href="#">Jone Doe</a>
                                        <span class="datetime">6:12</span>
@@ -316,7 +316,7 @@
                                 </li>
                                 
                                 <li class="right">
-                                   <img src="assets/images/users/avatar-6.jpg" alt="" />
+                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
                                     <div class="chat-info">
                                        <a class="name" href="#">Jone Doe</a>
                                        <span class="datetime">6:12</span>
@@ -327,7 +327,7 @@
                                 </li>
                                 
                                 <li class="left">
-                                   <img src="assets/images/users/avatar-6.jpg" alt="" />
+                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
                                     <div class="chat-info">
                                        <a class="name" href="#">Jone Doe</a>
                                        <span class="datetime">6:12</span>
@@ -338,7 +338,7 @@
                                 </li>
                                 
                                 <li class="right">
-                                   <img src="assets/images/users/avatar-6.jpg" alt="" />
+                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
                                     <div class="chat-info">
                                        <a class="name" href="#">Jone Doe</a>
                                        <span class="datetime">6:12</span>
