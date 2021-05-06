@@ -109,42 +109,42 @@
                 <ul class="dropdown-list normal-list">
                  <li class="message-list message-scroll-list">
                   <a href="#">
-                      <span class="photo"> <img src="assets/images/users/avatar-8.jpg" class="img-circle" alt="img"></span>
+                      <span class="photo"> <img src="{{ asset('backend/assets/images/users/avatar-8.jpg') }}" class="img-circle" alt="img"></span>
                       <span class="subject">John Doe</span>
                       <span class="message"> New tasks needs to be done</span>
                        <span class="time">15 minutes ago</span>
                   </a>
                   
                   <a href="#">
-                      <span class="photo"> <img src="assets/images/users/avatar-7.jpg" class="img-circle" alt="img"></span>
+                      <span class="photo"> <img src="{{ asset('backend/assets/images/users/avatar-7.jpg') }}" class="img-circle" alt="img"></span>
                       <span class="subject">John Doe</span>
                       <span class="message"> New tasks needs to be done</span>
                        <span class="time">10 minutes ago</span>
                   </a>
                 
                   <a href="#">
-                      <span class="photo"> <img src="assets/images/users/avatar-6.jpg" class="img-circle" alt="img"></span>
+                      <span class="photo"> <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" class="img-circle" alt="img"></span>
                        <span class="subject">John Doe</span>
                        <span class="message"> New tasks needs to be done</span>
                       <span class="time">20 minutes ago</span>
                   </a>
                  
                   <a href="#">
-                      <span class="photo"> <img src="assets/images/users/avatar-6.jpg" class="img-circle" alt="img"></span>
+                      <span class="photo"> <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" class="img-circle" alt="img"></span>
                        <span class="subject">John Doe</span>
                        <span class="message"> New tasks needs to be done</span>
                       <span class="time">20 minutes ago</span>
                   </a>
                 
                   <a href="#">
-                      <span class="photo"> <img src="assets/images/users/avatar-6.jpg" class="img-circle" alt="img"></span>
+                      <span class="photo"> <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" class="img-circle" alt="img"></span>
                        <span class="subject">John Doe</span>
                        <span class="message"> New tasks needs to be done</span>
                       <span class="time">20 minutes ago</span>
                   </a>
                   
                   <a href="#">
-                      <span class="photo"> <img src="assets/images/users/avatar-6.jpg" class="img-circle" alt="img"></span>
+                      <span class="photo"> <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" class="img-circle" alt="img"></span>
                        <span class="subject">John Doe</span>
                        <span class="message"> New tasks needs to be done</span>
                       <span class="time">20 minutes ago</span>
@@ -156,7 +156,7 @@
             </li>
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <img src="assets/images/users/avatar-6.jpg" alt="" />
+                    <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
                     John Doe
                     <span class="caret"></span>
                 </a>
