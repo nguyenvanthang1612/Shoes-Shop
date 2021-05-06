@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\order_details;
+use App\Models\order_items;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(categoriesSeeder::class);
+        $this->call(InventorySeeder::class);
+        $this->call(productSeeder::class);
+        $this->call(order_detailsSeeder::class);
+        $this->call(order_itemsSeeder::class);
+        $this->call(usersSeeder::class);
+        $this->call(user_addressSeeder::class);
+        $this->call(user_paymentSeeder::class);
+
     }
 }
