@@ -8,6 +8,7 @@ class AuthenticateController extends Controller
 {
     public function showLoginForm()
     {
-        return view('backend.Authenticate.login');
+        return view('backend.authenticate.login');
     }
+    
 }

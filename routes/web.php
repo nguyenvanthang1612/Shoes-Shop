@@ -21,13 +21,13 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [IndexController::class, 'index']);
-    Route::get('auth/login', [AuthenticateController::class, 'showLoginForm']);
 });
 /**
- * Admin route here
+ * Admin route here (Backend)
  */
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('backend.index');
     });
+    Route::get('auth/login', [AuthenticateController::class, 'showLoginForm']);
 });
