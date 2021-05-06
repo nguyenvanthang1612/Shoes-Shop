@@ -21,8 +21,6 @@ class Users extends Migration
             $table->string('last_name');
             $table->Integer('telephone');
             $table->timestamps();
-
-
         });
     }
 

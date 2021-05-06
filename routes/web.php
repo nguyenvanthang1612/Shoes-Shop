@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-Route::get('/', [IndexController::class, 'index']);
+/**
+ * Frontend routes here
+ */
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', [IndexController::class, 'index']);
+    Route::get('auth/login', [AuthenticateController::class, 'showLoginForm']);
+});
+/**
+ * Admin route here
+ */
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', function () {
+        return view('backend.index');
+    });
+});

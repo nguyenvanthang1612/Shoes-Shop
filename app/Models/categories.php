@@ -10,6 +10,8 @@ class categories extends Model
 {
     use HasFactory;
 
+    protected $table = "categories";
+
     protected $guarded = [];
 
     public function product()

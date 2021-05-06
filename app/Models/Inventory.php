@@ -11,6 +11,8 @@ class Inventory extends Model
 
     protected $guarded = [];
 
+    protected $table = "inventory";
+
     public function product()
     {
         return $this->hasMany(product::class, 'inventory_id');
