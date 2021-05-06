@@ -49,7 +49,7 @@
                                        
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="images/slideshow/img-01.png" alt="">
+                                           <img src="{{ asset('frontend/images/slideshow/img-01.png') }}" alt="">
                                        </div>
                                        
                                        <!-- Badge -->
@@ -114,7 +114,7 @@
                                        
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="images/slideshow/img-02.png" alt="">
+                                           <img src="{{ asset('frontend/images/slideshow/img-02.png') }}" alt="">
                                        </div>
                                        
                                        <!-- Badge -->
@@ -179,7 +179,7 @@
                                        
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="images/slideshow/img-03.png" alt="">
+                                           <img src="{{ asset('frontend/images/slideshow/img-03.png') }}" alt="">
                                        </div>
                                        
                                        <!-- Badge -->
@@ -314,8 +314,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-01-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-01.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-01-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-01.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -486,7 +486,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-02.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-02.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -657,7 +657,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-03.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-03.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -828,8 +828,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-04-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-04.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-04-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-04.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -999,8 +999,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-05-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-05.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-05-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-05.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1172,7 +1172,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-06.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-06.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1343,7 +1343,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-07.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-07.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1514,8 +1514,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-08-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-08.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-08-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-08.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1686,7 +1686,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-09.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-09.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1857,7 +1857,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-10.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-10.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -2028,7 +2028,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-11.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-11.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -2198,7 +2198,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-12.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-12.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -2366,43 +2366,43 @@
                                     <div class="owl-carousel owl-default banner-brands nav-bottom-right nav-white">
 
                                         <div class="item">
-                                            <img src="images/brands/img-01.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-01.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-02.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-02.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-03.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-03.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-04.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-04.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-05.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-05.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-06.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-06.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-07.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-07.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-08.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-08.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-09.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-09.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-10.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-10.png') }}" alt="">
                                         </div>
 
 
@@ -2422,7 +2422,7 @@
                 
                 <!-- Parallax block -->
                 <div class="parallax bg-darkness opc-7"
-                     data-parallax-image="images/blocks/bg-01.jpg"
+                     data-parallax-image="{{ asset('frontend/images/blocks/bg-01.jpg') }}"
                      data-speed-direction="-.2"></div><!-- / Parallax block -->
             </div><!-- / Parallax wrapper -->
         </div>
@@ -2438,7 +2438,7 @@
                        
                         <div class="row hidden-xs">
                             <div class="col-xs-12 img-on-bg">
-                                <img src="images/blocks/parallax-bg-popular-on-shop.png" alt="">
+                                <img src="{{ asset('images/blocks/parallax-bg-popular-on-shop.png') }}" alt="">
                             </div>
                         </div>
                         
@@ -2838,8 +2838,8 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="hover" src="images/shop/img-01-1.jpg" alt="">
-                                                    <img class="main" src="images/shop/img-01.jpg" alt="">
+                                                    <img class="hover" src="{{ asset('frontend/images/shop/img-01-1.jpg') }}" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-01.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3009,7 +3009,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-02.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-02.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3180,8 +3180,8 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="hover" src="images/shop/img-08-1.jpg" alt="">
-                                                    <img class="main" src="images/shop/img-08.jpg" alt="">
+                                                    <img class="hover" src="{{ asset('frontend/images/shop/img-08-1.jpg') }}" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-08.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3352,7 +3352,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-09.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-09.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3523,7 +3523,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-10.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-10.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3694,7 +3694,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-11.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-11.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -4069,7 +4069,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-01.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-01.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4129,7 +4129,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-02.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-02.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4189,7 +4189,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-03.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-03.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4249,7 +4249,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-04.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-04.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4309,7 +4309,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-05.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-05.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4369,7 +4369,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-06.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-06.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4429,7 +4429,7 @@
                                             
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-07.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-07.jpg') }}" alt="">
                                             </div>
                                             
                                             <!-- Caption -->
@@ -4589,56 +4589,56 @@
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-01.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-01.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-02.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-02.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-03.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-03.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-04.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-04.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-05.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-05.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-06.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-06.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-07.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-07.png') }}" alt="">
                            </div>
                        </div>
                        
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-08.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-08.png') }}" alt="">
                            </div>
                        </div>
                    </div>

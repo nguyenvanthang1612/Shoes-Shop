@@ -35,9 +35,9 @@
         <!-- 
         PRELOADER
         =============================================== -->
-        {{-- <div class="preloader">
+        <div class="preloader">
             <img src="images/preloader.gif" alt="">
-        </div> --}}
+        </div>
         <!-- END: PRELOADER -->
         
         <!-- 
