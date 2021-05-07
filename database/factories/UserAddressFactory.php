@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\users;
+use App\Models\UserAddress;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class usersFactory extends Factory
+class UserAddressFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = users::class;
+    protected $model = UserAddress::class;
 
     /**
      * Define the model's default state.
@@ -22,11 +22,11 @@ class usersFactory extends Factory
     public function definition()
     {
         return [
-            'user_name'=>$this->faker->word(),
-            'password'=>$this->faker->word(),
-            'first_name'=>$this->faker->word(),
-            'last_name'=>$this->faker->word(),
-            'telephone'=>$this->faker->phoneNumber(),
+            'user_id'=> rand(1,10),
+            'address'=> $this->faker->streetAddress(),
+            'city'=> $this->faker->city(),
+            'country' => $this->faker->country(),
+            'telephone' => rand(1,10)
         ];
     }
 }

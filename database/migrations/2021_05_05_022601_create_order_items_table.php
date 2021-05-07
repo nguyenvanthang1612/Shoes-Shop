@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use League\CommonMark\Reference\Reference;
 
-class OrderItems extends Migration
+class CreateOrderItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -35,6 +34,6 @@ class OrderItems extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('order_items');
     }
 }

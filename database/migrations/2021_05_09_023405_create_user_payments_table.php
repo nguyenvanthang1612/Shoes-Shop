@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserAddress extends Migration
+class CreateUserPaymentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class UserAddress extends Migration
      */
     public function up()
     {
-        Schema::create('user_address', function (Blueprint $table) {
+        Schema::create('user_payments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('address');
-            $table->string('city');
-            $table->string('country');
-            $table->bigInteger('telephone');
+            $table->string('payment_type');
+            $table->string('provider');
+            $table->bigInteger('account_no');
+            $table->dateTime('expiry');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')
-            ->on('user');
+            ->on('users');
         });
     }
 
@@ -34,6 +34,6 @@ class UserAddress extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('user_payments');
     }
 }

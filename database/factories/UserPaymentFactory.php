@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\categories;
+use App\Models\UserPayment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class categoriesFactory extends Factory
+class UserPaymentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = categories::class;
+    protected $model = UserPayment::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,11 @@ class categoriesFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
-            'desc' => $this->faker->sentence(2, true),
+            'user_id'=>rand(1,10),
+            'payment_type'=>$this->faker->word(),
+            'provider'=>$this->faker->word(),
+            'account_no'=>rand(1,10),
+            'expiry'=>$this->faker->dateTime(),
         ];
     }
 }

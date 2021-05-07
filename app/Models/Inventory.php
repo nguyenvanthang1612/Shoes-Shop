@@ -11,10 +11,10 @@ class Inventory extends Model
 
     protected $guarded = [];
 
-    protected $table = "inventory";
+    protected $table = 'inventories';
 
     public function product()
     {
-        return $this->hasMany(product::class, 'inventory_id');
+        return $this->hasMany(Product::class, 'inventory_id');
     }
 }

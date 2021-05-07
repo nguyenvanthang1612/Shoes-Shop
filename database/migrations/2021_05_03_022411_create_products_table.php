@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Product extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -27,7 +27,7 @@ class Product extends Migration
             $table->foreign('category_id')->references('id')
             ->on('categories');
             $table->foreign('inventory_id')->references('id')
-            ->on('inventory');
+            ->on('inventories');
 
         });
     }
@@ -39,6 +39,6 @@ class Product extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('products');
     }
 }

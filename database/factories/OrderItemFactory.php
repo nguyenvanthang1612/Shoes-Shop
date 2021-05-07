@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\order_details;
+use App\Models\OrderItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class order_detailsFactory extends Factory
+class OrderItemFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = order_details::class;
+    protected $model = OrderItem::class;
 
     /**
      * Define the model's default state.
@@ -22,8 +22,9 @@ class order_detailsFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>rand(1,10),
-            'total'=>rand(100000,100000000),
+            'order_id' =>rand(1,10),
+            'product_id'=>rand(1,10),
+            'quantity' =>rand(1,30),
         ];
     }
 }

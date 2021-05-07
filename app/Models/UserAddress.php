@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user_address extends Model
+class UserAddress extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $table = 'user_address';
 
     public function users()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(Users::class);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\user_address;
+use App\Models\OrderItem;
 use Illuminate\Database\Seeder;
 
-class user_addressSeeder extends Seeder
+class OrderItemSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class user_addressSeeder extends Seeder
      */
     public function run()
     {
-        user_address::factory(10)->create();
+        OrderItem::factory(10)->create();
     }
 }

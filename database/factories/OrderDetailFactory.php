@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\user_payment;
+use App\Models\OrderDetail;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class user_paymentFactory extends Factory
+class OrderDetailFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = user_payment::class;
+    protected $model = OrderDetail::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +23,7 @@ class user_paymentFactory extends Factory
     {
         return [
             'user_id'=>rand(1,10),
-            'payment_type'=>$this->word(),
-            'provider'=>$this->word(),
-            'account_no'=>$this->phoneNumber(),
-            'expiry'=>$this->dateTime(),
+            'total'=>rand(100000,100000000),
         ];
     }
 }

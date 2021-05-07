@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Product;
 
-class categories extends Model
+class UserPayment extends Model
 {
     use HasFactory;
 
-    protected $table = "categories";
-
     protected $guarded = [];
 
-    public function product()
+    protected $table = 'user_payments';
+
+    public function users()
     {
-        return $this->hasMany(product::class, 'category_id');
+        return $this->belongsTo(Users::class);
     }
 }
