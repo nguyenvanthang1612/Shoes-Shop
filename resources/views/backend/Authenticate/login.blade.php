@@ -26,14 +26,14 @@
                         <div class="form-group">
                             <div class="pull-left">
                             <div class="checkbox primary">
-                            <input  id="checkbox-2" type="checkbox">
-                            <label for="checkbox-2">Remember me</label>
+                                <input  id="checkbox-2" type="checkbox">
+                                <label for="checkbox-2">Remember me</label>
                             </div>
                             </div>
                             
                             <div class="pull-right">
                                 <a href="reset-password.html" class="a-link">
-                                <i class="fa fa-unlock-alt"></i> Forgot password?
+                                    <i class="fa fa-unlock-alt"></i> Forgot password?
                                 </a>
                             </div>
                         </div>
@@ -43,13 +43,13 @@
                         </div>
                         
                         <div class="form-group text-center">
-                         Don't have an account?  <a href="registration.html">Sign Up </a>
+                            Don't have an account?  <a href="registration.html">Sign Up </a>
                         </div>
                         
                     </form>
                     
                      <div class="copy-text"> 
-                      <p class="m-0">2017 &copy; Meter admin</p>
+                        <p class="m-0">2017 &copy; Meter admin</p>
                      </div>
                  
                 </div>
