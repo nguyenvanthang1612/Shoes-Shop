@@ -26,6 +26,8 @@ class ProductFactory extends Factory
             'desc' => $this->faker->sentence(2, true),
             'SKU' => $this->faker->ean13(),
             'size' => rand(1,10),
+            'gender' => rand(1,2),
+            'img' => $this->faker->sentence(1, true),
             'category_id' => rand(1,10),
             'inventory_id' => rand(1,10),
             'price' =>rand(1,10)
