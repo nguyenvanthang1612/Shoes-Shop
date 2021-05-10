@@ -14,13 +14,14 @@
  
                     <h2 class="header-title text-center">Login</h2>
                      
-                    <form>
+                    <form method="post" action="{{ url('admin/auth/login') }}">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control"  placeholder="Username" >
+                            <input type="text" class="form-control"  placeholder="Username" name="user_name">
                         </div>
                         
                         <div class="form-group">
-                            <input type="text" class="form-control"  placeholder="Password" >
+                            <input type="password" class="form-control"  placeholder="Password" name="password">
                         </div>
 
                         <div class="form-group">

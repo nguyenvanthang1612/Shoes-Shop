@@ -7,6 +7,7 @@ use App\Models\order_items;
 use App\Models\OrderDetail;
 use App\Models\UserAddress;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +21,34 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(InventorySeeder::class);
         $this->call(ProductSeeder::class);
+        DB::table('users')->insert([
+            [
+                'user_name' => 'admin',
+                'first_name' => 'admin',
+                'last_name' => 'admin',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('admin123'),
+                'telephone' => '12345',
+                'role' => '1'
+            ],
+            [
+                'user_name' => 'thang',
+                'first_name' => 'nguyen',
+                'last_name' => 'thang',
+                'email' => 'thang@gmail.com',
+                'password' => bcrypt('thang123'),
+                'telephone' => '12345',
+                'role' => '2'
+            ],
+            [
+                'user_name' => 'quan',
+                'first_name' => 'luong',
+                'last_name' => 'quan',
+                'email' => 'quan@gmail.com',
+                'password' => bcrypt('quan123'),
+                'telephone' => '12345',
+                'role' => '3'
+            ]
+        ]);
     }
 }

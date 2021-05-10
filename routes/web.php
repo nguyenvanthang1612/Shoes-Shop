@@ -32,4 +32,5 @@ Route::group(['prefix' => 'admin'], function () {
         return view('backend.index');
     });
     Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm']);
+    Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
 });

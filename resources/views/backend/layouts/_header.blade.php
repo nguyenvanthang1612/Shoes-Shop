@@ -156,8 +156,10 @@
             </li>
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
-                    John Doe
+                    {{-- <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" /> --}}
+                     @auth
+                        {{ Auth::user()->user_name }}
+                     @endauth
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">

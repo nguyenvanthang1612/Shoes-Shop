@@ -12,4 +12,25 @@ class AuthenticateController extends Controller
     {
         return view('backend.authenticate.login');
     }
+
+    public function login(Request $request)
+    {
+        if (Auth::attempt([
+            'role' => '1',
+            'user_name' => $request->input('user_name'), 
+            'password' => $request->input('password')
+        ])) {
+            return redirect('/admin');
+        }
+        else if (Auth::attempt([
+            'role' => '2',
+            'user_name' => $request->input('user_name'), 
+            'password' => $request->input('password')
+        ])) {
+            return redirect('/admin');
+        }
+        else {
+            return 'fail';
+        } 
+    }
 }
