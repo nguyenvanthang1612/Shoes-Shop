@@ -3,234 +3,233 @@
 @section('title')
     index
 @endsection
-            
-@section('content') 
-        <!-- 
+
+@section('content')
+        <!--
         SLIDESHOW
         =============================================== -->
         <div class="container-fluid">
             <div class="row">
                 <div class="clearfix">
                     <div class="owl-carousel slideshow">
-                        
                         <!-- Item -->
                         <div class="item">
-                           <div class="container">
+                            <div class="container">
                                <div class="row">
-                                   
+
                                    <div class="col-sm-12 col-md-5 hidden-xs hidden-sm">
-                                       
+
                                        <!-- Header -->
                                        <h2 class="header text-uppercase text-blue">Sneakers</h2>
-                                       
+
                                        <!-- Text -->
                                        <p>
                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et maxime vero amet, quisquam nihil! Odit, hic fugiat!
                                        </p>
-                                       
+
                                        <!-- Buttons -->
                                        <span class="btn-panel">
-                                             
+
                                              <span class="sdw-wrap">
                                                  <a href="" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
                                                  <span class="sdw"></span>
                                              </span>
-                                             
+
                                              <span class="hor-divider"></span>
-                                             
+
                                              <span class="sdw-wrap">
                                                  <a href="" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
                                                  <span class="sdw"></span>
-                                             </span> 
+                                             </span>
                                        </span>
                                    </div>
-                                   
+
                                    <div class="col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
-                                       
+
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="images/slideshow/img-01.png" alt="">
+                                           <img src="{{ asset('frontend/images/slideshow/img-01.png') }}" alt="">
                                        </div>
-                                       
+
                                        <!-- Badge -->
                                        <span class="sale-badge bg-green text-uppercase">
                                            new
                                        </span>
-                                       
+
                                        <!-- Price -->
                                        <span class="price hidden-xs">
                                            <span class="wrap text-red">
                                                $254<small>.50</small>-
                                            </span>
                                        </span>
-                                       
+
                                        <!-- Mobile button -->
                                        <span class="text-center visible-xs">
                                             <span class="sdw-wrap">
                                                 <a href="#" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">$254<small>.50</small></span></a>
                                                 <span class="sdw"></span>
-                                            </span> 
+                                            </span>
                                        </span>
-                                       
-                                       
+
+
                                    </div>
                                </div>
                            </div>
                         </div>
-                        
+
                         <!-- Item -->
                         <div class="item">
                            <div class="container">
                                <div class="row">
-                                   
+
                                    <div class="col-sm-12 col-md-5 hidden-xs hidden-sm">
-                                       
+
                                        <!-- Header -->
                                        <h2 class="header text-uppercase text-blue">belt</h2>
-                                       
+
                                        <!-- Text -->
                                        <p>
                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et maxime vero amet, quisquam nihil! Odit, hic fugiat!
                                        </p>
-                                       
+
                                        <!-- Buttons -->
                                        <span class="btn-panel">
-                                             
+
                                              <span class="sdw-wrap">
                                                  <a href="" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
                                                  <span class="sdw"></span>
                                              </span>
-                                             
+
                                              <span class="hor-divider"></span>
-                                             
+
                                              <span class="sdw-wrap">
                                                  <a href="" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
                                                  <span class="sdw"></span>
-                                             </span> 
+                                             </span>
                                        </span>
                                    </div>
-                                   
+
                                    <div class="col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
-                                       
+
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="images/slideshow/img-02.png" alt="">
+                                           <img src="{{ asset('frontend/images/slideshow/img-02.png') }}" alt="">
                                        </div>
-                                       
+
                                        <!-- Badge -->
                                        <span class="sale-badge bg-red text-uppercase">
                                            Hot!
                                        </span>
-                                       
+
                                        <!-- Price -->
                                        <span class="price hidden-xs">
                                            <span class="wrap text-red">
                                                $122<small>.00</small>-
                                            </span>
                                        </span>
-                                       
+
                                        <!-- Mobile button -->
                                        <span class="text-center visible-xs">
                                             <span class="sdw-wrap">
                                                 <a href="#" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">$122<small>.00</small></span></a>
                                                 <span class="sdw"></span>
-                                            </span> 
+                                            </span>
                                        </span>
-                                       
-                                       
+
+
                                    </div>
                                </div>
                            </div>
                         </div>
-                        
+
                         <!-- Item -->
                         <div class="item">
                            <div class="container">
                                <div class="row">
-                                   
+
                                    <div class="col-sm-12 col-md-5 hidden-xs hidden-sm">
-                                       
+
                                        <!-- Header -->
                                        <h2 class="header text-uppercase text-blue">Camera</h2>
-                                       
+
                                        <!-- Text -->
                                        <p>
                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et maxime vero amet, quisquam nihil! Odit, hic fugiat!
                                        </p>
-                                       
+
                                        <!-- Buttons -->
                                        <span class="btn-panel">
-                                             
+
                                              <span class="sdw-wrap">
                                                  <a href="" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
                                                  <span class="sdw"></span>
                                              </span>
-                                             
+
                                              <span class="hor-divider"></span>
-                                             
+
                                              <span class="sdw-wrap">
                                                  <a href="" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
                                                  <span class="sdw"></span>
-                                             </span> 
+                                             </span>
                                        </span>
                                    </div>
-                                   
+
                                    <div class="col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
-                                       
+
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="images/slideshow/img-03.png" alt="">
+                                           <img src="{{ asset('frontend/images/slideshow/img-03.png') }}" alt="">
                                        </div>
-                                       
+
                                        <!-- Badge -->
                                        <!--span class="sale-badge bg-green text-uppercase">
                                            new
                                        </span-->
-                                       
+
                                        <!-- Price -->
                                        <span class="price hidden-xs">
                                            <span class="wrap text-red">
                                                $1 254<small>.50</small>-
                                            </span>
                                        </span>
-                                       
+
                                        <!-- Mobile button -->
                                        <span class="text-center visible-xs">
                                             <span class="sdw-wrap">
                                                 <a href="#" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">$1 254<small>.50</small></span></a>
                                                 <span class="sdw"></span>
-                                            </span> 
+                                            </span>
                                        </span>
-                                       
-                                       
+
+
                                    </div>
                                </div>
                            </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>
         </div>
         <!-- END: SLIDESHOW -->
-            
-        <!-- 
+
+        <!--
         SUBSTRATE
         =============================================== -->
         <div class="container-fluid">
-           
+
             <div class="row">
-               
+
                 <div class="clearfix">
-                   
+
                     <div class="substrate-wrap">
-                       
+
                         <div class="substrate parallax-block"
                              data-speed-direction=".3"
                              data-default-pos="-600"
                              data-parallax-block="true">
-                            
+
                             <div class="text text-darkness">
                                 IN TREND
                             </div>
@@ -240,15 +239,15 @@
             </div>
         </div>
         <!-- END: SUBSTRATE -->
-            
-        <!-- 
+
+        <!--
         BLOCK FEATURES
         =============================================== -->
         <div class="container block">
-            
+
             <!-- Block header -->
             <div class="row">
-               
+
                 <div class="col-xs-12">
 
                     <div class="block-header text-uppercase">
@@ -258,11 +257,11 @@
                 </div>
             </div>
             <!-- /. Block header -->
-           
+
             <div class="row">
                 <div class="col-xs-12">
                     <div class="owl-carousel owl-default features nav-top-left">
-                        
+
                         <!-- Shop item 1 / timer -->
                         <div class="shop-item hover-sdw timer"
                              data-timer-date="2018, 2, 5, 0, 0, 0">
@@ -314,8 +313,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-01-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-01.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-01-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-01.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -350,10 +349,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -435,7 +434,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 2 -->
                         <div class="shop-item hover-sdw">
 
@@ -486,7 +485,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-02.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-02.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -521,10 +520,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -606,7 +605,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 3 -->
                         <div class="shop-item hover-sdw">
 
@@ -657,7 +656,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-03.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-03.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -692,10 +691,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -777,7 +776,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 4 -->
                         <div class="shop-item hover-sdw">
 
@@ -828,8 +827,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-04-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-04.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-04-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-04.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -863,10 +862,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -948,7 +947,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 5 -->
                         <div class="shop-item hover-sdw">
 
@@ -999,8 +998,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-05-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-05.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-05-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-05.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1035,10 +1034,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -1120,7 +1119,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 6 -->
                         <div class="shop-item hover-sdw timer"
                              data-timer-date="2018, 2, 5, 0, 0, 0">
@@ -1172,7 +1171,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-06.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-06.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1207,10 +1206,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -1292,7 +1291,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 7 -->
                         <div class="shop-item hover-sdw">
 
@@ -1343,7 +1342,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-07.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-07.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1378,10 +1377,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -1463,7 +1462,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 8 -->
                         <div class="shop-item hover-sdw">
 
@@ -1514,8 +1513,8 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="hover" src="images/shop/img-08-1.jpg" alt="">
-                                        <img class="main" src="images/shop/img-08.jpg" alt="">
+                                        <img class="hover" src="{{ asset('frontend/images/shop/img-08-1.jpg') }}" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-08.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1550,10 +1549,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -1635,7 +1634,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 9 -->
                         <div class="shop-item hover-sdw">
 
@@ -1686,7 +1685,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-09.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-09.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1721,10 +1720,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -1806,7 +1805,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 10 -->
                         <div class="shop-item hover-sdw">
 
@@ -1857,7 +1856,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-10.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-10.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -1892,10 +1891,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -1977,7 +1976,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 11 -->
                         <div class="shop-item hover-sdw">
 
@@ -2028,7 +2027,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-11.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-11.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -2062,10 +2061,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -2147,7 +2146,7 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                         <!-- Shop item 12 -->
                         <div class="shop-item hover-sdw">
 
@@ -2198,7 +2197,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" src="images/shop/img-12.jpg" alt="">
+                                        <img class="main" src="{{ asset('frontend/images/shop/img-12.jpg') }}" alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -2233,10 +2232,10 @@
                                         <!-- Timer -->
                                         <div class="timer-body">
                                             <span class="sale text-red">Sale</span>
-                                            <span class="tdtimer-d"></span>d 
-                                            <span class="tdtimer-h"></span>h 
-                                            <span class="tdtimer-m"></span>m 
-                                            <span class="tdtimer-s"></span>s 
+                                            <span class="tdtimer-d"></span>d
+                                            <span class="tdtimer-h"></span>h
+                                            <span class="tdtimer-m"></span>m
+                                            <span class="tdtimer-s"></span>s
                                         </div>
 
                                         <!-- Features list -->
@@ -2318,21 +2317,21 @@
                             </div>
                         </div>
                         <!-- / Shop item -->
-                        
+
                     </div>
                 </div>
             </div>
         </div>
         <!-- END: FEATURES -->
-            
-        <!-- 
+
+        <!--
         BLOCK BRAND INFO
         =============================================== -->
         <div class="container-fluid space-bottom space-bottom-shift">
-            
+
             <!-- Parallax wrapper -->
             <div class="row parallax-wrap">
-                
+
                 <div class="container">
                     <div class="row">
 
@@ -2366,43 +2365,43 @@
                                     <div class="owl-carousel owl-default banner-brands nav-bottom-right nav-white">
 
                                         <div class="item">
-                                            <img src="images/brands/img-01.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-01.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-02.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-02.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-03.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-03.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-04.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-04.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-05.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-05.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-06.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-06.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-07.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-07.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-08.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-08.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-09.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-09.png') }}" alt="">
                                         </div>
 
                                         <div class="item">
-                                            <img src="images/brands/img-10.png" alt="">
+                                            <img src="{{ asset('frontend/images/brands/img-10.png') }}" alt="">
                                         </div>
 
 
@@ -2419,31 +2418,31 @@
 
                     </div>
                 </div>
-                
+
                 <!-- Parallax block -->
                 <div class="parallax bg-darkness opc-7"
-                     data-parallax-image="images/blocks/bg-01.jpg"
+                     data-parallax-image="{{ asset('frontend/images/blocks/bg-01.jpg') }}"
                      data-speed-direction="-.2"></div><!-- / Parallax block -->
             </div><!-- / Parallax wrapper -->
         </div>
         <!-- END: BRAND INFO -->
-            
-        <!-- 
+
+        <!--
         BLOCK POPULAR ON SHOP
         =============================================== -->
         <div class="container-fluid block bg-grey-lightness space-top">
             <div class="row">
-                
+
                     <div class="container space-top">
-                       
+
                         <div class="row hidden-xs">
                             <div class="col-xs-12 img-on-bg">
-                                <img src="images/blocks/parallax-bg-popular-on-shop.png" alt="">
+                                <img src="{{ asset('images/blocks/parallax-bg-popular-on-shop.png') }}" alt="">
                             </div>
                         </div>
-                        
+
                         <div class="row">
-                           
+
                             <!-- Asside -->
                             <div class="col-md-4 col-lg-3 asside">
 
@@ -2617,7 +2616,7 @@
 
                                         <!-- Header -->
                                         <h3 class="header text-uppercase">Tags</h3>
-                                        
+
                                         <!-- Tags list -->
                                         <ul class="tags">
                                             <li><a href="#">e-shop</a></li>
@@ -2633,11 +2632,11 @@
                                         </ul>
                                     </div>
                                 </div><!-- Block tags -->
-                                
+
                                 <!-- List categories for mobile -->
                                 <div class="inblock padding-none visible-xs">
                                     <div class="mobile-category nav-close">
-                                        
+
                                         <!-- Header -->
                                         <div class="header bg-blue">
                                             <span class="head">Category</span>
@@ -2734,16 +2733,16 @@
                                 </div>
 
                             </div><!-- ./ Asside -->
-                            
+
                             <!-- Item list -->
                             <div class="col-md-8 col-lg-9 shop-items-set shop-items-full">
-                                
+
                                 <!-- Paginations -->
                                 <div class="row pagination-block hidden-xs">
                                     <div class="col-xs-12">
-                                        
+
                                         <div class="wrap">
-                                           
+
                                             <!-- Pagination -->
                                             <ul class="pagination">
 
@@ -2781,13 +2780,13 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
-                                
+
                                 <!-- Item list -->
                                 <div class="row item-wrapper">
-                                    
+
                                     <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer"
                                          data-timer-date="2018, 2, 5, 0, 0, 0">
 
@@ -2838,8 +2837,8 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="hover" src="images/shop/img-01-1.jpg" alt="">
-                                                    <img class="main" src="images/shop/img-01.jpg" alt="">
+                                                    <img class="hover" src="{{ asset('frontend/images/shop/img-01-1.jpg') }}" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-01.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -2874,10 +2873,10 @@
                                                     <!-- Timer -->
                                                     <div class="timer-body">
                                                         <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
+                                                        <span class="tdtimer-d"></span>d
+                                                        <span class="tdtimer-h"></span>h
+                                                        <span class="tdtimer-m"></span>m
+                                                        <span class="tdtimer-s"></span>s
                                                     </div>
 
                                                     <!-- Features list -->
@@ -3009,7 +3008,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-02.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-02.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3044,10 +3043,10 @@
                                                     <!-- Timer -->
                                                     <div class="timer-body">
                                                         <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
+                                                        <span class="tdtimer-d"></span>d
+                                                        <span class="tdtimer-h"></span>h
+                                                        <span class="tdtimer-m"></span>m
+                                                        <span class="tdtimer-s"></span>s
                                                     </div>
 
                                                     <!-- Features list -->
@@ -3180,8 +3179,8 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="hover" src="images/shop/img-08-1.jpg" alt="">
-                                                    <img class="main" src="images/shop/img-08.jpg" alt="">
+                                                    <img class="hover" src="{{ asset('frontend/images/shop/img-08-1.jpg') }}" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-08.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3216,10 +3215,10 @@
                                                     <!-- Timer -->
                                                     <div class="timer-body">
                                                         <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
+                                                        <span class="tdtimer-d"></span>d
+                                                        <span class="tdtimer-h"></span>h
+                                                        <span class="tdtimer-m"></span>m
+                                                        <span class="tdtimer-s"></span>s
                                                     </div>
 
                                                     <!-- Features list -->
@@ -3352,7 +3351,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-09.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-09.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3387,10 +3386,10 @@
                                                     <!-- Timer -->
                                                     <div class="timer-body">
                                                         <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
+                                                        <span class="tdtimer-d"></span>d
+                                                        <span class="tdtimer-h"></span>h
+                                                        <span class="tdtimer-m"></span>m
+                                                        <span class="tdtimer-s"></span>s
                                                     </div>
 
                                                     <!-- Features list -->
@@ -3523,7 +3522,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-10.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-10.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3558,10 +3557,10 @@
                                                     <!-- Timer -->
                                                     <div class="timer-body">
                                                         <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
+                                                        <span class="tdtimer-d"></span>d
+                                                        <span class="tdtimer-h"></span>h
+                                                        <span class="tdtimer-m"></span>m
+                                                        <span class="tdtimer-s"></span>s
                                                     </div>
 
                                                     <!-- Features list -->
@@ -3694,7 +3693,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="images/shop/img-11.jpg" alt="">
+                                                    <img class="main" src="{{ asset('frontend/images/shop/img-11.jpg') }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -3728,10 +3727,10 @@
                                                     <!-- Timer -->
                                                     <div class="timer-body">
                                                         <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
+                                                        <span class="tdtimer-d"></span>d
+                                                        <span class="tdtimer-h"></span>h
+                                                        <span class="tdtimer-m"></span>m
+                                                        <span class="tdtimer-s"></span>s
                                                     </div>
 
                                                     <!-- Features list -->
@@ -3812,15 +3811,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- / Shop item -->                                    
+                                    <!-- / Shop item -->
                                 </div>
-                                
+
                                 <!-- Paginations -->
                                 <div class="row pagination-block bottom">
                                     <div class="col-xs-12">
-                                        
+
                                         <div class="wrap">
-                                           
+
                                             <!-- Pagination -->
                                             <ul class="pagination">
 
@@ -3858,23 +3857,23 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
-                                
+
                             </div><!-- ./ Item list -->
                         </div>
                     </div>
-                    
+
             </div><!-- / Parallax wrapper -->
         </div>
         <!-- END: POPULAR ON SHOP -->
-            
-        <!-- 
+
+        <!--
         BLOCK SUBSCRIBE
         =============================================== -->
         <div class="container-fluid">
-            
+
             <div class="row parallax-wrap">
 
                 <div class="container block">
@@ -3926,7 +3925,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Parallax block -->
                 <div class="parallax bg-grey-light opc-7"
                      data-parallax-image="images/blocks/bg-02.jpg"
@@ -3934,23 +3933,23 @@
             </div><!-- / Parallax wrapper -->
         </div>
         <!-- END: SUBSCRIBE -->
-            
-        <!-- 
+
+        <!--
         SUBSTRATE
         =============================================== -->
         <div class="container-fluid">
-           
+
             <div class="row">
-               
+
                 <div class="clearfix">
-                   
+
                     <div class="substrate-wrap">
-                       
+
                         <div class="substrate parallax-block"
                              data-speed-direction=".3"
                              data-default-pos="-400"
                              data-parallax-block="true">
-                            
+
                             <div class="text text-dark">
                                 POPULAR
                             </div>
@@ -3960,22 +3959,22 @@
             </div>
         </div>
         <!-- END: SUBSTRATE -->
-            
-        <!-- 
+
+        <!--
         BLOCK LATEST ON BLOG
         =============================================== -->
         <div class="container-fluid block space-top">
             <div class="row">
                     <div class="container">
                         <div class="row">
-                           
+
                             <!-- Asside -->
                             <div class="col-md-4 col-lg-3 asside">
-                                
+
                                 <div class="inblock padding-none">
 
                                     <div class="wrap">
-                                
+
                                         <span class="comp-header st-16 text-uppercase">
                                             Latest
                                             <span class="text-grey">
@@ -3984,7 +3983,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Asside nav -->
                                 <div class="asside-nav no-bg hidden-xs">
                                     <ul class="nav-vrt">
@@ -4008,7 +4007,7 @@
                                     </ul>
 
                                 </div><!-- / Asside nav -->
-                                
+
                                 <div class="inblock padding-none hidden-xs">
                                     <span class="sdw-wrap">
                                         <a href="#" class="sdw-hover btn btn-material btn-yellow btn-lg">
@@ -4019,11 +4018,11 @@
                                         <span class="sdw"></span>
                                     </span>
                                 </div>
-                                
+
                                 <!-- List categories for mobile -->
                                 <div class="inblock padding-none visible-xs">
                                     <div class="mobile-category nav-close">
-                                        
+
                                         <!-- Header -->
                                         <div class="header bg-blue">
                                             <span class="head">Category</span>
@@ -4056,44 +4055,44 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                             </div><!-- ./ Asside -->
-                            
+
                             <!-- Item list -->
                             <div class="col-md-8 col-lg-9">
                                 <div class="owl-carousel owl-default latest-on-blog nav-bottom-right">
-                                    
+
                                     <!-- Item 1 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-01.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-01.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         Paper Bag
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4122,38 +4121,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Item 2 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-02.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-02.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         Paper book
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4182,38 +4181,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Item 3 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-03.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-03.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         T-Shirt
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4242,38 +4241,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Item 4 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-04.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-04.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         Business card
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4302,38 +4301,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Item 5 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-05.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-05.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         Card holder
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4362,38 +4361,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Item 6 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-06.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-06.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         Label mockup
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4422,38 +4421,38 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Item 7 -->
                                     <div class="blog-item">
                                         <div class="wrap">
-                                            
+
                                             <!-- Image -->
                                             <div class="image">
-                                                <img src="images/blog/img-07.jpg" alt="">
+                                                <img src="{{ asset('frontend/images/blog/img-07.jpg') }}" alt="">
                                             </div>
-                                            
+
                                             <!-- Caption -->
                                             <div class="caption">
-                                                
+
                                                 <!-- Header -->
                                                 <h3 class="header">
-                                                   
+
                                                     <!-- Date -->
                                                     <span class="date">
                                                         10 january 2017
                                                     </span>
-                                                    
+
                                                     <span class="text-uppercase">
                                                         Note booke
                                                     </span>
                                                 </h3>
-                                                
+
                                                 <!-- Text -->
                                                 <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
+
                                                 <!-- More link -->
                                                 <a href="blog-item.html" class="more-info">More info</a>
-                                                
+
                                                 <!-- Rate -->
                                                 <div class="rate inline">
 
@@ -4482,7 +4481,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div><!-- ./ Item list -->
                         </div>
@@ -4490,14 +4489,14 @@
             </div>
         </div>
         <!-- END: LATEST ON BLOG -->
-            
-        <!-- 
+
+        <!--
         BLOCK COUNTER
         =============================================== -->
         <div class="container space-bottom">
-            
+
             <div class="row">
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -4509,7 +4508,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -4521,7 +4520,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -4533,7 +4532,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -4548,23 +4547,23 @@
             </div>
         </div>
         <!-- END: COUNTER -->
-            
-        <!-- 
+
+        <!--
         SUBSTRATE
         =============================================== -->
         <div class="container-fluid">
-           
+
             <div class="row">
-               
+
                 <div class="clearfix">
-                   
+
                     <div class="substrate-wrap">
-                       
+
                         <div class="substrate parallax-block"
                              data-speed-direction=".1"
                              data-default-pos="-200"
                              data-parallax-block="true">
-                            
+
                             <div class="text text-dark">
                                 BRANDS
                             </div>
@@ -4574,71 +4573,71 @@
             </div>
         </div>
         <!-- END: SUBSTRATE -->
-            
-        <!-- 
+
+        <!--
         BLOCK BRANDS
         =============================================== -->
         <div class="container space-bottom">
-           
+
             <div class="row">
-               
+
                 <div class="col-xs-12">
-                   
+
                    <div class="owl-carousel owl-default brands nav-bottom-right">
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-01.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-01.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-02.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-02.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-03.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-03.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-04.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-04.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-05.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-05.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-06.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-06.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-07.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-07.png') }}" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-08.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/img-2-08.png') }}" alt="">
                            </div>
                        </div>
                    </div>
@@ -4647,7 +4646,7 @@
         </div>
         <!-- END: BRANDS -->
 @endsection
-            
-        
-        
+
+
+
 
