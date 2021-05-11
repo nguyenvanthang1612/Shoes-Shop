@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('admin123'),
                 'telephone' => '12345',
-                'role' => '1'
+                'role' => '1',
+                'avatar' => 'public/backend/images/chrome.png'
             ],
             [
                 'user_name' => 'thang',
@@ -38,7 +39,8 @@ class DatabaseSeeder extends Seeder
                 'email' => 'thang@gmail.com',
                 'password' => bcrypt('thang123'),
                 'telephone' => '12345',
-                'role' => '2'
+                'role' => '2',
+                'avatar' => 'public/backend/images/logo-dark.png'
             ],
             [
                 'user_name' => 'quan',
@@ -47,7 +49,8 @@ class DatabaseSeeder extends Seeder
                 'email' => 'quan@gmail.com',
                 'password' => bcrypt('quan123'),
                 'telephone' => '12345',
-                'role' => '3'
+                'role' => '3',
+                'avatar' => 'public/backend/images/logo-icon.png'
             ]
         ]);
     }

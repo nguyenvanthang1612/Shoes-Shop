@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountController as AdminAccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\IndexController as WebIndexController;
@@ -31,6 +33,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('backend.index');
     });
+    // authenticate
     Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm']);
     Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
+
+    // account
+    Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
+
+    //category
+    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
 });

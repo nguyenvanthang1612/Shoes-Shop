@@ -42,11 +42,7 @@
                         <div class="form-group">
                             <input type="submit" value="Login" class="btn btn-primary btn-block" >
                         </div>
-                        
-                        <div class="form-group text-center">
-                            Don't have an account?  <a href="registration.html">Sign Up </a>
-                        </div>
-                        
+
                     </form>
                     
                      <div class="copy-text"> 

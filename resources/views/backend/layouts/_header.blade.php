@@ -156,7 +156,7 @@
             </li>
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    {{-- <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" /> --}}
+                    {{-- <img src="{{ $users->avatar }}" alt="" /> --}}
                      @auth
                         {{ Auth::user()->user_name }}
                      @endauth
