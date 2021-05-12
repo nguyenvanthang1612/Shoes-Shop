@@ -44,23 +44,10 @@
 
         @yield('content');
 
-        {{-- @push('js')
-            <script>
-                function deleteItem(e)
-                {
-                    const confirmDeletePost = confirm('Are you sure ?')
-                    if (confirmDeletePost)
-                    {
-                        axios.delete(`categories/${e.getAttribute('data-id')}`)
-                        .then(res => location.reload())
-                        .catch(err => console.err(err))
-                    }
-                }
-            </script>
-        @endpush --}}
-
         @include('backend.layouts._footer');
     </div>
+
+    
 
 
 <!--Begin core plugin -->
@@ -89,7 +76,8 @@
     CKEDITOR.replace('ckeditor');
 </script>
 
-<script src="{{ asset('js/app.js') }}"></script>
+
+<script src="{{ asset('/js/app.js') }}"></script>
 @stack('js')
 </body>
 

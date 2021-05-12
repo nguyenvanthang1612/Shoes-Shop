@@ -1,10 +1,10 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    category table
+    Kid product table
 @endsection
 
-@push('js')
+{{-- @push('js')
     <script>
         function deleteItem(e)
         {
@@ -17,7 +17,7 @@
             }
         }
     </script>
-@endpush
+@endpush --}}
 
 @section('content')
     <!--body wrapper start-->
@@ -54,6 +54,9 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Description</th>
+                                          <th>Created at</th>
+                                          <th>Updated at</th>
+                                          <th></th>
                                       </tr>
                                   </thead>
                                   <tfoot>
@@ -61,6 +64,9 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Description</th>
+                                          <th>Created at</th>
+                                          <th>Updated at</th>
+                                          <th></th>
                                       </tr>
                                   </tfoot>
                                   <tbody>
@@ -69,6 +75,13 @@
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->name }}</td>
                                             <td>{{ $category->desc }}</td>
+                                            <td>{{ $category->created_at }}</td>
+                                            <td>{{ $category->updated_at }}</td>
+                                            <td>
+                                                <a href='{{ url("admin/categories/$category->id/edit") }}' class="btn btn-success">Edit</a>
+                                                <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $category->id }}">Delete</a>
+                                                
+                                            </td>
                                         </tr>
                                       @endforeach
                                   </tbody>

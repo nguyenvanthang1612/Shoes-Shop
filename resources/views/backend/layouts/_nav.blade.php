@@ -26,9 +26,10 @@
             <li class="menu-list"><a href="#"><i class="icon-layers" aria-hidden="true"></i><span>Product</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="">Create Product</a></li>
-                    <li><a href="">Sneaker</a></li>
-                    <li><a href="">Running</a></li>
-                    <li><a href="">Soccer</a></li>
+                    <li><a href="">All</a></li>
+                    <li><a href="">Man</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Kid</a></li>
                 </ul>
             </li>
             

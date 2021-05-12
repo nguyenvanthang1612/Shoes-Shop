@@ -1,10 +1,10 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    category table
+    All product table
 @endsection
 
-@push('js')
+{{-- @push('js')
     <script>
         function deleteItem(e)
         {
@@ -17,7 +17,7 @@
             }
         }
     </script>
-@endpush
+@endpush --}}
 
 @section('content')
     <!--body wrapper start-->
@@ -54,6 +54,9 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Description</th>
+                                          <th>Created at</th>
+                                          <th>Updated at</th>
+                                          <th></th>
                                       </tr>
                                   </thead>
                                   <tfoot>
@@ -61,16 +64,13 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Description</th>
+                                          <th>Created at</th>
+                                          <th>Updated at</th>
+                                          <th></th>
                                       </tr>
                                   </tfoot>
                                   <tbody>
-                                      @foreach ($categories as $category)
-                                        <tr>
-                                            <td>{{ $category->id }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>{{ $category->desc }}</td>
-                                        </tr>
-                                      @endforeach
+                                     
                                   </tbody>
                             </table>  
                           </div>
