@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\Admin\AccountController as AdminAccountController;
-use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
-use App\Http\Controllers\Admin\WebCategoryController;
+use App\Http\Controllers\Admin\AdminAccountController;
+use App\Http\Controllers\Admin\AdminAuthenticateController;
+
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\Web\CategoryController;
+use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
-use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
 use Illuminate\Routing\RouteAction;
@@ -52,4 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     //category
     Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+
+    //product
+    Route::get('product/all', [ProductController::class, 'allIndex']);
 });

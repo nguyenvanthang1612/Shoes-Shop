@@ -17,15 +17,15 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             [
-                'name' => 'Men',
+                'name_category' => 'Men',
                 'desc' => 'Men Power'
             ],
             [
-                'name' => 'Women',
+                'name_category' => 'Women',
                 'desc' => 'Women Power'
             ],
             [
-                'name' => 'Kid',
+                'name_category' => 'Kid',
                 'desc' => 'Kid Power'
             ]
         ]);

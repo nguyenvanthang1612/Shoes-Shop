@@ -67,7 +67,7 @@
                                       @foreach ($categories as $category)
                                         <tr>
                                             <td>{{ $category->id }}</td>
-                                            <td>{{ $category->name }}</td>
+                                            <td>{{ $category->name_category }}</td>
                                             <td>{{ $category->desc }}</td>
                                         </tr>
                                       @endforeach

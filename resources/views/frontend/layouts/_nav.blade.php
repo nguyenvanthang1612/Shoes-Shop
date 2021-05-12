@@ -221,7 +221,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             @foreach($categories as $category)
-                                <li><a href="#">{{$category->name}}</a></li>
+                                <li><a href="#">{{$category->name_category}}</a></li>
                             @endforeach
                             </ul>
                         </li>
