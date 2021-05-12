@@ -16,20 +16,15 @@
         <ul class="nav nav-pills nav-stacked custom-nav">
             <li><a href=""><i class="icon-home"></i> <span>Dashboard</span></a></li>
 
-            <li class="menu-list"><a href=""><i class="fa fa-list" aria-hidden="true"></i> <span>Category</span></a>
-                <ul class="sub-menu-list">
-                    <li><a href="{{ url('/admin/categories/create') }}">Create Category</a></li>
-                    <li><a href="{{ url('/admin/categories') }}">Category Management</a></li>
-                </ul>
-            </li>
+            <li ><a href="{{ url('/admin/categories') }}"><i class="fa fa-list" aria-hidden="true"></i> <span>Category</span></a></li>
 
             <li class="menu-list"><a href="#"><i class="icon-layers" aria-hidden="true"></i><span>Product</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="">Create Product</a></li>
                     <li><a href="{{ url('/admin/product/all') }}">All</a></li>
-                    <li><a href="">Man</a></li>
-                    <li><a href="">Women</a></li>
-                    <li><a href="">Kid</a></li>
+                    <li><a href="{{ url('/admin/product/man') }}">Man</a></li>
+                    <li><a href="{{ url('/admin/product/woman') }}">Woman</a></li>
+                    <li><a href="{{ url('/admin/product/kid') }}">Kid</a></li>
                 </ul>
             </li>
             

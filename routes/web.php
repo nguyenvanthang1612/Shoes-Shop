@@ -4,8 +4,6 @@ use App\Http\Controllers\Admin\AccountController as AdminAccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\AuthenticateController;
-use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\IndexController as WebIndexController;
 use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Route;
@@ -42,8 +40,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
 
     //category
-    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+    Route::get('categories', [CategoryController::class, 'index']);
 
     //product
     Route::get('product/all', [ProductController::class, 'allIndex']);
+    Route::get('product/man', [ProductController::class, 'manIndex']);
+    Route::get('product/woman', [ProductController::class, 'womanIndex']);
+    Route::get('product/kid', [ProductController::class, 'kidIndex']);
 });

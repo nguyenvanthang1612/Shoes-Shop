@@ -54,6 +54,12 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Description</th>
+                                          <th>SKU</th>
+                                          <th>size</th>
+                                          <th>brand</th>
+                                          <th>image</th>
+                                          <th>Category Name</th>
+                                          <th>quantity</th>
                                           <th>Created at</th>
                                           <th>Updated at</th>
                                           <th></th>
@@ -64,26 +70,33 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Description</th>
+                                          <th>SKU</th>
+                                          <th>size</th>
+                                          <th>brand</th>
+                                          <th>image</th>
+                                          <th>Category Name</th>
+                                          <th>quantity</th>
                                           <th>Created at</th>
                                           <th>Updated at</th>
                                           <th></th>
                                       </tr>
                                   </tfoot>
                                   <tbody>
-                                      @foreach ($categories as $category)
-                                        <tr>
-                                            <td>{{ $category->id }}</td>
-                                            <td>{{ $category->name }}</td>
-                                            <td>{{ $category->desc }}</td>
-                                            <td>{{ $category->created_at }}</td>
-                                            <td>{{ $category->updated_at }}</td>
-                                            <td>
-                                                <a href='{{ url("admin/categories/$category->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $category->id }}">Delete</a>
-                                                
-                                            </td>
-                                        </tr>
-                                      @endforeach
+                                     @foreach ($products as $product)
+                                         <tr>
+                                             <td>{{ $product->id }}</td>
+                                             <td>{{ $product->name }}</td>
+                                             <td>{{ $product->desc }}</td>
+                                             <td>{{ $product->SKU }}</td>
+                                             <td>{{ $product->size }}</td>
+                                             <td>{{ $product->brand }}</td>
+                                             <td>{{ $product->img }}</td>
+                                             <td>{{ $product->name_category }}</td>
+                                             <td>{{ $product->quantity }}</td>
+                                             <td>{{ $product->created_at }}</td>
+                                             <td>{{ $product->updated_at }}</td>
+                                         </tr>
+                                     @endforeach
                                   </tbody>
                             </table>  
                           </div>
