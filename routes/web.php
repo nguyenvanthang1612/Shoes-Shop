@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AccountController as AdminAccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\IndexController as WebIndexController;
@@ -42,4 +43,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     //category
     Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+
+    //product
+    Route::get('product/all', [ProductController::class, 'allIndex']);
 });
