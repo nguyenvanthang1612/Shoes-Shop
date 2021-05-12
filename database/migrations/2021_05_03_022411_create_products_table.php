@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->mediumText('desc');
             $table->string('SKU', 100);
             $table->integer('size');
-            $table->integer('gender');
+            $table->string('brand', 100);
             $table->string('img');
             $table->integer('category_id')->unsigned();
             $table->integer('inventory_id')->unsigned();

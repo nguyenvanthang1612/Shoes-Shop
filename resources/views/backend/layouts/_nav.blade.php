@@ -16,11 +16,23 @@
         <ul class="nav nav-pills nav-stacked custom-nav">
             <li><a href=""><i class="icon-home"></i> <span>Dashboard</span></a></li>
 
-            {{-- product chứa bản có select: nam, nữ, all --}}
-            <li><a href="#"><i class="icon-layers" aria-hidden="true"></i><span>Product</span></a></li>
-            
-            <li ><a href=""><i class="icon-plus"></i><span>Create</span></a></li>
+            <li class="menu-list"><a href=""><i class="fa fa-list" aria-hidden="true"></i> <span>Category</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="{{ url('/admin/categories/create') }}">Create Category</a></li>
+                    <li><a href="{{ url('/admin/categories') }}">Category Management</a></li>
+                </ul>
+            </li>
 
+            <li class="menu-list"><a href="#"><i class="icon-layers" aria-hidden="true"></i><span>Product</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="">Create Product</a></li>
+                    <li><a href="">All</a></li>
+                    <li><a href="">Man</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Kid</a></li>
+                </ul>
+            </li>
+            
             <li class="menu-list"><a href="#"><i class="icon-envelope-open"></i> <span>Mail</span></a>
                 <ul class="sub-menu-list">
                     <li><a href=""> Inbox</a></li>
@@ -30,8 +42,10 @@
             
             <li class="menu-list"><a href="#"><i class="icon-user"></i> <span>Account</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="">Client</a></li>
-                    <li><a href="">Admin</a></li>
+                    <li><a href="">Client Management</a></li>
+                    <li><a href="">Admin Management</a></li>
+                    <li><a href="{{ url('/admin/account/create_account') }}">Create Account</a></li>
+                    <li><a href="">Change Password</a></li>
                 </ul>
             </li>
 

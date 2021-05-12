@@ -23,6 +23,8 @@
     <link href="{!! asset('backend/assets/css/bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('backend/assets/css/style.css') !!}" rel="stylesheet">
     <link href="{!! asset('backend/assets/css/responsive.css') !!}" rel="stylesheet">
+    <link rel="stylesheet" href="{{  asset('css/app.css')  }}">
+    @stack('css')
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,6 +46,8 @@
 
         @include('backend.layouts._footer');
     </div>
+
+    
 
 
 <!--Begin core plugin -->
@@ -67,7 +71,14 @@
 <script src="{!! asset('backend/assets/plugins/summernote-master/summernote.min.js') !!}"></script>
 <script src="{!! asset('backend/assets/pages/compose.js') !!}"></script>
 <!--End Page Level Plugin-->
+<script src={{ url('ckeditor/ckeditor.js') }}></script>
+<script>
+    CKEDITOR.replace('ckeditor');
+</script>
 
+
+<script src="{{ asset('/js/app.js') }}"></script>
+@stack('js')
 </body>
 
 </html>
