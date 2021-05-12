@@ -2829,16 +2829,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <!-- Badge -->
-                                                    <span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span>
+
+
                                                 </div>
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="hover" src="{{ asset('frontend/images/shop/img-01-1.jpg') }}" alt="">
-                                                    <img class="main" src="{{ asset('frontend/images/shop/img-01.jpg') }}" alt="">
+
+                                                    <img class="main" src='{{$product->img}}' alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -2846,27 +2844,11 @@
                                                     <!-- Rate -->
                                                     <div class="rate">
 
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
+
 
                                                         <div class="rate-info">
-                                                            24 members
-                                                            <span>like it</span>
+                                                            BRAND
+                                                            <span>{{$product->brand}}</span>
                                                         </div>
                                                     </div>
 
@@ -3181,7 +3163,7 @@
                                                     <i class="nav-icon-open icofont icofont-curved-right"></i>
                                                 </a>
                                             </li>
-                                        
+
 
                                         </ul>
                                     </div>

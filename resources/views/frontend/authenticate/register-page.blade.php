@@ -96,6 +96,24 @@
                                             <div id="bankTransrerColl" class="panel-collapse collapse in">
                                                 <div class="panel-body">
 
+                                                        <div class="form-group pd-none">
+                                                            <label for="text" class="col-sm-3 control-label text-darkness">Your User Name</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text"
+                                                                       class="form-control"
+                                                                       id="user_name" name="user_name">
+                                                            </div>
+                                                        </div>
+
+                                                         <div class="form-group pd-none">
+                                                            <label for="password" class="col-sm-3 control-label text-darkness">Enter your password</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="password"
+                                                                       class="form-control"
+                                                                       id="password" name="password">
+                                                            </div>
+                                                        </div>
+
 
                                                         <div class="form-group pd-none">
                                                             <label for="frName" class="col-sm-3 control-label text-darkness">Your first name</label>
@@ -125,14 +143,6 @@
                                                         </div>
 
                                                         <div class="form-group pd-none">
-                                                            <label for="password" class="col-sm-3 control-label text-darkness">Enter your password</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="password"
-                                                                       class="form-control"
-                                                                       id="password" name="password">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group pd-none">
                                                             <label for="telephone" class="col-sm-3 control-label text-darkness">Enter your Telephone</label>
                                                             <div class="col-sm-8">
                                                                 <input type="text"
@@ -140,6 +150,8 @@
                                                                        id="telephone" name="telephone">
                                                             </div>
                                                         </div>
+
+                                                        
 
 
                                                 </div>

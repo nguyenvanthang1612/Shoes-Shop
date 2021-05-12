@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class IndexController extends Controller
+class WebIndexController extends Controller
 {
     public function index()
     {
@@ -21,14 +19,10 @@ class IndexController extends Controller
     }
     public function store(Request $request)
     {
-        $user = User::create($request->input());
+        $data = array_merge(['role' => 1], request()->input());
+        $user = User::create($data);
         if($user){
             return redirect('/');
         }
     }
-
-
-
-
-
 }
