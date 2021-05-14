@@ -60,8 +60,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
 
     //category
-    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+    Route::get('categories', [CategoryController::class, 'index']);
 
     //product
     Route::get('product/all', [ProductController::class, 'allIndex']);
+    Route::get('product/man', [ProductController::class, 'manIndex']);
+    Route::get('product/woman', [ProductController::class, 'womanIndex']);
+    Route::get('product/kid', [ProductController::class, 'kidIndex']);
 });
