@@ -32,6 +32,7 @@
                             <label for="top-search">search</label>
                         </form>
 
+                        @if (!Auth::check())
                         <div class="btn-cols">
 
                             <ul class="list-btn-group">
@@ -47,6 +48,7 @@
                                 </li>
                             </ul>
                         </div>
+                        @endauth
                     </div>
 
                     <ul class="nav navbar-nav navbar-right info-panel">
@@ -221,7 +223,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             @foreach($categories as $category)
-                                <li><a href="#">{{$category->name_category}}</a></li>
+                                <li><a href='{{url("/products/categories/$category->id/list")}}'>{{$category->name_category}}</a></li>
                             @endforeach
                             </ul>
                         </li>

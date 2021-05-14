@@ -26,9 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('frontend.layouts._nav', function($view) {
+        View::composer(['frontend.layouts._nav','frontend.index','frontend.product.shop-item','frontend.product.shop-list'], function($view) {
             return $view->with('categories', Category::all());
         });
-       
+
     }
 }

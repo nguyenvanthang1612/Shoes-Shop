@@ -3,26 +3,26 @@
 @section('title')
     Shop list
 @endsection
-            
+
 @section('content')
-            <!-- 
+            <!--
         BLOCK POPULAR ON SHOP
         =============================================== -->
         <div class="container-fluid block">
             <div class="row">
-                
-                    <div class="container">                        
+
+                    <div class="container">
                         <div class="row">
-                            
+
                             <!-- Item list -->
                             <div class="col-md-8 col-lg-9 shop-items-set">
-                                
+
                                 <!-- Paginations -->
                                 <div class="row pagination-block hidden-xs">
                                     <div class="col-xs-12">
-                                        
+
                                         <div class="wrap">
-                                           
+
                                             <!-- Pagination -->
                                             <ul class="pagination">
 
@@ -60,14 +60,15 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
-                                
+
                                 <!-- Item list -->
                                 <div class="row item-wrapper">
-                                    
+
                                     <!-- Shop item 1 / timer -->
+                                    @foreach($lists as $list)
                                     <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer"
                                          data-timer-date="2018, 2, 5, 0, 0, 0">
 
@@ -78,48 +79,26 @@
 
                                                 <!-- Header -->
                                                 <div class="comp-header st-4 text-uppercase">
+                                                <h3>{{$list->name}}</h3>
 
-                                                    T-shirt
                                                     <span>
-                                                        fake Brand
+                                                        Category: {{$list->category->name_category}}
                                                     </span>
+                                                    <span>
+                                                        Brand: {{$list->brand}}
+                                                    </span>
+
 
                                                     <!-- Rate -->
                                                     <div class="rate">
 
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
 
-                                                        <div class="rate-info">
-                                                            24 members rate it
-                                                        </div>
                                                     </div>
-
-                                                    <!-- Badge -->
-                                                    <span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span>
                                                 </div>
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="hover" src="images/shop/img-01-1.jpg" alt="">
-                                                    <img class="main" src="images/shop/img-01.jpg" alt="">
+                                                    <img class="main" src="{{$list->img}}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -150,16 +129,6 @@
                                                             <span>like it</span>
                                                         </div>
                                                     </div>
-
-                                                    <!-- Timer -->
-                                                    <div class="timer-body">
-                                                        <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
-                                                    </div>
-
                                                     <!-- Features list -->
                                                     <ul class="features">
                                                         <li>
@@ -196,15 +165,9 @@
                                                         <span class="curr">
                                                             $
                                                         </span>
-
-                                                        <!-- Sale price -->
-                                                        <span class="sale">
-                                                            <span>234<small>.00</small></span>
-                                                        </span>
-
                                                         <!-- Price -->
                                                         <span class="price">
-                                                            175<small>.50</small>
+                                                            {{$list->price}}
                                                         </span>
                                                     </span>
 
@@ -228,881 +191,23 @@
                                                 </a>
 
                                                 <!-- Favorite added -->
-                                                <a href="#" class="favorite-link active">
-                                                    <i class="icofont icofont-star"></i>
-                                                    to favorite
-                                                </a>
+
 
                                                 <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
+                                                <a href='{{  url("products/$list->id/item") }}' class="more-link">More info</a>
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
                                     <!-- / Shop item -->
-
-                                    <!-- Shop item 2 -->
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw">
-
-                                        <div class="wrap">
-
-                                            <!-- Image & Caption -->
-                                            <div class="body">
-
-                                                <!-- Header -->
-                                                <div class="comp-header st-4 text-uppercase">
-
-                                                    Jacket
-                                                    <span>
-                                                        fake Brand
-                                                    </span>
-
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            124 members rate it
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Badge -->
-                                                    <!--span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span-->
-                                                </div>
-
-                                                <!-- Image -->
-                                                <div class="image">
-                                                    <img class="main" src="images/shop/img-02.jpg" alt="">
-                                                </div>
-
-                                                <!-- Caption -->
-                                                <div class="caption">
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            124 members
-                                                            <span>like it</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Timer -->
-                                                    <div class="timer-body">
-                                                        <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
-                                                    </div>
-
-                                                    <!-- Features list -->
-                                                    <ul class="features">
-                                                        <li>
-                                                            <i class="icofont icofont-shield"></i>
-                                                            <span>24 days. Money Back Guarantee</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-ship"></i>
-                                                            <span>Free shipping</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-hand"></i>
-                                                            <span>Free help and setup</span>
-                                                        </li>
-                                                    </ul>
-
-                                                    <!-- Text -->
-                                                    <p class="text">
-                                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Buy btn & more link -->
-                                            <div class="info">
-
-                                                <!-- Buy btn -->
-                                                <a href="#" class="btn-material btn-price">
-
-                                                    <!-- Price -->
-                                                    <span class="price">
-
-                                                        <!-- Currency -->
-                                                        <span class="curr">
-                                                            $
-                                                        </span>
-
-                                                        <!-- Sale price
-                                                        <span class="sale">
-                                                            <span>234<small>.00</small></span>
-                                                        </span> -->
-
-                                                        <!-- Price -->
-                                                        <span class="price">
-                                                            234<small>.00</small>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Quantity -->
-                                                    <span class="qnt-select">
-                                                        <span class="plus">
-                                                            <i class="icofont icofont-plus"></i>
-                                                        </span>
-                                                        <span class="view-sum">
-                                                            01
-                                                        </span>
-                                                        <span class="minus">
-                                                            <i class="icofont icofont-minus"></i>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Icon card -->
-                                                    <span class="icon-card">
-                                                        <i class="icofont icofont-cart-alt"></i>
-                                                    </span>
-                                                </a>
-
-                                                <!-- Favorite added -->
-                                                <a href="#" class="favorite-link">
-                                                    <i class="icofont icofont-star"></i>
-                                                    to favorite
-                                                </a>
-
-                                                <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- / Shop item -->
-
-                                    <!-- Shop item 3 -->
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw">
-
-                                        <div class="wrap">
-
-                                            <!-- Image & Caption -->
-                                            <div class="body">
-
-                                                <!-- Header -->
-                                                <div class="comp-header st-4 text-uppercase">
-
-                                                    Grey shoes
-                                                    <span>
-                                                        fake Brand
-                                                    </span>
-
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            24 members rate it
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Badge
-                                                    <span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span> -->
-                                                </div>
-
-                                                <!-- Image -->
-                                                <div class="image">
-                                                    <img class="hover" src="images/shop/img-08-1.jpg" alt="">
-                                                    <img class="main" src="images/shop/img-08.jpg" alt="">
-                                                </div>
-
-                                                <!-- Caption -->
-                                                <div class="caption">
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            24 members
-                                                            <span>like it</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Timer -->
-                                                    <div class="timer-body">
-                                                        <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
-                                                    </div>
-
-                                                    <!-- Features list -->
-                                                    <ul class="features">
-                                                        <li>
-                                                            <i class="icofont icofont-shield"></i>
-                                                            <span>24 days. Money Back Guarantee</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-ship"></i>
-                                                            <span>Free shipping</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-hand"></i>
-                                                            <span>Free help and setup</span>
-                                                        </li>
-                                                    </ul>
-
-                                                    <!-- Text -->
-                                                    <p class="text">
-                                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Buy btn & more link -->
-                                            <div class="info">
-
-                                                <!-- Buy btn -->
-                                                <a href="#" class="btn-material btn-price">
-
-                                                    <!-- Price -->
-                                                    <span class="price">
-
-                                                        <!-- Currency -->
-                                                        <span class="curr">
-                                                            $
-                                                        </span>
-
-                                                        <!-- Sale price
-                                                        <span class="sale">
-                                                            <span>234<small>.00</small></span>
-                                                        </span> -->
-
-                                                        <!-- Price -->
-                                                        <span class="price">
-                                                            275<small>.50</small>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Quantity -->
-                                                    <span class="qnt-select">
-                                                        <span class="plus">
-                                                            <i class="icofont icofont-plus"></i>
-                                                        </span>
-                                                        <span class="view-sum">
-                                                            01
-                                                        </span>
-                                                        <span class="minus">
-                                                            <i class="icofont icofont-minus"></i>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Icon card -->
-                                                    <span class="icon-card">
-                                                        <i class="icofont icofont-cart-alt"></i>
-                                                    </span>
-                                                </a>
-
-                                                <!-- Favorite added -->
-                                                <a href="#" class="favorite-link">
-                                                    <i class="icofont icofont-star"></i>
-                                                    to favorite
-                                                </a>
-
-                                                <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- / Shop item -->
-
-                                    <!-- Shop item 4 -->
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw">
-
-                                        <div class="wrap">
-
-                                            <!-- Image & Caption -->
-                                            <div class="body">
-
-                                                <!-- Header -->
-                                                <div class="comp-header st-4 text-uppercase">
-
-                                                    Food President
-                                                    <span>
-                                                        fake Brand
-                                                    </span>
-
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            24 members rate it
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Badge
-                                                    <span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span> -->
-                                                </div>
-
-                                                <!-- Image -->
-                                                <div class="image">
-                                                    <img class="main" src="images/shop/img-09.jpg" alt="">
-                                                </div>
-
-                                                <!-- Caption -->
-                                                <div class="caption">
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            24 members
-                                                            <span>like it</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Timer -->
-                                                    <div class="timer-body">
-                                                        <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
-                                                    </div>
-
-                                                    <!-- Features list -->
-                                                    <ul class="features">
-                                                        <li>
-                                                            <i class="icofont icofont-shield"></i>
-                                                            <span>24 days. Money Back Guarantee</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-ship"></i>
-                                                            <span>Free shipping</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-hand"></i>
-                                                            <span>Free help and setup</span>
-                                                        </li>
-                                                    </ul>
-
-                                                    <!-- Text -->
-                                                    <p class="text">
-                                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Buy btn & more link -->
-                                            <div class="info">
-
-                                                <!-- Buy btn -->
-                                                <a href="#" class="btn-material btn-price">
-
-                                                    <!-- Price -->
-                                                    <span class="price">
-
-                                                        <!-- Currency -->
-                                                        <span class="curr">
-                                                            $
-                                                        </span>
-
-                                                        <!-- Sale price
-                                                        <span class="sale">
-                                                            <span>534<small>.00</small></span>
-                                                        </span> -->
-
-                                                        <!-- Price -->
-                                                        <span class="price">
-                                                            575<small>.50</small>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Quantity -->
-                                                    <span class="qnt-select">
-                                                        <span class="plus">
-                                                            <i class="icofont icofont-plus"></i>
-                                                        </span>
-                                                        <span class="view-sum">
-                                                            01
-                                                        </span>
-                                                        <span class="minus">
-                                                            <i class="icofont icofont-minus"></i>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Icon card -->
-                                                    <span class="icon-card">
-                                                        <i class="icofont icofont-cart-alt"></i>
-                                                    </span>
-                                                </a>
-
-                                                <!-- Favorite added -->
-                                                <a href="#" class="favorite-link">
-                                                    <i class="icofont icofont-star"></i>
-                                                    to favorite
-                                                </a>
-
-                                                <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- / Shop item -->
-
-                                    <!-- Shop item 5 -->
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw">
-
-                                        <div class="wrap">
-
-                                            <!-- Image & Caption -->
-                                            <div class="body">
-
-                                                <!-- Header -->
-                                                <div class="comp-header st-4 text-uppercase">
-
-                                                    Shoes for walking
-                                                    <span>
-                                                        fake Brand
-                                                    </span>
-
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            24 members rate it
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Badge
-                                                    <span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span> -->
-                                                </div>
-
-                                                <!-- Image -->
-                                                <div class="image">
-                                                    <img class="main" src="images/shop/img-10.jpg" alt="">
-                                                </div>
-
-                                                <!-- Caption -->
-                                                <div class="caption">
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li class="active">
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            24 members
-                                                            <span>like it</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Timer -->
-                                                    <div class="timer-body">
-                                                        <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
-                                                    </div>
-
-                                                    <!-- Features list -->
-                                                    <ul class="features">
-                                                        <li>
-                                                            <i class="icofont icofont-shield"></i>
-                                                            <span>24 days. Money Back Guarantee</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-ship"></i>
-                                                            <span>Free shipping</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-hand"></i>
-                                                            <span>Free help and setup</span>
-                                                        </li>
-                                                    </ul>
-
-                                                    <!-- Text -->
-                                                    <p class="text">
-                                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Buy btn & more link -->
-                                            <div class="info">
-
-                                                <!-- Buy btn -->
-                                                <a href="#" class="btn-material btn-price">
-
-                                                    <!-- Price -->
-                                                    <span class="price">
-
-                                                        <!-- Currency -->
-                                                        <span class="curr">
-                                                            $
-                                                        </span>
-
-                                                        <!-- Sale price
-                                                        <span class="sale">
-                                                            <span>234<small>.00</small></span>
-                                                        </span> -->
-
-                                                        <!-- Price -->
-                                                        <span class="price">
-                                                            175<small>.50</small>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Quantity -->
-                                                    <span class="qnt-select">
-                                                        <span class="plus">
-                                                            <i class="icofont icofont-plus"></i>
-                                                        </span>
-                                                        <span class="view-sum">
-                                                            01
-                                                        </span>
-                                                        <span class="minus">
-                                                            <i class="icofont icofont-minus"></i>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Icon card -->
-                                                    <span class="icon-card">
-                                                        <i class="icofont icofont-cart-alt"></i>
-                                                    </span>
-                                                </a>
-
-                                                <!-- Favorite added -->
-                                                <a href="#" class="favorite-link active">
-                                                    <i class="icofont icofont-star"></i>
-                                                    to favorite
-                                                </a>
-
-                                                <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- / Shop item -->
-
-                                    <!-- Shop item 6 -->
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw">
-
-                                        <div class="wrap">
-
-                                            <!-- Image & Caption -->
-                                            <div class="body">
-
-                                                <!-- Header -->
-                                                <div class="comp-header st-4 text-uppercase">
-
-                                                    Men's shorts
-                                                    <span>
-                                                        fake Brand
-                                                    </span>
-
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            not yet rated
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Badge
-                                                    <span class="sale-badge item-badge text-uppercase bg-green">
-                                                        New
-                                                    </span> -->
-                                                </div>
-
-                                                <!-- Image -->
-                                                <div class="image">
-                                                    <img class="main" src="images/shop/img-11.jpg" alt="">
-                                                </div>
-
-                                                <!-- Caption -->
-                                                <div class="caption">
-                                                    <!-- Rate -->
-                                                    <div class="rate">
-
-                                                        <ul class="stars">
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="icofont icofont-star"></i>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="rate-info">
-                                                            not yet rated
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Timer -->
-                                                    <div class="timer-body">
-                                                        <span class="sale text-red">Sale</span>
-                                                        <span class="tdtimer-d"></span>d 
-                                                        <span class="tdtimer-h"></span>h 
-                                                        <span class="tdtimer-m"></span>m 
-                                                        <span class="tdtimer-s"></span>s 
-                                                    </div>
-
-                                                    <!-- Features list -->
-                                                    <ul class="features">
-                                                        <li>
-                                                            <i class="icofont icofont-shield"></i>
-                                                            <span>24 days. Money Back Guarantee</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-ship"></i>
-                                                            <span>Free shipping</span>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-hand"></i>
-                                                            <span>Free help and setup</span>
-                                                        </li>
-                                                    </ul>
-
-                                                    <!-- Text -->
-                                                    <p class="text">
-                                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Buy btn & more link -->
-                                            <div class="info">
-
-                                                <!-- Buy btn -->
-                                                <a href="#" class="btn-material btn-price">
-
-                                                    <!-- Price -->
-                                                    <span class="price">
-
-                                                        <!-- Currency -->
-                                                        <span class="curr">
-                                                            $
-                                                        </span>
-
-                                                        <!-- Sale price
-                                                        <span class="sale">
-                                                            <span>234<small>.00</small></span>
-                                                        </span> -->
-
-                                                        <!-- Price -->
-                                                        <span class="price">
-                                                            789<small>.00</small>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Quantity -->
-                                                    <span class="qnt-select">
-                                                        <span class="plus">
-                                                            <i class="icofont icofont-plus"></i>
-                                                        </span>
-                                                        <span class="view-sum">
-                                                            01
-                                                        </span>
-                                                        <span class="minus">
-                                                            <i class="icofont icofont-minus"></i>
-                                                        </span>
-                                                    </span>
-
-                                                    <!-- Icon card -->
-                                                    <span class="icon-card">
-                                                        <i class="icofont icofont-cart-alt"></i>
-                                                    </span>
-                                                </a>
-
-                                                <!-- Favorite added -->
-                                                <a href="#" class="favorite-link">
-                                                    <i class="icofont icofont-star"></i>
-                                                    to favorite
-                                                </a>
-
-                                                <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- / Shop item -->
-                                    
                                 </div>
-                                
+
                                 <!-- Paginations -->
                                 <div class="row pagination-block bottom">
                                     <div class="col-xs-12">
-                                        
+
                                         <div class="wrap">
-                                           
+
                                             <!-- Pagination -->
                                             <ul class="pagination">
 
@@ -1140,12 +245,12 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
-                                
+
                             </div><!-- ./ Item list -->
-                            
+
                             <!-- Asside -->
                             <div class="col-md-4 col-lg-3 asside">
 
@@ -1229,85 +334,14 @@
                                     </div>
 
                                     <ul class="nav-vrt bg-white">
+                                    @foreach($categories as $category)
                                         <li class="active">
-                                            <a href="#" class="btn-material">Man line
+                                            <a href="#" class="btn-material">{{$category->name_category}}
                                                 <i class="nav-icon-open icofont icofont-plus"></i>
                                                 <i class="nav-icon-close icofont icofont-minus"></i>
                                             </a>
-
-                                            <div class="sub-nav bg-grey-light">
-                                                <ul class="sub">
-                                                    <li>
-                                                        <a href="#" class="btn-material">Shirts</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Pants</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Footwear</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Belts</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Bags</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Perfume</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Jewerly</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </li>
-
-                                        <li>
-                                            <a href="#" class="btn-material">Woman
-                                                <i class="nav-icon-open icofont icofont-plus"></i>
-                                                <i class="nav-icon-close icofont icofont-minus"></i>
-                                            </a>
-
-                                            <div class="sub-nav bg-grey-light">
-                                                <ul class="sub">
-                                                    <li>
-                                                        <a href="#" class="btn-material">Shirts</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Pants</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Footwear</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Belts</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Bags</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Accessories</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Perfume</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="btn-material">Jewerly</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="btn-material">Jewerly</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="btn-material">Electronics</a>
-                                        </li>
+                                    @endforeach
                                     </ul>
 
                                 </div><!-- / Asside nav -->
@@ -1319,7 +353,7 @@
 
                                         <!-- Header -->
                                         <h3 class="header text-uppercase">Tags</h3>
-                                        
+
                                         <!-- Tags list -->
                                         <ul class="tags">
                                             <li><a href="#">e-shop</a></li>
@@ -1335,11 +369,11 @@
                                         </ul>
                                     </div>
                                 </div><!-- Block tags -->
-                                
+
                                 <!-- List categories for mobile -->
                                 <div class="inblock padding-none visible-xs">
                                     <div class="mobile-category nav-close">
-                                        
+
                                         <!-- Header -->
                                         <div class="header bg-blue">
                                             <span class="head">Category</span>
@@ -1438,18 +472,18 @@
                             </div><!-- ./ Asside -->
                         </div>
                     </div>
-                    
+
             </div><!-- / Parallax wrapper -->
         </div>
         <!-- END: POPULAR ON SHOP -->
-        
-        <!-- 
+
+        <!--
         BLOCK SUBSCRIBE
         =============================================== -->
         <div class="container-fluid">
-            
+
             <div class="row parallax-wrap">
-                
+
                 <div class="container block">
 
                     <div class="row">
@@ -1499,7 +533,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Parallax block -->
                 <div class="parallax bg-grey-light opc-7"
                      data-parallax-image="images/blocks/bg-02.jpg"
@@ -1507,14 +541,14 @@
             </div><!-- / Parallax wrapper -->
         </div>
         <!-- END: SUBSCRIBE -->
-            
-        <!-- 
+
+        <!--
         BLOCK COUNTER
         =============================================== -->
         <div class="container block">
-            
+
             <div class="row">
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -1526,7 +560,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -1538,7 +572,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -1550,7 +584,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Counter -->
                 <div class="col-sm-3">
 
@@ -1565,24 +599,24 @@
             </div>
         </div>
         <!-- END: COUNTER -->
-            
-        <!-- 
+
+        <!--
         SUBSTRATE
         =============================================== -->
         <div class="container-fluid">
-           
+
             <div class="row">
-               
+
                 <div class="clearfix">
-                   
+
                     <div class="substrate-wrap">
-                       
+
                         <div class="substrate parallax-block"
                              style="position: absolute"
                              data-speed-direction=".1"
                              data-default-pos="-200"
                              data-parallax-block="true">
-                            
+
                             <div class="text text-dark">
                                 BRANDS
                             </div>
@@ -1592,67 +626,67 @@
             </div>
         </div>
         <!-- END: SUBSTRATE -->
-            
-        <!-- 
+
+        <!--
         BLOCK BRANDS
         =============================================== -->
         <div class="container space-bottom">
-           
+
             <div class="row">
-               
+
                 <div class="col-xs-12">
-                   
+
                    <div class="owl-carousel owl-default brands nav-bottom-right">
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-01.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-02.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-03.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-04.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-05.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-06.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
                                <img src="images/brands/img-2-07.png" alt="">
                            </div>
                        </div>
-                       
+
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
@@ -1665,7 +699,7 @@
         </div>
         <!-- END: BRANDS -->
 @endsection
-            
 
-        
+
+
 

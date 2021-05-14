@@ -151,7 +151,7 @@
                                                             </div>
                                                         </div>
 
-                                                        
+
 
 
                                                 </div>
@@ -230,7 +230,9 @@
                                                         -->
                                                         <div class="form-group">
                                                             <div class="col-sm-offset-3 col-sm-7">
-                                                            <button name="submit"><a href="#" class="sdw-hover btn btn-material btn-yellow ripple-cont">Next</a></button>
+                                                            <button name="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
+                                                            Next
+                                                            </button>
                                                         </div>
 
 
