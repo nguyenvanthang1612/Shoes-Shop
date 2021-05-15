@@ -12,6 +12,7 @@ use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
 use Illuminate\Routing\RouteAction;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,12 +31,19 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [WebIndexController::class, 'index']);
+    //register
     Route::get('register-page/create', [WebIndexController::class,'create']);
     Route::post('register-page', [WebIndexController::class,'store']);
     //Category
     Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
     Route::get('/',[WebProductController::class,'index']);
+    Route::get('products/{id}/item',[WebProductController::class,'itemIndex']);
+    Route::get('products/categories/{id}/list',[WebProductController::class,'listIndex']);
+
+    Route::get('/logout', function() {
+        Auth::logout();
+    });
 });
 /**
  * Admin route here (Backend)

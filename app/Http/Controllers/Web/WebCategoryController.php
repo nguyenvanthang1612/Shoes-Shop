@@ -11,8 +11,6 @@ class WebCategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('frontend.layouts._nav',[
-            'categories' => $categories
-        ]);
+        return view('frontend.layouts._nav', compact('categories'));
     }
 }
