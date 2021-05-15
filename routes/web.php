@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAccountController;
-use App\Http\Controllers\Admin\AdminAuthenticateController;
-
+use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\AuthenticateController;
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
@@ -47,6 +47,10 @@ Route::group(['prefix' => 'admin'], function () {
     // authenticate
     Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm']);
     Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
+    Route::get('auth/logout', function() {
+        Auth::logout();
+        return redirect('/admin/auth/login');
+    });
 
     // account
     Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
@@ -55,8 +59,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('categories', [CategoryController::class, 'index']);
 
     //product
-    Route::get('product/all', [ProductController::class, 'allIndex']);
+    Route::get('product', [ProductController::class, 'allIndex']);
     Route::get('product/man', [ProductController::class, 'manIndex']);
     Route::get('product/woman', [ProductController::class, 'womanIndex']);
     Route::get('product/kid', [ProductController::class, 'kidIndex']);
+    Route::get('product/create', [ProductController::class, 'create']);
+    Route::post('product', [ProductController::class, 'store']);
+    Route::put('product', [ProductController::class, 'upload']);
+    Route::get('product/{id}/edit', [ProductController::class, 'edit']);
+    Route::put('product/{id}', [ProductController::class, 'update']);
+    Route::delete('product/{id}', [ProductController::class, 'destroy']);
 });

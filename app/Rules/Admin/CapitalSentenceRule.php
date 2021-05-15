@@ -13,7 +13,7 @@ class CapitalSentenceRule implements Rule
      */
     public function __construct()
     {
-        
+        //
     }
 
     /**
@@ -36,6 +36,6 @@ class CapitalSentenceRule implements Rule
      */
     public function message()
     {
-        return 'Must have capital letters at the beginning of the sentence.';
+        return 'The beginning of a sentence must always be capitalized.';
     }
 }

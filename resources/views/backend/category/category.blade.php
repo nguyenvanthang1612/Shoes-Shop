@@ -4,21 +4,6 @@
     category table
 @endsection
 
-@push('js')
-    <script>
-        function deleteItem(e)
-        {
-            const confirmDeletePost = confirm('Are you sure ?')
-            if (confirmDeletePost)
-            {
-                axios.delete(`admin/categories/${e.getAttribute('data-id')}`)
-                .then(res => location.reload())
-                .catch(err => console.err(err))
-            }
-        }
-    </script>
-@endpush
-
 @section('content')
     <!--body wrapper start-->
     <div class="wrapper">
@@ -46,7 +31,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                         <h2 class="header-title">Basic example</h2>
+                         <h2 class="header-title">Category</h2>
                           <div class="table-responsive">
                            <table id="example" class="display table">
                                   <thead>
