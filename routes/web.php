@@ -4,13 +4,13 @@ use App\Http\Controllers\Admin\AdminAccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
+use App\Http\Middleware\Admin\CheckUser;
 use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -51,9 +51,9 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('backend.index');
-    });
+    })->middleware('CheckUser');
     // authenticate
-    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm']);
+    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm'])->middleware('CheckLogout');
     Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
     Route::get('auth/logout', function() {
         Auth::logout();
