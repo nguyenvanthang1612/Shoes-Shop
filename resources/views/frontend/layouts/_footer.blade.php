@@ -1,19 +1,17 @@
-<!-- 
-        FOOTER
-        =============================================== -->
-        <footer>            
-            
+
+        <footer>
+
             <div class="container-fluid bg-blue footer text-white">
                 <div class="row">
                     <div class="container">
                         <div class="row">
-                            
+
                             <div class="col-sm-6 col-md-3">
-                               
+
                                 <h3 class="header text-uppercase">
                                     Buyer information
                                 </h3>
-                                
+
                                 <ul class="nav-vrt white opc none-padding">
                                     <li>
                                         <a href="#" class="btn-material">Support service</a>
@@ -43,47 +41,47 @@
                                         <a href="#" class="btn-material">How to Pay</a>
                                     </li>
                                 </ul>
-                                
+
                             </div>
-                            
+
                             <div class="col-sm-6 col-md-3">
-                               
+
                                 <h3 class="header text-uppercase">
                                     Service
                                 </h3>
-                                
+
                                 <ul class="nav-vrt white opc none-padding">
                                     <li>
                                         <a href="#" class="btn-material">About us</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="#" class="btn-material">Contact us</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="#" class="btn-material">My account</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="#" class="btn-material">Orders history</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="#" class="btn-material">Advanced search</a>
                                     </li>
                                 </ul>
-                                
+
                             </div>
-                            
+
                             <div class="col-sm-12 col-md-6">
                                 <div class="row">
                                     <div class="col-md-6">
-                               
+
                                         <h3 class="header text-uppercase">
                                             Our contacts
                                         </h3>
-                                        
+
                                         <ul class="list-icon white ">
                                             <li>
                                                 <i class="icon icofont icofont-location-pin"></i>
@@ -105,21 +103,21 @@
                                                 Mon - Sun / 9:00AM - 8:00PM
                                             </li>
                                         </ul>
-                                        
+
                                     </div>
-                                    
+
                                     <div class="col-md-6">
                                         <div class="footer-brand">
                                             <img src="images/main-brand.png" alt="">
                                         </div>
-                                        
+
                                         <span class="comp-header st-12 text-uppercase">
                                             Komotto
                                             <span>
                                                 Bootstrap theme
                                             </span>
                                         </span>
-                                        
+
                                         <p>
                                             Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor nisi elit consequat ipsum, nec sagittis sem nibh id elit.
                                         </p>
@@ -127,38 +125,38 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        
+
                                         <ul class="social ">
                                             <li>
                                                 <a href="#">
                                                     <i class="icofont icofont-social-facebook"></i>
                                                 </a>
                                             </li>
-                                            
+
                                             <li>
                                                 <a href="#">
                                                     <i class="icofont icofont-social-google-plus"></i>
                                                 </a>
                                             </li>
-                                            
+
                                             <li>
                                                 <a href="#">
                                                     <i class="icofont icofont-social-twitter"></i>
                                                 </a>
                                             </li>
-                                            
+
                                             <li>
                                                 <a href="#">
                                                     <i class="icofont icofont-social-vk"></i>
                                                 </a>
                                             </li>
-                                            
+
                                             <li>
                                                 <a href="#">
                                                     <i class="icofont icofont-social-instagram"></i>
                                                 </a>
                                             </li>
-                                            
+
                                             <li>
                                                 <a href="#">
                                                     <i class="icofont icofont-social-youtube-play"></i>
@@ -168,12 +166,12 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="container-fluid copiright">
                 <div class="row">
                     <div class="container">
@@ -183,9 +181,9 @@
                                     © 2016 Komotto by ThemeDron. All rights reserved.
                                 </span>
                             </div>
-                           
+
                             <div class="col-md-6 ">
-                                
+
                                 <ul class="vrt-icons text-yellow pull-right">
                                     <li>
                                         <i class="icofont icofont-paypal-alt"></i>
@@ -208,14 +206,17 @@
             .
         </footer>
         <!-- END: FOOTER -->
-            
-        <!-- 
+
+        <!--
         REGISTER MODAL
         =============================================== -->
+
+
+
         <div class="modal fade" id="myModal">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                   
+
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">
                             <span aria-hidden="true">
@@ -223,13 +224,13 @@
                             </span>
                         </button>
                         <h4 class="modal-title" id="myModalLabel">
-                            Authorization 
+                            Authorization
                             <span>
                                 required
                             </span>
                         </h4>
                     </div>
-                    
+
                     <div class="modal-body">
 
                         <!-- Authirize form -->
@@ -253,14 +254,16 @@
                             </div>
 
                             <div class="col-md-5 col-md-offset-1 form-fields">
-                                <form>
+
+                                <form action='{{ url("/login") }}' method="POST" id="login-form">
+                                    <div id="error-login"></div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <label for="exampleInputEmail1">User Name</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name" name="user_name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
                                     </div>
                                     <div class="checkbox padding">
                                         <input type="checkbox" id="inputCheckBox">
@@ -273,13 +276,13 @@
                                         </label>
                                     </div>
                                     <span class="sdw-wrap">
-                                        <button type="submit" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">Login</button>
+                                        <button type="submit" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont" name="login">Login</button>
                                         <span class="sdw"></span>
                                     </span>
 
                                     <ul class="addon-login-btn">
                                         <li>
-                                            <a href="#">register</a>
+                                            <a href='{{ url(" register-page/create ") }}'>register</a>
                                         </li>
                                         <li>or</li>
                                         <li>
@@ -294,4 +297,6 @@
                 </div>
             </div>
         </div>
+
+
         <!-- END: REGISTER MODAL -->

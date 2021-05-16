@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\AdminAuthenticateController;
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\Web\AuthenticateController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
@@ -40,7 +40,9 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/',[WebProductController::class,'index']);
     Route::get('products/{id}/item',[WebProductController::class,'itemIndex']);
     Route::get('products/categories/{id}/list',[WebProductController::class,'listIndex']);
-
+    // authenticate
+    Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
+    Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
     Route::get('/logout', function() {
         Auth::logout();
     });

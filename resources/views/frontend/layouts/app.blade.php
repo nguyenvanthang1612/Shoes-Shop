@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <meta name="token" content="{{ csrf_token() }}" />
         <!--link rel="icon" href="#"-->
 
         <title>@yield('title')</title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="{!! asset('frontend/assets/css/bootstrap.min.css') !!}">
+        <link rel="stylesheet" href="{!! asset('frontend/assets/css/bootstrap.min.css') !!}"/>
 
         <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="{!! asset('frontend/css/theme.min.css') !!}">
+        <link rel="stylesheet" href="{!! asset('frontend/css/theme.min.css') !!}"/>
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet"/>
 
         <!-- Icons -->
-        <link href="{!! asset('frontend/assets/fonts/icofont/icofont.min.css') !!}" rel="stylesheet">
+        <link href="{!! asset('frontend/assets/fonts/icofont/icofont.min.css') !!}" rel="stylesheet"/>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -65,5 +66,25 @@
         <!-- Google API -->
         <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_API_KEY&libraries=places&callback=initAutocomplete"
         async defer></script><!-- / Google API -->
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script>
+        $(function() {
+            $("form#login-form").submit(function(e) {
+                e.preventDefault();
+                const username = $("[name='user_name']").val();
+                const password = $("[name='password']").val();
+
+                post("{{ route('user.login') }}", {
+                    user_name: username,
+                    password
+                }, function(res) {
+                    console.log(res);
+                    // location.reload();
+                }, function(res) {
+                    $("#error-login").text(res.responseJSON.message);
+                })
+            })
+        })
+        </script>
     </body>
 </html>

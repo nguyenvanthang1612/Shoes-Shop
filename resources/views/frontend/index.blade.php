@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 
 @section('title')
     index
@@ -61,7 +61,7 @@
                                        <!-- Price -->
                                        <span class="price hidden-xs">
                                            <span class="wrap text-red">
-                                               {{$product->price}}
+                                               {{$product->price}} $
                                            </span>
                                        </span>
 
@@ -166,7 +166,7 @@
                                     <!-- Image -->
                                     <div class="image">
 
-                                        <img class="main" src='{{$product->img}}' alt="">
+                                        <img style="width:253px;height:347px " class="main" src='{{$product->img}}' alt="">
                                     </div>
 
                                     <!-- Caption -->
@@ -360,7 +360,7 @@
 
                         <div class="row hidden-xs">
                             <div class="col-xs-12 img-on-bg">
-                                <img src="{{ asset('images/blocks/parallax-bg-popular-on-shop.png') }}" alt="">
+                                <img style="width:253px;height:347px" src="{{ asset('images/blocks/parallax-bg-popular-on-shop.png') }}" alt="">
                             </div>
                         </div>
 
@@ -698,7 +698,7 @@
                                                 <!-- Image -->
                                                 <div class="image">
 
-                                                    <img class="main" src='{{$product->img}}' alt="">
+                                                    <img style="width:253px;height:347px " class="main" src='{{$product->img}}' alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -789,7 +789,7 @@
                                                 </a>
 
                                                 <!-- More link -->
-                                                <a href="#" class="more-link">More info</a>
+                                                <a href='{{  url("products/$product->id/item") }}' class="more-link">More info</a>
                                             </div>
                                         </div>
                                     </div>
