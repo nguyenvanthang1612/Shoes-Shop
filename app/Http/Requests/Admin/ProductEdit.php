@@ -5,7 +5,7 @@ namespace App\Http\Requests\Admin;
 use App\Rules\Admin\CapitalSentenceRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryCreateRequest extends FormRequest
+class ProductEdit extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,16 +25,11 @@ class CategoryCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', new CapitalSentenceRule()],
-            'desc' => 'required'
+            'name' => ['required', new CapitalSentenceRule],
+            'desc' => 'required',
+            'SKU' => 'required',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric'
         ];
     }
-
-    // public function message()
-    // {
-    //     return [
-    //         'name.required' => 'nhập đê',
-    //         'desc.required' => 'hãy nhập'
-    //     ];
-    // }
 }

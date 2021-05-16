@@ -3,7 +3,22 @@
 @section('title')
     login
 @endsection
- 
+
+@if ( Session::has('success') )
+	<div class="alert alert-success alert-dismissible" role="alert">
+		<strong>{{ Session::get('success') }}</strong>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			<span class="sr-only">Close</span>
+		</button>
+	</div>
+@endif
+
+<?php //Hiển thị thông báo lỗi?>
+
+
+
+
 @section('content')
      <!--Start login Section-->
   <section class="login-section">
@@ -13,6 +28,30 @@
                 <div class="login-inner">
  
                     <h2 class="header-title text-center">Login</h2>
+
+                    @if ( Session::has('error') )
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <strong>{{ Session::get('error') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                    @endif
                      
                     <form method="post" action="{{ url('admin/auth/login') }}">
                         @csrf
@@ -27,7 +66,7 @@
                         <div class="form-group">
                             <div class="pull-left">
                             <div class="checkbox primary">
-                                <input  id="checkbox-2" type="checkbox">
+                                <input  id="checkbox-2" type="checkbox" name="remember_token">
                                 <label for="checkbox-2">Remember me</label>
                             </div>
                             </div>

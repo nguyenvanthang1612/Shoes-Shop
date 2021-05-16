@@ -20,7 +20,7 @@
                     <ul class="dropdown-list">
                     <li class="notification-scroll-list notification-list ">
                        <!-- list item-->
-                       <a href="javascript:void(0);" class="list-group-item">
+                       <a href="javascript:void(0)" class="list-group-item">
                           <div class="media">
                              <div class="pull-left p-r-10">
                                 <em class="fa  fa-shopping-cart noti-primary"></em>
@@ -35,7 +35,7 @@
                        </a>
             
                        <!-- list item-->
-                       <a href="javascript:void(0);" class="list-group-item">
+                       <a href="javascript:void(0)" class="list-group-item">
                           <div class="media">
                              <div class="pull-left p-r-10">
                                 <em class="fa fa-check noti-success"></em>
@@ -50,7 +50,7 @@
                        </a>
             
                        <!-- list item-->
-                       <a href="javascript:void(0);" class="list-group-item">
+                       <a href="javascript:void(0)" class="list-group-item">
                           <div class="media">
                              <div class="pull-left p-r-10">
                                 <em class="fa fa-user-plus noti-info"></em>
@@ -65,7 +65,7 @@
                        </a>
             
                         <!-- list item-->
-                       <a href="javascript:void(0);" class="list-group-item">
+                       <a href="javascript:void(0)" class="list-group-item">
                           <div class="media">
                              <div class="pull-left p-r-10">
                                 <em class="fa fa-diamond noti-danger"></em>
@@ -80,7 +80,7 @@
                        </a>
             
                        <!-- list item-->
-                       <a href="javascript:void(0);" class="list-group-item">
+                       <a href="javascript:void(0)" class="list-group-item">
                           <div class="media">
                              <div class="pull-left p-r-10">
                                 <em class="fa fa-cog noti-warning"></em>
@@ -166,7 +166,7 @@
                   <li> <a href="#"> <i class="fa fa-wrench"></i> Settings </a> </li>
                   <li> <a href="#"> <i class="fa fa-user"></i> Profile </a> </li>
                   <li> <a href="#"> <i class="fa fa-info"></i> Help </a> </li>
-                  <li> <a href="#"> <i class="fa fa-lock"></i> Logout </a> </li>
+                  <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-lock"></i> Logout </a> </li>
                 </ul>
             </li>
 
