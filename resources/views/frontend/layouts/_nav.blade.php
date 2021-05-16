@@ -33,22 +33,22 @@
                         </form>
 
                         @if (!Auth::check())
-                        <div class="btn-cols">
+                            <div class="btn-cols">
 
-                            <ul class="list-btn-group">
-                                <li>
-                                    <a href='' data-toggle="modal" data-target="#myModal">
-                                        Sign in
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='{{url("/register-page/create")}}'>
-                                        <b>Sign up</b>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        @endauth
+                                <ul class="list-btn-group">
+                                    <li>
+                                        <a href='' data-toggle="modal" data-target="#myModal">
+                                            Sign in
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='{{url("/register-page/create")}}'>
+                                            <b>Sign up</b>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
                     </div>
 
                     <ul class="nav navbar-nav navbar-right info-panel">
@@ -73,8 +73,10 @@
                                 <!-- Info -->
                                 <span class="info">
                                     <!-- Name -->
-                                    <span class="name text-uppercase">John Doe</span>
+                                    @if(Auth::check())
+                                    <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
                                     <a href="#">edit profile</a>
+                                    @endif
                                 </span>
                             </span>
                         </li>

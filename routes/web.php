@@ -5,6 +5,10 @@ use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateContro
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 
+
+use Illuminate\Support\Facades\Auth;
+
+// >>>>>>> 5f060bf16c4ee577597105e3cc97f441840b9c72
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
@@ -12,7 +16,7 @@ use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
 use App\Http\Middleware\Admin\CheckUser;
 use Illuminate\Routing\RouteAction;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,7 +44,9 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/',[WebProductController::class,'index']);
     Route::get('products/{id}/item',[WebProductController::class,'itemIndex']);
     Route::get('products/categories/{id}/list',[WebProductController::class,'listIndex']);
-
+    // authenticate
+    Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
+    Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
     Route::get('/logout', function() {
         Auth::logout();
     });

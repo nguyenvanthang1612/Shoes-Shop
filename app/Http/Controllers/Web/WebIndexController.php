@@ -21,7 +21,7 @@ class WebIndexController extends Controller
 
     public function store(Request $request)
     {
-        $data = array_merge(['role' => 1], request()->input());
+        $data = array_merge(['role' => 3], request()->input());
         $user = User::create($data);
         if($user){
             Auth::login($user);
