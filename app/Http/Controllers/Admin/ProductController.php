@@ -129,9 +129,8 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        $id = $_GET['id'];
-        $product = new Product();
+        $product = Product::findOrFail($id);
         $result = $product->delete($id);
-        return $result;    
+        return  redirect()->route('product.index');
     } 
 }

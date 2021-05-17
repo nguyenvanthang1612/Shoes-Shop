@@ -73,7 +73,12 @@
                                              <td>{{ $product->price }}</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a href="javascript:void(0)" class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="product/delete/{{ $product->id }}">Delete</a>
+                                                <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('product-{{ $product->id }}').submit()">Delete</a>
+                                                <form action="product/delete/{{ $product->id }}" method="post" id="product-{{ $product->id }}">
+                                                    @method('DELETE')
+                                                    @csrf
+
+                                                </form>
                                             </td>
                                          </tr>
                                      @endforeach
