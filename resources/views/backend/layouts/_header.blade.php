@@ -1,7 +1,7 @@
 <!-- header section start-->
 <div class="header-section">
 
-    <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+    <a class="toggle-btn menu-collapsed"><i class="fa fa-bars"></i></a>
 
     <form class="searchform">
         <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
