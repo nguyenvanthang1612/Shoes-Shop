@@ -7,8 +7,6 @@ use App\Http\Controllers\Admin\ProductController;
 
 
 use Illuminate\Support\Facades\Auth;
-
-// >>>>>>> 5f060bf16c4ee577597105e3cc97f441840b9c72
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
@@ -55,16 +53,19 @@ Route::group(['prefix' => '/'], function () {
  * Admin route here (Backend)
  */
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm'])
+    ->name('admin.login')->middleware('CheckLogout');
+
     Route::get('/', function () {
         return view('backend.index');
-    })->middleware('CheckUser');
+    })->name('admin.index')->middleware('CheckUser');
+
     // authenticate
-    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm'])->middleware('CheckLogout');
     Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
     Route::get('auth/logout', function() {
         Auth::logout();
-        return redirect('/admin/auth/login');
-    });
+        return redirect(route('admin.login'));
+    })->middleware('CheckUser');
 
     // account
     Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
@@ -82,5 +83,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::put('product', [ProductController::class, 'upload']);
     Route::get('product/{id}/edit', [ProductController::class, 'edit']);
     Route::put('product/{id}', [ProductController::class, 'update']);
-    Route::delete('product/{id}', [ProductController::class, 'destroy']);
+    Route::delete('product/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 });

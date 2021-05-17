@@ -127,8 +127,11 @@ class ProductController extends Controller
         return [null, $request->input('img')];
     }
 
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        return $product->delete();
-    }
+        $id = $_GET['id'];
+        $product = new Product();
+        $result = $product->delete($id);
+        return $result;    
+    } 
 }

@@ -3,6 +3,19 @@
 @section('title')
     All product table
 @endsection
+{{-- 
+@push('js')
+    <script>
+         $.ajax({ 
+           type: "POST", 
+           url: "{{ url('product/delete/{id}') }}",               
+           data:{id:id}
+           success: function(result) {
+            console.log(result);
+           }
+       });
+    </script>
+@endpush --}}
 
 @section('content')
     <!--body wrapper start-->
@@ -55,12 +68,12 @@
                                              <td>{{ $product->SKU }}</td>
                                              <td>{{ $product->size }}</td>
                                              <td>{{ $product->brand }}</td>
-                                             <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->img) }}"></td>
+                                             <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->img) }}" ></td>
                                              <td>{{ $product->quantity }}</td>
                                              <td>{{ $product->price }}</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $product->id }}">Delete</a>
+                                                <a href="javascript:void(0)" class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="product/delete/{{ $product->id }}">Delete</a>
                                             </td>
                                          </tr>
                                      @endforeach

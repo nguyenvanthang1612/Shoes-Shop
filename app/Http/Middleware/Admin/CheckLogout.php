@@ -19,11 +19,8 @@ class CheckLogout
     {
         if (Auth::check())
         {
-            return $next($request);
+            return redirect(route('admin.index'));
         }
-        else
-        {
-            return redirect('/admin');
-        }
+        return $next($request);
     }
 }

@@ -21,7 +21,6 @@ class AuthenticateController extends Controller
         $rules = [
             'user_name' => 'required',
             'password' => 'required|min:6',
-            'remember_token' => 'accepted'
         ];
         $validator = Validator::make($request->all(), $rules);
 
@@ -35,14 +34,14 @@ class AuthenticateController extends Controller
                 'role' => '1',
                 'user_name' => $request->input('user_name'), 
                 'password' => $request->input('password')
-            ], true)) {
+            ], $request->remember_token ? true : false)) {
                 return redirect('/admin');
             }
             else if (Auth::attempt([
                 'role' => '2',
                 'user_name' => $request->input('user_name'), 
                 'password' => $request->input('password')
-            ], true)) {
+            ], $request->remember_token ? true : false)) {
                 return redirect('/admin');
             }
             else {
