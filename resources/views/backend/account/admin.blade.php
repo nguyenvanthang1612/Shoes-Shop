@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Client Management
+    Admin Management
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                       <a href="#">Account</a>
                   </li>
                   <li class="active">
-                      Client Management
+                      Admin Management
                   </li>
               </ol>
               <div class="clearfix"></div>
@@ -62,7 +62,7 @@
                                             <td>{{ $account->email }}</td>
                                             <td>{{ $account->password }}</td>
                                             <td>{{ $account->telephone }}</td>
-                                            <td>{{ $account->avatar }}</td>
+                                            <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/account/'.$account->avatar) }}" ></td>
                                         </tr>
                                       @endforeach
                                   </tbody>

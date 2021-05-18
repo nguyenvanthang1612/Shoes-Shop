@@ -39,7 +39,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -54,7 +53,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -70,7 +68,6 @@
                                              <td>{{ $product->id }}</td>
                                              <td>{{ $product->name }}</td>
                                              <td>{{ $product->name_category }}</td>
-                                             <td>{!! $product->desc !!}</td>
                                              <td>{{ $product->SKU }}</td>
                                              <td>{{ $product->size }}</td>
                                              <td>{{ $product->brand }}</td>
@@ -79,7 +76,7 @@
                                              <td>{{ $product->price }}</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $product->id }}">Delete</a>
+                                                {{-- <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $product->id }}">Delete</a> --}}
                                             </td>
                                          </tr>
                                      @endforeach

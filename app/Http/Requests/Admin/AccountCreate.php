@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests\Admin;
 
-use App\Rules\Admin\CapitalSentenceRule;
+use App\Rules\Admin\PhoneNumberRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductCreate extends FormRequest
+class AccountCreate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,12 +25,13 @@ class ProductCreate extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', new CapitalSentenceRule],
-            'desc' => 'required',
-            'SKU' => 'required',
-            'quantity' => 'required|numeric',
-            'price' => 'required|numeric',
-            'img' => 'required|image'
+            'user_name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'telephone' => ['required', 'numeric', new PhoneNumberRule],
+            'avatar' => 'required|image'
         ];
     }
 }

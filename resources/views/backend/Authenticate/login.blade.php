@@ -54,7 +54,7 @@
                     <form method="post" action="{{ url('admin/auth/login') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control"  placeholder="Username" name="user_name" value="{{ old('user_name') }}"/>
+                            <input type="text" class="form-control"  placeholder="email" name="user_name" value="{{ old('user_name') }}"/>
                         </div>
                         
                         <div class="form-group">

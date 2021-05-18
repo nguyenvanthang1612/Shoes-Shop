@@ -31,7 +31,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                         <h2 class="header-title">Man Product</h2>
+                         <h2 class="header-title">All Product</h2>
                           <div class="table-responsive">
                            <table id="example" class="display table">
                                   <thead>
@@ -39,7 +39,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -54,7 +53,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -70,7 +68,6 @@
                                              <td>{{ $product->id }}</td>
                                              <td>{{ $product->name }}</td>
                                              <td>{{ $product->name_category }}</td>
-                                             <td>{!! $product->desc !!}</td>
                                              <td>{{ $product->SKU }}</td>
                                              <td>{{ $product->size }}</td>
                                              <td>{{ $product->brand }}</td>
@@ -79,7 +76,11 @@
                                              <td>{{ $product->price }}</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $product->id }}">Delete</a>
+                                                {{-- <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('product-{{ $product->id }}').submit()">Delete</a> --}}
+                                                {{-- <form action="product/delete/{{ $product->id }}" method="post" id="product-{{ $product->id }}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form> --}}
                                             </td>
                                          </tr>
                                      @endforeach

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminAccountController;
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -53,22 +53,25 @@ Route::group(['prefix' => '/'], function () {
  * Admin route here (Backend)
  */
 Route::group(['prefix' => 'admin'], function () {
+    // authenticate
     Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm'])
     ->name('admin.login')->middleware('CheckLogout');
-
-    Route::get('/', function () {
-        return view('backend.index');
-    })->name('admin.index')->middleware('CheckUser');
-
-    // authenticate
     Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
     Route::get('auth/logout', function() {
         Auth::logout();
         return redirect(route('admin.login'));
     })->middleware('CheckUser');
 
+    //dashboard
+    Route::get('/', function () {
+        return view('backend.index');
+    })->name('admin.index')->middleware('CheckUser');
+
     // account
-    Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
+    Route::get('account/admin_management', [AccountController::class, 'adminIndex']);
+    Route::get('account/client_management', [AccountController::class, 'clientIndex']);
+    Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm']);
+    Route::post('account/create_account', [AccountController::class, 'createAccountAdmin']);
 
     //category
     Route::get('categories', [CategoryController::class, 'index']);

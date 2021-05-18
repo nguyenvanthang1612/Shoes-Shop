@@ -33,7 +33,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -48,7 +47,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -64,7 +62,6 @@
                                              <td>{{ $product->id }}</td>
                                              <td>{{ $product->name }}</td>
                                              <td>{{ $product->name_category }}</td>
-                                             <td>{!! $product->desc !!}</td>
                                              <td>{{ $product->SKU }}</td>
                                              <td>{{ $product->size }}</td>
                                              <td>{{ $product->brand }}</td>
@@ -77,7 +74,6 @@
                                                 <form action="product/delete/{{ $product->id }}" method="post" id="product-{{ $product->id }}">
                                                     @method('DELETE')
                                                     @csrf
-
                                                 </form>
                                             </td>
                                          </tr>
