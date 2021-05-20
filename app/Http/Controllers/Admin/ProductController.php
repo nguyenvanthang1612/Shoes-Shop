@@ -92,12 +92,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $categories = Category::all();
-        // $inventories = Inventory::all();
         $product = Product::with('inventory')->where('id', $id)->first();
         return view('backend.product.edit', [
             'categories' => $categories,
             'product' => $product,
-            // 'inventories' => $inventories
         ]);
     }
 
@@ -107,7 +105,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update(array_merge($request->except('quantity'), ['img' => $fileName]));
         Inventory::findOrFail($product->inventory_id)->update(['quantity' => $request->input('quantity')]);
-        // $product = Product::findOrFail($id)->update($request->all());
         if ($product)
         {
             if ($request->hasFile('img')) {

@@ -7,26 +7,7 @@
 @section('content')
     <!--body wrapper start-->
     <div class="wrapper">
-              
-        <!--Start Page Title-->
-         {{-- <div class="page-title-box">
-              <h4 class="page-title">Data Table</h4>
-              <ol class="breadcrumb">
-                  <li>
-                      <a href="#">Dashboard</a>
-                  </li>
-                  <li>
-                      <a href="#">Table</a>
-                  </li>
-                  <li class="active">
-                      Data Table
-                  </li>
-              </ol>
-              <div class="clearfix"></div>
-        </div> --}}
-            <!--End Page Title-->          
-         
-         
+               
              <!--Start row-->
              <div class="row">
                  <div class="col-md-12">

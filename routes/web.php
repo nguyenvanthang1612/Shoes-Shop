@@ -68,10 +68,17 @@ Route::group(['prefix' => 'admin'], function () {
     })->name('admin.index')->middleware('CheckUser');
 
     // account
-    Route::get('account/admin_management', [AccountController::class, 'adminIndex']);
+    Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
     Route::get('account/client_management', [AccountController::class, 'clientIndex']);
-    Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm']);
+    Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('CheckPermission');
     Route::post('account/create_account', [AccountController::class, 'createAccountAdmin']);
+    Route::put('account/admin_management', [AccountController::class, 'upload']);
+    Route::get('account/{id}/edit', [ProductController::class, 'edit']);
+    Route::put('account/{id}', [ProductController::class, 'update']);
+    Route::delete('account/delete/{id}', [AccountController::class, 'destroy']);
+
+    // admin avatar
+    // Route::get('/', [AccountController::class, 'adminAvatar']);
 
     //category
     Route::get('categories', [CategoryController::class, 'index']);

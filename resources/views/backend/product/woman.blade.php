@@ -9,7 +9,7 @@
     <div class="wrapper">
               
         <!--Start Page Title-->
-         {{-- <div class="page-title-box">
+         <div class="page-title-box">
               <h4 class="page-title">Data Table</h4>
               <ol class="breadcrumb">
                   <li>
@@ -23,7 +23,7 @@
                   </li>
               </ol>
               <div class="clearfix"></div>
-        </div> --}}
+        </div>
             <!--End Page Title-->          
          
          

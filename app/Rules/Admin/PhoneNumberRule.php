@@ -25,7 +25,7 @@ class PhoneNumberRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        preg_match('/^[0-9\-\+]{9,11}$/', $value, $matches);
+        preg_match('/(84|0[3|5|7|8|9])+([0-9]{8})\b/', $value, $matches);
         return count($matches) > 0;
     }
 

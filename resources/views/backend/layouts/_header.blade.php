@@ -156,7 +156,9 @@
             </li>
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    {{-- <img src="{{ $users->avatar }}" alt="" /> --}}
+                    {{-- @foreach ($accounts as $account)
+                        <img style="width:26px; height:26px" src="{{  asset('storage/backend/account/'.$account->avatar)  }}" alt="" />
+                    @endforeach --}}
                      @auth
                         {{ Auth::user()->user_name }}
                      @endauth
@@ -164,7 +166,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
                   <li> <a href="#"> <i class="fa fa-wrench"></i> Settings </a> </li>
-                  <li> <a href="#"> <i class="fa fa-user"></i> Profile </a> </li>
+                  <li> <a href=""> <i class="fa fa-user"></i> Edit Profile </a> </li>
                   <li> <a href="#"> <i class="fa fa-info"></i> Help </a> </li>
                   <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-lock"></i> Logout </a> </li>
                 </ul>

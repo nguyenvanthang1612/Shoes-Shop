@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,8 +21,8 @@ class AuthenticateController extends Controller
     public function login(Request $request)
     {
         $rules = [
-            'user_name' => 'required',
-            'password' => 'required|min:6',
+            'email' => 'required',
+            'password' => 'required',
         ];
         $validator = Validator::make($request->all(), $rules);
 
@@ -32,20 +34,20 @@ class AuthenticateController extends Controller
         {
             if (Auth::attempt([
                 'role' => '1',
-                'user_name' => $request->input('user_name'), 
+                'email' => $request->input('email'), 
                 'password' => $request->input('password')
             ], $request->remember_token ? true : false)) {
                 return redirect('/admin');
             }
             else if (Auth::attempt([
                 'role' => '2',
-                'user_name' => $request->input('user_name'), 
+                'email' => $request->input('email'), 
                 'password' => $request->input('password')
             ], $request->remember_token ? true : false)) {
                 return redirect('/admin');
             }
             else {
-                Session::flash('error', 'Your username or password is incorrect!');
+                Session::flash('error', 'Your email or password is incorrect!');
                 return redirect('/admin/auth/login');
             } 
         }

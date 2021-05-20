@@ -42,6 +42,7 @@
                                           <th>Password</th>
                                           <th>Telephone</th>
                                           <th>Avatar</th>
+                                          <th></th>
                                       </tr>
                                   </thead>
                                   <tfoot>
@@ -52,6 +53,7 @@
                                           <th>Password</th>
                                           <th>Telephone</th>
                                           <th>Avatar</th>
+                                          <th></th>
                                       </tr>
                                   </tfoot>
                                   <tbody>
@@ -63,6 +65,14 @@
                                             <td>{{ $account->password }}</td>
                                             <td>{{ $account->telephone }}</td>
                                             <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/account/'.$account->avatar) }}" ></td>
+                                            <td>
+                                                <a class="btn btn-danger" data-id="{{ $account->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('account-{{ $account->id }}').submit()">Delete</a>
+                                                <form action="
+                                                delete/{{ $account->id }}" method="post" id="account-{{ $account->id }}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
+                                            </td>
                                         </tr>
                                       @endforeach
                                   </tbody>
