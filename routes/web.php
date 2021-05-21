@@ -4,17 +4,13 @@ use App\Http\Controllers\Admin\AdminAccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-<<<<<<< HEAD
 use App\Http\Controllers\Web\AuthenticateController;
-=======
-use Illuminate\Support\Facades\Auth;
-
->>>>>>> 5f060bf16c4ee577597105e3cc97f441840b9c72
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
+use App\Http\Controllers\Web\WebUserAddressController;
 use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -35,9 +31,14 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [WebIndexController::class, 'index']);
-    //register
+    //index - register - edit
+    Route::get('user/{id}/index-page',[WebIndexController::class,'mainUserIndex']);
+
     Route::get('register-page/create', [WebIndexController::class,'create']);
     Route::post('register-page', [WebIndexController::class,'store']);
+
+    Route::get('user/{id}', [WebIndexController::class,'edit']);
+    Route::put('user/{id}', [WebIndexController::class,'update']);
     //Category
     Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
@@ -49,6 +50,7 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
     Route::get('/logout', function() {
         Auth::logout();
+        return redirect('/');
     });
 });
 /**

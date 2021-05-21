@@ -61,7 +61,7 @@
                                 <span class="image bg-white">
 
                                     <!-- New message badge -->
-                                    <span class="badge bg-blue hidden-xs hidden-sm">5</span>
+                                    <span class="badge bg-blue hidden-xs hidden-sm"></span>
 
                                     <span class="icon">
                                         <i class="icofont icofont-user-alt-4 text-blue"></i>
@@ -75,7 +75,9 @@
                                     <!-- Name -->
                                     @if(Auth::check())
                                     <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
-                                    <a href="#">edit profile</a>
+                                    <a href='{{ url("/user", [Auth::user()->id] ,"/index-page" ) }}'>edit profile</a>
+                                    <a href='{{ url("/logout") }}'>Logout</a>
+
                                     @endif
                                 </span>
                             </span>

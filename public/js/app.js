@@ -10,12 +10,12 @@ function post(url, data, successCallback, failureCallback) {
 
     $.ajax({
         data: {
-            _token,
+            _token: token,
             ...data
         },
         url,
         type: 'POST'
     })
     .done(successCallback)
-    .fail(failureCallback);
+    .fail(failureCallback)
 }
