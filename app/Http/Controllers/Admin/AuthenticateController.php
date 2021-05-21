@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthenticateController extends Controller
 {
+    // login form
     public function showLoginForm()
     {
         return view('backend.authenticate.login');
     }
 
+    // action login form
     public function login(Request $request)
     {
         $rules = [

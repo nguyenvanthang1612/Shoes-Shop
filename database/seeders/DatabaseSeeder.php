@@ -6,6 +6,7 @@ use App\Models\order_details;
 use App\Models\order_items;
 use App\Models\OrderDetail;
 use App\Models\UserAddress;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(InventorySeeder::class);
         $this->call(ProductSeeder::class);
+        $this->call(OrderSeeder::class);
         DB::table('users')->insert([
             [
                 'user_name' => 'admin',

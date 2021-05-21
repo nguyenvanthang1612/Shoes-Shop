@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    //all product table
     public function allIndex()
     {
         $products = DB::table('products')
@@ -26,6 +27,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // man product table
     public function manIndex()
     {
         $products = DB::table('products')
@@ -40,6 +42,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // woman product table
     public function womanIndex()
     {
         $products = DB::table('products')
@@ -54,6 +57,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // kid product table
     public function kidIndex()
     {
         $products = DB::table('products')
@@ -68,6 +72,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // show create form
     public function create()
     {
         $categories = Category::all();
@@ -77,6 +82,7 @@ class ProductController extends Controller
 
     }
 
+    // action create form
     public function store(ProductCreate $request)
     {
         [$file, $fileName] = $this->upload($request);
@@ -89,6 +95,7 @@ class ProductController extends Controller
         }
     }
 
+    // edit form
     public function edit($id)
     {
         $categories = Category::all();
@@ -99,6 +106,7 @@ class ProductController extends Controller
         ]);
     }
 
+    // action edit form 
     public function update(ProductEdit $request, $id)
     {
         [$file, $fileName] = $this->upload($request);
@@ -114,6 +122,7 @@ class ProductController extends Controller
         }
     }
 
+    // upload image
     public function upload(Request $request)
     {
         if ($request->hasFile('img')) {
@@ -124,6 +133,7 @@ class ProductController extends Controller
         return [null, $request->input('img')];
     }
 
+    // delete product
     public function destroy($id)
     {
         $product = Product::findOrFail($id);

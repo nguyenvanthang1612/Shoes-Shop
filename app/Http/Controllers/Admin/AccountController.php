@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AccountCreate;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
@@ -20,6 +22,7 @@ class AccountController extends Controller
     //     ]);
     // }
 
+    // admin table
     public function adminIndex()
     {
         $accounts = DB::table('users')->where('role', 2)->get();
@@ -28,6 +31,7 @@ class AccountController extends Controller
         ]);
     }
 
+    // client table
     public function clientIndex()
     {
         $accounts = DB::table('users')->where('role', 3)->get();
@@ -36,11 +40,13 @@ class AccountController extends Controller
         ]);
     }
 
+    // admin create form
     public function showCreateAccountForm()
     {
         return view('backend.account.create');
     }
 
+    // action admin create form
     public function createAccountAdmin(AccountCreate $request)
     {
         $hashingPassword = Hash::make($request->input('password'));
@@ -53,33 +59,31 @@ class AccountController extends Controller
         }
     }
 
-    public function edit($id)
+    // edit form
+    public function edit()
     {
-        $account = User::findOrFail($id);
+        $account = User::findOrFail(auth()->id());
         return view('backend.account.edit', [
             'account' => $account
         ]);
     }
 
-    public function linkEditAccount()
-    {
-        return view('backend.layouts._header');
-    }
-
+    // action edit form
     public function update(Request $request, $id)
     {
         [$file, $fileName] = $this->upload($request);
         $account = User::findOrFail($id);
-        $account->update(array_merge($request->input, ['avatar' => $fileName]));
+        $account->update(array_merge($request->input(), ['avatar' => $fileName]));
         if ($account)
         {
             if ($request->hasFile('avatar')) {
                 $file->storeAs('', $fileName, 'account');
             }
-            return redirect('admin/account/admin_management');
+            return redirect('/admin');
         }
     }
 
+    // upload avatar
     public function upload(Request $request)
     {
         if ($request->hasFile('avatar')) {
@@ -90,6 +94,7 @@ class AccountController extends Controller
         return [null, $request->input('avatar')];
     }
 
+    // delete admin
     public function destroy($id)
     {
         $product = User::findOrFail($id);

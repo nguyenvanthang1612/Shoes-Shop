@@ -3,10 +3,6 @@
 
     <a class="toggle-btn menu-collapsed"><i class="fa fa-bars"></i></a>
 
-    <form class="searchform">
-        <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
-    </form>
-
     <!--notification menu start -->
     <div class="menu-right">
         <ul class="notification-menu">
@@ -156,9 +152,6 @@
             </li>
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    {{-- @foreach ($accounts as $account)
-                        <img style="width:26px; height:26px" src="{{  asset('storage/backend/account/'.$account->avatar)  }}" alt="" />
-                    @endforeach --}}
                      @auth
                         {{ Auth::user()->user_name }}
                      @endauth
@@ -166,12 +159,12 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
                   <li> <a href="#"> <i class="fa fa-wrench"></i> Settings </a> </li>
-                  <li> <a href=""> <i class="fa fa-user"></i> Edit Profile </a> </li>
+                  <li> <a href='{{ url("admin/account/edit") }}'> <i class="fa fa-user"></i> Edit Profile </a> </li>
                   <li> <a href="#"> <i class="fa fa-info"></i> Help </a> </li>
                   <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-lock"></i> Logout </a> </li>
                 </ul>
             </li>
-
+            {{-- {{ url("admin/account/$account->id/edit") }} --}}
         </ul>
     </div>
     <!--notification menu end -->

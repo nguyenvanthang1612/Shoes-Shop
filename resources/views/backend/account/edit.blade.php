@@ -1,7 +1,7 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    Create Admin Account
+    Edit Account
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                             <a href="#">Account</a>
                         </li>
                         <li class="active">
-                            Create Account
+                            Edit Account
                         </li>
                     </ol>
                     <div class="clearfix"></div>
@@ -31,9 +31,10 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Create Admin </h2>
+                     <h2 class="header-title">Edit Admin </h2>
                        
-                        <form class="form-horizontal" action='{{ url("/admin/account/{$account->id}") }}' method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal" action='{{ url("/admin/account/edit/$account->id") }}' method="POST" enctype="multipart/form-data">
+                          @method('PUT')
                           @csrf
                           {{-- username --}}
                           <div class="form-group">
@@ -80,19 +81,6 @@
                             <div class="col-md-10">
                               <input id="example-email" name="email" class="form-control" placeholder="Email" type="text" value="{{ old('email', $account->email) }}">
                               {{-- @error('email')
-                                  <div class="text-danger">
-                                    <span>{{ $message }}</span>
-                                  </div>
-                              @enderror --}}
-                            </div>
-                          </div>
-                          
-                          {{-- password --}}
-                          <div class="form-group">
-                            <label class="col-md-2 control-label">Password</label>
-                            <div class="col-md-10">
-                              <input class="form-control" type="password" placeholder="Password" name="password" value="{{ old('password', $account->password) }}">
-                              {{-- @error('password')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
                                   </div>

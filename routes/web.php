@@ -73,8 +73,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('CheckPermission');
     Route::post('account/create_account', [AccountController::class, 'createAccountAdmin']);
     Route::put('account/admin_management', [AccountController::class, 'upload']);
-    Route::get('account/{id}/edit', [ProductController::class, 'edit']);
-    Route::put('account/{id}', [ProductController::class, 'update']);
+    Route::get('account/edit', [AccountController::class, 'edit']);
+    Route::put('account/edit/{id}', [AccountController::class, 'update']);
     Route::delete('account/delete/{id}', [AccountController::class, 'destroy']);
 
     // admin avatar
