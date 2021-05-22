@@ -2,6 +2,7 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
 use Illuminate\Support\Facades\Auth;
@@ -105,4 +106,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('product/{id}/edit', [ProductController::class, 'edit']);
     Route::put('product/{id}', [ProductController::class, 'update']);
     Route::delete('product/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+    //order
+    Route::get('order', [OrderController::class, 'index']);
 });
