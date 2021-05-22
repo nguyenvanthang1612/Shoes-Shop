@@ -40,7 +40,6 @@
                     <li><a href="{{ url('/admin/account/client_management') }}">Client Management</a></li>
                     <li><a href="{{ url('/admin/account/admin_management') }}">Admin Management</a></li>
                     <li><a href="{{ url('/admin/account/create_account') }}">Create Account</a></li>
-                    <li><a href="">Change Password</a></li>
                 </ul>
             </li>
 

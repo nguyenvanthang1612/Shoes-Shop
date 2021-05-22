@@ -76,9 +76,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('account/edit', [AccountController::class, 'edit']);
     Route::put('account/edit/{id}', [AccountController::class, 'update']);
     Route::delete('account/delete/{id}', [AccountController::class, 'destroy']);
-
-    // admin avatar
-    // Route::get('/', [AccountController::class, 'adminAvatar']);
+    Route::get('account/change-password', [AccountController::class, 'showChangePasswordForm']);
+    Route::put('account/change-password/{id}', [AccountController::class, 'changePassword']);
 
     //category
     Route::get('categories', [CategoryController::class, 'index']);
