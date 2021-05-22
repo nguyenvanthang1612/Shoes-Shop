@@ -23,7 +23,6 @@ class AuthenticateController extends Controller
                 'password' => $request->input('password')
             ]))
             {
-
                 return response()->json(['user' => Auth::user()], 200);
             }
             else{

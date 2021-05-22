@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-    Register
+    Edit
 @endsection
 
 @section('content')
@@ -81,97 +81,26 @@
                                 </div>
 
                     <div class="col-md-9">
-                        <form class="form-horizontal" method="POST" action="{{url('register-page')}}" >
-                            @csrf
-                                <div class="panel-group" id="accordion">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading" id="profileInfo">
-                                                <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#bankTransrerColl">
-                                                        <span class="panel-indicator"></span>
-                                                        Profile info
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="bankTransrerColl" class="panel-collapse collapse in">
-                                                <div class="panel-body">
-
-                                                        <div class="form-group pd-none">
-                                                            <label for="text" class="col-sm-3 control-label text-darkness">Your User Name</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="user_name" name="user_name">
-                                                            </div>
-                                                        </div>
-
-                                                         <div class="form-group pd-none">
-                                                            <label for="password" class="col-sm-3 control-label text-darkness">Enter your password</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="password"
-                                                                       class="form-control"
-                                                                       id="password" name="password">
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="form-group pd-none">
-                                                            <label for="frName" class="col-sm-3 control-label text-darkness">Your first name</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="frName" name="first_name">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group pd-none">
-                                                            <label for="lnName" class="col-sm-3 control-label text-darkness">Your last name</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="lnName" name="last_name">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group pd-none">
-                                                            <label for="email" class="col-sm-3 control-label text-darkness">Enter your email</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="email"
-                                                                       class="form-control"
-                                                                       id="email" name="email">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group pd-none">
-                                                            <label for="telephone" class="col-sm-3 control-label text-darkness">Enter your Telephone</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="telephone" name="telephone">
-                                                            </div>
-                                                        </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="panel panel-default">
+                    <form method="POST" action="{{ url('user/address-edit-page', [$userAddressData->id]) }}">
+                        @method('PUT')
+                        @csrf
+                        <div class="panel panel-default">
                                             <div class="panel-heading" id="addressSet">
                                                 <h4 class="panel-title">
                                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                                                         <span class="panel-indicator"></span>
-                                                        Address Create
+                                                        Address Edit
                                                     </a>
                                                 </h4>
                                             </div>
-                                             <div id="collapseTwo" class="panel-collapse collapse">
+                                             
                                                 <div class="panel-body">
                                                         <div class="form-group pd-none">
                                                             <label for="route" class="col-sm-3 control-label text-darkness"> Strees Address</label>
                                                             <div class="col-sm-8">
                                                                 <input type="text"
                                                                        class="form-control"
-                                                                       id="address" name="address"
+                                                                       id="address" name="address"  value="{{$userAddressData->address}}"
                                                                        >
                                                             </div>
                                                         </div>
@@ -181,7 +110,7 @@
                                                             <div class="col-sm-8">
                                                                 <input type="text"
                                                                        class="form-control"
-                                                                       id="city" name="city"
+                                                                       id="city" name="city"  value="{{$userAddressData->city}}"
                                                                        >
                                                             </div>
                                                         </div>
@@ -190,7 +119,7 @@
                                                             <div class="col-sm-8">
                                                                 <input type="text"
                                                                        class="form-control"
-                                                                       id="country" name="country"
+                                                                       id="country" name="country"  value="{{$userAddressData->country}}"
                                                                        >
                                                             </div>
                                                         </div>
@@ -200,7 +129,7 @@
                                                             <div class="col-sm-8">
                                                                 <input type="text"
                                                                        class="form-control"
-                                                                       id="telephone" name="telephone"
+                                                                       id="telephone" name="telephone"  value="{{$userAddressData->telephone}}"
                                                                        >
                                                             </div>
                                                         </div>
@@ -225,13 +154,12 @@
                                                         <div class="form-group">
                                                             <div class="col-sm-offset-3 col-sm-7">
                                                             <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
-                                                                Create
+                                                                    UPDATE
                                                             </button>
                                                         </div>
                                                 </div>
-                                            </div>
+
                                         </div>
-                                </div>
                         </form>
                     </div>
 

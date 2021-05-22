@@ -33,7 +33,11 @@ class AppServiceProvider extends ServiceProvider
             return $view->with('categories', Category::all());
         });
 
-        
+        $users = User::all();
+        View::share('', compact('users'));
+
+
+
 
     }
 }

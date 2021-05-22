@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-    Register
+    Your User
 @endsection
 
 @section('content')
@@ -14,8 +14,8 @@
 
                     <ol class="breadcrumb bg-blue">
                         <li><a href="#">Homepage</a></li>
-                        <li><a href="#">Blog category</a></li>
-                        <li class="active">This item</li>
+                        <li><a href="#">User</a></li>
+                        <li class="active">Edit profile</li>
                     </ol>
 
                 </div>
@@ -42,9 +42,9 @@
 
                                     <!-- Header -->
                                     <h1 class="header text-uppercase">
-                                        New user
+                                        Your User
                                         <span>
-                                            registration
+                                            Your Information
                                         </span>
                                     </h1>
                                 </div>
@@ -80,10 +80,11 @@
 
                                 </div>
 
-                    <div class="col-md-9">
-                        <form class="form-horizontal" method="POST" action="{{url('register-page')}}" >
-                            @csrf
-                                <div class="panel-group" id="accordion">
+                                <div class="col-md-9">
+                                @foreach($users as $user)
+
+                                    <div class="panel-group" id="accordion">
+
                                         <div class="panel panel-default">
                                             <div class="panel-heading" id="profileInfo">
                                                 <h4 class="panel-title">
@@ -95,115 +96,96 @@
                                             </div>
                                             <div id="bankTransrerColl" class="panel-collapse collapse in">
                                                 <div class="panel-body">
-
                                                         <div class="form-group pd-none">
                                                             <label for="text" class="col-sm-3 control-label text-darkness">Your User Name</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="user_name" name="user_name">
+                                                                <p class="form-control">{{$user->user_name}}</p>
                                                             </div>
                                                         </div>
-
-                                                         <div class="form-group pd-none">
-                                                            <label for="password" class="col-sm-3 control-label text-darkness">Enter your password</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="password"
-                                                                       class="form-control"
-                                                                       id="password" name="password">
-                                                            </div>
-                                                        </div>
-
 
                                                         <div class="form-group pd-none">
                                                             <label for="frName" class="col-sm-3 control-label text-darkness">Your first name</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="frName" name="first_name">
+                                                                <p class="form-control">{{$user->first_name}}</p>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group pd-none">
                                                             <label for="lnName" class="col-sm-3 control-label text-darkness">Your last name</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="lnName" name="last_name">
+                                                            <p class="form-control">{{$user->last_name}}</p>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group pd-none">
                                                             <label for="email" class="col-sm-3 control-label text-darkness">Enter your email</label>
                                                             <div class="col-sm-8">
-                                                                <input type="email"
-                                                                       class="form-control"
-                                                                       id="email" name="email">
+                                                            <p class="form-control">{{$user->email}}</p>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group pd-none">
                                                             <label for="telephone" class="col-sm-3 control-label text-darkness">Enter your Telephone</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="telephone" name="telephone">
+                                                            <p class="form-control">{{$user->telephone}}</p>
                                                             </div>
                                                         </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-offset-3 col-sm-7">
+
+                                                            <a href='{{ url("/user/edit-page", [Auth::user()->id]) }}' class="sdw-hover btn btn-material btn-yellow ripple-cont">EDIT YOUR PROFILE</a>
+
+                                                        </div>
+
+
+
 
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <div class="panel panel-default">
                                             <div class="panel-heading" id="addressSet">
                                                 <h4 class="panel-title">
                                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                                                         <span class="panel-indicator"></span>
-                                                        Address Create
+                                                        Your Address
                                                     </a>
                                                 </h4>
                                             </div>
                                              <div id="collapseTwo" class="panel-collapse collapse">
                                                 <div class="panel-body">
+
+
                                                         <div class="form-group pd-none">
-                                                            <label for="route" class="col-sm-3 control-label text-darkness"> Strees Address</label>
+                                                            <label for="route" class="col-sm-3 control-label text-darkness">Street address</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="address" name="address"
-                                                                       >
+                                                                <p class="form-control" >{{$user->address}}</p>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group pd-none">
                                                             <label for="locality" class="col-sm-3 control-label text-darkness">City</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="city" name="city"
-                                                                       >
+                                                            <p class="form-control" >{{$user->city}}</p>
                                                             </div>
                                                         </div>
                                                         <div class="form-group pd-none">
                                                             <label for="country" class="col-sm-3 control-label text-darkness">Country</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="country" name="country"
-                                                                       >
+                                                            <p class="form-control" >{{$user->country}}</p>
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group pd-none">
                                                             <label for="telephone" class="col-sm-3 control-label text-darkness">Telephone</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text"
-                                                                       class="form-control"
-                                                                       id="telephone" name="telephone"
-                                                                       >
+                                                            <p class="form-control" >{{$user->telephone}}</p>
                                                             </div>
                                                         </div>
+
 
                                                         <div class="form-group pd-sm">
                                                             <div class="col-sm-offset-3 col-sm-7">
@@ -220,21 +202,22 @@
                                                             </div>
                                                         </div>
 
-                                                        </div>
-
                                                         <div class="form-group">
                                                             <div class="col-sm-offset-3 col-sm-7">
-                                                            <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
-                                                                Create
-                                                            </button>
+
+                                                            <a href='{{ url("/user/address-edit-page", []) }}' class="sdw-hover btn btn-material btn-yellow ripple-cont">EDIT YOUR ADDRESS</a>
+
                                                         </div>
+
+                                                        </div>
+
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                @endforeach
                                 </div>
-                        </form>
-                    </div>
-
+                            </div>
                         </div>
                     </div>
                 </div>

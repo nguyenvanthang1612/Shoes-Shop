@@ -74,12 +74,13 @@
                 const username = $("[name='user_name']").val();
                 const password = $("[name='password']").val();
 
+                console.log(username, password)
+
                 post("{{ route('user.login') }}", {
                     user_name: username,
                     password
                 }, function(res) {
-                    console.log(res);
-                    // location.reload();
+                    location.reload();
                 }, function(res) {
                     $("#error-login").text(res.responseJSON.message);
                 })

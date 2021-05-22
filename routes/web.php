@@ -1,18 +1,20 @@
 <?php
-
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-
-
+use App\Http\Controllers\Web\AuthenticateController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
+
+use App\Http\Controllers\Web\WebUserAddressController;
+
 use App\Http\Middleware\Admin\CheckUser;
+
 use Illuminate\Routing\RouteAction;
 // use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +35,18 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [WebIndexController::class, 'index']);
-    //register
+    //index - register - edit
+    Route::get('user/index-page/{id}',[WebIndexController::class,'mainUserIndex']);
+
     Route::get('register-page/create', [WebIndexController::class,'create']);
     Route::post('register-page', [WebIndexController::class,'store']);
+
+    Route::get('user/edit-page/{id}', [WebIndexController::class,'edit']);
+    Route::put('user/edit-page/{id}', [WebIndexController::class,'update']);
+
+    Route::get('user/address-edit-page/{id}', [WebIndexController::class,'addressEdit']);
+    Route::put('user/address-edit-page/{id}', [WebIndexController::class,'addressUpdate']);
+
     //Category
     Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
@@ -47,6 +58,7 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
     Route::get('/logout', function() {
         Auth::logout();
+        return redirect('/');
     });
 });
 /**

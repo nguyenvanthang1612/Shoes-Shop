@@ -16,7 +16,7 @@ function post(url, data, successCallback, failureCallback) {
         type: 'POST'
     })
     .done(successCallback)
-    .fail(failureCallback);
+    .fail(failureCallback)
 }
 
 function destroy (url, successCallback, failureCallback) {
