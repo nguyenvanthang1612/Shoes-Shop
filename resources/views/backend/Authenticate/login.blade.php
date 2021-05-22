@@ -1,4 +1,4 @@
-@extends('backend.Authenticate.layouts.app');
+@extends('backend.Authenticate.layouts.app')
 
 @section('title')
     login
@@ -33,21 +33,19 @@
                         <div class="alert alert-danger alert-dismissible" role="alert">
                             <strong>{{ Session::get('error') }}</strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                <span class="sr-only">Close</span>
+                              <span aria-hidden="true">&times;</span>
+                              <span class="sr-only">Close</span>
                             </button>
                         </div>
                     @endif
 
                     @if ($errors->any())
                         <div class="alert alert-danger alert-dismissible" role="alert">
-                            <ul>
                                 @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
+                                    <strong>{{ $error }}</strong>
                                 @endforeach
-                            </ul>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true" style="display: flex; align-items: flex-end; justify-content: center">&times;</span>
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
@@ -56,11 +54,11 @@
                     <form method="post" action="{{ url('admin/auth/login') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control"  placeholder="Username" name="user_name">
+                            <input type="text" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}"/>
                         </div>
                         
                         <div class="form-group">
-                            <input type="password" class="form-control"  placeholder="Password" name="password">
+                            <input type="password" class="form-control"  placeholder="Password" name="password" />
                         </div>
 
                         <div class="form-group">

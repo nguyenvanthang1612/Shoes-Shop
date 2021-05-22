@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 
 @section('title')
     Register
@@ -150,6 +150,7 @@
                                                                        id="telephone" name="telephone">
                                                             </div>
                                                         </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -223,7 +224,7 @@
 
                                                         <div class="form-group">
                                                             <div class="col-sm-offset-3 col-sm-7">
-                                                            <button name="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
+                                                            <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
                                                                 Create
                                                             </button>
                                                         </div>

@@ -1,4 +1,4 @@
-@extends('backend.layouts.app');
+@extends('backend.layouts.app')
 
 @section('title')
     category table

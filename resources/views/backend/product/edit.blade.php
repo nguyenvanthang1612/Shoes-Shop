@@ -165,7 +165,7 @@
                     <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-9">
                         <button class="btn btn-primary outline-btn">Submit</button>
-                        <a href="{{ url('/admin/categories') }}">
+                        <a href="{{ url('/admin/product') }}">
                           <button type="button" class="btn btn-danger outline-btn">Cancel</button>
                         </a>
                       </div>

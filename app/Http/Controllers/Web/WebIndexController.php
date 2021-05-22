@@ -20,19 +20,19 @@ class WebIndexController extends Controller
         return view('frontend.authenticate.register-page');
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $userData = User::findOrFail($id);
+        $userData = User::findOrFail(auth()->id());
         return view('frontend.authenticate.edit-page',[
             'userData' => $userData,
         ]);
     }
 
-    public function update($id,Request $request)
+    public function update(Request $request, $id)
     {
         $userData = User::findOrFail($id)->update($request->input());
         if($userData){
-            return redirect('user/$userData->id/index-page');
+            return redirect("/user/index-page/$id");
         }
 
     }
@@ -54,13 +54,27 @@ class WebIndexController extends Controller
     {
         $users = DB::table('users')
         ->join('user_address', 'users.id', '=' , 'user_address.user_id')
-        ->select('users.*','user_address.address')
+        ->select('users.*','user_address.address','user_address.city','user_address.country','user_address.telephone','user_address.user_id')
         ->where('users.id' , $id)->get();
         return view('frontend.authenticate.index-page',compact('users'));
     }
 
+    public function addressEdit($id)
+    {
+        $userAddressData = UserAddress::findOrFail($id);
+        return view('frontend.authenticate.address-edit-page',[
+            'userAddressData' => $userAddressData,
+        ]);
+    }
 
+    public function addressUpdate(Request $request, $id)
+    {
+        $userAddressData = UserAddress::findOrFail($id)->update($request->input());
+        if($userAddressData ){
+            return redirect("/");
+        }
 
+    }
 
 
 

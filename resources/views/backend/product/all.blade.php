@@ -3,6 +3,19 @@
 @section('title')
     All product table
 @endsection
+{{-- 
+@push('js')
+    <script>
+         $.ajax({ 
+           type: "POST", 
+           url: "{{ url('product/delete/{id}') }}",               
+           data:{id:id}
+           success: function(result) {
+            console.log(result);
+           }
+       });
+    </script>
+@endpush --}}
 
 @section('content')
     <!--body wrapper start-->
@@ -20,7 +33,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -35,7 +47,6 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Category Name</th>
-                                          <th>Description</th>
                                           <th>SKU</th>
                                           <th>size</th>
                                           <th>brand</th>
@@ -51,16 +62,19 @@
                                              <td>{{ $product->id }}</td>
                                              <td>{{ $product->name }}</td>
                                              <td>{{ $product->name_category }}</td>
-                                             <td>{!! $product->desc !!}</td>
                                              <td>{{ $product->SKU }}</td>
                                              <td>{{ $product->size }}</td>
                                              <td>{{ $product->brand }}</td>
-                                             <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->img) }}"></td>
+                                             <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->img) }}" ></td>
                                              <td>{{ $product->quantity }}</td>
                                              <td>{{ $product->price }}</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $product->id }}">Delete</a>
+                                                <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('product-{{ $product->id }}').submit()">Delete</a>
+                                                <form action="product/delete/{{ $product->id }}" method="post" id="product-{{ $product->id }}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
                                             </td>
                                          </tr>
                                      @endforeach

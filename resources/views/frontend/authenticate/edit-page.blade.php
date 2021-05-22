@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 
 @section('title')
     Edit
@@ -81,7 +81,7 @@
                                 </div>
 
                     <div class="col-md-9">
-                    <form method="POST" action='{{ url("user", [Auth::user()->id]) }}'>
+                    <form method="POST" action="{{ url('user/edit-page', [$userData->id]) }}">
                         @method('PUT')
                         @csrf
                                 <div class="panel-group" id="accordion">
@@ -143,7 +143,7 @@
 
                                                         <div class="form-group">
                                                             <div class="col-sm-offset-3 col-sm-7">
-                                                            <button name="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
+                                                            <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">
                                                                     Update
                                                             </button>
                                                         </div>

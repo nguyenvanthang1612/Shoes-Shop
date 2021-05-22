@@ -37,8 +37,8 @@
             
             <li class="menu-list"><a href="#"><i class="icon-user"></i> <span>Account</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="">Client Management</a></li>
-                    <li><a href="">Admin Management</a></li>
+                    <li><a href="{{ url('/admin/account/client_management') }}">Client Management</a></li>
+                    <li><a href="{{ url('/admin/account/admin_management') }}">Admin Management</a></li>
                     <li><a href="{{ url('/admin/account/create_account') }}">Create Account</a></li>
                     <li><a href="">Change Password</a></li>
                 </ul>

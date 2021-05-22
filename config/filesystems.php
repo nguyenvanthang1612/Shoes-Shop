@@ -57,6 +57,13 @@ return [
             'root' => storage_path('app/public/backend/product'),
             'url' => env('APP_URL').'storage/product',
             'visibility' => 'public'
+        ],
+
+        'account' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/backend/account'),
+            'url' => env('APP_URL').'storage/account',
+            'visibility' => 'public'
         ]
 
     ],

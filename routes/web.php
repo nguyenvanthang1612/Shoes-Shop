@@ -1,18 +1,22 @@
 <?php
-
-use App\Http\Controllers\Admin\AdminAccountController;
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
+
 use App\Http\Controllers\Web\WebUserAddressController;
+
+use App\Http\Middleware\Admin\CheckUser;
+
 use Illuminate\Routing\RouteAction;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,13 +36,17 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [WebIndexController::class, 'index']);
     //index - register - edit
-    Route::get('user/{id}/index-page',[WebIndexController::class,'mainUserIndex']);
+    Route::get('user/index-page/{id}',[WebIndexController::class,'mainUserIndex']);
 
     Route::get('register-page/create', [WebIndexController::class,'create']);
     Route::post('register-page', [WebIndexController::class,'store']);
 
-    Route::get('user/{id}', [WebIndexController::class,'edit']);
-    Route::put('user/{id}', [WebIndexController::class,'update']);
+    Route::get('user/edit-page/{id}', [WebIndexController::class,'edit']);
+    Route::put('user/edit-page/{id}', [WebIndexController::class,'update']);
+
+    Route::get('user/address-edit-page/{id}', [WebIndexController::class,'addressEdit']);
+    Route::put('user/address-edit-page/{id}', [WebIndexController::class,'addressUpdate']);
+
     //Category
     Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
@@ -57,25 +65,38 @@ Route::group(['prefix' => '/'], function () {
  * Admin route here (Backend)
  */
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', function () {
-        return view('backend.index');
-    });
     // authenticate
-    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm']);
+    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm'])
+    ->name('admin.login')->middleware('CheckLogout');
     Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
     Route::get('auth/logout', function() {
         Auth::logout();
-        return redirect('/admin/auth/login');
-    });
+        return redirect(route('admin.login'));
+    })->middleware('CheckUser');
+
+    //dashboard
+    Route::get('/', function () {
+        return view('backend.index');
+    })->name('admin.index')->middleware('CheckUser');
 
     // account
-    Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
+    Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
+    Route::get('account/client_management', [AccountController::class, 'clientIndex']);
+    Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('CheckPermission');
+    Route::post('account/create_account', [AccountController::class, 'createAccountAdmin']);
+    Route::put('account/admin_management', [AccountController::class, 'upload']);
+    Route::get('account/edit', [AccountController::class, 'edit']);
+    Route::put('account/edit/{id}', [AccountController::class, 'update']);
+    Route::delete('account/delete/{id}', [AccountController::class, 'destroy']);
+
+    // admin avatar
+    // Route::get('/', [AccountController::class, 'adminAvatar']);
 
     //category
     Route::get('categories', [CategoryController::class, 'index']);
 
     //product
-    Route::get('product', [ProductController::class, 'allIndex']);
+    Route::get('product', [ProductController::class, 'allIndex'])->name('product.index');
     Route::get('product/man', [ProductController::class, 'manIndex']);
     Route::get('product/woman', [ProductController::class, 'womanIndex']);
     Route::get('product/kid', [ProductController::class, 'kidIndex']);
@@ -84,5 +105,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::put('product', [ProductController::class, 'upload']);
     Route::get('product/{id}/edit', [ProductController::class, 'edit']);
     Route::put('product/{id}', [ProductController::class, 'update']);
-    Route::delete('product/{id}', [ProductController::class, 'destroy']);
+    Route::delete('product/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 });
