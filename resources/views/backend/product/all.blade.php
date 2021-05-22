@@ -78,6 +78,8 @@
                                             </td>
                                          </tr>
                                      @endforeach
+
+                                     {{ $products->links('vendor.pagination.bootstrap-4') }}
                                   </tbody>
                             </table>  
                           </div>

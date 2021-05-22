@@ -75,11 +75,12 @@
                                             <td>{{ $product->quantity }}</td>
                                             <td>{{ $product->price }}</td>
                                             <td>
-                                            <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                            {{-- <a href="javascript:void(0)" class="btn btn-danger" onclick="deleteItem(this)" data-id="{{ $product->id }}">Delete</a> --}}
-                                        </td>
+                                                <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
+                                            </td>
                                         </tr>
                                     @endforeach
+
+                                    {{ $products->links('vendor.pagination.bootstrap-4') }}
                                   </tbody>
                             </table>  
                           </div>

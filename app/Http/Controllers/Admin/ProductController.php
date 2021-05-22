@@ -21,7 +21,7 @@ class ProductController extends Controller
             ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
             ->select('products.*', 'categories.name_category', 'inventories.quantity')
             ->orderBy('id', 'asc')
-            ->get();
+            ->paginate(5);
         return view('backend.product.all', [
             'products' => $products
         ]);
@@ -36,7 +36,7 @@ class ProductController extends Controller
             ->select('products.*', 'categories.name_category', 'inventories.quantity')
             ->orderBy('id', 'asc')
             ->where('name_category', '=', 'Men')
-            ->get();
+            ->paginate(5);
         return view('backend.product.man', [
             'products' => $products
         ]);
@@ -51,7 +51,7 @@ class ProductController extends Controller
             ->select('products.*', 'categories.name_category', 'inventories.quantity')
             ->orderBy('id', 'asc')
             ->where('name_category', '=', 'Women')
-            ->get();
+            ->paginate(5);
         return view('backend.product.all', [
             'products' => $products
         ]);
@@ -66,7 +66,7 @@ class ProductController extends Controller
             ->select('products.*', 'categories.name_category', 'inventories.quantity')
             ->orderBy('id', 'asc')
             ->where('name_category', '=', 'Kid')
-            ->get();
+            ->paginate(5);
         return view('backend.product.all', [
             'products' => $products
         ]);

@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
 use GuzzleHttp\Psr7\Request;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -35,9 +36,6 @@ class AppServiceProvider extends ServiceProvider
 
         $users = User::all();
         View::share('', compact('users'));
-
-
-
 
     }
 }
