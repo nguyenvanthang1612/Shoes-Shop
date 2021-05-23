@@ -52,7 +52,7 @@ class ProductController extends Controller
             ->orderBy('id', 'asc')
             ->where('name_category', '=', 'Women')
             ->paginate(5);
-        return view('backend.product.all', [
+        return view('backend.product.woman', [
             'products' => $products
         ]);
     }
@@ -67,7 +67,7 @@ class ProductController extends Controller
             ->orderBy('id', 'asc')
             ->where('name_category', '=', 'Kid')
             ->paginate(5);
-        return view('backend.product.all', [
+        return view('backend.product.kid', [
             'products' => $products
         ]);
     }
@@ -140,4 +140,67 @@ class ProductController extends Controller
         $result = $product->delete($id);
         return  redirect()->route('product.index');
     } 
+
+    public function searchAll(Request $request)
+    {
+        $searchText = $request->input('search');
+        $products = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
+            ->select('products.*', 'categories.name_category', 'inventories.quantity')
+            ->orderBy('id', 'asc')
+            ->where('name', 'LIKE', '%'.$searchText.'%')
+            ->paginate(5);
+        return view('backend.product.all', [
+            'products' => $products
+        ]);
+    }
+
+    public function searchMan(Request $request)
+    {
+        $searchText = $request->input('search');
+        $products = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
+            ->select('products.*', 'categories.name_category', 'inventories.quantity')
+            ->orderBy('id', 'asc')
+            ->where('name', 'LIKE', '%'.$searchText.'%')
+            ->where('name_category', '=', 'Men')
+            ->paginate(5);
+        return view('backend.product.man', [
+            'products' => $products
+        ]);
+    }
+
+    public function searchWoman(Request $request)
+    {
+        $searchText = $request->input('search');
+        $products = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
+            ->select('products.*', 'categories.name_category', 'inventories.quantity')
+            ->orderBy('id', 'asc')
+            ->where('name', 'LIKE', '%'.$searchText.'%')
+            ->where('name_category', '=', 'Women')
+            ->paginate(5);
+        return view('backend.product.woman', [
+            'products' => $products
+        ]);
+    }
+
+    public function searchKid(Request $request)
+    {
+        $searchText = $request->input('search');
+        $products = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
+            ->select('products.*', 'categories.name_category', 'inventories.quantity')
+            ->orderBy('id', 'asc')
+            ->where('name', 'LIKE', '%'.$searchText.'%')
+            ->where('name_category', '=', 'Kid')
+            ->paginate(5);
+        return view('backend.product.kid', [
+            'products' => $products
+        ]);
+    }
 }

@@ -10,7 +10,7 @@
               
         <!--Start Page Title-->
          <div class="page-title-box">
-              <h4 class="page-title">Data Table</h4>
+              <h4 class="page-title">Account</h4>
               <ol class="breadcrumb">
                   <li>
                       <a href="#">Dashboard</a>
@@ -44,16 +44,6 @@
                                           <th>Avatar</th>
                                       </tr>
                                   </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Id</th>
-                                          <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Password</th>
-                                          <th>Telephone</th>
-                                          <th>Avatar</th>
-                                      </tr>
-                                  </tfoot>
                                   <tbody>
                                       @foreach ($accounts as $account)
                                         <tr>

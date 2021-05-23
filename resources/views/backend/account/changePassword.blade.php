@@ -10,7 +10,7 @@
               
               <!--Start Page Title-->
                <div class="page-title-box">
-                    <h4 class="page-title">Change Password</h4>
+                    <h4 class="page-title">Account</h4>
                     <ol class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
@@ -31,7 +31,7 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Create Admin </h2>
+                     <h2 class="header-title">Change Password </h2>
                        
                         <form class="form-horizontal" action='{{ url("admin/account/change-password/$account->id") }}' method="POST">
                           @method('PUT')

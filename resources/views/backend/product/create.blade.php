@@ -11,7 +11,7 @@
               <!--Start Page Title-->
                 {{-- <div class="white-box"> --}}
                   <div class="page-title-box">
-                      <h4 class="page-title">Form Basic</h4>
+                      <h4 class="page-title">Product</h4>
                       <ol class="breadcrumb">
                           <li>
                               <a href="#">Dashboard</a>
@@ -33,7 +33,7 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Select Fields</h2>
+                     <h2 class="header-title">Create Product</h2>
                        
                         <form class="form-horizontal" action="{{ url('admin/product') }}" method="POST" enctype="multipart/form-data">
                           

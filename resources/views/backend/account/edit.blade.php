@@ -10,7 +10,7 @@
               
               <!--Start Page Title-->
                <div class="page-title-box">
-                    <h4 class="page-title">Edit Form</h4>
+                    <h4 class="page-title">Account</h4>
                     <ol class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>

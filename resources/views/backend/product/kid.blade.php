@@ -10,16 +10,16 @@
               
         <!--Start Page Title-->
          <div class="page-title-box">
-              <h4 class="page-title">Data Table</h4>
+              <h4 class="page-title">Product</h4>
               <ol class="breadcrumb">
                   <li>
                       <a href="#">Dashboard</a>
                   </li>
                   <li>
-                      <a href="#">Table</a>
+                      <a href="#">Product</a>
                   </li>
                   <li class="active">
-                      Data Table
+                      Kid Collection
                   </li>
               </ol>
               <div class="clearfix"></div>
@@ -31,7 +31,14 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                         <h2 class="header-title">Basic example</h2>
+
+                        <h2 class="header-title" style="text-align: center; font-size: 25px">Kid Collection</h2>
+                        <form method="POST" action="{{ url('admin/product/search/kid') }}">
+                           @csrf
+                           <input type="text" class="form-control" name="search" placeholder="Search here..." 
+                           style="width:50%; margin: auto; margin-bottom: 30px"/>
+                        </form>
+                        
                           <div class="table-responsive">
                            <table id="example" class="display table">
                                 <thead>
@@ -48,20 +55,6 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Category Name</th>
-                                        <th>SKU</th>
-                                        <th>size</th>
-                                        <th>brand</th>
-                                        <th>image</th>
-                                        <th>quantity</th>
-                                        <th>price</th>
-                                        <th></th>
-                                    </tr>
-                                </tfoot>
                                   <tbody>
                                     @foreach ($products as $product)
                                         <tr>
@@ -79,10 +72,9 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
-                                    {{ $products->links('vendor.pagination.bootstrap-4') }}
                                   </tbody>
                             </table>  
+                            {{ $products->links('vendor.pagination.bootstrap-4') }}
                           </div>
                      </div>
                  </div>

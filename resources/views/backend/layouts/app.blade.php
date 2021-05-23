@@ -8,8 +8,7 @@
   <meta name="author" content="">
   {{-- add thêm --}}
   <meta name="csrf-token" content="{{ csrf_token() }}"> 
-  <link rel="shortcut icon" href="https://i.pinimg.com/736x/de/13/be/de13bedba8ab6783e2e460ff0e58e0a5.jpg" sizes="32x32" />
-  {{-- <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" type="image/png"> --}}
+  <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" type="image/png">
   <title>@yield('title')</title>
 
     <!--Begin  Page Level  CSS -->
