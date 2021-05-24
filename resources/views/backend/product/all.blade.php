@@ -33,7 +33,6 @@
                          <h2 class="header-title" style="text-align: center; font-size: 25px">All Collection</h2>
                          <form method="POST" action="{{ url('admin/product/search') }}">
                             @csrf
-                            {{-- <i class="fa fa-search" aria-hidden="true"></i> --}}
                             <input type="text" class="form-control" name="search" placeholder="Search here..." 
                             style="width:50%; margin: auto; margin-bottom: 30px" />
                          </form>
@@ -64,10 +63,10 @@
                                              <td>{{ $product->brand }}</td>
                                              <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->img) }}" ></td>
                                              <td>{{ $product->quantity }}</td>
-                                             <td>{{ $product->price }}</td>
+                                             <td>{{ number_format($product->price) }}$</td>
                                              <td>
-                                                <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
-                                                <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('product-{{ $product->id }}').submit()">Delete</a>
+                                                <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success"><i class="fa fa-pencil-square-o" ></i></a>
+                                                <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('product-{{ $product->id }}').submit()"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                 <form action="product/delete/{{ $product->id }}" method="post" id="product-{{ $product->id }}">
                                                     @method('DELETE')
                                                     @csrf

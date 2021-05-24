@@ -66,9 +66,9 @@
                                              <td>{{ $product->brand }}</td>
                                              <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->img) }}"></td>
                                              <td>{{ $product->quantity }}</td>
-                                             <td>{{ $product->price }}</td>
+                                             <td>{{ number_format($product->price) }}$</td>
                                              <td>
-                                                <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success">Edit</a>
+                                                <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success"><i class="fa fa-pencil-square-o" ></i></a>
                                             </td>
                                          </tr>
                                      @endforeach

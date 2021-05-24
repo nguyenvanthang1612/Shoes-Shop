@@ -39,9 +39,7 @@
                                           <th>Id</th>
                                           <th>Name</th>
                                           <th>Email</th>
-                                          <th>Password</th>
                                           <th>Telephone</th>
-                                          <th>Avatar</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -50,9 +48,7 @@
                                             <td>{{ $account->id }}</td>
                                             <td>{{ $account->user_name }}</td>
                                             <td>{{ $account->email }}</td>
-                                            <td>{{ $account->password }}</td>
                                             <td>{{ $account->telephone }}</td>
-                                            <td>{{ $account->avatar }}</td>
                                         </tr>
                                       @endforeach
                                   </tbody>

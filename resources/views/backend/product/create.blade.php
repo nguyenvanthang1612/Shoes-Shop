@@ -95,6 +95,8 @@
                             <label class="col-sm-2 control-label">Size</label>
                             <div class="col-sm-10">
                               <select class="form-control" name="size">
+                                <option value="35">35</option>
+                                <option value="36">36</option>
                                 <option value="37">37</option>
                                 <option value="38">38</option>
                                 <option value="39">39</option>
@@ -115,7 +117,7 @@
                                 <option value="Addidas">Addidas</option>
                                 <option value="Puma">Puma</option>
                                 <option value="Gucci">Gucci</option>
-                                <option value="Thượng Đình">Thượng Đình</option>
+                                <option value="Thượng Đình">Converse</option>
                               </select>
                             </div>
                           </div>

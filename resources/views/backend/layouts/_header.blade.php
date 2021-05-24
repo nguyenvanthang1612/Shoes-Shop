@@ -153,7 +153,7 @@
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                      @auth
-                        <img src="{{ 'storage/backend/account/'.Auth::user()->avatar }}" style="width:30px;height:30px"/>
+                        <img src="{{ asset('storage/backend/account/'.Auth::user()->avatar) }}" style="width:30px;height:30px"/>
                      @endauth
                      @auth
                         {{ Auth::user()->user_name }}
@@ -166,7 +166,6 @@
                   <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-sign-out"></i> Logout </a> </li>
                 </ul>
             </li>
-            
         </ul>
     </div>
     <!--notification menu end -->

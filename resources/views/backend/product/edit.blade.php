@@ -90,8 +90,10 @@
                       <label class="col-sm-2 control-label">Size</label>
                       <div class="col-sm-10">
                         <select class="form-control" name="size">
+                          <option value="35" {{ $product->size == 35 ? 'selected' : '' }}>35</option>
+                          <option value="36" {{ $product->size == 36 ? 'selected' : '' }}>36</option>
                           <option value="37" {{ $product->size == 37 ? 'selected' : '' }}>37</option>
-                          <option value="38" {{ old('size', $product->size) == 38 ? 'selected' : '' }}>38</option>
+                          <option value="38" {{ $product->size == 38 ? 'selected' : '' }}>38</option>
                           <option value="39" {{ $product->size == 39 ? 'selected' : '' }}>39</option>
                           <option value="40" {{ $product->size == 40 ? 'selected' : '' }}>40</option>
                           <option value="41" {{ $product->size == 41 ? 'selected' : '' }}>41</option>
@@ -110,7 +112,7 @@
                           <option value="Addidas" {{ $product->brand == 'Addidas' ? 'selected' : '' }}>Addidas</option>
                           <option value="Puma" {{ $product->brand == 'Puma' ? 'selected' : '' }}>Puma</option>
                           <option value="Gucci" {{ $product->brand == 'Gucci' ? 'selected' : '' }}>Gucci</option>
-                          <option value="Thượng Đình" {{ $product->brand == 'Thượng Đình' ? 'selected' : '' }}>Thượng Đình</option>
+                          <option value="Converse" {{ $product->brand == 'Converse' ? 'selected' : '' }}>Converse</option>
                         </select>
                       </div>
                     </div>
