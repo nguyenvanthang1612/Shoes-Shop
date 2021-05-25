@@ -47,6 +47,7 @@
                                           <th>Address</th>
                                           <th>City</th>
                                           <th>Payment Type</th>
+                                          <th></th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -63,6 +64,9 @@
                                             <td>{{ $order->address }}</td>
                                             <td>{{ $order->city }}</td>
                                             <td>{{ $order->payment_type }}</td>
+                                            <td>
+                                                <a href='{{ url("admin/order/$order->id/detail") }}' class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            </td>
                                         </tr>
                                       @endforeach
                                   </tbody>

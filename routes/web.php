@@ -2,6 +2,7 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Web\WebUserAddressController;
 use App\Http\Middleware\Admin\CheckUser;
 
 use Illuminate\Routing\RouteAction;
+use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -77,8 +79,16 @@ Route::group(['prefix' => 'admin'], function () {
 
     //dashboard
     Route::get('/', function () {
-        return view('backend.index');
+        $orders = DB::table('orders')->count();
+        $totalPrice = DB::table('orders')->sum('price');
+        $clientAccount = DB::table('users')->where('role', 3)->count();
+        return view('backend.index', [
+            'orders' => $orders,
+            'totalPrice' => $totalPrice,
+            'clientAccount' => $clientAccount
+        ]);
     })->name('admin.index')->middleware('CheckUser');
+    
 
     // account
     Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
@@ -114,4 +124,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     //order
     Route::get('order', [OrderController::class, 'index']);
+    Route::get('order/{id}/detail', [OrderController::class, 'show']);
+
 });

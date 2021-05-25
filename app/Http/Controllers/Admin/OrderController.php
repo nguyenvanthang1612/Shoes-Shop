@@ -15,4 +15,12 @@ class OrderController extends Controller
             'orders' => $orders
         ]);
     }
+
+    public function show($id)
+    {
+        $order = Order::findOrFail($id);
+        return view('backend.order.detail', [
+            'order' => $order
+        ]);
+    }
 }

@@ -62,7 +62,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>2300</p>
+                              <p>{{ $clientAccount }}</p>
                               <span>Daily visitors</span>
                           </div>
                           <div class="info-icon text-info">
@@ -82,7 +82,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>5320</p>
+                              <p>{{ $totalPrice }}</p>
                               <span>Total Earning</span>
                           </div>
                           <div class="info-icon text-warning">
@@ -102,7 +102,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>65</p>
+                              <p>{{ $orders }}</p>
                               <span>Pending Orders</span>
                           </div>
                           <div class="info-icon text-danger">
@@ -125,26 +125,7 @@
                   
                 <!--Start row-->  
                 <div class="row">
-                     <div class="col-md-6">
-                         <div class="white-box">
-                         <h2 class="header-title">Sales Analytics</h2>
-                            <ul class="list-inline text-center m-t-10">
-                              <li>
-                                <h5><i class="fa fa-circle m-r-5" style="color:#98C1D1;"></i>Iphone</h5>
-                              </li>
-                              <li>
-                                <h5><i class="fa fa-circle m-r-5" style="color: #23DBDE;"></i>Ipad</h5>
-                              </li>
-                              <li>
-                                <h5><i class="fa fa-circle m-r-5" style="color: #F6DDA0;"></i>Itouch</h5>
-                              </li>
-                            </ul>
-                               <div id="morris-area-chart" style="height:250px;"></div>
-                         </div>
-                     </div>
-                     
-                     
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                       <div class="white-box">
                           <h2 class="header-title">Total Revenue </h2>
                             <ul class="list-inline text-center m-t-10">
@@ -155,12 +136,10 @@
                                 <h5><i class="fa fa-circle m-r-5" style="color: #FFAA00;"></i>Section B</h5>
                               </li>
                             </ul>
-                            <div id="morris2"  style="height:250px;"></div>
+                            <div id="morris2"  style="height:300px;"></div>
                             
                       </div>
-                  </div><!-- /col-md-6-->
-
-                     
+                  </div>
                 </div>
                 <!--End row-->
                   
@@ -169,7 +148,7 @@
                    <div class="row">
                    
                     <!-- Start inbox widget-->
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                         <div class="white-box">
                           <h2 class="header-title">Inbox</h2>
                             <div class="inbox-widget inbox-scroll-list">
@@ -298,7 +277,7 @@
                       <!-- End inbox widget-->
                        
                    <!--Start chat widget-->
-                   <div class="col-md-4">
+                   <div class="col-md-6">
                        <div class="white-box">
                            <h2 class="header-title">Chat</h2>
                            
@@ -365,145 +344,7 @@
                    </div>
                    <!--End chat widget-->
     
-                 <!-- Start timeline-->
-                 <div class="col-md-4">
-                     <div class="white-box">
-                       <h2 class="header-title">Latest Activity</h2>
-                        <ul class="timeline timeline-compact">
-                          <li class="latest">
-                            <div class="timeline-date">Just Now</div>
-                            <div class="timeline-title">Create New Page</div>
-                            <div class="timeline-description">Lorem Ipsum generators on the tend to repeat.</div>
-                          </li>
-                          
-                          <li>
-                           <div class="timeline-date">Just Now</div>
-                            <div class="timeline-title">Back Up Theme</div>
-                            <div class="timeline-description">Lorem Ipsum generators on the tend to repeat.</div>
-                          </li>
-                          
-                          <li>
-                            <div class="timeline-date">Just Now</div>
-                            <div class="timeline-title">Changes In The Structure</div>
-                            <div class="timeline-description">Lorem Ipsum generators on the tend to repeat. </div>
-                          </li>
-                          
-                          <li>
-                            <div class="timeline-date">Just Now</div>
-                            <div class="timeline-title">New user register</div>
-                            <div class="timeline-description">Lorem Ipsum generators on the tend to repeat.</div>
-                          </li>
-                          
-                        </ul>
-                     </div>
-                 </div>
-                 <!-- End timeline-->  
-                       
-                    
-                     <!-- Start inbox widget-->
-                     <div class="col-md-12">
-                        <div class="white-box">
-                          <h2 class="header-title"> Projects </h2>
-                            <div class="table-responsive">
-                              <table class="table table-hover">
-                                <thead>
-                                  <tr>
-                                    <th>#</th>
-                                    <th>Project Name</th>
-                                    <th >Start Date</th>
-                                    <th>Deadline Date</th>
-                                    <th>Status</th>
-                                    <th>Progress</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <td>1</td>
-                                    <td>Design new theme</td>
-                                    <td>10/10/2016</td>
-                                    <td>12/11/2016</td>
-                                    <td><span class="label label-warning">Pending</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-warning" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Website Redesign</td>
-                                    <td>10/10/2016</td>
-                                   <td>12/11/2016</td>
-                                    <td><span class="label label-success">In Progress</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-success" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Mockup Design</td>
-                                     <td>10/10/2016</td>
-                                     <td>12/11/2016</td>
-                                    <td><span class="label label-warning">Pending</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-primary" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>4</td>
-                                    <td>Admin Panel design</td>
-                                    <td>10/10/2016</td>
-                                    <td>12/11/2016</td>
-                                    <td><span class="label label-success">In Progress</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-success" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>5</td>
-                                    <td>Front End Design</td>
-                                    <td>10/10/2016</td>
-                                    <td>12/11/2016</td>
-                                    <td><span class="label label-danger">On Hold</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-danger" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>6</td>
-                                    <td>Software Testing</td>
-                                    <td>10/10/2016</td>
-                                    <td>12/11/2016</td>
-                                    <td><span class="label label-success">In Progress</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-success" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>7</td>
-                                    <td>Admin Panel design</td>
-                                    <td>10/10/2016</td>
-                                    <td>12/11/2016</td>
-                                    <td><span class="label label-danger">On Hold</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-danger" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                  <tr>
-                                    <td>8</td>
-                                    <td>Website Redesign</td>
-                                    <td>10/10/2016</td>
-                                    <td>12/11/2016</td>
-                                    <td><span class="label label-warning">Pending</span></td>
-                                    <td><div class="progress progress-striped progress-sm">
-                                      <div class="progress-bar progress-bar-warning" style="width: 25%;"></div>
-                                    </div></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                                
-                        </div>
-                       </div>
-					<!-- Start inbox widget-->
+             
                    </div>
                    <!--End row-->
 			   
