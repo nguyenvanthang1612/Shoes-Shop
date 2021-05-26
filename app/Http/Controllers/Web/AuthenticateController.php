@@ -33,6 +33,11 @@ class AuthenticateController extends Controller
         }
     }
 
+    public function showRegisterForm()
+    {
+        return view('frontend.authenticate.register-page');
+    }
+
     public function register(Request $request)
     {
         $userData = array_merge($request->except(['address', 'city', 'country']), ['role' => 3]);

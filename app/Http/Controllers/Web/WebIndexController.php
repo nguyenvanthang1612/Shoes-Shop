@@ -15,11 +15,6 @@ class WebIndexController extends Controller
         return view('frontend.index');
     }
 
-    public function create()
-    {
-        return view('frontend.authenticate.register-page');
-    }
-
     public function edit()
     {
         $userData = User::findOrFail(auth()->id());

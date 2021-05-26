@@ -56,8 +56,8 @@ Route::group(['prefix' => '/'], function () {
     // authenticate
     Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
     Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
-    Route::get('register', [WebIndexController::class, 'create'])->name('register');
-    Route::post('register', [WebIndexController::class, 'store'])->name('register');
+    Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
+    Route::post('register', [AuthenticateController::class, 'store'])->name('register');
 
     Route::get('/logout', function() {
         Auth::logout();

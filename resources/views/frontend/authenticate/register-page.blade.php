@@ -52,7 +52,7 @@ Register
 
                     <div class="row">
 
-                        <form class="form-horizontal" method="POST" action="{{url('register-page')}}">
+                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
