@@ -30,12 +30,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['frontend.layouts._nav','frontend.index','frontend.product.shop-item','frontend.product.shop-list'], function($view) {
-            return $view->with('categories', Category::all());
-        });
+        if (!app()->runningInConsole()) {
+            View::composer(['frontend.layouts._nav','frontend.index','frontend.product.shop-item','frontend.product.shop-list'], function($view) {
+                return $view->with('categories', Category::all());
+            });
 
-        $users = User::all();
-        View::share('', compact('users'));
+            $users = User::all();
+            View::share('', compact('users'));
+        }
 
     }
 }
