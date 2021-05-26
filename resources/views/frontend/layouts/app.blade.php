@@ -34,6 +34,11 @@
             .navbar-default .navbar-nav ul.dropdown-menu {
                 padding-bottom: 0;
             }
+
+            .auth-form {
+                padding-bottom: 80px;
+                margin: 0;
+            }
         </style>
     </head>
 

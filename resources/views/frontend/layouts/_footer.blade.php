@@ -235,68 +235,47 @@
 
                 <!-- Authirize form -->
                 <div class="row auth-form">
-                    <div class="col-md-4">
+                    <form action='{{ url("/login") }}' method="POST" id="login-form">
+                        {{-- Login failed message --}}
+                        <div id="error-login" role="alert"></div>
 
-                        <!-- Nav -->
-                        <div class="asside-nav no-bg">
-                            <ul class="nav-vrt border">
-                                <li class="active">
-                                    <a href="#" class="btn-material">Privacy policy</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn-material">Terms and conditions</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn-material">FAQ</a>
-                                </li>
-                            </ul>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name"
+                                name="user_name">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Password" name="password">
+                        </div>
+                        <div class="checkbox padding">
+                            <input type="checkbox" id="inputCheckBox">
+                            <label for="inputCheckBox">
+                                <span class="checkbox-input">
+                                    <span class="off">off</span>
+                                    <span class="on">on</span>
+                                </span>
+                                remember password
+                            </label>
+                        </div>
+                        <span class="sdw-wrap">
+                            <button type="submit" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont"
+                                name="login">Login</button>
+                            <span class="sdw"></span>
+                        </span>
 
-                    <div class="col-md-5 col-md-offset-1 form-fields">
-
-                        <form action='{{ url("/login") }}' method="POST" id="login-form">
-                            {{-- Login failed message --}}
-                            <div id="error-login" role="alert"></div>
-
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">User Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name"
-                                    name="user_name">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1"
-                                    placeholder="Password" name="password">
-                            </div>
-                            <div class="checkbox padding">
-                                <input type="checkbox" id="inputCheckBox">
-                                <label for="inputCheckBox">
-                                    <span class="checkbox-input">
-                                        <span class="off">off</span>
-                                        <span class="on">on</span>
-                                    </span>
-                                    remember password
-                                </label>
-                            </div>
-                            <span class="sdw-wrap">
-                                <button type="submit" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont"
-                                    name="login">Login</button>
-                                <span class="sdw"></span>
-                            </span>
-
-                            <ul class="addon-login-btn">
-                                <li>
-                                    <a href='{{ url("register-page/create") }}'>register</a>
-                                </li>
-                                <li>or</li>
-                                <li>
-                                    <a href="#">restore password</a>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                        <ul class="addon-login-btn">
+                            <li>
+                                <a href='{{ url("register-page/create") }}'>register</a>
+                            </li>
+                            <li>or</li>
+                            <li>
+                                <a href="#">restore password</a>
+                            </li>
+                        </ul>
+                    </form>
                 </div>
                 <!-- / Authirize form -->
             </div>
