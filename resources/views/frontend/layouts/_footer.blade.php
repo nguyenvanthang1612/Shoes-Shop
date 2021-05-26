@@ -268,7 +268,7 @@
 
                         <ul class="addon-login-btn">
                             <li>
-                                <a href='{{ url("register-page/create") }}'>register</a>
+                                <a href='{{ route('register') }}'>register</a>
                             </li>
                             <li>or</li>
                             <li>
