@@ -29,7 +29,12 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+        @stack('css')
+        <style>
+            .navbar-default .navbar-nav ul.dropdown-menu {
+                padding-bottom: 0;
+            }
+        </style>
     </head>
 
     <body>
@@ -63,6 +68,20 @@
         <script src="{!! asset('frontend/assets/js/selectize.min.js') !!}"></script><!-- Select customize -->
         <script src="{!! asset('frontend/js/main.min.js') !!}"></script>
 
+        <!-- Alert js -->
+
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <!-- Default theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+        <!-- Semantic UI theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+
         <!-- Google API -->
         <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_API_KEY&libraries=places&callback=initAutocomplete"
         async defer></script><!-- / Google API -->
@@ -74,18 +93,58 @@
                 const username = $("[name='user_name']").val();
                 const password = $("[name='password']").val();
 
-                console.log(username, password)
-
                 post("{{ route('user.login') }}", {
                     user_name: username,
                     password
                 }, function(res) {
                     location.reload();
                 }, function(res) {
+                    $("#error-login").addClass('alert alert-danger alert-dismissible')
                     $("#error-login").text(res.responseJSON.message);
                 })
-            })
-        })
+            });
+        });
         </script>
+<<<<<<< HEAD
+        <script>
+            function addCart(id)
+            {
+                $.ajax({
+                    url: 'addCart/'+id,
+                    type: 'GET',
+                }).done(function(response)
+                {
+                    console.log(response);
+                    renderCart(response);
+                    alertify.success("Đã thêm sản phẩm mới");
+                });
+
+
+
+            }
+
+            $(document).on("click",".remove-btn" , function(){
+                    //<span data-idcart="2"></span>
+                    $.ajax({
+                    url:'deleteItemCart/'+$(this).attr("data-idCart"),
+                    type:'GET',
+                }).done(function(respone) {
+                    $("#change-item-cart").empty();
+                    $("#change-item-cart").html(response);
+                    alertify.success('Đã xoá thành công sản phẩm');
+                });
+            });
+
+            function renderCart(response)
+            {
+                $("#change-item-cart").empty();
+                $("#change-item-cart").html(response);
+
+
+            }
+        </script>
+=======
+        @stack('js')
+>>>>>>> b7042c6f6dbd3d18903b7fc9056127eff9ae1fc3
     </body>
 </html>

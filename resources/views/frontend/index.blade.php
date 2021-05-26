@@ -40,7 +40,7 @@
                                              <span class="hor-divider"></span>
 
                                              <span class="sdw-wrap">
-                                                 <a href="" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
+                                                 <a onclick='addCart("{{$product->id}}")'  href="javascript:" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
                                                  <span class="sdw"></span>
                                              </span>
                                        </span>
