@@ -35,9 +35,5 @@ class AppServiceProvider extends ServiceProvider
 
         $users = User::all();
         View::share('', compact('users'));
-
-
-
-
     }
 }

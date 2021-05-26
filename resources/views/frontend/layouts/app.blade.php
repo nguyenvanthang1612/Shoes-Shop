@@ -63,6 +63,20 @@
         <script src="{!! asset('frontend/assets/js/selectize.min.js') !!}"></script><!-- Select customize -->
         <script src="{!! asset('frontend/js/main.min.js') !!}"></script>
 
+        <!-- Alert js -->
+
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <!-- Default theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+        <!-- Semantic UI theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+
         <!-- Google API -->
         <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_API_KEY&libraries=places&callback=initAutocomplete"
         async defer></script><!-- / Google API -->
@@ -86,6 +100,43 @@
                 })
             })
         })
+        </script>
+        <script>
+            function addCart(id)
+            {
+                $.ajax({
+                    url: 'addCart/'+id,
+                    type: 'GET',
+                }).done(function(response)
+                {
+                    console.log(response);
+                    renderCart(response);
+                    alertify.success("Đã thêm sản phẩm mới");
+                });
+
+
+
+            }
+
+            $(document).on("click",".remove-btn" , function(){
+                    //<span data-idcart="2"></span>
+                    $.ajax({
+                    url:'deleteItemCart/'+$(this).attr("data-idCart"),
+                    type:'GET',
+                }).done(function(respone) {
+                    $("#change-item-cart").empty();
+                    $("#change-item-cart").html(response);
+                    alertify.success('Đã xoá thành công sản phẩm');
+                });
+            });
+
+            function renderCart(response)
+            {
+                $("#change-item-cart").empty();
+                $("#change-item-cart").html(response);
+
+
+            }
         </script>
     </body>
 </html>

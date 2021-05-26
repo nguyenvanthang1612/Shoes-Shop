@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\WebIndexController;
 use App\Http\Controllers\Web\RegisterController;
@@ -46,7 +47,9 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('user/address-edit-page/{id}', [WebIndexController::class,'addressEdit']);
     Route::put('user/address-edit-page/{id}', [WebIndexController::class,'addressUpdate']);
-
+    //Cart
+    Route::get('/addCart/{id}', [CartController::class,'addCart']);
+    Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
     //Category
     Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
@@ -60,6 +63,7 @@ Route::group(['prefix' => '/'], function () {
         Auth::logout();
         return redirect('/');
     });
+
 });
 /**
  * Admin route here (Backend)

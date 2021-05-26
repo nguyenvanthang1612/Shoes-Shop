@@ -1,4 +1,5 @@
 
+
         <nav class="navbar navbar-default">
 
             <div class="container">
@@ -24,6 +25,9 @@
 
                         <div class="phone text-blue">
                             <i class="icofont icofont-phone-circle"></i>
+
+
+
                             +1 234 567 89 10
                         </div>
 
@@ -56,22 +60,22 @@
                         <!-- Profile -->
                         <li class="profile">
                             <span class="wrap">
-
+                            @if(Auth::check())
                                 <!-- Image -->
                                 <span class="image bg-white">
 
                                     <!-- New message badge -->
                                     <span class="badge bg-blue hidden-xs hidden-sm"></span>
 
-                                    @if(Auth::check())
+
                                     <span class="icon">
                                         <a href='{{ url("/user/index-page", [Auth::user()->id]) }}'><i class="icofont icofont-user-alt-4 text-blue" ></i></a>
                                     </span>
-                                    @endif
+
 
                                     <!--img src="images/profile/profile-img.jpg" alt=""-->
                                 </span>
-
+                            @endif
                                 <!-- Info -->
                                 <span class="info">
                                     <!-- Name -->
@@ -88,133 +92,12 @@
                         <!-- Cart -->
                         <li class="cart">
 
-                            <a href="#" class="cart-icon hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <div id="change-item-cart">
+                                                        
+                            </div>
 
-                                <span class="badge bg-blue">3</span>
-
-                                <i class="icofont icofont-cart-alt"></i>
-                            </a>
-
-                            <a href="#" class="visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="icofont icofont-cart-alt"></i>
-                                Shopping cart
-                            </a>
-
-                            <!-- Dropdown items list -->
-                            <ul class="dropdown-menu">
-
-                                <!-- Item -->
-                                <li>
-                                    <div class="wrap">
-
-                                        <!-- Image -->
-                                        <div class="image">
-                                            <img src="images/shop/img-01.jpg" alt="">
-                                        </div>
-
-                                        <!-- Caption -->
-                                        <div class="caption">
-                                            <span class="comp-header st-1 text-uppercase">
-                                                T-SHIPT
-                                                <span>
-                                                    MEN COLLECTION
-                                                </span>
-                                                <span>
-                                                    FAKE BRAND
-                                                </span>
-                                            </span>
-
-                                            <span class="price">
-                                                <span class="text-grey-dark">$</span>
-                                                257 <small class="text-grey-dark">.00</small>
-                                            </span>
-                                        </div>
-
-                                        <!-- Remove btn -->
-                                        <span class="remove-btn bg-blue">
-                                            <i class="icofont icofont-bucket"></i>
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <!-- Item -->
-                                <li>
-                                    <div class="wrap">
-
-                                        <!-- Image -->
-                                        <div class="image">
-                                            <img src="images/shop/img-01.jpg" alt="">
-                                        </div>
-
-                                        <!-- Caption -->
-                                        <div class="caption">
-                                            <span class="comp-header st-1 text-uppercase">
-                                                T-SHIPT
-                                                <span>
-                                                    MEN COLLECTION
-                                                </span>
-                                                <span>
-                                                    FAKE BRAND
-                                                </span>
-                                            </span>
-
-                                            <span class="price">
-                                                <span class="text-grey-dark">$</span>
-                                                257 <small class="text-grey-dark">.00</small>
-                                            </span>
-                                        </div>
-
-                                        <!-- Remove btn -->
-                                        <span class="remove-btn bg-blue">
-                                            <i class="icofont icofont-bucket"></i>
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <!-- Item -->
-                                <li>
-                                    <div class="wrap">
-
-                                        <!-- Image -->
-                                        <div class="image">
-                                            <img src="images/shop/img-01.jpg" alt="">
-                                        </div>
-
-                                        <!-- Caption -->
-                                        <div class="caption">
-                                            <span class="comp-header st-1 text-uppercase">
-                                                T-SHIPT
-                                                <span>
-                                                    MEN COLLECTION
-                                                </span>
-                                                <span>
-                                                    FAKE BRAND
-                                                </span>
-                                            </span>
-
-                                            <span class="price">
-                                                <span class="text-grey-dark">$</span>
-                                                257 <small class="text-grey-dark">.00</small>
-                                            </span>
-                                        </div>
-
-                                        <!-- Remove btn -->
-                                        <span class="remove-btn bg-blue">
-                                            <i class="icofont icofont-bucket"></i>
-                                        </span>
-                                    </div>
-                                </li>
-
-
-                               <li class="more-btn sdw">
-                                   <a href="card-page-step-1.html" class="btn-material btn-primary">
-                                       View order <i class="icofont icofont-check-circled"></i>
-                                   </a>
-                               </li>
-
-
-                            </ul>
                         </li>
+
                     </ul>
 
                     <ul class="nav navbar-nav">
