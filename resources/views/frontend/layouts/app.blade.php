@@ -29,7 +29,12 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+        @stack('css')
+        <style>
+            .navbar-default .navbar-nav ul.dropdown-menu {
+                padding-bottom: 0;
+            }
+        </style>
     </head>
 
     <body>
@@ -88,19 +93,19 @@
                 const username = $("[name='user_name']").val();
                 const password = $("[name='password']").val();
 
-                console.log(username, password)
-
                 post("{{ route('user.login') }}", {
                     user_name: username,
                     password
                 }, function(res) {
                     location.reload();
                 }, function(res) {
+                    $("#error-login").addClass('alert alert-danger alert-dismissible')
                     $("#error-login").text(res.responseJSON.message);
                 })
-            })
-        })
+            });
+        });
         </script>
+<<<<<<< HEAD
         <script>
             function addCart(id)
             {
@@ -138,5 +143,8 @@
 
             }
         </script>
+=======
+        @stack('js')
+>>>>>>> b7042c6f6dbd3d18903b7fc9056127eff9ae1fc3
     </body>
 </html>

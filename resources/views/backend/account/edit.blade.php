@@ -10,7 +10,7 @@
               
               <!--Start Page Title-->
                <div class="page-title-box">
-                    <h4 class="page-title">Form Basic</h4>
+                    <h4 class="page-title">Account</h4>
                     <ol class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
@@ -41,11 +41,11 @@
                             <label class="col-md-2 control-label">Username</label>
                             <div class="col-md-10">
                               <input class="form-control" type="text" name="user_name" placeholder="user name" value="{{ old('user_name', $account->user_name) }}">
-                              {{-- @error('user_name')
+                              @error('user_name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
                                   </div>
-                              @enderror --}}
+                              @enderror
                             </div>
                           </div>
 
@@ -54,11 +54,11 @@
                             <label class="col-md-2 control-label">First name</label>
                             <div class="col-md-10">
                               <input class="form-control" type="text" name="first_name" placeholder="first name" value="{{ old('first_name', $account->first_name) }}">
-                              {{-- @error('first_name')
+                              @error('first_name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
                                   </div>
-                              @enderror --}}
+                              @enderror
                             </div>
                           </div>
 
@@ -67,11 +67,11 @@
                             <label class="col-md-2 control-label">Last name</label>
                             <div class="col-md-10">
                               <input class="form-control" type="text" name="last_name" placeholder="last name" value="{{ old('last_name', $account->last_name) }}">
-                              {{-- @error('last_name')
+                              @error('last_name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
                                   </div>
-                              @enderror --}}
+                              @enderror
                             </div>
                           </div>
                           
@@ -80,11 +80,11 @@
                             <label class="col-md-2 control-label" for="example-email">Email</label>
                             <div class="col-md-10">
                               <input id="example-email" name="email" class="form-control" placeholder="Email" type="text" value="{{ old('email', $account->email) }}">
-                              {{-- @error('email')
+                              @error('email')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
                                   </div>
-                              @enderror --}}
+                              @enderror
                             </div>
                           </div>
 
@@ -93,11 +93,11 @@
                             <label class="col-md-2 control-label">Telephone</label>
                             <div class="col-md-10">
                               <input class="form-control" type="text" name="telephone" placeholder="Telephone" value="{{ old('telephone', $account->telephone) }}">
-                              {{-- @error('telephone')
+                              @error('telephone')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
                                   </div>
-                              @enderror --}}
+                              @enderror
                             </div>
                           </div>
 
@@ -110,11 +110,11 @@
                                   <div class="fallback">
                                     <input type="hidden" name="avatar" value="{{ $account->avatar }}" />
                                     <input type="file" name="avatar">
-                                    {{-- @error('avatar')
+                                    @error('avatar')
                                         <div class="text-danger">
                                           <span>{{ $message }}</span>
                                         </div>
-                                    @enderror --}}
+                                    @enderror
                                   </div>
                               </div>
                             </div>

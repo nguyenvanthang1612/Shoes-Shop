@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AccountCreate;
+use App\Http\Requests\Admin\AccountEdit;
+use App\Http\Requests\Admin\ChangePassword;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
@@ -69,7 +71,7 @@ class AccountController extends Controller
     }
 
     // action edit form
-    public function update(Request $request, $id)
+    public function update(AccountEdit $request, $id)
     {
         [$file, $fileName] = $this->upload($request);
         $account = User::findOrFail($id);
@@ -101,4 +103,20 @@ class AccountController extends Controller
         $result = $product->delete($id);
         return  redirect('/admin/account/admin_management');
     } 
+
+    // change password form
+    public function showChangePasswordForm()
+    {
+       $account = User::findOrFail(auth()->id());
+       return view('backend.account.changePassword', [
+        'account' => $account
+       ]);
+    }
+
+    // change password
+    public function changePassword(ChangePassword $request)
+    {
+        User::findOrFail(auth()->id())->update(['password'=> $request->input('new_password')]);
+        return redirect('/admin');
+    }
 }

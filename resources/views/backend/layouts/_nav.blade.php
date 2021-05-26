@@ -40,11 +40,10 @@
                     <li><a href="{{ url('/admin/account/client_management') }}">Client Management</a></li>
                     <li><a href="{{ url('/admin/account/admin_management') }}">Admin Management</a></li>
                     <li><a href="{{ url('/admin/account/create_account') }}">Create Account</a></li>
-                    <li><a href="">Change Password</a></li>
                 </ul>
             </li>
 
-            <li><a href=""><i class="ti-truck"></i> <span>Order</span></a></li>
+            <li><a href="{{ url('/admin/order') }}"><i class="ti-truck"></i> <span>Order</span></a></li>
             <li><a href=""><i class="ti-money"></i> <span>Statistical</span></a></li>
             <li><a href=""><i class="icon-credit-card"></i> <span>Bill</span></a></li>
         </ul>

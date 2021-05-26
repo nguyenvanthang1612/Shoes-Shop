@@ -2,6 +2,8 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +19,7 @@ use App\Http\Controllers\Web\WebUserAddressController;
 use App\Http\Middleware\Admin\CheckUser;
 
 use Illuminate\Routing\RouteAction;
+use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -80,8 +83,16 @@ Route::group(['prefix' => 'admin'], function () {
 
     //dashboard
     Route::get('/', function () {
-        return view('backend.index');
+        $orders = DB::table('orders')->count();
+        $totalPrice = DB::table('orders')->sum('price');
+        $clientAccount = DB::table('users')->where('role', 3)->count();
+        return view('backend.index', [
+            'orders' => $orders,
+            'totalPrice' => $totalPrice,
+            'clientAccount' => $clientAccount
+        ]);
     })->name('admin.index')->middleware('CheckUser');
+    
 
     // account
     Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
@@ -92,9 +103,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('account/edit', [AccountController::class, 'edit']);
     Route::put('account/edit/{id}', [AccountController::class, 'update']);
     Route::delete('account/delete/{id}', [AccountController::class, 'destroy']);
-
-    // admin avatar
-    // Route::get('/', [AccountController::class, 'adminAvatar']);
+    Route::get('account/change-password', [AccountController::class, 'showChangePasswordForm']);
+    Route::put('account/change-password/{id}', [AccountController::class, 'changePassword']);
 
     //category
     Route::get('categories', [CategoryController::class, 'index']);
@@ -110,4 +120,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('product/{id}/edit', [ProductController::class, 'edit']);
     Route::put('product/{id}', [ProductController::class, 'update']);
     Route::delete('product/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    // search
+    Route::post('product/search', [ProductController::class, 'searchAll']);
+    Route::post('product/search/man', [ProductController::class, 'searchMan']);
+    Route::post('product/search/woman', [ProductController::class, 'searchWoman']);
+    Route::post('product/search/kid', [ProductController::class, 'searchKid']);
+
+    //order
+    Route::get('order', [OrderController::class, 'index']);
+    Route::get('order/{id}/detail', [OrderController::class, 'show']);
+
 });

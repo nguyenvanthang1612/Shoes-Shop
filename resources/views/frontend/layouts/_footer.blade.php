@@ -256,7 +256,10 @@
                             <div class="col-md-5 col-md-offset-1 form-fields">
 
                                 <form action='{{ url("/login") }}' method="POST" id="login-form">
-                                    <div id="error-login"></div>
+                                    {{-- Login failed message --}}
+                                    <div id="error-login" role="alert"></div>
+
+
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">User Name</label>
                                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name" name="user_name">

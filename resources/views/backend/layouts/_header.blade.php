@@ -153,18 +153,19 @@
             <li>
                 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                      @auth
+                        <img src="{{ asset('storage/backend/account/'.Auth::user()->avatar) }}" style="width:30px;height:30px"/>
+                     @endauth
+                     @auth
                         {{ Auth::user()->user_name }}
                      @endauth
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                  <li> <a href="#"> <i class="fa fa-wrench"></i> Settings </a> </li>
                   <li> <a href='{{ url("admin/account/edit") }}'> <i class="fa fa-user"></i> Edit Profile </a> </li>
-                  <li> <a href="#"> <i class="fa fa-info"></i> Help </a> </li>
-                  <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-lock"></i> Logout </a> </li>
+                  <li> <a href='{{ url("admin/account/change-password") }}'><i class="fa fa-lock"></i>Change Password</a> </li>
+                  <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-sign-out"></i> Logout </a> </li>
                 </ul>
             </li>
-            {{-- {{ url("admin/account/$account->id/edit") }} --}}
         </ul>
     </div>
     <!--notification menu end -->

@@ -11,7 +11,7 @@
               <!--Start Page Title-->
                 {{-- <div class="white-box"> --}}
                   <div class="page-title-box">
-                      <h4 class="page-title">Form Basic</h4>
+                      <h4 class="page-title">Product</h4>
                       <ol class="breadcrumb">
                           <li>
                               <a href="#">Dashboard</a>
@@ -33,7 +33,7 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Select Fields</h2>
+                     <h2 class="header-title">Create Product</h2>
                        
                         <form class="form-horizontal" action="{{ url('admin/product') }}" method="POST" enctype="multipart/form-data">
                           
@@ -95,6 +95,8 @@
                             <label class="col-sm-2 control-label">Size</label>
                             <div class="col-sm-10">
                               <select class="form-control" name="size">
+                                <option value="35">35</option>
+                                <option value="36">36</option>
                                 <option value="37">37</option>
                                 <option value="38">38</option>
                                 <option value="39">39</option>
@@ -115,7 +117,7 @@
                                 <option value="Addidas">Addidas</option>
                                 <option value="Puma">Puma</option>
                                 <option value="Gucci">Gucci</option>
-                                <option value="Thượng Đình">Thượng Đình</option>
+                                <option value="Thượng Đình">Converse</option>
                               </select>
                             </div>
                           </div>
