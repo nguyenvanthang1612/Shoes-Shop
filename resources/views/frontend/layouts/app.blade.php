@@ -39,6 +39,10 @@
                 padding-bottom: 80px;
                 margin: 0;
             }
+
+            .register-field {
+                margin-bottom: 25px !important;
+            }
         </style>
     </head>
 

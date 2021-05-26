@@ -37,6 +37,7 @@ use Illuminate\Support\Facades\Route;
  * Frontend routes here
  */
 Route::group(['prefix' => '/'], function () {
+
     Route::get('/', [WebIndexController::class, 'index']);
     //index - register - edit
     Route::get('user/index-page/{id}',[WebIndexController::class,'mainUserIndex']);
@@ -57,7 +58,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
     Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
     Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
-    Route::post('register', [AuthenticateController::class, 'store'])->name('register');
+    Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
     Route::get('/logout', function() {
         Auth::logout();

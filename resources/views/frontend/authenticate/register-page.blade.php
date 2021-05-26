@@ -68,63 +68,93 @@ Register
                                     <div id="bankTransrerColl" class="panel-collapse collapse in">
                                         <div class="panel-body">
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="text" class="col-sm-3 control-label text-darkness">Your
                                                     User Name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="user_name"
                                                         name="user_name">
+                                                    @error('user_name')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
-                                            <div class="form-group pd-none">
+
+                                            <div class="form-group pd-none register-field">
                                                 <label for="password"
                                                     class="col-sm-3 control-label text-darkness">Enter your
                                                     password</label>
                                                 <div class="col-sm-8">
                                                     <input type="password" class="form-control" id="password"
                                                         name="password">
+                                                    @error('password')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group pd-none register-field">
+                                                <label for="password"
+                                                    class="col-sm-3 control-label text-darkness">Enter confirmation
+                                                    password</label>
+                                                <div class="col-sm-8">
+                                                    <input type="password" class="form-control" id="password"
+                                                        name="password_confirmation">
+
                                                 </div>
                                             </div>
 
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="frName"
                                                     class="col-sm-3 control-label text-darkness">Your first
                                                     name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="frName"
-                                                        name="first_name">
+                                                        name="first_name"/>
+                                                    @error('first_name')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="lnName"
                                                     class="col-sm-3 control-label text-darkness">Your last
                                                     name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="lnName"
                                                         name="last_name">
+                                                    @error('last_name')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="email"
                                                     class="col-sm-3 control-label text-darkness">Enter your
                                                     email</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email"
                                                         name="email">
+                                                    @error('email')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="telephone"
                                                     class="col-sm-3 control-label text-darkness">Enter your
                                                     Telephone</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="telephone"
                                                         name="telephone">
+                                                    @error('telephone')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
@@ -144,7 +174,7 @@ Register
                                     </div>
                                     <div id="collapseTwo" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="route" class="col-sm-3 control-label text-darkness">
                                                     Address</label>
                                                 <div class="col-sm-8">
@@ -153,14 +183,14 @@ Register
                                                 </div>
                                             </div>
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="locality"
                                                     class="col-sm-3 control-label text-darkness">City</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="city" name="city">
                                                 </div>
                                             </div>
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field">
                                                 <label for="country"
                                                     class="col-sm-3 control-label text-darkness">Country</label>
                                                 <div class="col-sm-8">
@@ -169,7 +199,7 @@ Register
                                                 </div>
                                             </div>
 
-                                            <div class="form-group pd-none">
+                                            <div class="form-group pd-none register-field register-field">
                                                 <label for="telephone"
                                                     class="col-sm-3 control-label text-darkness">Telephone</label>
                                                 <div class="col-sm-8">
