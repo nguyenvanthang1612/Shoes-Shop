@@ -11,15 +11,13 @@
         <div class="row">
             <div class="login-wrapper">
                 <div class="login-inner">
-                    
-                    <div class="logo">
-                      <img src="assets/images/logo-dark.png"  alt="logo"/>
-                    </div>
-                        
-                    <form>
+
+                    <form method="POST" >
+                      @csrf
+                      
                       <label class="text-center m-b-25">Enter your email address below to reset your password</label>
                         <div class="form-group">
-                            <input type="password" class="form-control" >
+                            <input type="text" class="form-control" placeholder="Enter your email">
                         </div>
                         
                         <div class="form-group">

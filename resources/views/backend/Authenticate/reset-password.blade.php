@@ -4,7 +4,7 @@
     login
 @endsection
 
-@if ( Session::has('success') )
+{{-- @if ( Session::has('success') )
 	<div class="alert alert-success alert-dismissible" role="alert">
 		<strong>{{ Session::get('success') }}</strong>
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -12,7 +12,7 @@
 			<span class="sr-only">Close</span>
 		</button>
 	</div>
-@endif
+@endif --}}
 
 <?php //Hiển thị thông báo lỗi?>
 
@@ -29,7 +29,7 @@
  
                     <h2 class="header-title text-center">Login</h2>
 
-                    @if ( Session::has('error') )
+                    {{-- @if ( Session::has('error') )
                         <div class="alert alert-danger alert-dismissible" role="alert">
                             <strong>{{ Session::get('error') }}</strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -49,9 +49,9 @@
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
-                    @endif
+                    @endif --}}
                      
-                    <form method="post" action="{{ url('admin/auth/login') }}">
+                    <form method="post" action="#">
                         @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}"/>
@@ -62,22 +62,11 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="pull-left">
-                            <div class="checkbox primary">
-                                <input  id="checkbox-2" type="checkbox" name="remember_token">
-                                <label for="checkbox-2">Remember me</label>
-                            </div>
-                            </div>
-                            
-                            <div class="pull-right">
-                                <a href="{{ url('admin/auth/forgot-password') }}" class="a-link">
-                                    <i class="fa fa-unlock-alt"></i> Forgot password?
-                                </a>
-                            </div>
+                            <input type="password" class="form-control"  placeholder="Confirm Password" name="confirm_password" />
                         </div>
-                       
+
                         <div class="form-group">
-                            <input type="submit" value="Login" class="btn btn-primary btn-block" >
+                            <input type="submit" value="Reset" class="btn btn-primary btn-block" >
                         </div>
 
                     </form>

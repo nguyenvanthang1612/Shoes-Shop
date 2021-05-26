@@ -76,6 +76,7 @@ Route::group(['prefix' => 'admin'], function () {
         Auth::logout();
         return redirect(route('admin.login'));
     })->middleware('CheckUser');
+    Route::get('auth/forgot-password', [AdminAuthenticateController::class, 'forgotPasswordForm'])->middleware('guest');
 
     //dashboard
     Route::get('/', function () {
@@ -116,7 +117,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('product/{id}/edit', [ProductController::class, 'edit']);
     Route::put('product/{id}', [ProductController::class, 'update']);
     Route::delete('product/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
-    // search
     Route::post('product/search', [ProductController::class, 'searchAll']);
     Route::post('product/search/man', [ProductController::class, 'searchMan']);
     Route::post('product/search/woman', [ProductController::class, 'searchWoman']);

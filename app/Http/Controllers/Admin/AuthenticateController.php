@@ -54,4 +54,9 @@ class AuthenticateController extends Controller
             } 
         }
     }
+
+    public function forgotPasswordForm()
+    {
+        return view('backend.authenticate.forgot-password');
+    }
 }
