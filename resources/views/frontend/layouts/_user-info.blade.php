@@ -24,7 +24,10 @@
                     <!-- Name -->
                         <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
                         <a href='{{ url("/user/edit-page", [Auth::user()->id]) }}'>edit profile</a>
-                        <a href='{{ url("/logout") }}'>Logout</a>
+                        <a href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">Logout</a>
+                        <form class="d-inline" action="{{ route('logout') }}" id="logout-form" method="POST">
+                            @csrf
+                        </form>
                 </span>
             @endif
         </span>

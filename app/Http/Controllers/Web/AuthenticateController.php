@@ -60,4 +60,10 @@ class AuthenticateController extends Controller
             return redirect()->route('register');
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 }

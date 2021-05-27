@@ -38,7 +38,6 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/addCart/{id}', [CartController::class,'addCart']);
     Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
     //Category
-    Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('product-categories-list');
 
@@ -49,8 +48,5 @@ Route::group(['prefix' => '/'], function () {
     Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
-    Route::get('/logout', function() {
-        Auth::logout();
-        return redirect('/');
-    });
+    Route::post('/logout', [AuthenticateController::class, 'logout'])->name('logout');
 });
