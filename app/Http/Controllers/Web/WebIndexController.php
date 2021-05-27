@@ -15,11 +15,6 @@ class WebIndexController extends Controller
         return view('frontend.index');
     }
 
-    public function create()
-    {
-        return view('frontend.authenticate.register-page');
-    }
-
     public function edit()
     {
         $userData = User::findOrFail(auth()->id());
@@ -37,18 +32,6 @@ class WebIndexController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
-        $userData = array_merge($request->except(['address','city','country']), ['role' => 3]);
-        $user = User::create($userData);
-        $addressData = array_merge($request->only(['address','city','country', 'telephone']), ['user_id' => $user->id]);
-        UserAddress::create($addressData);
-
-        if($user){
-            Auth::login($user);
-            return redirect('/');
-        }
-    }
 
     public function mainUserIndex($id)
     {

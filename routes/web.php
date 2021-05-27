@@ -38,12 +38,10 @@ use Illuminate\Support\Facades\Route;
  * Frontend routes here
  */
 Route::group(['prefix' => '/'], function () {
+
     Route::get('/', [WebIndexController::class, 'index']);
     //index - register - edit
     Route::get('user/index-page/{id}',[WebIndexController::class,'mainUserIndex']);
-
-    Route::get('register-page/create', [WebIndexController::class,'create']);
-    Route::post('register-page', [WebIndexController::class,'store']);
 
     Route::get('user/edit-page/{id}', [WebIndexController::class,'edit']);
     Route::put('user/edit-page/{id}', [WebIndexController::class,'update']);
@@ -62,6 +60,9 @@ Route::group(['prefix' => '/'], function () {
     // authenticate
     Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
     Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
+    Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
+    Route::post('register', [AuthenticateController::class, 'register'])->name('register');
+
     Route::get('/logout', function() {
         Auth::logout();
         return redirect('/');
@@ -92,7 +93,7 @@ Route::group(['prefix' => 'admin'], function () {
             'clientAccount' => $clientAccount
         ]);
     })->name('admin.index')->middleware('CheckUser');
-    
+
 
     // account
     Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');

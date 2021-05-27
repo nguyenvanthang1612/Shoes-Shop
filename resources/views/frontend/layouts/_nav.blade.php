@@ -33,21 +33,20 @@
                 </form>
 
                 @if (!Auth::check())
-                <div class="btn-cols">
-
-                    <ul class="list-btn-group">
-                        <li>
-                            <a href='' data-toggle="modal" data-target="#myModal">
-                                Sign in
-                            </a>
-                        </li>
-                        <li>
-                            <a href='{{url("/register-page/create")}}'>
-                                <b>Sign up</b>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="btn-cols">
+                        <ul class="list-btn-group">
+                            <li>
+                                <a href='' data-toggle="modal" data-target="#myModal">
+                                    Sign in
+                                </a>
+                            </li>
+                            <li>
+                                <a href='{{ route('register') }}'>
+                                    <b>Sign up</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 @endif
             </div>
 
