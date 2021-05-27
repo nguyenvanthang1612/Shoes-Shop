@@ -12,12 +12,9 @@
                     </a>
                 </li>
 
-                <li><a href="#">01</a></li>
-                <li class="active"><a href="#">02</a></li>
-                <li><a href="#">03</a></li>
-                <li><a href="#">04</a></li>
-                <li><a href="#">05</a></li>
-
+                @for($i = 1; $i <= $paginator->lastPage(); $i++)
+                    <li class="{{ $paginator->currentPage() == $i ? 'active' : '' }}"><a href="{{ $paginator->url($i) }}">{{ $i }}</a></li>
+                @endfor
                 <li>
                     <a href="#">
                         <span><i class="icofont icofont-rounded-right"></i></span>

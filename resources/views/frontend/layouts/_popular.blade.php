@@ -206,7 +206,7 @@
                     <div class="col-md-8 col-lg-9 shop-items-set shop-items-full">
 
                         <!-- Paginations -->
-                        @include('frontend.layouts._pagination')
+                        {{ $products->links() }}
 
                         <!-- Item list -->
                         <div class="row item-wrapper">
@@ -345,7 +345,7 @@
 
                         </div>
 
-                        @include('frontend.layouts._pagination')
+                        {{ $products->links() }}
 
                     </div><!-- ./ Item list -->
                 </div>

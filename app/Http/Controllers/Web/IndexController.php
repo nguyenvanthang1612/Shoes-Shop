@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::oldest()->get();
+        $products = Product::oldest()->paginate(10);
         $latestProducts = $products->take(5);
         $featureProducts = $products->take(10);
         return view('frontend.index', compact('products', 'latestProducts', 'featureProducts'));
