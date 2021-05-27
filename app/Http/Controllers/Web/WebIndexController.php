@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\User;
 use App\Models\UserAddress;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class WebIndexController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $products = Product::oldest()->get();
+        return view('frontend.index', compact('products'));
     }
 
     public function edit()

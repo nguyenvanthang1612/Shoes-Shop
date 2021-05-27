@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class WebProductController extends Controller
 {
-    public function index()
-    {
-        $products = Product::oldest()->get();
-        return view('frontend.index', compact('products'));
-    }
-
     public function itemIndex($id)
     {
         $items = DB::table('products')->where('id' , $id)->get();

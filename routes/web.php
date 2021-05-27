@@ -54,8 +54,7 @@ Route::group(['prefix' => '/'], function () {
     //Category
     Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
-    Route::get('/',[WebProductController::class,'index']);
-    Route::get('products/{id}/item',[WebProductController::class,'itemIndex']);
+    Route::get('products/{id}/item', [WebProductController::class, 'itemIndex'])->name('product-item');
     Route::get('products/categories/{id}/list', [WebProductController::class, 'listIndex'])->name('product-categories-list');
     // authenticate
     Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
