@@ -45,7 +45,7 @@ class CartController extends Controller
         return view("frontend.shoppingCart.card-page-step-1");
     }
 
-    public function deleteListCart(Request $request,$id)
+    /*public function deleteListCart(Request $request,$id)
     {
            $oldCart = Session('Cart') ? Session('Cart') : null;
            $newCart = new Cart($oldCart);
@@ -55,11 +55,11 @@ class CartController extends Controller
             $request->session()->put('Cart', $newCart);
            }
            else
-           {   
+           {
             $request->session()->forget('Cart');
            }
            return view('frontend.shoppingCart.list-cart);
-    }
+    }*/
 
 
 

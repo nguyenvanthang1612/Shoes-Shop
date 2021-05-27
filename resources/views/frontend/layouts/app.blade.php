@@ -126,7 +126,7 @@
                 $("#show-total-quantity").text($("#total-quantity-cart").val());
             }
 
-            function deleteListCart(id)
+            /*function deleteListCart(id)
             {
                 $.ajax({
                     url: 'deleteCart/'+id,
@@ -142,7 +142,7 @@
             {
                 $("#list-cart").empty();
                 $("#list-cart").html(response);
-            }
+            }*/
 
         </script>
 

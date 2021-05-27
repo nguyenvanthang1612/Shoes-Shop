@@ -40,7 +40,7 @@
 
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src='{{ asset('storage/backend/product/'.$product->img) }}' alt="" >
+                                           <img src='https://vehoathinhcartoon.com/wp-content/uploads/2020/11/9-cau-thoai-cua-Batman-khien-ke-thu-phai-run-so-vehoathinhcartoon.png' alt="" >
                                        </div>
 
                                        <!-- Badge -->
