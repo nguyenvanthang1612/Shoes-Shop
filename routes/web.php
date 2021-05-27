@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * Frontend routes here
  */
-Route::group(['prefix' => '/'], function () {
+Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
