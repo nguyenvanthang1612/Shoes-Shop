@@ -9,6 +9,6 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-        return view('frontend.product.shop-item', compact('product'));
+        return view('frontend.product.show', compact('product'));
     }
 }

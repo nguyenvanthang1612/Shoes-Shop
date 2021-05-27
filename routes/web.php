@@ -1,14 +1,11 @@
 <?php
 
 use App\Http\Controllers\Web\AuthenticateController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
-use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +22,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
 
-    Route::get('/', [IndexController::class, 'index']);
+    Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
     Route::get('user/index-page/{id}', [IndexController::class, 'mainUserIndex']);
 
@@ -38,9 +35,8 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/addCart/{id}', [CartController::class,'addCart']);
     Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
     //Category
-    Route::get('categories/{id}/shop-list', [WebCategoryController::class,'index']);
     //Product
-    Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('product-categories-list');
+    Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
 
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
@@ -49,8 +45,5 @@ Route::group(['prefix' => '/'], function () {
     Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
-    Route::get('/logout', function() {
-        Auth::logout();
-        return redirect('/');
-    });
+    Route::post('/logout', [AuthenticateController::class, 'logout'])->name('logout');
 });

@@ -51,9 +51,9 @@
             </div>
 
             {{-- Authentication information --}}
-            @include('frontend.layouts._info')
+            @include('frontend.layouts._user-info')
 
-
+            {{-- Nav bar --}}
             <ul class="nav navbar-nav">
                 <li class="active">
                     <a href="{{ url('/') }}">
@@ -66,8 +66,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         @foreach($categories as $category)
-                        <li><a
-                                href='{{ route('product-categories-list', $category->id) }}'>{{$category->name_category}}</a>
+                        <li>
+                            <a href='{{ route('frontend.category-product.index', $category->id) }}'>{{$category->name_category}}</a>
                         </li>
                         @endforeach
                     </ul>

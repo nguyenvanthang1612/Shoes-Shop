@@ -32,7 +32,7 @@
                             <!--
                             MAIN INFO
                             =============================================== -->
-                            @foreach($items as $item)
+
                             <div class="row shop-item-page">
 
                                 <!-- ITEM GALLERY BLOCK -->
@@ -42,7 +42,7 @@
                                         <div class="owl-carousel image">
 
                                             <div class="item">
-                                                <img src="{{$item->img}}" alt="">
+                                                <img src="{{$product->img}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -57,12 +57,12 @@
                                         <div class="col-md-7">
 
                                             <h1 class="comp-header st-12 text-uppercase text-blue">
-                                            {{$item->name}}
+                                            {{$product->name}}
                                                 <span class="text-dark">
 
                                                 </span>
                                                 <span class="text-dark">
-                                                {{$item->brand}}
+                                                {{$product->brand}}
                                                 </span>
                                             </h1>
                                         </div>
@@ -90,7 +90,7 @@
 
                                                     <!-- Currency -->
                                                     <span class="curr">$</span>
-                                                    {{$item->price}}<small>.00</small>
+                                                    {{$product->price}}<small>.00</small>
                                                 </span>
                                             </span>
 
@@ -120,7 +120,7 @@
 
                                             <!-- Size panel -->
                                             <ul class="size-panel">
-                                                <li>{{$item->size}}</li>
+                                                <li>{{$product->size}}</li>
 
                                             </ul>
                                         </div>
@@ -157,7 +157,7 @@
                                             </h2>
 
                                             <p>
-                                                {{$item->desc}}
+                                                {{$product->desc}}
                                             </p>
 
                                             <dl class="dl-horizontal terms">
@@ -195,7 +195,6 @@
                                 </div><!-- / CAPTION BLOCK -->
 
                             </div>
-                            @endforeach
                             <!-- END: MAIN INFO -->
 
                             <!--
@@ -207,31 +206,23 @@
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs hidden-xs" role="tablist">
                                         <li role="presentation" class="active">
-                                            <a href="#description"
-                                               data-toggle="tab">Description</a>
+                                            <a href="#description" data-toggle="tab">Description</a>
                                         </li>
 
                                         <li role="presentation">
-                                            <a href="#comments"
-                                               data-toggle="tab">Comments</a>
+                                            <a href="#comments" data-toggle="tab">Comments</a>
                                         </li>
                                     </ul>
 
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active description" id="description">
-
-                                            <p>
-                                               {{$item->desc}}
-                                            </p>
+                                            <p>{{$product->desc}}</p>
                                         </div>
+                                        {{-- Comments --}}
                                         <div role="tabpanel" class="tab-pane comments" id="comments">
-
-                                            <!-- Header -->
-                                            <h3 class="header">Comments</h3>
-
                                             <!-- Comments -->
-                                            <ul class="media-list">
+                                            {{-- <ul class="media-list">
 
                                                 <!-- 1 comments -->
                                                 <li class="media">
@@ -319,77 +310,9 @@
 
                                                     </div>
                                                 </li>
-                                            </ul>
+                                            </ul> --}}
 
-                                            <!-- Paginations -->
-                                            <div class="row pagination-wrap">
-                                                <div class="col-sm-11 col-sm-offset-1">
-                                                    <ul class="pagination">
-                                                        <li>
-                                                            <a href="#" aria-label="Previous">
-                                                                <i class="icofont icofont-curved-left"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li><a href="#">01</a></li>
-                                                        <li class="active"><a href="#">02</a></li>
-                                                        <li><a href="#">03</a></li>
-                                                        <li><a href="#">04</a></li>
-                                                        <li><a href="#">05</a></li>
-                                                        <li>
-                                                            <a href="#" aria-label="Next">
-                                                                <i class="icofont icofont-curved-right"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <!-- Form -->
-                                            <div class="add-comment">
-
-                                                <!-- Header -->
-                                                <h3 class="header">Add new comments</h3>
-
-                                                <form class="form-horizontal">
-
-                                                    <div class="form-group">
-                                                        <label for="inputName" class="col-sm-3 control-label">Enter your name</label>
-                                                        <div class="col-sm-7">
-                                                            <input type="text" class="form-control" id="inputName">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="inputText" class="col-sm-3 control-label">Enter your message</label>
-                                                        <div class="col-sm-7">
-                                                            <textarea class="form-control" id="inputText" cols="30" rows="3"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="col-sm-offset-3 col-sm-7">
-                                                            <div class="checkbox">
-                                                                <input type="checkbox" id="inputCheckBox1">
-                                                                <label for="inputCheckBox1">
-                                                                    <span class="checkbox-input">
-                                                                        <span class="off">off</span>
-                                                                        <span class="on">on</span>
-                                                                    </span>
-                                                                    get an answer to email
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="col-sm-offset-3 col-sm-7">
-                                                            <button type="submit" class="btn btn-primary btn-material">
-                                                                <span class="body">Send message</span>
-                                                                <i class="icon icofont icofont-check-circled"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                            <div class="fb-comments" data-href="{{ route('frontend.product.show', $product->id) }}" data-width="100%" data-numposts="5"></div>
                                         </div>
                                     </div>
 
@@ -405,25 +328,7 @@
 
 
                             <!-- Asside nav -->
-                            <div class="asside-nav bg-white hidden-xs">
-                                <div class="header text-uppercase text-white bg-blue">
-                                    Category
-                                </div>
-
-                                <ul class="nav-vrt bg-white">
-                                @foreach($categories as $category)
-                                    <li class="active">
-                                        <a href="#" class="btn-material">{{$category-> name_category}}
-                                            <i class="nav-icon-open icofont icofont-plus"></i>
-                                            <i class="nav-icon-close icofont icofont-minus"></i>
-                                        </a>
-                                    </li>
-                                @endforeach
-
-
-                                </ul>
-
-                            </div><!-- / Asside nav -->
+                            @include('frontend.layouts._category-sidenav')
 
                             <!-- Block tags -->
                             <div class="inblock padding-none hidden-xs">

@@ -25,8 +25,7 @@
 
                                     <!-- Shop item 1 / timer -->
                                     @foreach($products as $product)
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer"
-                                         data-timer-date="2018, 2, 5, 0, 0, 0">
+                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer" data-timer-date="2018, 2, 5, 0, 0, 0">
 
                                         <div class="wrap">
 
@@ -153,7 +152,7 @@
                                                 </a>
 
                                                 <!-- More link -->
-                                                <a href='{{  url("products/$product->id/item") }}' class="more-link">More info</a>
+                                                <a href='{{ route('frontend.product.show', $product->id) }}' class="more-link">More info</a>
                                             </div>
                                         </div>
                                     </div>
@@ -242,24 +241,7 @@
                                     </div>
                                 </div><!-- Block setup -->
 
-                                <!-- Asside nav -->
-                                <div class="asside-nav bg-white hidden-xs">
-                                    <div class="header text-uppercase text-white bg-blue">
-                                        Category
-                                    </div>
-
-                                    <ul class="nav-vrt bg-white">
-                                    @foreach($categories as $category)
-                                        <li class="active">
-                                            <a href="#" class="btn-material">{{$category->name_category}}
-                                                <i class="nav-icon-open icofont icofont-plus"></i>
-                                                <i class="nav-icon-close icofont icofont-minus"></i>
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                    </ul>
-
-                                </div><!-- / Asside nav -->
+                                @include('frontend.layouts._category-sidenav')
 
                                 <!-- Block tags -->
                                 <div class="inblock padding-none hidden-xs">
