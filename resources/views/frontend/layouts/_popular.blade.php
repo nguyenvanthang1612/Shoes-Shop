@@ -90,18 +90,10 @@
                             <ul class="nav-vrt bg-white">
                             @foreach($categories as $category)
                                 <li class="active">
-                                    <a href="#" class="btn-material">{{$category->name_category}}
+                                    <a href="{{ route('product-categories-list', $category->id) }}" class="btn-material">{{$category->name_category}}
                                         <i class="nav-icon-open icofont icofont-plus"></i>
                                         <i class="nav-icon-close icofont icofont-minus"></i>
                                     </a>
-
-                                    <div class="sub-nav bg-grey-light">
-                                        <ul class="sub">
-                                            <li>
-                                                <a href="#" class="btn-material">{{$category->brand}}</a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </li>
                             @endforeach
 
