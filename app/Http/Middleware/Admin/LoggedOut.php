@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware\Admin;
 
+use App\Constants;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckLogout
+class LoggedOut
 {
     /**
      * Handle an incoming request.
