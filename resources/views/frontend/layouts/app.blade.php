@@ -34,17 +34,23 @@
             .navbar-default .navbar-nav ul.dropdown-menu {
                 padding-bottom: 0;
             }
+
+            .auth-form {
+                padding-bottom: 80px;
+                margin: 0;
+            }
+
+            .register-field {
+                margin-bottom: 25px !important;
+            }
+
+            .shop-item .comp-header {
+                z-index: 3;
+            }
         </style>
     </head>
 
     <body>
-        <!--
-        PRELOADER
-        =============================================== -->
-        <div class="preloader">
-            <img src="{{ asset('frontend/images/preloader.gif') }}" alt="">
-        </div>
-        <!-- END: PRELOADER -->
 
         <!--
         NAVBAR
@@ -105,6 +111,39 @@
             });
         });
         </script>
+        <script>
+            function addCart(id)
+            {
+                $.ajax({
+                    url: 'addCart/'+id,
+                    type: 'GET',
+                }).done(function(response)
+                {
+                    console.log(response);
+                    renderCart(response);
+                    alertify.success("Đã thêm sản phẩm mới");
+                });
+            }
+
+            $(document).on("click",".remove-btn" , function(){
+                    //<span data-idcart="2"></span>
+                    $.ajax({
+                    url:'deleteItemCart/'+$(this).attr("data-idCart"),
+                    type:'GET',
+                }).done(function(respone) {
+                    $("#change-item-cart").empty();
+                    $("#change-item-cart").html(response);
+                    alertify.success('Đã xoá thành công sản phẩm');
+                });
+            });
+
+            function renderCart(response)
+            {
+                $("#change-item-cart").empty();
+                $("#change-item-cart").html(response);
+            }
+        </script>
+
         @stack('js')
     </body>
 </html>

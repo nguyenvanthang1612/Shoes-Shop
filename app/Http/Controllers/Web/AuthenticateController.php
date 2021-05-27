@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\UserAddress;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class AuthenticateController extends Controller
 {
@@ -28,6 +29,35 @@ class AuthenticateController extends Controller
             else{
                 return response()->json(['message' => 'Đăng nhập thất bại'], 500);
             }
+        }
+    }
+
+    public function showRegisterForm()
+    {
+        return view('frontend.authenticate.register-page');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate(
+            [
+                'user_name' => 'required',
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'email' => 'required|unique:users,email',
+                'password' => 'required|confirmed',
+                'telephone' => 'required|unique:user_address,telephone',
+            ]
+        );
+
+        $userData = array_merge($request->except(['address', 'city', 'country']), ['role' => 3]);
+        $user = User::create($userData);
+        $addressData = array_merge($request->only(['address', 'city', 'country', 'telephone']), ['user_id' => $user->id]);
+        UserAddress::create($addressData);
+
+        if ($user) {
+            Auth::login($user);
+            return redirect()->route('register');
         }
     }
 }

@@ -5,31 +5,28 @@
         <span class="wrap">
 
             <!-- Image -->
-            <span class="image bg-white">
+            @if(Auth::check())
+                <span class="image bg-white">
 
-                <!-- New message badge -->
-                <span class="badge bg-blue hidden-xs hidden-sm"></span>
+                    <!-- New message badge -->
+                    <span class="badge bg-blue hidden-xs hidden-sm"></span>
 
-                @if(Auth::check())
-                <span class="icon">
-                    <a href='{{ url("/user/index-page", [Auth::user()->id]) }}'><i
-                            class="icofont icofont-user-alt-4 text-blue"></i></a>
+                        <span class="icon">
+                            <a href='{{ url("/user/index-page", [Auth::user()->id]) }}'><i
+                                    class="icofont icofont-user-alt-4 text-blue"></i></a>
+                        </span>
+
+                    <!--img src="images/profile/profile-img.jpg" alt=""-->
                 </span>
-                @endif
 
-                <!--img src="images/profile/profile-img.jpg" alt=""-->
-            </span>
-
-            <!-- Info -->
-            <span class="info">
-                <!-- Name -->
-                @if(Auth::check())
-                <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
-                <a href='{{ url("/user/edit-page", [Auth::user()->id]) }}'>edit profile</a>
-                <a href='{{ url("/logout") }}'>Logout</a>
-
-                @endif
-            </span>
+                <!-- Info -->
+                <span class="info">
+                    <!-- Name -->
+                        <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
+                        <a href='{{ url("/user/edit-page", [Auth::user()->id]) }}'>edit profile</a>
+                        <a href='{{ url("/logout") }}'>Logout</a>
+                </span>
+            @endif
         </span>
     </li>
 

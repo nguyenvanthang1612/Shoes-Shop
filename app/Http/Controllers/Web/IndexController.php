@@ -1,23 +1,21 @@
 <?php
 namespace App\Http\Controllers\Web;
+
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\User;
 use App\Models\UserAddress;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Console\Input\Input;
 
-class WebIndexController extends Controller
+class IndexController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
-    }
-
-    public function create()
-    {
-        return view('frontend.authenticate.register-page');
+        $products = Product::oldest()->paginate(10);
+        $latestProducts = $products->take(5);
+        $featureProducts = $products->take(10);
+        return view('frontend.index', compact('products', 'latestProducts', 'featureProducts'));
     }
 
     public function edit()
@@ -37,18 +35,6 @@ class WebIndexController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
-        $userData = array_merge($request->except(['address','city','country']), ['role' => 3]);
-        $user = User::create($userData);
-        $addressData = array_merge($request->only(['address','city','country', 'telephone']), ['user_id' => $user->id]);
-        UserAddress::create($addressData);
-
-        if($user){
-            Auth::login($user);
-            return redirect('/');
-        }
-    }
 
     public function mainUserIndex($id)
     {
@@ -73,7 +59,6 @@ class WebIndexController extends Controller
         if($userAddressData ){
             return redirect("/");
         }
-
     }
 
 

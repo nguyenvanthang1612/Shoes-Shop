@@ -33,28 +33,25 @@
                 </form>
 
                 @if (!Auth::check())
-                <div class="btn-cols">
-
-                    <ul class="list-btn-group">
-                        <li>
-                            <a href='' data-toggle="modal" data-target="#myModal">
-                                Sign in
-                            </a>
-                        </li>
-                        <li>
-                            <a href='{{url("/register-page/create")}}'>
-                                <b>Sign up</b>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="btn-cols">
+                        <ul class="list-btn-group">
+                            <li>
+                                <a href='' data-toggle="modal" data-target="#myModal">
+                                    Sign in
+                                </a>
+                            </li>
+                            <li>
+                                <a href='{{ route('register') }}'>
+                                    <b>Sign up</b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 @endif
             </div>
 
             {{-- Authentication information --}}
-            @if (Auth::check())
-                @include('frontend.layouts._nav')
-            @endif
+            @include('frontend.layouts._info')
 
 
             <ul class="nav navbar-nav">
@@ -70,7 +67,7 @@
                     <ul class="dropdown-menu">
                         @foreach($categories as $category)
                         <li><a
-                                href='{{url("/products/categories/$category->id/list")}}'>{{$category->name_category}}</a>
+                                href='{{ route('product-categories-list', $category->id) }}'>{{$category->name_category}}</a>
                         </li>
                         @endforeach
                     </ul>
