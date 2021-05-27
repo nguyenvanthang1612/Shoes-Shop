@@ -27,42 +27,32 @@
             <div class="login-wrapper">
                 <div class="login-inner">
  
-                    <h2 class="header-title text-center">Login</h2>
-
-                    {{-- @if ( Session::has('error') )
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                            <strong>{{ Session::get('error') }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                              <span class="sr-only">Close</span>
-                            </button>
-                        </div>
-                    @endif
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger alert-dismissible" role="alert">
-                                @foreach ($errors->all() as $error)
-                                    <strong>{{ $error }}</strong>
-                                @endforeach
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true" style="display: flex; align-items: flex-end; justify-content: center">&times;</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                        </div>
-                    @endif --}}
+                    <h2 class="header-title text-center">Reset Password</h2>
                      
-                    <form method="post" action="#">
+                    <form method="POST" action='{{ url("admin/auth/reset-password") }}'>
                         @csrf
+
+                        <input type="hidden" name="token" value="{{ $token }}">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}"/>
+                            <input type="text" class="form-control" placeholder="Email" name="email" value="{{ $email ?? old('email') }}"/>
                         </div>
                         
                         <div class="form-group">
                             <input type="password" class="form-control"  placeholder="Password" name="password" />
+                            @error('password')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <input type="password" class="form-control"  placeholder="Confirm Password" name="confirm_password" />
+                            @error('confirm_password')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-group">

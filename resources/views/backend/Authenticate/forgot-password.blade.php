@@ -12,12 +12,24 @@
             <div class="login-wrapper">
                 <div class="login-inner">
 
-                    <form method="POST" >
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ url('admin/auth/forgot-password') }}">
                       @csrf
                       
+                      {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
                       <label class="text-center m-b-25">Enter your email address below to reset your password</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter your email">
+                            <input type="text" class="form-control" placeholder="Enter your email" name="email">
+                            @error('email')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         
                         <div class="form-group">

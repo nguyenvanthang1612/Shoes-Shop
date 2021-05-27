@@ -68,6 +68,8 @@ Route::group(['prefix' => '/'], function () {
     });
 
 });
+
+
 /**
  * Admin route here (Backend)
  */
@@ -81,6 +83,9 @@ Route::group(['prefix' => 'admin'], function () {
         return redirect(route('admin.login'));
     })->middleware('CheckUser');
     Route::get('auth/forgot-password', [AdminAuthenticateController::class, 'forgotPasswordForm'])->middleware('guest');
+    Route::post('auth/forgot-password', [AdminAuthenticateController::class, 'forgotPassword'])->middleware('guest');
+    Route::get('auth/reset-password/{token}', [AdminAuthenticateController::class, 'resetPasswordForm'])->middleware('guest');
+    Route::post('auth/reset-password', [AdminAuthenticateController::class, 'resetPassword'])->middleware('guest');
 
     //dashboard
     Route::get('/', function () {
@@ -94,7 +99,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]);
     })->name('admin.index')->middleware('CheckUser');
     
-
     // account
     Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
     Route::get('account/client_management', [AccountController::class, 'clientIndex']);

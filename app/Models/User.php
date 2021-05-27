@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Notifications\ResetPasswordNotification;
 
 class User extends Authenticatable
 {
@@ -59,6 +60,13 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $url = 'https://localhost/SneakerStore_ITPLUS/public/admin/auth/reset-password?token='.$token;
+
+        $this->notify(new ResetPasswordNotification($url));
     }
 
 }
