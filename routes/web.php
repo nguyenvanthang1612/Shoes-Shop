@@ -7,10 +7,9 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\WebCategoryController;
-use App\Http\Controllers\Web\WebIndexController;
+use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
 
@@ -39,15 +38,15 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
 
-    Route::get('/', [WebIndexController::class, 'index']);
+    Route::get('/', [IndexController::class, 'index']);
     //index - register - edit
-    Route::get('user/index-page/{id}',[WebIndexController::class,'mainUserIndex']);
+    Route::get('user/index-page/{id}', [IndexController::class, 'mainUserIndex']);
 
-    Route::get('user/edit-page/{id}', [WebIndexController::class,'edit']);
-    Route::put('user/edit-page/{id}', [WebIndexController::class,'update']);
+    Route::get('user/edit-page/{id}', [IndexController::class, 'edit']);
+    Route::put('user/edit-page/{id}', [IndexController::class, 'update']);
 
-    Route::get('user/address-edit-page/{id}', [WebIndexController::class,'addressEdit']);
-    Route::put('user/address-edit-page/{id}', [WebIndexController::class,'addressUpdate']);
+    Route::get('user/address-edit-page/{id}', [IndexController::class, 'addressEdit']);
+    Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);
     //Cart
     Route::get('/addCart/{id}', [CartController::class,'addCart']);
     Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);

@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 
-class WebIndexController extends Controller
+class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::oldest()->get();
+        $products = Product::oldest()->take(5)->get();
         return view('frontend.index', compact('products'));
     }
 
