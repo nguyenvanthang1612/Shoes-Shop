@@ -39,7 +39,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
     //Category
     //Product
-    Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('product-categories-list');
+    Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
 
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate

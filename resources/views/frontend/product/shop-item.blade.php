@@ -32,7 +32,7 @@
                             <!--
                             MAIN INFO
                             =============================================== -->
-                            @foreach($items as $item)
+
                             <div class="row shop-item-page">
 
                                 <!-- ITEM GALLERY BLOCK -->
@@ -42,7 +42,7 @@
                                         <div class="owl-carousel image">
 
                                             <div class="item">
-                                                <img src="{{$item->img}}" alt="">
+                                                <img src="{{$product->img}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -57,12 +57,12 @@
                                         <div class="col-md-7">
 
                                             <h1 class="comp-header st-12 text-uppercase text-blue">
-                                            {{$item->name}}
+                                            {{$product->name}}
                                                 <span class="text-dark">
 
                                                 </span>
                                                 <span class="text-dark">
-                                                {{$item->brand}}
+                                                {{$product->brand}}
                                                 </span>
                                             </h1>
                                         </div>
@@ -90,7 +90,7 @@
 
                                                     <!-- Currency -->
                                                     <span class="curr">$</span>
-                                                    {{$item->price}}<small>.00</small>
+                                                    {{$product->price}}<small>.00</small>
                                                 </span>
                                             </span>
 
@@ -120,7 +120,7 @@
 
                                             <!-- Size panel -->
                                             <ul class="size-panel">
-                                                <li>{{$item->size}}</li>
+                                                <li>{{$product->size}}</li>
 
                                             </ul>
                                         </div>
@@ -157,7 +157,7 @@
                                             </h2>
 
                                             <p>
-                                                {{$item->desc}}
+                                                {{$product->desc}}
                                             </p>
 
                                             <dl class="dl-horizontal terms">
@@ -195,7 +195,6 @@
                                 </div><!-- / CAPTION BLOCK -->
 
                             </div>
-                            @endforeach
                             <!-- END: MAIN INFO -->
 
                             <!--
@@ -222,7 +221,7 @@
                                         <div role="tabpanel" class="tab-pane active description" id="description">
 
                                             <p>
-                                               {{$item->desc}}
+                                               {{$product->desc}}
                                             </p>
                                         </div>
                                         <div role="tabpanel" class="tab-pane comments" id="comments">

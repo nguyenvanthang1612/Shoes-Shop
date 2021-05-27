@@ -152,7 +152,7 @@
                                                 </a>
 
                                                 <!-- More link -->
-                                                <a href='{{  url("products/$product->id/item") }}' class="more-link">More info</a>
+                                                <a href='{{ route('frontend.product.show', $product->id) }}' class="more-link">More info</a>
                                             </div>
                                         </div>
                                     </div>
