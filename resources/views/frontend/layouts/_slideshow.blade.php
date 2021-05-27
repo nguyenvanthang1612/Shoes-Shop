@@ -3,7 +3,7 @@
                 <div class="clearfix">
                     <div class="owl-carousel slideshow">
                         <!-- Item -->
-                        @foreach($products as $product)
+                        @foreach($latestProducts as $product)
                         <div class="item">
                             <div class="container">
                                 <div class="row">

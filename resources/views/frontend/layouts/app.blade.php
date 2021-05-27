@@ -43,6 +43,10 @@
             .register-field {
                 margin-bottom: 25px !important;
             }
+
+            .shop-item .comp-header {
+                z-index: 3;
+            }
         </style>
     </head>
 
@@ -114,7 +118,6 @@
             });
         });
         </script>
-<<<<<<< HEAD
         <script>
             function addCart(id)
             {
@@ -127,9 +130,6 @@
                     renderCart(response);
                     alertify.success("Đã thêm sản phẩm mới");
                 });
-
-
-
             }
 
             $(document).on("click",".remove-btn" , function(){
@@ -148,12 +148,9 @@
             {
                 $("#change-item-cart").empty();
                 $("#change-item-cart").html(response);
-
-
             }
         </script>
-=======
+
         @stack('js')
->>>>>>> b7042c6f6dbd3d18903b7fc9056127eff9ae1fc3
     </body>
 </html>

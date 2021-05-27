@@ -90,9 +90,8 @@
                             <ul class="nav-vrt bg-white">
                             @foreach($categories as $category)
                                 <li class="active">
-                                    <a href="{{ route('product-categories-list', $category->id) }}" class="btn-material">{{$category->name_category}}
-                                        <i class="nav-icon-open icofont icofont-plus"></i>
-                                        <i class="nav-icon-close icofont icofont-minus"></i>
+                                    <a href="{{ route('product-categories-list', $category->id) }}" class="btn-material">
+                                        {{$category->name_category}}
                                     </a>
                                 </li>
                             @endforeach
@@ -101,30 +100,6 @@
                             </ul>
 
                         </div><!-- / Asside nav -->
-
-                        <!-- Block tags -->
-                        <div class="inblock padding-none hidden-xs">
-
-                            <div class="wrap">
-
-                                <!-- Header -->
-                                <h3 class="header text-uppercase">Tags</h3>
-
-                                <!-- Tags list -->
-                                <ul class="tags">
-                                    <li><a href="#">e-shop</a></li>
-                                    <li><a href="#">Bootstrap</a></li>
-                                    <li><a href="#">Material</a></li>
-                                    <li><a href="#">SEO</a></li>
-                                    <li><a href="#">WordPress</a></li>
-                                    <li><a href="#">Drupal</a></li>
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Web Design</a></li>
-                                    <li><a href="#">Main Blog</a></li>
-                                    <li><a href="#">Landing Page</a></li>
-                                </ul>
-                            </div>
-                        </div><!-- Block tags -->
 
                         <!-- List categories for mobile -->
                         <div class="inblock padding-none visible-xs">
@@ -231,51 +206,7 @@
                     <div class="col-md-8 col-lg-9 shop-items-set shop-items-full">
 
                         <!-- Paginations -->
-                        <div class="row pagination-block hidden-xs">
-                            <div class="col-xs-12">
-
-                                <div class="wrap">
-
-                                    <!-- Pagination -->
-                                    <ul class="pagination">
-
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="icofont icofont-rounded-left"></i></span>
-                                            </a>
-                                        </li>
-
-                                        <li><a href="#">01</a></li>
-                                        <li class="active"><a href="#">02</a></li>
-                                        <li><a href="#">03</a></li>
-                                        <li><a href="#">04</a></li>
-                                        <li><a href="#">05</a></li>
-
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="icofont icofont-rounded-right"></i></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-                                    <!-- Switch style on shop item -->
-                                    <ul class="swither">
-                                        <li class="cols">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </li>
-                                        <li class="rows active">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
+                        @include('frontend.layouts._pagination')
 
                         <!-- Item list -->
                         <div class="row item-wrapper">
@@ -291,10 +222,7 @@
                                         <!-- Header -->
                                         <div class="comp-header st-4 text-uppercase">
 
-                                            {{$product->category->name_category}}
-                                            <span>
-                                                {{$product->name}}
-                                            </span>
+                                            <a href="{{ route('product-item', $product->id) }}">{{$product->name}}</a>
 
                                             <!-- Rate -->
                                             <div class="rate">
@@ -328,30 +256,18 @@
 
                                         <!-- Image -->
                                         <div class="image">
-
-                                            <img style="width:253px;height:347px " class="main" src='{{$product->img}}' alt="">
+                                            <img class="main" src='{{$product->img}}' alt="">
                                         </div>
 
                                         <!-- Caption -->
                                         <div class="caption">
                                             <!-- Rate -->
                                             <div class="rate">
-
-
-
                                                 <div class="rate-info">
                                                     BRAND
                                                     <span>{{$product->brand}}</span>
                                                 </div>
                                             </div>
-
-                                            <!-- Timer -->
-                                            <div class="timer-body">
-                                                <span class="sale text-red">Size</span>
-                                                <span class="tdtimer-d"></span>{{$product->size}}
-
-                                            </div>
-
                                             <!-- Features list -->
                                             <ul class="features">
                                                 <li>
@@ -429,52 +345,7 @@
 
                         </div>
 
-                        <!-- Paginations -->
-                        <div class="row pagination-block bottom">
-                            <div class="col-xs-12">
-
-                                <div class="wrap">
-
-                                    <!-- Pagination -->
-                                    <ul class="pagination">
-
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="icofont icofont-rounded-left"></i></span>
-                                            </a>
-                                        </li>
-
-                                        <li><a href="#">01</a></li>
-                                        <li class="active"><a href="#">02</a></li>
-                                        <li><a href="#">03</a></li>
-                                        <li><a href="#">04</a></li>
-                                        <li><a href="#">05</a></li>
-
-                                        <li>
-                                            <a href="#">
-                                                <span><i class="icofont icofont-rounded-right"></i></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-                                    <!-- Switch style on shop item -->
-                                    <ul class="swither">
-                                        <li class="cols">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </li>
-                                        <li class="rows active">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
+                        @include('frontend.layouts._pagination')
 
                     </div><!-- ./ Item list -->
                 </div>

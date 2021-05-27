@@ -2,7 +2,6 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Web\AuthenticateController;
@@ -10,16 +9,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\IndexController;
-use App\Http\Controllers\Web\RegisterController;
 use App\Http\Controllers\Web\WebProductController;
 
 use App\Http\Controllers\Web\WebUserAddressController;
 
 use App\Http\Middleware\Admin\CheckUser;
 
-use Illuminate\Routing\RouteAction;
 use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*

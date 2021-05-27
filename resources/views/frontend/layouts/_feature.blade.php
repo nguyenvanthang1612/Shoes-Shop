@@ -18,7 +18,7 @@
                     <div class="owl-carousel owl-default features nav-top-left">
 
                         <!-- Shop item 1 / timer -->
-                        @foreach($products as $product)
+                        @foreach($featureProducts as $product)
                         <div class="shop-item hover-sdw timer" data-timer-date="2018, 2, 5, 0, 0, 0">
 
                             <div class="wrap">

@@ -13,8 +13,10 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::oldest()->take(5)->get();
-        return view('frontend.index', compact('products'));
+        $products = Product::oldest()->get();
+        $latestProducts = $products->take(5);
+        $featureProducts = $products->take(10);
+        return view('frontend.index', compact('products', 'latestProducts', 'featureProducts'));
     }
 
     public function edit()
@@ -58,7 +60,6 @@ class IndexController extends Controller
         if($userAddressData ){
             return redirect("/");
         }
-
     }
 
 
