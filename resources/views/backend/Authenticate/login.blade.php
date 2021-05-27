@@ -70,7 +70,7 @@
                             </div>
                             
                             <div class="pull-right">
-                                <a href="reset-password.html" class="a-link">
+                                <a href="{{ url('admin/auth/forgot-password') }}" class="a-link">
                                     <i class="fa fa-unlock-alt"></i> Forgot password?
                                 </a>
                             </div>

@@ -11,15 +11,25 @@
         <div class="row">
             <div class="login-wrapper">
                 <div class="login-inner">
-                    
-                    <div class="logo">
-                      <img src="assets/images/logo-dark.png"  alt="logo"/>
-                    </div>
-                        
-                    <form>
+
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ url('admin/auth/forgot-password') }}">
+                      @csrf
+                      
+                      {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
                       <label class="text-center m-b-25">Enter your email address below to reset your password</label>
                         <div class="form-group">
-                            <input type="password" class="form-control" >
+                            <input type="text" class="form-control" placeholder="Enter your email" name="email">
+                            @error('email')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         
                         <div class="form-group">
