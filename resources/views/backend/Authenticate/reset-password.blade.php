@@ -1,7 +1,7 @@
 @extends('backend.Authenticate.layouts.app')
 
 @section('title')
-    login
+    Reset Password
 @endsection
 
 {{-- @if ( Session::has('success') )

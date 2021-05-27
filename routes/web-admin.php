@@ -44,9 +44,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 
         // account
-        Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
+        Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('superadmin');
         Route::get('account/client_management', [AccountController::class, 'clientIndex']);
-        Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('CheckPermission');
+        Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('superadmin');
         Route::post('account/create_account', [AccountController::class, 'createAccountAdmin']);
         Route::put('account/admin_management', [AccountController::class, 'upload']);
         Route::get('account/edit', [AccountController::class, 'edit']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ResetPassword;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
@@ -93,7 +94,7 @@ class AuthenticateController extends Controller
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:10',
+            'password' => 'required',
             'confirm_password' => 'required|same:password'
         ]);
     
@@ -109,7 +110,9 @@ class AuthenticateController extends Controller
                 event(new PasswordReset($user));
             }
         );
-    
+
+        $email = ResetPassword::findWhere('email', 'email_from_token');
+
         return $status == Password::PASSWORD_RESET
                     ? redirect()->route('admin.login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);

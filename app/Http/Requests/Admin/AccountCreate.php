@@ -29,7 +29,7 @@ class AccountCreate extends FormRequest
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:10',
+            'password' => 'required',
             'telephone' => ['required', 'numeric', new PhoneNumberRule],
             'avatar' => 'required|image'
         ];
