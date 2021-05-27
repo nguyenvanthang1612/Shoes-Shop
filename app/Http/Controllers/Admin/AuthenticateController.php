@@ -111,8 +111,6 @@ class AuthenticateController extends Controller
             }
         );
 
-        $email = ResetPassword::findWhere('email', 'email_from_token');
-
         return $status == Password::PASSWORD_RESET
                     ? redirect()->route('admin.login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);

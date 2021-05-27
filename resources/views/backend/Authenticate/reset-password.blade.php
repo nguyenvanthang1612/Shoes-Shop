@@ -29,14 +29,11 @@
  
                     <h2 class="header-title text-center">Reset Password</h2>
                      
-                    <form method="POST" action='{{ url("admin/auth/reset-password") }}'>
+                    <form method="POST" action='{{ url("admin/auth/reset-password/$token") }}'>
                         @method('PUT')
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email" name="email" value="{{ $email ?? old('email') }}"/>
-                        </div>
                         
                         <div class="form-group">
                             <input type="password" class="form-control"  placeholder="Password" name="password" />

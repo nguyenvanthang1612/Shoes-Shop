@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('auth/forgot-password', [AuthenticateController::class, 'forgotPasswordForm'])->middleware('guest');
     Route::post('auth/forgot-password', [AuthenticateController::class, 'forgotPassword'])->middleware('guest');
     Route::get('auth/reset-password/{token}', [AuthenticateController::class, 'resetPasswordForm'])->middleware('guest');
-    Route::put('auth/reset-password', [AuthenticateController::class, 'resetPassword'])->middleware('guest');
+    Route::put('auth/reset-password/{token}', [AuthenticateController::class, 'resetPassword'])->middleware('guest');
 
     Route::group(['middleware' => 'authenticated-as-admin'], function () {
         Route::get('auth/logout', function () {
