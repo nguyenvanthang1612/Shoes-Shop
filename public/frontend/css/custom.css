@@ -1,0 +1,30 @@
+.navbar-default .navbar-nav ul.dropdown-menu {
+    padding-bottom: 0;
+}
+
+.auth-form {
+    padding-bottom: 80px;
+    margin: 0;
+}
+
+.register-field {
+    margin-bottom: 25px !important;
+}
+
+.shop-item .comp-header {
+    z-index: 3;
+}
+
+.slideshow .header {
+    font-size: 1.5em;
+}
+
+.slideshow .header img {
+    height: 436px;
+    background-position: center;
+}
+
+.feature-thumbnail {
+    width: 247px !important;
+    height: 286px;
+}
