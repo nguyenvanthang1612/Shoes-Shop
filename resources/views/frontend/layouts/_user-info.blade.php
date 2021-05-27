@@ -35,133 +35,27 @@
 
     <!-- Cart -->
     <li class="cart">
+        <a href="#" class="cart-icon hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            @if(Session::has("Cart") != null)
+                <span class="badge bg-blue" id="show-total-quantity">{{Session::get('Cart')->totalQuantity}}</span>
+            @else
+                <span class="badge bg-blue" id="show-total-quantity">0</span>
+            @endif
+                <i class="icofont icofont-cart-alt"></i>
+            </a>
 
-        <a href="#" class="cart-icon hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false">
-
-            <span class="badge bg-blue">3</span>
-
-            <i class="icofont icofont-cart-alt"></i>
-        </a>
-
-        <a href="#" class="visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="icofont icofont-cart-alt"></i>
-            Shopping cart
-        </a>
+            <a href="#" class="visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="icofont icofont-cart-alt"></i>
+                Shopping cart
+            </a>
 
         <!-- Dropdown items list -->
         <ul class="dropdown-menu">
+        <div id="change-item-cart">
 
-            <!-- Item -->
-            <li>
-                <div class="wrap">
-
-                    <!-- Image -->
-                    <div class="image">
-                        <img src="images/shop/img-01.jpg" alt="">
-                    </div>
-
-                    <!-- Caption -->
-                    <div class="caption">
-                        <span class="comp-header st-1 text-uppercase">
-                            T-SHIPT
-                            <span>
-                                MEN COLLECTION
-                            </span>
-                            <span>
-                                FAKE BRAND
-                            </span>
-                        </span>
-
-                        <span class="price">
-                            <span class="text-grey-dark">$</span>
-                            257 <small class="text-grey-dark">.00</small>
-                        </span>
-                    </div>
-
-                    <!-- Remove btn -->
-                    <span class="remove-btn bg-blue">
-                        <i class="icofont icofont-bucket"></i>
-                    </span>
-                </div>
-            </li>
-
-            <!-- Item -->
-            <li>
-                <div class="wrap">
-
-                    <!-- Image -->
-                    <div class="image">
-                        <img src="images/shop/img-01.jpg" alt="">
-                    </div>
-
-                    <!-- Caption -->
-                    <div class="caption">
-                        <span class="comp-header st-1 text-uppercase">
-                            T-SHIPT
-                            <span>
-                                MEN COLLECTION
-                            </span>
-                            <span>
-                                FAKE BRAND
-                            </span>
-                        </span>
-
-                        <span class="price">
-                            <span class="text-grey-dark">$</span>
-                            257 <small class="text-grey-dark">.00</small>
-                        </span>
-                    </div>
-
-                    <!-- Remove btn -->
-                    <span class="remove-btn bg-blue">
-                        <i class="icofont icofont-bucket"></i>
-                    </span>
-                </div>
-            </li>
-
-            <!-- Item -->
-            <li>
-                <div class="wrap">
-
-                    <!-- Image -->
-                    <div class="image">
-                        <img src="images/shop/img-01.jpg" alt="">
-                    </div>
-
-                    <!-- Caption -->
-                    <div class="caption">
-                        <span class="comp-header st-1 text-uppercase">
-                            T-SHIPT
-                            <span>
-                                MEN COLLECTION
-                            </span>
-                            <span>
-                                FAKE BRAND
-                            </span>
-                        </span>
-
-                        <span class="price">
-                            <span class="text-grey-dark">$</span>
-                            257 <small class="text-grey-dark">.00</small>
-                        </span>
-                    </div>
-
-                    <!-- Remove btn -->
-                    <span class="remove-btn bg-blue">
-                        <i class="icofont icofont-bucket"></i>
-                    </span>
-                </div>
-            </li>
-
-
-            <li class="more-btn sdw">
-                <a href="card-page-step-1.html" class="btn-material btn-primary">
-                    View order <i class="icofont icofont-check-circled"></i>
-                </a>
-            </li>
-
-
+        </div>
         </ul>
+
+
     </li>
 </ul>

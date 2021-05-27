@@ -30,24 +30,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         @stack('css')
-        <style>
-            .navbar-default .navbar-nav ul.dropdown-menu {
-                padding-bottom: 0;
-            }
-
-            .auth-form {
-                padding-bottom: 80px;
-                margin: 0;
-            }
-
-            .register-field {
-                margin-bottom: 25px !important;
-            }
-
-            .shop-item .comp-header {
-                z-index: 3;
-            }
-        </style>
+        <link href="{!! asset('frontend/css/custom.css') !!}" rel="stylesheet"/>
     </head>
 
     <body>
@@ -120,7 +103,6 @@
                     type: 'GET',
                 }).done(function(response)
                 {
-                    console.log(response);
                     renderCart(response);
                     alertify.success("Đã thêm sản phẩm mới");
                 });
@@ -131,9 +113,8 @@
                     $.ajax({
                     url:'deleteItemCart/'+$(this).attr("data-idCart"),
                     type:'GET',
-                }).done(function(respone) {
-                    $("#change-item-cart").empty();
-                    $("#change-item-cart").html(response);
+                }).done(function(response) {
+                    renderCart(response);
                     alertify.success('Đã xoá thành công sản phẩm');
                 });
             });
@@ -142,8 +123,29 @@
             {
                 $("#change-item-cart").empty();
                 $("#change-item-cart").html(response);
+                $("#show-total-quantity").text($("#total-quantity-cart").val());
             }
+
+            function deleteListCart(id)
+            {
+                $.ajax({
+                    url: 'deleteCart/'+id,
+                    type: 'GET',
+                }).done(function(response)
+                {
+                    renderListCart(response);
+                    alertify.success("Đã xóa sản phẩm mới");
+                });
+            }
+
+            function renderListCart(response)
+            {
+                $("#list-cart").empty();
+                $("#list-cart").html(response);
+            }
+
         </script>
+
 
         @stack('js')
     </body>

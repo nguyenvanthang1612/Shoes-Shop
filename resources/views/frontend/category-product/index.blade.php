@@ -34,7 +34,7 @@
 
                                                 <!-- Header -->
                                                 <div class="comp-header st-4 text-uppercase">
-                                                <h3>{{$product->name}}</h3>
+                                                <h3><a class="text-decoration-none" href="{{ route('frontend.product.show', $product->id) }}">{{$product->name}}</a></h3>
 
                                                     <span>
                                                         Category: {{$product->category->name_category}}
@@ -53,7 +53,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="{{$product->img}}" alt="">
+                                                    <img class="main" src="{{ asset('storage/backend/product/'.$product->img) }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->

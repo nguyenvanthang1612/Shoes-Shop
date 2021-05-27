@@ -239,7 +239,7 @@
 
                                         <!-- Image -->
                                         <div class="image">
-                                            <img class="main" src='{{$product->img}}' alt="">
+                                            <img class="main feature-thumbnail" src='{{ asset('storage/backend/product/'.$product->img) }}' alt="" />
                                         </div>
 
                                         <!-- Caption -->
@@ -268,9 +268,7 @@
                                             </ul>
 
                                             <!-- Text -->
-                                            <p class="text">
-                                                {{$product->desc}}
-                                            </p>
+                                                {!! $product->desc !!}
                                         </div>
                                     </div>
 
