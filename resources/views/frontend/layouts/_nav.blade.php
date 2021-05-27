@@ -51,9 +51,7 @@
             </div>
 
             {{-- Authentication information --}}
-            @if (Auth::check())
-                @include('frontend.layouts._nav')
-            @endif
+            @include('frontend.layouts._info')
 
 
             <ul class="nav navbar-nav">
