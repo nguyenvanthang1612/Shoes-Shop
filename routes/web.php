@@ -1,14 +1,11 @@
 <?php
 
 use App\Http\Controllers\Web\AuthenticateController;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
-use App\Http\Controllers\Web\WebCategoryController;
 use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +22,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::group(['prefix' => '/'], function () {
 
-    Route::get('/', [IndexController::class, 'index']);
+    Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
     Route::get('user/index-page/{id}', [IndexController::class, 'mainUserIndex']);
 

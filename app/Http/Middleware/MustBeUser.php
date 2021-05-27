@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Middleware\Admin;
+namespace App\Http\Middleware;
 
-use App\Models\User;
+use App\Constants;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CheckPermission
+class MustBeUser
 {
     /**
      * Handle an incoming request.
@@ -18,11 +18,9 @@ class CheckPermission
      */
     public function handle(Request $request, Closure $next)
     {
-        $role = Auth::user()->role;
-        if ($role == 1)
-        {
-            return $next($request);
+        if (Auth::check() && Auth::user() != Constants::ROLE['USER']) {
+            return redirect()->name('admin.index');
         }
-        return abort(403);
+        return $next($request);
     }
 }

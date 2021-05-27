@@ -11,28 +11,28 @@
                                     <div class="col-sm-12 col-md-5 hidden-xs hidden-sm">
 
                                         <!-- Header -->
-                                        <h2 class="header text-uppercase text-blue">{{$product->name}}</h2>
+                                        <h4 class="header text-uppercase text-blue">{{$product->name}}</h4>
                                         <h2>{{$product->category->name_category}}</h2>
 
                                         <!-- Text -->
                                         <p>
-                                            {{$product->desc}}
+                                            {!! $product->desc !!}
                                         </p>
 
                                         <!-- Buttons -->
                                         <span class="btn-panel">
 
-                                                <span class="sdw-wrap">
-                                                    <a href="{{ route('frontend.product.show', $product->id) }}" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
-                                                    <span class="sdw"></span>
-                                                </span>
+                                            <span class="sdw-wrap">
+                                                <a href="{{ route('frontend.product.show', $product->id) }}" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
+                                                <span class="sdw"></span>
+                                            </span>
 
-                                                <span class="hor-divider"></span>
+                                            <span class="hor-divider"></span>
 
-                                                <span class="sdw-wrap">
-                                                    <a onclick='addCart("{{$product->id}}")'  href="javascript:" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
-                                                    <span class="sdw"></span>
-                                                </span>
+                                            <span class="sdw-wrap">
+                                                <a onclick='addCart("{{$product->id}}")'  href="javascript:" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
+                                                <span class="sdw"></span>
+                                            </span>
                                         </span>
                                    </div>
 
@@ -40,7 +40,7 @@
 
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src="{{ $product->img }}" alt="">
+                                           <img src='{{ asset('storage/backend/product/'.$product->img) }}' alt="" >
                                        </div>
 
                                        <!-- Badge -->

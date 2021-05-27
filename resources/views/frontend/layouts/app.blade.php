@@ -30,24 +30,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         @stack('css')
-        <style>
-            .navbar-default .navbar-nav ul.dropdown-menu {
-                padding-bottom: 0;
-            }
-
-            .auth-form {
-                padding-bottom: 80px;
-                margin: 0;
-            }
-
-            .register-field {
-                margin-bottom: 25px !important;
-            }
-
-            .shop-item .comp-header {
-                z-index: 3;
-            }
-        </style>
+        <link href="{!! asset('frontend/css/custom.css') !!}" rel="stylesheet"/>
     </head>
 
     <body>
