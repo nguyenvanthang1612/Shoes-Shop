@@ -268,9 +268,7 @@
                                             </ul>
 
                                             <!-- Text -->
-                                            <p class="text">
-                                                {{$product->desc}}
-                                            </p>
+                                                {!! $product->desc !!}
                                         </div>
                                     </div>
 
