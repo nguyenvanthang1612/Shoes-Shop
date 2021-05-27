@@ -19,6 +19,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('auth/login', [AuthenticateController::class, 'showLoginForm'])
     ->name('admin.login')->middleware('logged-out');
     Route::post('auth/login', [AuthenticateController::class, 'login'])->middleware('logged-out');
+    Route::get('auth/forgot-password', [AuthenticateController::class, 'forgotPasswordForm'])->middleware('guest');
+    Route::post('auth/forgot-password', [AuthenticateController::class, 'forgotPassword'])->middleware('guest');
+    Route::get('auth/reset-password/{token}', [AuthenticateController::class, 'resetPasswordForm'])->middleware('guest');
+    Route::put('auth/reset-password/{token}', [AuthenticateController::class, 'resetPassword'])->middleware('guest');
 
     Route::group(['middleware' => 'authenticated-as-admin'], function () {
         Route::get('auth/logout', function () {
@@ -40,9 +44,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 
         // account
-        Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('CheckPermission');
+        Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('superadmin');
         Route::get('account/client_management', [AccountController::class, 'clientIndex']);
-        Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('CheckPermission');
+        Route::get('account/create_account', [AccountController::class, 'showCreateAccountForm'])->middleware('superadmin');
         Route::post('account/create_account', [AccountController::class, 'createAccountAdmin']);
         Route::put('account/admin_management', [AccountController::class, 'upload']);
         Route::get('account/edit', [AccountController::class, 'edit']);

@@ -18,8 +18,8 @@ class MustBeUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user() != Constants::ROLE['USER']) {
-            return redirect()->name('admin.index');
+        if (Auth::check() && Auth::user()->role != Constants::ROLE['USER']) {
+            return redirect()->route('admin.index');
         }
         return $next($request);
     }
