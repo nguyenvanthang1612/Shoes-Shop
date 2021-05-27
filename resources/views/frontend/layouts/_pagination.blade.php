@@ -5,22 +5,25 @@
 
             <!-- Pagination -->
             <ul class="pagination">
-
-                <li>
-                    <a href="#">
-                        <span><i class="icofont icofont-rounded-left"></i></span>
-                    </a>
-                </li>
+                @if(!$paginator->onFirstPage())
+                    <li>
+                        <a href="{{ $paginator->previousPageUrl() }}">
+                            <span><i class="icofont icofont-rounded-left"></i></span>
+                        </a>
+                    </li>
+                @endif
 
                 @for($i = 1; $i <= $paginator->lastPage(); $i++)
                     <li class="{{ $paginator->currentPage() == $i ? 'active' : '' }}"><a href="{{ $paginator->url($i) }}">{{ $i }}</a></li>
                 @endfor
-                <li>
-                    <a href="#">
-                        <span><i class="icofont icofont-rounded-right"></i></span>
-                    </a>
-                </li>
 
+                @if($paginator->currentPage() !== $paginator->lastPage())
+                    <li>
+                        <a href="{{ $paginator->nextPageUrl() }}">
+                            <span><i class="icofont icofont-rounded-right"></i></span>
+                        </a>
+                    </li>
+                @endif
             </ul>
 
             <!-- Switch style on shop item -->
