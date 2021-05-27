@@ -10,7 +10,7 @@ class CategoryProductController extends Controller
 {
     public function index(Category $category)
     {
-        $products = Product::where('category_id', $category->id)->get();
+        $products = Product::where('category_id', $category->id)->paginate(10);
         return view('frontend.product.shop-list', compact('products'));
     }
 }
