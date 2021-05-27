@@ -1,13 +1,12 @@
 <?php
 namespace App\Http\Controllers\Web;
+
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\UserAddress;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Console\Input\Input;
 
 class IndexController extends Controller
 {

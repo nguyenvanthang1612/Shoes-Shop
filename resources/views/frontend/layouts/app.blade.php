@@ -51,13 +51,6 @@
     </head>
 
     <body>
-        <!--
-        PRELOADER
-        =============================================== -->
-        <div class="preloader">
-            <img src="{{ asset('frontend/images/preloader.gif') }}" alt="">
-        </div>
-        <!-- END: PRELOADER -->
 
         <!--
         NAVBAR

@@ -23,7 +23,7 @@
                                         <span class="btn-panel">
 
                                                 <span class="sdw-wrap">
-                                                    <a href="{{ route('product-item', $product->id) }}" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
+                                                    <a href="{{ route('frontend.product.show', $product->id) }}" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
                                                     <span class="sdw"></span>
                                                 </span>
 

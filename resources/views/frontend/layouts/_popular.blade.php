@@ -222,7 +222,7 @@
                                         <!-- Header -->
                                         <div class="comp-header st-4 text-uppercase">
 
-                                            <a href="{{ route('product-item', $product->id) }}">{{$product->name}}</a>
+                                            <a href="{{ route('frontend.product.show', $product->id) }}">{{$product->name}}</a>
 
                                             <!-- Rate -->
                                             <div class="rate">
@@ -336,7 +336,7 @@
                                         </a>
 
                                         <!-- More link -->
-                                        <a href='{{  url("products/$product->id/item") }}' class="more-link">More info</a>
+                                        <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">More info</a>
                                     </div>
                                 </div>
                             </div>

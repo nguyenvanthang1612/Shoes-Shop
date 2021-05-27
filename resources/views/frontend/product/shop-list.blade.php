@@ -68,7 +68,7 @@
                                 <div class="row item-wrapper">
 
                                     <!-- Shop item 1 / timer -->
-                                    @foreach($lists as $list)
+                                    @foreach($products as $product)
                                     <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer"
                                          data-timer-date="2018, 2, 5, 0, 0, 0">
 
@@ -79,13 +79,13 @@
 
                                                 <!-- Header -->
                                                 <div class="comp-header st-4 text-uppercase">
-                                                <h3>{{$list->name}}</h3>
+                                                <h3>{{$product->name}}</h3>
 
                                                     <span>
-                                                        Category: {{$list->category->name_category}}
+                                                        Category: {{$product->category->name_category}}
                                                     </span>
                                                     <span>
-                                                        Brand: {{$list->brand}}
+                                                        Brand: {{$product->brand}}
                                                     </span>
 
 
@@ -98,7 +98,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="{{$list->img}}" alt="">
+                                                    <img class="main" src="{{$product->img}}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
@@ -129,7 +129,7 @@
                                                             <span>like it</span>
                                                         </div>
                                                     </div>
-                                                    <!-- Features list -->
+                                                    <!-- Features product -->
                                                     <ul class="features">
                                                         <li>
                                                             <i class="icofont icofont-shield"></i>
@@ -167,7 +167,7 @@
                                                         </span>
                                                         <!-- Price -->
                                                         <span class="price">
-                                                            {{$list->price}}
+                                                            {{$product->price}}
                                                         </span>
                                                     </span>
 
@@ -191,10 +191,13 @@
                                                 </a>
 
                                                 <!-- Favorite added -->
-
+                                                <a href="#" class="favorite-link active">
+                                                    <i class="icofont icofont-star"></i>
+                                                    to favorite
+                                                </a>
 
                                                 <!-- More link -->
-                                                <a href='{{  url("products/$list->id/item") }}' class="more-link">More info</a>
+                                                <a href='{{  url("products/$product->id/item") }}' class="more-link">More info</a>
                                             </div>
                                         </div>
                                     </div>
