@@ -40,6 +40,27 @@ class CartController extends Controller
            return view('frontend.shoppingCart.cart-item');
     }
 
+    public function showListCart()
+    {
+        return view("frontend.shoppingCart.card-page-step-1");
+    }
+
+    public function deleteListCart(Request $request,$id)
+    {
+           $oldCart = Session('Cart') ? Session('Cart') : null;
+           $newCart = new Cart($oldCart);
+           $newCart->deleteItemCart($id);
+           if(count($newCart->products) > 0)
+           {
+            $request->session()->put('Cart', $newCart);
+           }
+           else
+           {   
+            $request->session()->forget('Cart');
+           }
+           return view('frontend.shoppingCart.list-cart);
+    }
+
 
 
 }

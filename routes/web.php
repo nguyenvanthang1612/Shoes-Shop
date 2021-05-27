@@ -37,6 +37,9 @@ Route::group(['prefix' => '/'], function () {
     //Cart
     Route::get('/addCart/{id}', [CartController::class,'addCart']);
     Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
+
+    Route::get('listCart/', [CartController::class,'showListCart']);
+    Route::get('deleteCart/', [CartController::class,'deleteListCart']);
     //Category
     //Product
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
