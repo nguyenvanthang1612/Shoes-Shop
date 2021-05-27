@@ -23,6 +23,10 @@ Route::group(['prefix' => 'admin'], function () {
         Auth::logout();
         return redirect(route('admin.login'));
     })->middleware('CheckUser');
+    Route::get('auth/forgot-password', [AuthenticateController::class, 'forgotPasswordForm'])->middleware('guest');
+    Route::post('auth/forgot-password', [AuthenticateController::class, 'forgotPassword'])->middleware('guest');
+    Route::get('auth/reset-password/{token}', [AuthenticateController::class, 'resetPasswordForm'])->middleware('guest');
+    Route::put('auth/reset-password', [AuthenticateController::class, 'resetPassword'])->middleware('guest');
 
     //dashboard
     Route::get('/', function () {

@@ -30,6 +30,7 @@
                     <h2 class="header-title text-center">Reset Password</h2>
                      
                     <form method="POST" action='{{ url("admin/auth/reset-password") }}'>
+                        @method('PUT')
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
