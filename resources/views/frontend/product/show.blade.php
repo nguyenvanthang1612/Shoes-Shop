@@ -42,7 +42,7 @@
                                         <div class="owl-carousel image">
 
                                             <div class="item">
-                                                <img src="{{$product->img}}" alt="">
+                                                <img src="{{ asset('storage/backend/product/'.$product->img) }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -150,47 +150,7 @@
                                     </div>
 
                                     <!-- Description -->
-                                    <div class="row description">
-                                        <div class="col-xs-12">
-                                            <h2 class="header">
-                                                Description:
-                                            </h2>
 
-                                            <p>
-                                                {{$product->desc}}
-                                            </p>
-
-                                            <dl class="dl-horizontal terms">
-                                                <dt><span class="body">Leather</span></dt><dd>30%</dd>
-                                                <dt><span class="body">Polyester</span></dt><dd>25%</dd>
-                                                <dt><span class="body">Guarantee</span></dt><dd>36 month</dd>
-                                                <dt><span class="body">Leather</span></dt><dd>30%</dd>
-                                                <dt><span class="body">Polyester</span></dt><dd>25%</dd>
-                                                <dt><span class="body">Guarantee</span></dt><dd>36 month</dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-
-                                    <!-- Features panel -->
-                                    <div class="row features-pan hidden-xs">
-                                        <div class="col-xs-12">
-
-                                            <ul class="row features-list">
-                                                <li class="col-md-4">
-                                                    <i class="icofont icofont-shield"></i>
-                                                    <span>24 days. Money Back Guarantee</span>
-                                                </li>
-                                                <li class="col-md-4">
-                                                    <i class="icofont icofont-ship"></i>
-                                                    <span>Free shipping</span>
-                                                </li>
-                                                <li class="col-md-4">
-                                                    <i class="icofont icofont-hand"></i>
-                                                    <span>Free help and setup</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
 
                                 </div><!-- / CAPTION BLOCK -->
 
@@ -217,7 +177,7 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active description" id="description">
-                                            <p>{{$product->desc}}</p>
+                                            {!! $product->desc !!}
                                         </div>
                                         {{-- Comments --}}
                                         <div role="tabpanel" class="tab-pane comments" id="comments">
