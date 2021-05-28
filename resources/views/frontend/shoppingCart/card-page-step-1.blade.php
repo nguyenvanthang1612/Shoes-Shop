@@ -183,7 +183,7 @@ Step 1
                         <div class="list-footer bg-blue">
                             <a href="card-page-step-2.html" class="btn btn-default btn-material">
                                 <i class="icofont icofont-cart-alt"></i>
-                                {{-- <h4>{{ number_format(Session::get('Cart')->totalPrice) }}</h4> --}}
+                                <h4>$ {{ number_format(Session::get('Cart')->totalPrice) }}</h4>
                                 <span class="body">Make a purchase</span>
                             </a>
                             <a href="#" class="btn btn-text-white">
