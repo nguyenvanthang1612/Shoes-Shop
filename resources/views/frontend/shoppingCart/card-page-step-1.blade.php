@@ -129,7 +129,7 @@
     @foreach(Session::get('Cart')->products as $item)
     <div class="item">
         <div class="product">
-            <img src="{{$item['productInfo']->img}}" alt="">
+            <img src="{{ asset('storage/backend/product/'.$item['productInfo']->img) }}" alt="">
 
             <span class="comp-header st-8 text-uppercase">
                 {{$item['productInfo']->name}}

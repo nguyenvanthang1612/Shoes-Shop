@@ -28,3 +28,27 @@
     width: 247px !important;
     height: 316px;
 }
+
+.remove-btn {
+    font-size: 1.1em;
+    border-radius: 50%;
+    background-color: #00a0ea;
+    border: 0 none;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    /* right: 0;
+    transform: translate(0, -50%);
+    top: 50%;
+    position: absolute; */
+}
+
+.navbar-default .navbar-nav .cart .dropdown-menu {
+    padding-top: 0;
+}
+
+
+.product-item {
+    display: flex;
+    align-items: center;
+}

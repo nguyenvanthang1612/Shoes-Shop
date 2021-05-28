@@ -102,7 +102,7 @@
                     renderCart(res);
                     alertify.success("Đã thêm sản phẩm mới");
                 }, function(err) {
-                    console.err(err)
+                    console.error(err)
                 })
             }
 
