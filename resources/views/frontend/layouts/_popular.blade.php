@@ -192,7 +192,7 @@
                         {{ $products->links() }}
 
                         <!-- Item list -->
-                        <div class="row item-wrapper">
+                        <div class="row item-wrapper" data-viewmode="details">
                         @foreach($products as $product)
                             <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer"
                                     data-timer-date="2018, 2, 5, 0, 0, 0">
@@ -291,7 +291,7 @@
                                                 </span>
                                             </span>
 
-                                            
+
 
                                             <!-- Icon card -->
                                             <span class="icon-card">

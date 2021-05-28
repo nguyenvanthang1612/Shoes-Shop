@@ -28,12 +28,12 @@
 
             <!-- Switch style on shop item -->
             <ul class="swither">
-                <li class="cols">
+                <li class="cols" data-display="grid">
                     <span></span>
                     <span></span>
                     <span></span>
                 </li>
-                <li class="rows active">
+                <li class="rows active" data-display="details">
                     <span></span>
                     <span></span>
                     <span></span>

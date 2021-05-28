@@ -122,6 +122,12 @@
                 $("#show-total-quantity").text($("#total-quantity-cart").length != 0 ? $("#total-quantity-cart").val() : 0);
             }
 
+            $('.swither').on("click", "li" , function(){
+                    //<span data-idcart="2"></span>
+                const viewMode = $(this).data('display');
+                $(".item-wrapper").attr('data-viewmode', viewMode)
+            });
+
             /*function deleteListCart(id)
             {
                 $.ajax({

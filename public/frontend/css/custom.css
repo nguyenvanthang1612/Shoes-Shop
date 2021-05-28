@@ -60,8 +60,6 @@
     margin-bottom: 0;
 }
 
-@media screen and (min-width:1198px) {
-    .feature-thumbnail {
-        width: 247px !important;
-    }
+.item-wrapper[data-viewmode='details'] img {
+    width: 247px !important;
 }
