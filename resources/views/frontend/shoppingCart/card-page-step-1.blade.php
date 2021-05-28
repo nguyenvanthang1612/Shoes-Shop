@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 
 @section('title')
 Step 1
@@ -24,9 +24,7 @@ Step 1
 <!-- END: BREADCRUMBS -->
 
 <div class="container">
-    <!--
-            STEPS
-            =============================================== -->
+    <!-- STEPS =============================================== -->
     <div class="row block none-padding-top">
         <div class="col-xs-12">
 
@@ -98,9 +96,6 @@ Step 1
                     <!-- Header -->
 
                     <div class="list-header text-uppercase">
-
-
-
                         <div class="product">
                             Product
                         </div>
@@ -146,7 +141,7 @@ Step 1
                                     <span class="price">
                                         <i class="icofont icofont-cur-dollar"></i>
                                         <span class="prc">
-                                            <span>{{number_format($item['productInfo']->price)}}</span><small>$</small>
+                                            <span>{{number_format($item['productInfo']->price)}}</span><small></small>
                                         </span>
                                     </span>
                                 </div>

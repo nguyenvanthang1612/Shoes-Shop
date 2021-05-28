@@ -24,10 +24,10 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
-    Route::get('user/index-page/{id}', [IndexController::class, 'mainUserIndex']);
+    Route::get('user/index-page', [IndexController::class, 'mainUserIndex'])->name('frontend.index.main-user-index');
 
-    Route::get('user/edit-page/{id}', [IndexController::class, 'edit']);
-    Route::put('user/edit-page/{id}', [IndexController::class, 'update']);
+    Route::get('user/edit-page', [IndexController::class, 'edit'])->name('frontend.index.edit');
+    Route::put('user/edit-page', [IndexController::class, 'update'])->name('frontend.index.update');
 
     Route::get('user/address-edit-page/{id}', [IndexController::class, 'addressEdit']);
     Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);

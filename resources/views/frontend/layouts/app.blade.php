@@ -73,8 +73,6 @@
 
 
         <!-- Google API -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAPS_API_KEY&libraries=places&callback=initAutocomplete"
-        async defer></script><!-- / Google API -->
         <script src="{{ asset('js/app.js') }}"></script>
         <script>
         $(function() {
@@ -98,7 +96,7 @@
         <script>
             function addCart(id)
             {
-                get(`addCart/${id}`, function(res) {
+                get(`/addCart/${id}`, function(res) {
                     renderCart(res);
                     alertify.success("Đã thêm sản phẩm mới");
                 }, function(err) {

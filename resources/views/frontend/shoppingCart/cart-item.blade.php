@@ -31,7 +31,7 @@
     </li>
     @endforeach
     <li>
-        <h5>Total: {{ Session::get('Cart')->totalPrice }}đ</h5>
+        <h5>Total: ${{ Session::get('Cart')->totalPrice }}</h5>
         </li>
     <input hidden id="total-quantity-cart" type="number" value="{{ count(Session::get('Cart')->products) }}"/>
     <li class="more-btn sdw">

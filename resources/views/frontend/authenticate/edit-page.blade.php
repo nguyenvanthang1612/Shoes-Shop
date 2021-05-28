@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="col-md-9">
-                                <form method="POST" action="{{ url('user/edit-page', [$userData->id]) }}">
+                                <form method="POST" action="{{ route('frontend.index.update') }}">
                                     @method('PUT')
                                     @csrf
                                     <div class="panel-group" id="accordion">
@@ -97,20 +97,15 @@
                                             <div id="bankTransrerColl" class="panel-collapse collapse in">
                                                 <div class="panel-body">
                                                     <div class="form-group pd-none">
-                                                        <label for="text" class="col-sm-3 control-label text-darkness">Your User Name</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text"
-                                                                    class="form-control"
-                                                                    id="user_name" name="user_name" value="{{$userData->user_name}}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group pd-none">
                                                         <label for="frName" class="col-sm-3 control-label text-darkness">Your first name</label>
                                                         <div class="col-sm-8">
                                                             <input type="text"
                                                                     class="form-control"
                                                                     id="frName" name="first_name" value="{{$userData->first_name}}">
                                                         </div>
+                                                        @error('first_name')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
 
                                                     <div class="form-group pd-none">
@@ -120,6 +115,9 @@
                                                                     class="form-control"
                                                                     id="lnName" name="last_name" value="{{$userData->last_name}}">
                                                         </div>
+                                                        @error('last_name')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
 
                                                     <div class="form-group pd-none">
@@ -129,6 +127,9 @@
                                                                     class="form-control"
                                                                     id="email" name="email" value="{{$userData->email}}">
                                                         </div>
+                                                        @error('email')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
 
                                                     <div class="form-group pd-none">

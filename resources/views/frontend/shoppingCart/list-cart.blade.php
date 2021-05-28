@@ -1,9 +1,6 @@
 <!-- Header -->
 
 <div class="list-header text-uppercase">
-
-
-
     <div class="product">
         Product
     </div>
