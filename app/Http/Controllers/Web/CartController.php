@@ -41,6 +41,13 @@ class CartController extends Controller
         return view("frontend.shoppingCart.card-page-step-1");
     }
 
+    public function reloadProductsInCardPage(Request $request)
+    {
+        if ($request->ajax()) {
+            return view('frontend.shoppingCart._product-cart-page-step-1');
+        }
+    }
+
 
     public function updateCartQuantity(Request $request, $id)
     {

@@ -33,10 +33,11 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);
     //Cart
     Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
-    Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
+    Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart']);
+    Route::get('listCart', [CartController::class, 'showListCart']);
+    Route::get('deleteCart', [CartController::class, 'deleteListCart']);
+    Route::get('carts/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reloadProductsInCardPage');
 
-    Route::get('listCart/', [CartController::class,'showListCart']);
-    Route::get('deleteCart/', [CartController::class,'deleteListCart']);
     //Category
     //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');

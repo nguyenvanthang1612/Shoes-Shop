@@ -106,7 +106,7 @@
 
             $(document).on("click",".remove-btn" , function(){
                     //<span data-idcart="2"></span>
-                    $.ajax({
+                $.ajax({
                     url:'deleteItemCart/'+$(this).attr("data-idCart"),
                     type:'GET',
                 }).done(function(response) {
@@ -141,8 +141,6 @@
             }*/
 
         </script>
-
-
 
         @stack('js')
     </body>
