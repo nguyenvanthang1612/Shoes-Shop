@@ -84,7 +84,7 @@
 
                         </div>
                         <!-- Remove btn -->
-                        <button type="submit" class="remove-btn align-items-center" data-idCart="{{$item['productInfo']->id}}">
+                        <button type="submit" class="remove-btn product-delete-icon" data-idCart="{{$item['productInfo']->id}}">
                             <i class="icofont icofont-close-line"></i>
                         </button>
                     </div>

@@ -24,7 +24,7 @@
                 </span>
             </div>
             <!-- Remove btn -->
-            <button class="remove-btn" data-idCart="{{$item['productInfo']->id}}">
+            <button class="remove-btn product-delete-icon" data-idCart="{{$item['productInfo']->id}}">
                 <i class="icofont icofont-close-line"></i>
             </button>
         </div>

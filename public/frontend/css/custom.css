@@ -52,6 +52,10 @@
     align-items: center;
 }
 
+.navbar-default .navbar-nav .cart .dropdown-menu li .remove-btn {
+    padding-top: 0;
+}
+
 @media screen and (min-width:1198px) {
     .feature-thumbnail {
         width: 247px !important;
