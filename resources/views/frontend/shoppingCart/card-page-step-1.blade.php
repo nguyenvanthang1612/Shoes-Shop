@@ -132,12 +132,56 @@ Step 1
 @push('js')
 <script>
     $(document).on("click",".remove-btn" , function(){
+        reloadProductInCartPage()
+    });
+
+    function reloadProductInCartPage()
+    {
         $.ajax({
             url: '{{ route('frontend.cart.reloadProductsInCardPage') }}',
             type:'GET',
         }).done(function(response) {
             $("#products-step-1").html(response)
         });
+    }
+
+    $(document).on('change', ".cart-item", function() {
+        const productId = $(this).data('productid')
+        const quantity = $(this).val()
+        post('cart/update-quantity', {id: productId, quantity}, function(response) {
+            $("#products-step-1").html(response)
+        });
+    });
+
+    $(document).on('click', ".minus", function() {
+        $(this).unbind();
+        const productId = $(this).data('productid')
+        const cartItem = $(this).next('.input').find('input')
+        // console.log($(this).next('.input').find('input').val());
+        const quantity = parseInt(cartItem.val()) - 1 <= 0 ? 0 : parseInt(cartItem.val()) - 1
+
+        if (quantity == 0) {
+            removeItemOutOfCart($(this))
+        }
+        else {
+            post('cart/update-quantity', {id: productId, quantity}, function(response) {
+            $("#products-step-1").html(response)
+        });
+        }
+
+    });
+
+    $(document).on('click', ".plus", function() {
+        $(this).unbind();
+        const productId = $(this).data('productid')
+        const cartItem = $(this).prev('.input').find('input')
+        // console.log($(this).next('.input').find('input').val());
+        const quantity = parseInt(cartItem.val()) + 1
+
+        post('cart/update-quantity', {id: productId, quantity}, function(response) {
+            $("#products-step-1").html(response)
+        });
+
     });
 
 </script>

@@ -105,15 +105,20 @@
             }
 
             $(document).on("click",".remove-btn" , function(){
-                    //<span data-idcart="2"></span>
+                removeItemOutOfCart($(this));
+            });
+
+            function removeItemOutOfCart(item)
+            {
+                //<span data-idcart="2"></span>
                 $.ajax({
-                    url:'deleteItemCart/'+$(this).attr("data-idCart"),
+                    url:'deleteItemCart/'+item.attr("data-idCart"),
                     type:'GET',
                 }).done(function(response) {
                     renderCart(response);
                     alertify.success('Đã xoá thành công sản phẩm');
                 });
-            });
+            }
 
             function renderCart(response)
             {

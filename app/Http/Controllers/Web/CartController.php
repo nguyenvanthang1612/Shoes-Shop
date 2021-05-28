@@ -9,15 +9,14 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function addCart(Request $request,$id)
+    public function addCart(Request $request, $id)
     {
         $product = Product::find($id);
         if($product != null)
         {
-            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $oldCart = Session('Cart') ? Session('Cart') : [];
             $newCart = new Cart($oldCart);
             $newCart->addCart($product, $id);
-
             $request->session()->put('Cart', $newCart);
         }
         return view('frontend.shoppingCart.cart-item');
@@ -49,8 +48,20 @@ class CartController extends Controller
     }
 
 
-    public function updateCartQuantity(Request $request, $id)
+    public function updateCartQuantity(Request $request)
     {
+        if ($request->ajax()) {
+            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new Cart($oldCart);
+            $newCart->updateCartQuantity($request->input('id'), $request->input('quantity'));
+
+            if (count($newCart->products) > 0) {
+                $request->session()->put('Cart', $newCart);
+            } else {
+                $request->session()->forget('Cart');
+            }
+            return view('frontend.shoppingCart._product-cart-page-step-1');
+        }
     }
     /*public function deleteListCart(Request $request,$id)
     {

@@ -54,7 +54,6 @@
         <ul class="dropdown-menu">
             <div id="change-item-cart">
                 @if(Session::has("Cart") != null)
-
                 <!-- Dropdown items list -->
                 @foreach(Session::get('Cart')->products as $item)
                 <!-- Item -->

@@ -28,13 +28,14 @@
 
                                 <div class="qnt">
                                     <span>
-                                        <span class="minus">
+                                        <span class="minus" data-productid={{ $item['productInfo']->id }} data-idCart={{ $item['productInfo']->id }}>
                                             <i class="icofont icofont-minus"></i>
                                         </span>
                                         <span class="input">
-                                            <input type="text" value="{{$item['quantity']}}">
+                                            <input type="text" min="0" value="{{$item['quantity']}}" data-productid={{ $item['productInfo']->id }}
+                                            class="cart-item" />
                                         </span>
-                                        <span class="plus">
+                                        <span class="plus" data-productid={{ $item['productInfo']->id }} data-idCart={{ $item['productInfo']->id }}>
                                             <i class="icofont icofont-plus"></i>
                                         </span>
                                     </span>
