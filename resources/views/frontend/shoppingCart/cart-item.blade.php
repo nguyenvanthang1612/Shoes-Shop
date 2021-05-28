@@ -8,23 +8,23 @@
 
             <!-- Image -->
             <div class="image">
-                <img src="{{$item['productInfo']->img}}" alt="">
+                <img src="{{ asset('storage/backend/product/'. $item['productInfo']->img) }}" alt="">
             </div>
 
             <!-- Caption -->
             <div class="caption">
                 <span class="comp-header st-1 text-uppercase">
-                {{$item['productInfo']->name}}
+                {{ $item['productInfo']->name }}
                     <span>
                     </span>
                     <span>
-                    {{$item['productInfo']->brand}}
+                    {{ $item['productInfo']->brand }}
                     </span>
                 </span>
 
                 <span class="price">
                     <span class="text-grey-dark">$</span>
-                    {{$item['productInfo']->price}} <small class="text-grey-dark">$</small> x {{$item['quantity']}}
+                    {{ $item['productInfo']->price }} <small class="text-grey-dark">$</small> x {{$item['quantity']}}
                 </span>
 
 
@@ -33,7 +33,7 @@
 
             <!-- Remove btn -->
             <button type="submit" class="remove-btn" data-idCart="{{$item['productInfo']->id}}">
-               X
+                X
             </button>
         </div>
     </li>

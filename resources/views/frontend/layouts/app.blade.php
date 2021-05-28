@@ -98,14 +98,12 @@
         <script>
             function addCart(id)
             {
-                $.ajax({
-                    url: 'addCart/'+id,
-                    type: 'GET',
-                }).done(function(response)
-                {
-                    renderCart(response);
+                get(`addCart/${id}`, function(res) {
+                    renderCart(res);
                     alertify.success("Đã thêm sản phẩm mới");
-                });
+                }, function(err) {
+                    console.err(err)
+                })
             }
 
             $(document).on("click",".remove-btn" , function(){
@@ -145,7 +143,7 @@
             }*/
 
         </script>
-        
+
 
 
         @stack('js')
