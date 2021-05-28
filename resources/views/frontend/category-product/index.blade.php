@@ -111,7 +111,7 @@
                                             <div class="info">
 
                                                 <!-- Buy btn -->
-                                                <a href="#" class="btn-material btn-price">
+                                                <a  onclick='addCart("{{$product->id}}")'  href="javascript:" class="btn-material btn-price">
 
                                                     <!-- Price -->
                                                     <span class="price">
