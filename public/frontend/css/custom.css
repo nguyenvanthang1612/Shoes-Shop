@@ -25,7 +25,6 @@
 }
 
 .feature-thumbnail {
-    width: 247px !important;
     height: 316px;
 }
 
@@ -51,4 +50,10 @@
 .product-item {
     display: flex;
     align-items: center;
+}
+
+@media screen and (min-width:1198px) {
+    .feature-thumbnail {
+        width: 247px !important;
+    }
 }
