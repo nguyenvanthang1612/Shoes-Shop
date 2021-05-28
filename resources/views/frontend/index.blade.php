@@ -66,7 +66,7 @@
 
                                     <!-- Header -->
                                     <span class="comp-header st-20 text-uppercase text-white">
-                                        <small>New Brands</small>
+                                        <small>Brands</small>
                                     </span>
 
                                     <!-- Button -->
@@ -81,13 +81,31 @@
                                 <!-- Carousel -->
                                 <div class="col-sm-6">
                                     <div class="owl-carousel owl-default banner-brands nav-bottom-right nav-white">
-                                    @foreach($products as $product)
-                                        <div class="item">
-                                            <h1> {{$product->brand}} </h1>
+                                        <div class="owl-item">
+                                            <div class="wrap">
+                                                <img src="{{ asset('frontend/images/brands/nike.png') }}" alt="">
+                                            </div>
                                         </div>
-                                    @endforeach
-
-
+                                        <div class="owl-item">
+                                            <div class="wrap">
+                                                <img src="{{ asset('frontend/images/brands/adidas.png') }}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item">
+                                            <div class="wrap">
+                                                <img src="{{ asset('frontend/images/brands/gucci.png') }}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item">
+                                            <div class="wrap">
+                                                <img src="{{ asset('frontend/images/brands/converse.png') }}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="owl-item">
+                                            <div class="wrap">
+                                                <img src="{{ asset('frontend/images/brands/puma.png') }}" alt="">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div><!-- / Carousel -->
 
@@ -104,7 +122,7 @@
 
                 <!-- Parallax block -->
                 <div class="parallax bg-darkness opc-7"
-                     data-parallax-image="{{ asset('frontend/images/blocks/bg-01.jpg') }}"
+                     data-parallax-image="{{ asset('frontend/images/blocks/bg-shoes.jpg') }}"
                      data-speed-direction="-.2"></div><!-- / Parallax block -->
             </div><!-- / Parallax wrapper -->
         </div>
@@ -251,58 +269,38 @@
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-01.png') }}" alt="">
+                               <img src="{{ asset('frontend/images/brands/nike.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-02.png') }}" alt="">
+                               <img src="{{ asset('frontend/images/brands/adidas.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-03.png') }}" alt="">
+                               <img src="{{ asset('frontend/images/brands/gucci.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-04.png') }}" alt="">
+                               <img src="{{ asset('frontend/images/brands/converse.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-05.png') }}" alt="">
+                               <img src="{{ asset('frontend/images/brands/puma.png') }}" alt="">
                            </div>
                        </div>
 
-                       <!-- Item -->
-                       <div class="img-item">
-                           <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-06.png') }}" alt="">
-                           </div>
-                       </div>
-
-                       <!-- Item -->
-                       <div class="img-item">
-                           <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-07.png') }}" alt="">
-                           </div>
-                       </div>
-
-                       <!-- Item -->
-                       <div class="img-item">
-                           <div class="wrap">
-                               <img src="{{ asset('frontend/images/brands/img-2-08.png') }}" alt="">
-                           </div>
-                       </div>
                    </div>
                 </div>
             </div>
