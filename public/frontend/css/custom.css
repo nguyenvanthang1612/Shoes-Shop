@@ -56,6 +56,10 @@
     padding-top: 0;
 }
 
+.navbar-default .navbar-nav .cart .dropdown-menu .more-btn {
+    margin-bottom: 0;
+}
+
 @media screen and (min-width:1198px) {
     .feature-thumbnail {
         width: 247px !important;

@@ -171,7 +171,7 @@ Step 1
                                 </div>
 
                                 <div class="rmv text-center">
-                                    <button class="remove-btn" onclick="deleteListCart({{ $item['productInfo']->id }});">
+                                    <button class="remove-btn" data-idcart="{{ $item['productInfo']->id }}">
                                         <i class="icofont icofont-close-line"></i>
                                     </button>
                                 </div>
@@ -190,6 +190,10 @@ Step 1
                                 <span class="body">remove selected</span>
                             </a>
                         </div><!-- / Footer -->
+                    @else
+                        <div class="product">
+                            Không có sản phẩm trong giỏ hàng
+                        </div>
                     @endif
                 </div>
             </div>
