@@ -121,7 +121,7 @@
             {
                 $("#change-item-cart").empty();
                 $("#change-item-cart").html(response);
-                $("#show-total-quantity").text($("#total-quantity-cart").val());
+                $("#show-total-quantity").text($("#total-quantity-cart").length != 0 ? $("#total-quantity-cart").val() : 0);
             }
 
             /*function deleteListCart(id)

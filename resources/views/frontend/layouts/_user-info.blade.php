@@ -37,7 +37,7 @@
     <li class="cart">
         <a href="#" class="cart-icon hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true"
             aria-expanded="false">
-            @if(Session::has("Cart") != null)
+            @if(Session::has("Cart"))
                 <span class="badge bg-blue" id="show-total-quantity">{{ count(Session::get('Cart')->products) }}</span>
             @else
                 <span class="badge bg-blue" id="show-total-quantity">0</span>
