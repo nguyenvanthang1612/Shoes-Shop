@@ -141,6 +141,7 @@ class ProductController extends Controller
         return  redirect()->route('product.index');
     }
 
+    // search all product
     public function searchAll(Request $request)
     {
         $searchText = $request->input('search');
@@ -156,6 +157,7 @@ class ProductController extends Controller
         ]);
     }
 
+     // search man product
     public function searchMan(Request $request)
     {
         $searchText = $request->input('search');
@@ -166,12 +168,13 @@ class ProductController extends Controller
             ->orderBy('id', 'asc')
             ->where('name', 'LIKE', '%'.$searchText.'%')
             ->where('name_category', '=', 'Men')
-        ->paginate(10);
+            ->paginate(10);
         return view('backend.product.man', [
             'products' => $products
         ]);
     }
 
+     // search woman product
     public function searchWoman(Request $request)
     {
         $searchText = $request->input('search');
@@ -188,6 +191,7 @@ class ProductController extends Controller
         ]);
     }
 
+     // search kid product
     public function searchKid(Request $request)
     {
         $searchText = $request->input('search');
@@ -198,7 +202,7 @@ class ProductController extends Controller
             ->orderBy('id', 'asc')
             ->where('name', 'LIKE', '%'.$searchText.'%')
             ->where('name_category', '=', 'Kid')
-        ->paginate(10);
+            ->paginate(10);
         return view('backend.product.kid', [
             'products' => $products
         ]);

@@ -149,7 +149,7 @@
                       <div class="custom-file">
                         <label class="col-sm-2 control-label">Image</label>
                         <div class="col-sm-10">
-                            <img src="{{ asset('storage/backend/product/'.$product->img) }}" />
+                            <img src="{{ asset('storage/backend/product/'.$product->img) }}" style="width:220px; height:200px" />
                             <div class="fallback">
                               <input type="hidden" name="img" value="{{ $product->img }}" />
                               <input type="file" name="img">

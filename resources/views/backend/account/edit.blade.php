@@ -104,9 +104,9 @@
                           {{-- Avatar --}}
                           <div class="form-group">
                             <div class="custom-file">
-                              <label class="col-sm-2 control-label">Image</label>
+                              <label class="col-sm-2 control-label">Avatar</label>
                               <div class="col-sm-10">
-                                  <img src="{{ asset('storage/backend/account/'.$account->avatar) }}" />
+                                  <img src="{{ asset('storage/backend/account/'.$account->avatar) }}" style="width:200px; height:200px"/>
                                   <div class="fallback">
                                     <input type="hidden" name="avatar" value="{{ $account->avatar }}" />
                                     <input type="file" name="avatar">

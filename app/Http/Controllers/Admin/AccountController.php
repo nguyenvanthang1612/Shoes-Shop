@@ -16,18 +16,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
-    // public function adminAvatar()
-    // {
-    //     $accounts = DB::table('users')->where('role', 2)->get();
-    //     return view('backend.layouts._header', [
-    //         'accounts' => $accounts
-    //     ]);
-    // }
-
     // admin table
     public function adminIndex()
     {
-        $accounts = DB::table('users')->where('role', 2)->get();
+        $accounts = DB::table('users')->where('role', 2)->paginate(10);
         return view('backend.account.admin', [
             'accounts' => $accounts
         ]);
@@ -36,7 +28,7 @@ class AccountController extends Controller
     // client table
     public function clientIndex()
     {
-        $accounts = DB::table('users')->where('role', 3)->get();
+        $accounts = DB::table('users')->where('role', 3)->paginate(10);
         return view('backend.account.client', [
             'accounts' => $accounts
         ]);
@@ -118,5 +110,30 @@ class AccountController extends Controller
     {
         User::findOrFail(auth()->id())->update(['password'=> $request->input('new_password')]);
         return redirect('/admin');
+    }
+
+    // search admin account
+    public function searchAdmin(Request $request)
+    {
+        $searchText = $request->input('search');
+        $accounts = DB::table('users')
+                    ->where('role', 2)
+                    ->where('user_name', 'LIKE', '%'.$searchText.'%')
+                    ->paginate(10);
+        return view('backend.account.admin', [
+            'accounts' => $accounts
+        ]);
+    }
+
+    public function searchClient(Request $request)
+    {
+        $searchText = $request->input('search');
+        $accounts = DB::table('users')
+                    ->where('role', 3)
+                    ->where('user_name', 'LIKE', '%'.$searchText.'%')
+                    ->paginate(10);
+        return view('backend.account.client', [
+            'accounts' => $accounts
+        ]);
     }
 }

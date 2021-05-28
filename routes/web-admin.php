@@ -54,6 +54,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('account/delete/{id}', [AccountController::class, 'destroy']);
         Route::get('account/change-password', [AccountController::class, 'showChangePasswordForm']);
         Route::put('account/change-password/{id}', [AccountController::class, 'changePassword']);
+        //search
+        Route::post('account/search/admin', [AccountController::class, 'searchAdmin']);
+        Route::post('account/search/client', [AccountController::class, 'searchClient']);
 
         //category
         Route::get('categories', [CategoryController::class, 'index']);

@@ -31,7 +31,12 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                         <h2 class="header-title">Admin Management</h2>
+                        <h2 class="header-title" style="text-align: center; font-size: 25px">Client Management</h2>
+                        <form method="POST" action="{{ url('admin/account/search/admin') }}">
+                           @csrf
+                           <input type="text" class="form-control" name="search" placeholder="Search here..." 
+                           style="width:50%; margin: auto; margin-bottom: 30px" />
+                        </form>
                           <div class="table-responsive">
                            <table id="example" class="display table">
                                   <thead>
@@ -53,6 +58,7 @@
                                       @endforeach
                                   </tbody>
                             </table>  
+                            {{ $accounts->links('vendor.pagination.bootstrap-4') }}
                           </div>
                      </div>
                  </div>
