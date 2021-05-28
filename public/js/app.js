@@ -13,13 +13,13 @@ function post(url, data, successCallback, failureCallback) {
             ...data
         },
         url,
-        type: 'POST'
+        method: 'POST'
     })
     .done(successCallback)
     .fail(failureCallback)
 }
 
-function destroy (url, successCallback, failureCallback) {
+function destroy(url, successCallback, failureCallback) {
     const token = $('meta[name="token"]').attr('content')
     $.ajaxSetup({
         headers: {
@@ -28,14 +28,22 @@ function destroy (url, successCallback, failureCallback) {
     });
 
     $.ajax({
-        data: {
-            _token: token,
-            _method: 'DELETE',
-            ...data
-        },
-        url,
-        type: 'POST'
-    })
-    .done(successCallback)
-    .fail(failureCallback);
+            data: {
+                    _token: token,
+                    _method: 'DELETE',
+                    ...data
+                },
+                url,
+                type: 'POST'
+            })
+            .done(successCallback)
+                .fail(failureCallback);
+}
+function get(url, successCallback, failureCallback) {
+    $.ajax({
+            url,
+            method: 'GET'
+        })
+        .done(successCallback)
+        .fail(failureCallback);
 }

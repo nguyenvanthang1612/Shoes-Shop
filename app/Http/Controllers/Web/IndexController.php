@@ -12,9 +12,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::oldest()->paginate(10);
-        $latestProducts = $products->take(5);
-        $featureProducts = $products->take(10);
+        $products = Product::latest()->paginate(10);
+        $latestProducts = Product::latest()->take(5)->get();
+        $featureProducts = Product::latest()->take(10)->get();
         return view('frontend.index', compact('products', 'latestProducts', 'featureProducts'));
     }
 
@@ -60,9 +60,6 @@ class IndexController extends Controller
             return redirect("/");
         }
     }
-
-
-
 }
 
 

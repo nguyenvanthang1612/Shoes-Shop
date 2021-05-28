@@ -142,7 +142,7 @@
                                                 <!-- Btns -->
                                                 <div class="btns-wrap btn-material bg-white">
                                                     <a href="#">Buy now</a>
-                                                    <a class="text-blue" href="#">Put in cart</a>
+                                                    <a class="text-blue" onclick='addCart("{{$product->id}}")'  href="javascript:" >Put in cart</a>
                                                 </div>
                                             </div>
 

@@ -32,15 +32,22 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::get('user/address-edit-page/{id}', [IndexController::class, 'addressEdit']);
     Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);
     //Cart
-    Route::get('/addCart/{id}', [CartController::class,'addCart']);
+    Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
     Route::get('deleteItemCart/{id}', [CartController::class,'deleteItemCart']);
 
     Route::get('listCart/', [CartController::class,'showListCart']);
     Route::get('deleteCart/', [CartController::class,'deleteListCart']);
     //Category
-    //Product
+    //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
+    Route::get('categories/{category}/addCart/{id}', [CategoryProductController::class, 'addCart']);
+    Route::get('categories/{category}/deleteItemCart/{id}', [CategoryProductController::class, 'deleteItemCart']);
 
+
+    //Product-Cart
+    Route::get('products/addCart/{id}', [ProductController::class, 'addCart']);
+    Route::get('products/deleteItemCart/{id}', [ProductController::class, 'deleteItemCart']);
+    //Product show
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
     Route::get('/login', [AuthenticateController::class, 'showLoginForm']);

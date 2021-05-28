@@ -98,14 +98,12 @@
         <script>
             function addCart(id)
             {
-                $.ajax({
-                    url: 'addCart/'+id,
-                    type: 'GET',
-                }).done(function(response)
-                {
-                    renderCart(response);
+                get(`addCart/${id}`, function(res) {
+                    renderCart(res);
                     alertify.success("Đã thêm sản phẩm mới");
-                });
+                }, function(err) {
+                    console.error(err)
+                })
             }
 
             $(document).on("click",".remove-btn" , function(){
@@ -123,10 +121,10 @@
             {
                 $("#change-item-cart").empty();
                 $("#change-item-cart").html(response);
-                $("#show-total-quantity").text($("#total-quantity-cart").val());
+                $("#show-total-quantity").text($("#total-quantity-cart").length != 0 ? $("#total-quantity-cart").val() : 0);
             }
 
-            function deleteListCart(id)
+            /*function deleteListCart(id)
             {
                 $.ajax({
                     url: 'deleteCart/'+id,
@@ -142,9 +140,10 @@
             {
                 $("#list-cart").empty();
                 $("#list-cart").html(response);
-            }
+            }*/
 
         </script>
+
 
 
         @stack('js')

@@ -95,7 +95,7 @@
                                 <div class="info">
 
                                     <!-- Buy btn -->
-                                    <a href="shop-item.html" class="btn-material btn-price">
+                                    <a  onclick='addCart("{{$product->id}}")'  href="javascript:" class="btn-material btn-price">
 
                                         <!-- Price -->
                                         <span class="price">
@@ -113,18 +113,7 @@
                                             </span>
                                         </span>
 
-                                        <!-- Quantity -->
-                                        <span class="qnt-select">
-                                            <span class="plus">
-                                                <i class="icofont icofont-plus"></i>
-                                            </span>
-                                            <span class="view-sum">
-                                                01
-                                            </span>
-                                            <span class="minus">
-                                                <i class="icofont icofont-minus"></i>
-                                            </span>
-                                        </span>
+
 
                                         <!-- Icon card -->
                                         <span class="icon-card">
