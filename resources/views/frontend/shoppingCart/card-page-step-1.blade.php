@@ -162,6 +162,7 @@ Step 1
 
         if (quantity == 0) {
             removeItemOutOfCart($(this))
+            reloadProductInCartPage();
         }
         else {
             post('cart/update-quantity', {id: productId, quantity}, function(response) {

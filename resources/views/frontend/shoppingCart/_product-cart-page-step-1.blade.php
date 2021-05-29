@@ -32,7 +32,7 @@
                                             <i class="icofont icofont-minus"></i>
                                         </span>
                                         <span class="input">
-                                            <input type="text" min="0" value="{{$item['quantity']}}" data-productid={{ $item['productInfo']->id }}
+                                            <input type="number" min="0" value="{{$item['quantity']}}" data-productid={{ $item['productInfo']->id }}
                                             class="cart-item" />
                                         </span>
                                         <span class="plus" data-productid={{ $item['productInfo']->id }} data-idCart={{ $item['productInfo']->id }}>
