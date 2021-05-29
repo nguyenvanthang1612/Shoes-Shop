@@ -19,7 +19,6 @@ class CartController extends Controller
             $newCart->addCart($product, $id);
             $request->session()->put('Cart', $newCart);
         }
-        return view('frontend.shoppingCart.cart-item');
     }
 
     public function deleteItemCart(Request $request, $id)
@@ -32,6 +31,10 @@ class CartController extends Controller
         } else {
             $request->session()->forget('Cart');
         }
+    }
+
+    public function reloadCartItemInBadge()
+    {
         return view('frontend.shoppingCart.cart-item');
     }
 

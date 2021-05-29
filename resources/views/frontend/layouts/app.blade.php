@@ -97,7 +97,7 @@
             function addCart(id)
             {
                 get(`/addCart/${id}`, function(res) {
-                    renderCart(res);
+                    reloadCartItemInBadge()
                     alertify.success("Đã thêm sản phẩm mới");
                 }, function(err) {
                     console.error(err)
@@ -110,13 +110,22 @@
 
             function removeItemOutOfCart(item)
             {
-                //<span data-idcart="2"></span>
                 $.ajax({
                     url:'deleteItemCart/'+item.attr("data-idCart"),
                     type:'GET',
                 }).done(function(response) {
-                    renderCart(response);
+                    reloadCartItemInBadge()
                     alertify.success('Đã xoá thành công sản phẩm');
+                });
+            }
+
+            function reloadCartItemInBadge()
+            {
+                $.ajax({
+                    url: "{{ route('frontend.cart.reloadCartItemInBadge') }}",
+                    type:'GET',
+                }).done(function(response) {
+                    renderCart(response);
                 });
             }
 

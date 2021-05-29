@@ -151,6 +151,7 @@ Step 1
         post('cart/update-quantity', {id: productId, quantity}, function(response) {
             $("#products-step-1").html(response)
         });
+        reloadCartItemInBadge()
     });
 
     $(document).on('click', ".minus", function() {
@@ -167,6 +168,7 @@ Step 1
         else {
             post('cart/update-quantity', {id: productId, quantity}, function(response) {
             $("#products-step-1").html(response)
+            reloadCartItemInBadge()
         });
         }
 
@@ -182,7 +184,7 @@ Step 1
         post('cart/update-quantity', {id: productId, quantity}, function(response) {
             $("#products-step-1").html(response)
         });
-
+        reloadCartItemInBadge()
     });
 
 </script>
