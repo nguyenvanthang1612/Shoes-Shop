@@ -81,7 +81,7 @@
                 const username = $("[name='user_name']").val();
                 const password = $("[name='password']").val();
 
-                post("{{ route('user.login') }}", {
+                post("login", {
                     user_name: username,
                     password
                 }, function(res) {
@@ -122,7 +122,7 @@
             function reloadCartItemInBadge()
             {
                 $.ajax({
-                    url: "{{ route('frontend.cart.reloadCartItemInBadge') }}",
+                    url: "reloadCartItemInBadge",
                     type:'GET',
                 }).done(function(response) {
                     renderCart(response);

@@ -53,10 +53,10 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     //Product show
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
-    Route::get('/login', [AuthenticateController::class, 'showLoginForm']);
-    Route::post('/login', [AuthenticateController::class, 'login'])->name('user.login');
+    Route::get('login', [AuthenticateController::class, 'showLoginForm']);
+    Route::post('login', [AuthenticateController::class, 'login'])->name('user.login');
     Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
-    Route::post('/logout', [AuthenticateController::class, 'logout'])->name('logout');
+    Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
 });

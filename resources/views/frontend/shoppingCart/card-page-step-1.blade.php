@@ -138,7 +138,7 @@ Step 1
     function reloadProductInCartPage()
     {
         $.ajax({
-            url: '{{ route('frontend.cart.reloadProductsInCardPage') }}',
+            url: 'cart/products',
             type:'GET',
         }).done(function(response) {
             $("#products-step-1").html(response)
