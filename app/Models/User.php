@@ -64,9 +64,9 @@ class User extends Authenticatable
 
     public function sendPasswordResetNotification($token)
     {
-        $url = 'https://localhost/SneakerStore_ITPLUS/public/admin/auth/reset-password?token='.$token;
+        dd($token);
 
-        $this->notify(new ResetPasswordNotification($url));
+        // $this->notify(new ResetPasswordNotification($url));
     }
 
 }

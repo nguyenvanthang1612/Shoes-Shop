@@ -29,12 +29,12 @@
  
                     <h2 class="header-title text-center">Reset Password</h2>
                      
-                    <form method="POST" action='{{ url("admin/auth/reset-password/$token") }}'>
+                    <form method="POST" action='{{ url("admin/auth/reset-password") }}'>
                         @method('PUT')
                         @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
                         
+                        <input type="hidden" name="token" value="{{ request()->query('token') }}"/>
+                        <input type="hidden" name="email" value="{{ request()->query('token') }}"/>
                         <div class="form-group">
                             <input type="password" class="form-control"  placeholder="Password" name="password" />
                             @error('password')
@@ -45,8 +45,8 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="password" class="form-control"  placeholder="Confirm Password" name="confirm_password" />
-                            @error('confirm_password')
+                            <input type="password" class="form-control"  placeholder="Confirm Password" name="password_confirmation" />
+                            @error('password_confirmation')
                                 <div class="text-danger">
                                     {{ $message }}
                                 </div>

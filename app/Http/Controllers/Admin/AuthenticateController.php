@@ -63,7 +63,7 @@ class AuthenticateController extends Controller
     // show forgot password form
     public function forgotPasswordForm()
     {
-        return view('backend.authenticate.forgot-password');
+        // return view('backend.authenticate.forgot-password');
     }
 
     // forgot password
@@ -71,9 +71,11 @@ class AuthenticateController extends Controller
     {
         $request->validate(['email' => 'required|email']);
 
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        // $user = User::where('email', $request->input('email'))->first();
+        // $token = Password::createToken($user);
+        $status = Password::sendResetLink([
+            'email' => $request->input('email'),
+        ]);
 
         return $status === Password::RESET_LINK_SENT
                     ? back()->with(['status' => __($status)])
@@ -81,11 +83,10 @@ class AuthenticateController extends Controller
     }
 
     // show reset password form
-    public function resetPasswordForm($token)
+    public function resetPasswordForm()
     {
-        return view('backend.authenticate.reset-password' ,[
-            'token' => $token
-        ]);
+        // $email = PasswordRes
+        return view('backend.authenticate.reset-password');
     }
 
     // reset password
@@ -94,13 +95,15 @@ class AuthenticateController extends Controller
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',
-            'password' => 'required',
-            'confirm_password' => 'required|same:password'
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required'
         ]);
+
     
         $status = Password::reset(
-            $request->only('email', 'password', 'confirm_password', 'token'),
+            $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user, $password) use ($request) {
+                return [$user, $password];
                 $user->forceFill([
                     'password' => Hash::make($password)
                 ])->setRememberToken(Str::random(60));
@@ -110,6 +113,8 @@ class AuthenticateController extends Controller
                 event(new PasswordReset($user));
             }
         );
+
+        dd($status);
 
         return $status == Password::PASSWORD_RESET
                     ? redirect()->route('admin.login')->with('status', __($status))

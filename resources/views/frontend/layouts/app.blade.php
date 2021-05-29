@@ -96,7 +96,7 @@
         <script>
             function addCart(id)
             {
-                get(`/addCart/${id}`, function(res) {
+                get(`addCart/${id}`, function(res) {
                     reloadCartItemInBadge()
                     alertify.success("Đã thêm sản phẩm mới");
                 }, function(err) {
