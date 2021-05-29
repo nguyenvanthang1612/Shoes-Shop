@@ -63,3 +63,8 @@
 .item-wrapper[data-viewmode='details'] img {
     width: 247px !important;
 }
+
+.owl-stage {
+    display: flex;
+    align-items: center;
+}
