@@ -26,15 +26,24 @@
         <div class="row">
             <div class="login-wrapper">
                 <div class="login-inner">
- 
+
                     <h2 class="header-title text-center">Reset Password</h2>
-                     
-                    <form method="POST" action='{{ url("admin/auth/reset-password") }}'>
+
+                    <form method="POST" action='{{ route('backend.password.reset') }}'>
                         @method('PUT')
                         @csrf
-                        
-                        <input type="hidden" name="token" value="{{ request()->query('token') }}"/>
-                        <input type="hidden" name="email" value="{{ request()->query('token') }}"/>
+
+                        <input type="hidden" name="token" value="{{ $token }}"/>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control"  placeholder="Email.." name="email" />
+                            @error('email')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <input type="password" class="form-control"  placeholder="Password" name="password" />
                             @error('password')
@@ -58,14 +67,14 @@
                         </div>
 
                     </form>
-                    
-                     <div class="copy-text"> 
+
+                     <div class="copy-text">
                         <p class="m-0">2017 &copy; Meter admin</p>
                      </div>
-                 
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>

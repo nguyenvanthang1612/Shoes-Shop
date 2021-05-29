@@ -41,14 +41,14 @@ class AuthenticateController extends Controller
         {
             if (Auth::attempt([
                 'role' => '1',
-                'email' => $request->input('email'), 
+                'email' => $request->input('email'),
                 'password' => $request->input('password')
             ], $request->remember_token ? true : false)) {
                 return redirect('/admin');
             }
             else if (Auth::attempt([
                 'role' => '2',
-                'email' => $request->input('email'), 
+                'email' => $request->input('email'),
                 'password' => $request->input('password')
             ], $request->remember_token ? true : false)) {
                 return redirect('/admin');
@@ -56,14 +56,14 @@ class AuthenticateController extends Controller
             else {
                 Session::flash('error', 'Your email or password is incorrect!');
                 return redirect('/admin/auth/login');
-            } 
+            }
         }
     }
 
     // show forgot password form
     public function forgotPasswordForm()
     {
-        // return view('backend.authenticate.forgot-password');
+        return view('backend.authenticate.forgot-password');
     }
 
     // forgot password
@@ -83,10 +83,9 @@ class AuthenticateController extends Controller
     }
 
     // show reset password form
-    public function resetPasswordForm()
+    public function resetPasswordForm($token)
     {
-        // $email = PasswordRes
-        return view('backend.authenticate.reset-password');
+        return view('backend.authenticate.reset-password', compact('token'));
     }
 
     // reset password
@@ -99,26 +98,24 @@ class AuthenticateController extends Controller
             'password_confirmation' => 'required'
         ]);
 
-    
+
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user, $password) use ($request) {
-                return [$user, $password];
                 $user->forceFill([
-                    'password' => Hash::make($password)
+                    'password' => $password
                 ])->setRememberToken(Str::random(60));
-    
+
                 $user->save();
-    
+
                 event(new PasswordReset($user));
             }
         );
 
-        dd($status);
 
         return $status == Password::PASSWORD_RESET
                     ? redirect()->route('admin.login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
     }
-    
+
 }
