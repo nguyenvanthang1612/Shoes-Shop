@@ -8,6 +8,7 @@
         <meta name="description" content=""/>
         <meta name="author" content=""/>
         <meta name="token" content="{{ csrf_token() }}" />
+        <link rel="shortcut icon" href="{{ asset('frontend/images/blocks/logo-icon1.png') }}" type="image/png">
         <!--link rel="icon" href="#"-->
 
         <title>@yield('title')</title>

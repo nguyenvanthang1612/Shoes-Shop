@@ -3,11 +3,11 @@
 
     <!--logo-->
     <div class="logo">
-        <a href="index.html"><img src="{{ asset('backend/assets/images/logo.png') }}" alt=""></a>
+        <a href="{{ url('/admin') }}"><img src="{{ asset('backend/assets/images/logo1.png') }}" alt="" style="width: 130px; height: 50px"></a>
     </div>
 
     <div class="logo-icon text-center">
-        <a href="index.html"><img src="{{ asset('backend/assets/images/logo-icon.png') }}" alt=""></a>
+        <a href="{{ url('/admin') }}"><img src="{{ asset('backend/assets/images/logo-icon1.png') }}" alt="" style="width: 40px; height: 40px"></a>
     </div>
     <!--logo-->
 

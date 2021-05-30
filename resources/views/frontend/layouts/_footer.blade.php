@@ -89,12 +89,12 @@
                                     <li>
                                         <a href="mailto:info@example.com">
                                             <i class="icon icofont icofont-email"></i>
-                                            info@example.com
+                                            shoesshop12@gmail.com
                                         </a>
                                     </li>
                                     <li>
                                         <i class="icon icofont icofont-phone-circle"></i>
-                                        +1 (234) 567-89-10
+                                        039 365 60 99
                                     </li>
                                     <li>
                                         <i class="icon icofont icofont-clock-time"></i>
