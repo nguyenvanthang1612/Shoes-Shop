@@ -30,7 +30,7 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     //Cart
     Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
     Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart'])->name('frontend.cart.delete-item');
-    Route::get('listCart', [CartController::class, 'showListCart']);
+    Route::get('listCart', [CartController::class, 'showListCart'])->name('frontend.cart.list-cart');
     Route::get('reloadCartItemInBadge', [CartController::class, 'reloadCartItemInBadge'])->name('frontend.cart.reloadCartItemInBadge');
     Route::get('deleteCart', [CartController::class, 'deleteListCart']);
     Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reload-products-in-cardpage');
@@ -41,9 +41,6 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
 
-    //Product-Cart
-    Route::get('products/addCart/{id}', [ProductController::class, 'addCart']);
-    Route::get('products/deleteItemCart/{id}', [ProductController::class, 'deleteItemCart']);
     //Product show
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
@@ -55,6 +52,3 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
 });
 
-Route::get('/preview', function () {
-    return view('frontend.user.edit-address');
-});

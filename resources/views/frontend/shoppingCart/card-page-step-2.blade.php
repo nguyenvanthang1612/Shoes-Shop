@@ -247,41 +247,7 @@ Step 2
         </div>
 
         <div class="col-xs-12 col-md-4 col-lg-3 fix-height asside hidden-xs hidden-sm">
-            <div class="product-list float-block">
-                <div class="wrap bg-white">
-
-                    <!-- Asside nav -->
-                    <div class="asside-nav bg-grey-lightness hidden-xs">
-                        <div class="header text-uppercase text-white bg-blue">
-                            Category
-                        </div>
-
-                        <ul class="list-2">
-                            <li>
-                                <span class="head">Number of items:</span>
-                                <span class="sub">09</span>
-                            </li>
-                            <li>
-                                <span class="head">Discount:</span>
-                                <span class="sub">$20.00</span>
-                            </li>
-                            <li>
-                                <span class="head">Total price:</span>
-                                <span class="sub">$2 250.00</span>
-                            </li>
-                        </ul>
-
-                        <div class="asside-btn text-center">
-                            <a href="#" class="btn btn-primary btn-material">
-                                <span class="body">View order</span>
-                                <i class="icon icofont icofont-check-circled"></i>
-                            </a>
-                        </div>
-
-                    </div><!-- / Asside nav -->
-
-                </div>
-            </div>
+            @include('frontend.shoppingCart._cart-sidebar')
         </div>
     </div>
     <!-- END: CONTENT -->
