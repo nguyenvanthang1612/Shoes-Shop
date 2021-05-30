@@ -87,9 +87,9 @@
                     password
                 }, function(res) {
                     location.reload();
-                }, function(res) {
+                }, function(err) {
                     $("#error-login").addClass('alert alert-danger alert-dismissible')
-                    $("#error-login").text(res.responseJSON.message);
+                    $("#error-login").text(err.responseJSON.message);
                 })
             });
         });
@@ -119,25 +119,19 @@
             function removeItemOutOfCart(item)
             {
                 const productId = item.attr("data-idcart");
-                $.ajax({
-                    // url:'deleteItemCart/'+item.attr("data-idCart"),
-                    url: route("frontend.cart.delete-item", productId),
-                    type:'GET',
-                }).done(function(response) {
+
+                get(route("frontend.cart.delete-item", productId), function() {
                     reloadCartItemInBadge();
                     reloadProductInCartPage();
                     alertify.success('Đã xoá thành công sản phẩm');
-                });
+                })
             }
 
             function reloadCartItemInBadge()
             {
-                $.ajax({
-                    url: route('frontend.cart.reloadCartItemInBadge'),
-                    type:'GET',
-                }).done(function(response) {
-                    renderCart(response);
-                });
+                get(route('frontend.cart.reloadCartItemInBadge'), function(response) {
+                    renderCart(response)
+                })
             }
 
             function renderCart(response)
