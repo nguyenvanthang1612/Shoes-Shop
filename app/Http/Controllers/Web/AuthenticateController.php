@@ -53,18 +53,17 @@ class AuthenticateController extends Controller
                 'last_name' => 'required',
                 'email' => 'required|unique:users,email',
                 'password' => 'required|confirmed',
-                'telephone' => 'required|unique:user_address,telephone',
             ]
         );
 
         $userData = array_merge($request->except(['address', 'city', 'country', 'password_confirmation']), ['role' => 3]);
         $user = User::create($userData);
-        $addressData = array_merge($request->only(['address', 'city', 'country', 'telephone']), ['user_id' => $user->id]);
+        $addressData = array_merge($request->only(['address', 'city', 'country']), ['user_id' => $user->id]);
         UserAddress::create($addressData);
 
         if ($user) {
             Auth::login($user);
-            return redirect()->route('register');
+            return redirect()->route('frontend.index');
         }
     }
 

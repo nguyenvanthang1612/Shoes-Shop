@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
 use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +25,8 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
-    Route::get('user/edit-profile', [IndexController::class, 'edit'])->name('frontend.index.edit');
-    Route::put('user/edit-profile', [IndexController::class, 'update'])->name('frontend.index.update');
-
-    Route::get('user/address-edit-page/{id}', [IndexController::class, 'addressEdit']);
-    Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);
+    Route::get('user/edit-profile', [UserController::class, 'editProfile'])->name('frontend.user.edit-profile');
+    Route::put('user/edit-profile', [UserController::class, 'updateProfile'])->name('frontend.user.update-profile');
     //Cart
     Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
     Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart'])->name('frontend.cart.delete-item');
@@ -58,5 +56,5 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 });
 
 Route::get('/preview', function () {
-    return view('frontend.shoppingCart.card-page-step-3');
+    return view('frontend.user.edit-address');
 });

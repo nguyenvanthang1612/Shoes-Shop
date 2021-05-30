@@ -23,7 +23,7 @@
             <span class="info">
                 <!-- Name -->
                 <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
-                <a href='{{ route('frontend.') }}'>edit profile</a>
+                <a href='{{ route('frontend.user.edit-profile') }}'>Edit profile</a>
                 <a href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">Logout</a>
                 <form class="d-inline" action="{{ route('logout') }}" id="logout-form" method="POST">
                     @csrf
