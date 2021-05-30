@@ -69,6 +69,7 @@ class CartController extends Controller
 
     public function enterProductAddress()
     {
+        return view('frontend.shoppingCart.card-page-step-2');
     }
 
 }
