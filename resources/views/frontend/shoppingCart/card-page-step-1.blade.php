@@ -94,7 +94,6 @@ Step 1
 
         if (quantity == 0) {
             removeItemOutOfCart($(this))
-            reloadProductInCartPage();
         }
         else {
             post(route('frontend.cart.updateCartQuantity'), {id: productId, quantity}, function(response) {

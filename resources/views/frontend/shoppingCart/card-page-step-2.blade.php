@@ -67,11 +67,12 @@ Step 2
                         </div>
 
                         <div class="col">
-                            <form>
+                            <form action="{{ route('frontend.authenticate.login') }}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail2">Username</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2"
-                                        placeholder="Email">
+                                    <input type="text" class="form-control" id="exampleInputEmail2"
+                                        placeholder="Username">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword2">Password</label>
