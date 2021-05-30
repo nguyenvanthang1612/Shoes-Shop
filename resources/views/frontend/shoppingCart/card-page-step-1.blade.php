@@ -75,27 +75,14 @@ Step 1
 
 @push('js')
 <script>
-    $(document).on("click",".remove-btn" , function(){
-        reloadProductInCartPage()
-    });
-
-    function reloadProductInCartPage()
-    {
-        $.ajax({
-            url: route('frontend.cart.reload-products-in-cardpage'),
-            type:'GET',
-        }).done(function(response) {
-            $("#products-step-1").html(response)
-        });
-    }
 
     $(document).on('change', ".cart-item", function() {
         const productId = $(this).data('productid')
         const quantity = $(this).val()
         post(route('frontend.cart.updateCartQuantity'), {id: productId, quantity}, function(response) {
             $("#products-step-1").html(response)
+            reloadCartItemInBadge()
         });
-        reloadCartItemInBadge()
     });
 
     $(document).on('click', ".minus", function() {

@@ -105,8 +105,16 @@
                 })
             }
 
+            function reloadProductInCartPage()
+            {
+                get(route('frontend.cart.reload-products-in-cardpage'), function(response) {
+                    $("#products-step-1").html(response)
+                });
+            }
+
             $(document).on("click",".remove-btn" , function(){
                 removeItemOutOfCart($(this));
+                reloadProductInCartPage();
             });
 
             function removeItemOutOfCart(item)
