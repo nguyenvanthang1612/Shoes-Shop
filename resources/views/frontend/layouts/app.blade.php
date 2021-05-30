@@ -82,7 +82,7 @@
                 const username = $("[name='user_name']").val();
                 const password = $("[name='password']").val();
 
-                post("login", {
+                post(route("frontend.authenticate.login"), {
                     user_name: username,
                     password
                 }, function(res) {

@@ -55,7 +55,7 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
     Route::get('login', [AuthenticateController::class, 'showLoginForm']);
-    Route::post('login', [AuthenticateController::class, 'login'])->name('user.login');
+    Route::post('login', [AuthenticateController::class, 'login'])->name('frontend.authenticate.login');
     Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
@@ -63,5 +63,5 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 });
 
 Route::get('/preview', function () {
-    return view('frontend.shoppingCart.card-page-step-2');
+    return view('frontend.shoppingCart.card-page-step-3');
 });
