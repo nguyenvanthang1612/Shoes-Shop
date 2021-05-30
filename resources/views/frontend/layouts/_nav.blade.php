@@ -24,7 +24,7 @@
 
                 <div class="phone text-blue">
                     <i class="icofont icofont-phone-circle"></i>
-                    +1 234 567 89 10
+                        039 365 60 99
                 </div>
 
                 <form class="search bg-grey-light btn-material">
