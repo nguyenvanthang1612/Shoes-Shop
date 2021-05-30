@@ -13,8 +13,13 @@ class Order extends Model
 
     protected $table = 'orders';
 
-    public function order()
+    public function orderItem()
     {
-        return $this->hasMany(Order_item::class);
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function shipping()
+    {
+        return $this->hasMany(Shipping::class);
     }
 }
