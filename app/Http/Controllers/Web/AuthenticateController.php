@@ -56,6 +56,7 @@ class AuthenticateController extends Controller
             ]
         );
 
+
         $userData = array_merge($request->except(['address', 'city', 'country', 'password_confirmation']), ['role' => 3]);
         $user = User::create($userData);
         $addressData = array_merge($request->only(['address', 'city', 'country']), ['user_id' => $user->id]);

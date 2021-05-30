@@ -73,7 +73,7 @@ Register
                                                     User Name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="user_name"
-                                                        name="user_name">
+                                                        name="user_name" value="{{ old('user_name') }}">
                                                     @error('user_name')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -112,7 +112,7 @@ Register
                                                     name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="frName"
-                                                        name="first_name"/>
+                                                        name="first_name" value="{{ old('first_name') }}"/>
                                                     @error('first_name')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -125,7 +125,7 @@ Register
                                                     name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="lnName"
-                                                        name="last_name">
+                                                        name="last_name" value="{{ old('last_name') }}">
                                                     @error('last_name')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -138,7 +138,7 @@ Register
                                                     email</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email"
-                                                        name="email">
+                                                        name="email" value="{{ old('email') }}">
                                                     @error('email')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -151,7 +151,7 @@ Register
                                                     telephone</label>
                                                 <div class="col-sm-8">
                                                     <input type="tel" class="form-control" id="telephone"
-                                                        name="telephone">
+                                                        name="telephone" value="{{ old('telephone') }}">
                                                     @error('telephone')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -179,7 +179,7 @@ Register
                                                     Address</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="address"
-                                                        name="address">
+                                                        name="address" value="{{ old('address') }}">
                                                 </div>
                                             </div>
 
@@ -187,7 +187,7 @@ Register
                                                 <label for="locality"
                                                     class="col-sm-3 control-label text-darkness">City</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="city" name="city">
+                                                    <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
                                                 </div>
                                             </div>
                                             <div class="form-group pd-none register-field">
@@ -195,7 +195,7 @@ Register
                                                     class="col-sm-3 control-label text-darkness">Country</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="country"
-                                                        name="country">
+                                                        name="country" value="{{ old('country') }}">
                                                 </div>
                                             </div>
 

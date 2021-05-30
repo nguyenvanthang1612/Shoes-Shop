@@ -72,7 +72,7 @@ Update profile
                                                     name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="frName"
-                                                        name="first_name" value="{{ $user->first_name }}"/>
+                                                        name="first_name" value="{{ old('first_name',$user->first_name) }}"/>
                                                     @error('first_name')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -85,7 +85,7 @@ Update profile
                                                     name</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="lnName"
-                                                        name="last_name" value="{{ $user->last_name }}"/>
+                                                        name="last_name" value="{{ old('last_name', $user->last_name) }}"/>
                                                     @error('last_name')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -98,7 +98,7 @@ Update profile
                                                     email</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email"
-                                                        name="email" value="{{ $user->email }}">
+                                                        name="email" value="{{ old('email', $user->email) }}">
                                                     @error('email')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -111,7 +111,7 @@ Update profile
                                                     Telephone</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="telephone"
-                                                        name="telephone" value="{{ $user->telephone }}">
+                                                        name="telephone" value="{{ old('telephone', $user->telephone) }}">
                                                     @error('telephone')
                                                         <div class="text-danger">{{ $message }}</div>
                                                     @enderror
@@ -139,7 +139,7 @@ Update profile
                                                     Address</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="address"
-                                                        name="address" value="{{ $userAddress->address }}" />
+                                                        name="address" value="{{ old('address', $userAddress->address) }}" />
                                                 </div>
                                             </div>
 
@@ -147,7 +147,7 @@ Update profile
                                                 <label for="locality"
                                                     class="col-sm-3 control-label text-darkness">City</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="city" name="city" value="{{ $userAddress->city }}">
+                                                    <input type="text" class="form-control" id="city" name="city" value="{{ old('city', $userAddress->city) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group pd-none register-field">
@@ -155,7 +155,7 @@ Update profile
                                                     class="col-sm-3 control-label text-darkness">Country</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="country"
-                                                        name="country" value="{{ $userAddress->country }}">
+                                                        name="country" value="{{ old('country', $userAddress->country) }}">
                                                 </div>
                                             </div>
 
