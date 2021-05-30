@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 
 @section('title')
 Step 2
@@ -70,14 +70,21 @@ Step 2
                             <form action="{{ route('frontend.authenticate.login') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail2">Username</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail2"
+                                    <label for="username">Username</label>
+                                    <input type="text" name="user_name" class="form-control" id="username"
                                         placeholder="Username">
+                                    @error('username')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="exampleInputPassword2">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword2"
-                                        placeholder="Password">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        placeholder="Password" name="password">
+                                    @error('password')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="checkbox padding">
                                     <input type="checkbox" id="inputCheckBox2">
@@ -111,14 +118,14 @@ Step 2
                         <div class="col-xs-12">
 
                             <div class="panel-group" id="accordion">
-
+                                @if (Auth::check())
                                 <div class="panel panel-default">
                                     <div class="panel-heading" id="headingOne">
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseOne">
                                                 <span class="panel-indicator"></span>
-                                                Use addres from your profile
+                                                Use address from your profile
                                             </a>
                                         </h4>
                                     </div>
@@ -131,7 +138,9 @@ Step 2
                                                         address:</label>
                                                     <div class="col-sm-9">
                                                         <span class="text">
-                                                            12A Questen, Mt Vernon, NY 10550, US
+                                                            @if (isset(Auth::user()->userAddress->address))
+                                                                {{ Auth::user()->userAddress->address }}
+                                                            @endif
                                                         </span>
                                                     </div>
                                                 </div>
@@ -146,6 +155,7 @@ Step 2
                                         </div>
                                     </div>
                                 </div>
+                                @endif
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading" id="headingTwo">
@@ -160,16 +170,6 @@ Step 2
                                         <div class="panel-body">
 
                                             <form class="form-horizontal">
-
-                                                <!-- Authocompille -->
-                                                <div class="form-group pd-bottom">
-                                                    <label for="autocomplete"
-                                                        class="col-sm-2 control-label">Address</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="autocomplete"
-                                                            placeholder="Enter your address" onFocus="geolocate()">
-                                                    </div>
-                                                </div>
 
                                                 <div class="form-group pd-none">
                                                     <label for="route"
@@ -224,25 +224,6 @@ Step 2
                                                             data-placeholder="Delivery is not selected"></select>
                                                     </div>
                                                 </div>
-
-                                                <div class="form-group">
-                                                    <div class="col-sm-offset-3 col-sm-8">
-                                                        <button type="button" class="btn btn-primary btn-material">
-                                                            <span class="body">Calculate shipping</span>
-                                                            <i class="icon icofont icofont-check-circled"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group padding">
-                                                    <label class="col-sm-3 control-label pd-none">Cost delivery:</label>
-                                                    <div class="col-sm-9">
-                                                        <span class="text">
-                                                            <b>$456</b>.00
-                                                        </span>
-                                                    </div>
-                                                </div>
-
 
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-3 col-sm-8">

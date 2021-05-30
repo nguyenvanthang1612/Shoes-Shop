@@ -79,9 +79,10 @@
         $(function() {
             $("form#login-form").submit(function(e) {
                 e.preventDefault();
-                const username = $("[name='user_name']").val();
-                const password = $("[name='password']").val();
+                const username = $("#login-form [name='user_name']").val();
+                const password = $("#login-form [name='password']").val();
 
+                console.log(username, password)
                 post(route("frontend.authenticate.login"), {
                     user_name: username,
                     password

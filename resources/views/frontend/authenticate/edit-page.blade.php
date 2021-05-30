@@ -42,10 +42,7 @@
 
                                 <!-- Header -->
                                 <h1 class="header text-uppercase">
-                                    New user
-                                    <span>
-                                        registration
-                                    </span>
+                                    Edit profile
                                 </h1>
                             </div>
                         </div>
@@ -53,34 +50,7 @@
 
                         <div class="row">
 
-                            <!-- Header & nav -->
-                            <div class="col-md-3">
-
-                                <!-- Text -->
-                                <p class="text">
-                                    Magni labore ratione maiores, laborum quaerat molestiae excepturi. Corporis, necessitatibus earum.
-                                </p>
-
-                                <!-- Nav -->
-                                <div class="asside-nav no-bg">
-                                    <ul class="nav-vrt border">
-                                        <li class="active">
-                                            <a href="#" class="btn-material">Privacy policy</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="btn-material">Terms and conditions</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="btn-material">FAQ</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-9">
+                            <div class="col">
                                 <form method="POST" action="{{ route('frontend.index.update') }}">
                                     @method('PUT')
                                     @csrf
