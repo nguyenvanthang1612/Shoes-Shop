@@ -92,7 +92,7 @@ Step 1
     $(document).on('change', ".cart-item", function() {
         const productId = $(this).data('productid')
         const quantity = $(this).val()
-        post('cart/update-quantity', {id: productId, quantity}, function(response) {
+        post(route('frontend.cart.updateCartQuantity'), {id: productId, quantity}, function(response) {
             $("#products-step-1").html(response)
         });
         reloadCartItemInBadge()
@@ -110,10 +110,10 @@ Step 1
             reloadProductInCartPage();
         }
         else {
-            post('cart/update-quantity', {id: productId, quantity}, function(response) {
-            $("#products-step-1").html(response)
-            reloadCartItemInBadge()
-        });
+            post(route('frontend.cart.updateCartQuantity'), {id: productId, quantity}, function(response) {
+                $("#products-step-1").html(response)
+                reloadCartItemInBadge()
+            });
         }
 
     });
@@ -125,10 +125,10 @@ Step 1
         // console.log($(this).next('.input').find('input').val());
         const quantity = parseInt(cartItem.val()) + 1
 
-        post('cart/update-quantity', {id: productId, quantity}, function(response) {
+        post(route('frontend.cart.updateCartQuantity'), {id: productId, quantity}, function(response) {
             $("#products-step-1").html(response)
+            reloadCartItemInBadge()
         });
-        reloadCartItemInBadge()
     });
 
 </script>
