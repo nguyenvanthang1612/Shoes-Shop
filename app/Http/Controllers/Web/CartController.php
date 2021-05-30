@@ -14,7 +14,7 @@ class CartController extends Controller
         $product = Product::find($id);
         if($product != null)
         {
-            $oldCart = Session('Cart') ? Session('Cart') : [];
+            $oldCart = session('Cart') ? session('Cart') : [];
             $newCart = new Cart($oldCart);
             $newCart->addCart($product, $id);
             $request->session()->put('Cart', $newCart);
@@ -23,7 +23,7 @@ class CartController extends Controller
 
     public function deleteItemCart(Request $request, $id)
     {
-        $oldCart = Session('Cart') ? Session('Cart') : null;
+        $oldCart = session('Cart') ? session('Cart') : [];
         $newCart = new Cart($oldCart);
         $newCart->deleteItemCart($id);
         if (count($newCart->products) > 0) {

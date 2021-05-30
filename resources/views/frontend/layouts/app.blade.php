@@ -114,20 +114,18 @@
 
             $(document).on("click",".remove-btn" , function(){
                 removeItemOutOfCart($(this));
-                reloadProductInCartPage();
             });
 
             function removeItemOutOfCart(item)
             {
                 const productId = item.attr("data-idcart");
-                console.log(productId);
                 $.ajax({
                     // url:'deleteItemCart/'+item.attr("data-idCart"),
                     url: route("frontend.cart.delete-item", productId),
                     type:'GET',
                 }).done(function(response) {
-                    console.log(response);
-                    reloadCartItemInBadge()
+                    reloadCartItemInBadge();
+                    reloadProductInCartPage();
                     alertify.success('Đã xoá thành công sản phẩm');
                 });
             }
