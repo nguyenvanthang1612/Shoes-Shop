@@ -30,6 +30,15 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         @stack('css')
+        <!-- CSS -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+        <!-- Default theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+        <!-- Semantic UI theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
         <link href="{!! asset('frontend/css/custom.css') !!}" rel="stylesheet"/>
     </head>
 
@@ -62,15 +71,7 @@
 
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-        <!-- Default theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-        <!-- Semantic UI theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-        <!-- Bootstrap theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-
+        @routes
 
         <!-- Google API -->
         <script src="{{ asset('js/app.js') }}"></script>
@@ -81,7 +82,7 @@
                 const username = $("[name='user_name']").val();
                 const password = $("[name='password']").val();
 
-                post("login", {
+                post(route("frontend.authenticate.login"), {
                     user_name: username,
                     password
                 }, function(res) {
@@ -96,7 +97,7 @@
         <script>
             function addCart(id)
             {
-                get(`addCart/${id}`, function(res) {
+                get(route('frontend.cart.add-cart', id), function(res) {
                     reloadCartItemInBadge()
                     alertify.success("Đã thêm sản phẩm mới");
                 }, function(err) {
@@ -110,8 +111,10 @@
 
             function removeItemOutOfCart(item)
             {
+                const productId = item.attr("data-idCart");
                 $.ajax({
-                    url:'deleteItemCart/'+item.attr("data-idCart"),
+                    // url:'deleteItemCart/'+item.attr("data-idCart"),
+                    url: route("frontend.cart.delete-item", productId),
                     type:'GET',
                 }).done(function(response) {
                     reloadCartItemInBadge()
@@ -122,7 +125,7 @@
             function reloadCartItemInBadge()
             {
                 $.ajax({
-                    url: "reloadCartItemInBadge",
+                    url: route('frontend.cart.reloadCartItemInBadge'),
                     type:'GET',
                 }).done(function(response) {
                     renderCart(response);

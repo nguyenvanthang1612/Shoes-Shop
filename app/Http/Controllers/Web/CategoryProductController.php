@@ -14,9 +14,4 @@ class CategoryProductController extends Controller
         $products = Product::where('category_id', $category->id)->paginate(10);
         return view('frontend.category-product.index', compact('products'));
     }
-
-    public function showListCart()
-    {
-        return view("frontend.shoppingCart.card-page-step-1");
-    }
 }

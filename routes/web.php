@@ -33,12 +33,13 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);
     //Cart
     Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
-    Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart']);
+    Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart'])->name('frontend.cart.delete-item');
     Route::get('listCart', [CartController::class, 'showListCart']);
     Route::get('reloadCartItemInBadge', [CartController::class, 'reloadCartItemInBadge'])->name('frontend.cart.reloadCartItemInBadge');
     Route::get('deleteCart', [CartController::class, 'deleteListCart']);
-    Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reloadProductsInCardPage');
+    Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reload-products-in-cardpage');
     Route::post('cart/update-quantity', [CartController::class, 'updateCartQuantity'])->name('frontend.cart.updateCartQuantity');
+    Route::get('cart/enter-address', [CartController::class, 'enterProductAddress'])->name('frontend.cart.enter-address');
 
     //Category
     //Product-category
@@ -54,9 +55,13 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
     Route::get('login', [AuthenticateController::class, 'showLoginForm']);
-    Route::post('login', [AuthenticateController::class, 'login'])->name('user.login');
+    Route::post('login', [AuthenticateController::class, 'login'])->name('frontend.authenticate.login');
     Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
     Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
+});
+
+Route::get('/preview', function () {
+    return view('frontend.shoppingCart.card-page-step-3');
 });
