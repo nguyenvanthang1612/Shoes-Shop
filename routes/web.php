@@ -37,7 +37,7 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::get('listCart', [CartController::class, 'showListCart']);
     Route::get('reloadCartItemInBadge', [CartController::class, 'reloadCartItemInBadge'])->name('frontend.cart.reloadCartItemInBadge');
     Route::get('deleteCart', [CartController::class, 'deleteListCart']);
-    Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reloadProductsInCardPage');
+    Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reload-products-in-cardpage');
     Route::post('cart/update-quantity', [CartController::class, 'updateCartQuantity'])->name('frontend.cart.updateCartQuantity');
     Route::get('cart/enter-address', [CartController::class, 'enterProductAddress'])->name('frontend.cart.enter-address');
 
