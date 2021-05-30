@@ -20,40 +20,29 @@ class ProductController extends Controller
 
     public function addCart(Request $request,$id)
     {
-        $product = DB::table('products')->where('id',$id)->first();
+        $product = Product::findOrFail($id);
         if($product != null)
         {
-           $oldCart = Session('Cart') ? Session('Cart') : null;
-           $newCart = new Cart($oldCart);
-           $newCart->addCart($product,$id);
+            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new Cart($oldCart);
+            $newCart->addCart($product, $id);
 
-           $request->session()->put('Cart', $newCart);
+            $request->session()->put('Cart', $newCart);
         }
         return view('frontend.shoppingCart.cart-item');
     }
 
     public function deleteItemCart(Request $request,$id)
     {
-           $oldCart = Session('Cart') ? Session('Cart') : null;
-           $newCart = new Cart($oldCart);
-           $newCart->deleteItemCart($id);
-           if(count($newCart->products) > 0)
-           {
+        $oldCart = Session('Cart') ? Session('Cart') : null;
+        $newCart = new Cart($oldCart);
+        $newCart->deleteItemCart($id);
+        if (count($newCart->products) > 0) {
             $request->session()->put('Cart', $newCart);
-           }
-           else
-           {
+        } else {
             $request->session()->forget('Cart');
-           }
-           return view('frontend.shoppingCart.cart-item');
+        }
+        return view('frontend.shoppingCart.cart-item');
     }
-
-    public function showListCart()
-    {
-        return view("frontend.shoppingCart.card-page-step-1");
-    }
-
-
-
 
 }
