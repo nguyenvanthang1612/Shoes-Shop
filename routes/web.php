@@ -44,9 +44,6 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     //Category
     //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
-    Route::get('categories/{category}/addCart/{id}', [CategoryProductController::class, 'addCart']);
-    Route::get('categories/{category}/deleteItemCart/{id}', [CategoryProductController::class, 'deleteItemCart']);
-
 
     //Product-Cart
     Route::get('products/addCart/{id}', [ProductController::class, 'addCart']);

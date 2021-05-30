@@ -17,19 +17,26 @@ class AuthenticateController extends Controller
 
     public function login(Request $request)
     {
+        $canUserLogin = Auth::attempt([
+            'role' => '3',
+            'user_name' => $request->input('user_name'),
+            'password' => $request->input('password')
+        ]);
+
         if ($request->ajax()) {
-            if(Auth::attempt([
-                'role' => '3',
-                'user_name' => $request->input('user_name'),
-                'password' => $request->input('password')
-            ]))
-            {
+            if ($canUserLogin) {
                 return response()->json(['user' => Auth::user()], 200);
-            }
-            else{
+            } else {
                 return response()->json(['message' => 'Đăng nhập thất bại'], 500);
             }
+        } else {
+            if ($canUserLogin) {
+                return redirect()->back();
+            } else {
+                return redirect()->back()->with('failure', 'Đăng nhập thất bại');
+            }
         }
+
     }
 
     public function showRegisterForm()
