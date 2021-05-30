@@ -21,8 +21,4 @@ class Product extends Model
     {
         return $this->belongsTo(Inventory::class);
     }
-    public function orderitem()
-    {
-        return $this->hasMany(OrderItem::class, 'product_id');
-    }
 }

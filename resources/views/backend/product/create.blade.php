@@ -117,7 +117,7 @@
                                 <option value="Addidas">Addidas</option>
                                 <option value="Puma">Puma</option>
                                 <option value="Gucci">Gucci</option>
-                                <option value="Thượng Đình">Converse</option>
+                                <option value="Converse">Converse</option>
                               </select>
                             </div>
                           </div>

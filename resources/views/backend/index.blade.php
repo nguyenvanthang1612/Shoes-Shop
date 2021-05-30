@@ -82,7 +82,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>{{ $totalPrice }}</p>
+                              <p>65</p>
                               <span>Total Earning</span>
                           </div>
                           <div class="info-icon text-warning">
@@ -102,7 +102,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>{{ $orders }}</p>
+                              <p>25</p>
                               <span>Pending Orders</span>
                           </div>
                           <div class="info-icon text-danger">

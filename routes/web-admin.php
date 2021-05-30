@@ -19,10 +19,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('auth/login', [AuthenticateController::class, 'showLoginForm'])
     ->name('admin.login')->middleware('logged-out');
     Route::post('auth/login', [AuthenticateController::class, 'login'])->middleware('logged-out');
-    Route::get('auth/forgot-password', [AuthenticateController::class, 'forgotPasswordForm'])->middleware('guest');
-    Route::post('auth/forgot-password', [AuthenticateController::class, 'forgotPassword'])->middleware('guest');
-    Route::get('auth/reset-password/{token}', [AuthenticateController::class, 'resetPasswordForm'])->middleware('guest')->name('backend.password.resetPasswordForm');
-    Route::put('auth/reset-password', [AuthenticateController::class, 'resetPassword'])->middleware('guest')->name('backend.password.reset');
+    Route::get('auth/forgot-password', [AuthenticateController::class, 'forgotPasswordForm']);
+    Route::post('auth/forgot-password', [AuthenticateController::class, 'forgotPassword']);
+    Route::get('auth/reset-password/{token}', [AuthenticateController::class, 'resetPasswordForm'])->name('backend.password.resetPasswordForm');
+    Route::put('auth/reset-password', [AuthenticateController::class, 'resetPassword'])->name('backend.password.reset');
 
     Route::group(['middleware' => 'authenticated-as-admin'], function () {
         Route::get('auth/logout', function () {
@@ -32,12 +32,12 @@ Route::group(['prefix' => 'admin'], function () {
 
         //dashboard
         Route::get('/', function () {
-            $orders = DB::table('orders')->count();
-            $totalPrice = DB::table('orders')->sum('price');
+            // $orders = DB::table('orders')->count();
+            // $totalPrice = DB::table('orders')->sum('price');
             $clientAccount = DB::table('users')->where('role', 3)->count();
             return view('backend.index', [
-                'orders' => $orders,
-                'totalPrice' => $totalPrice,
+                // 'orders' => $orders,
+                // 'totalPrice' => $totalPrice,
                 'clientAccount' => $clientAccount
             ]);
         })->name('admin.index');
@@ -78,8 +78,5 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('product/search/woman', [ProductController::class, 'searchWoman']);
         Route::post('product/search/kid', [ProductController::class, 'searchKid']);
 
-        //order
-        Route::get('order', [OrderController::class, 'index']);
-        Route::get('order/{id}/detail', [OrderController::class, 'show']);
     });
 });
