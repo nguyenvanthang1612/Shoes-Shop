@@ -18,6 +18,8 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->bigInteger('total_price');
             $table->dateTime('buy_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('full_name');
+            $table->string('telephone');
             $table->string('email');
             $table->timestamps();
         });

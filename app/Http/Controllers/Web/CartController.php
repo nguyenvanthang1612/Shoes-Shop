@@ -5,8 +5,12 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\LoginRequest;
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\Shipping;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -51,7 +55,6 @@ class CartController extends Controller
         }
     }
 
-
     public function updateCartQuantity(Request $request)
     {
         if ($request->ajax()) {
@@ -68,9 +71,47 @@ class CartController extends Controller
         }
     }
 
-    public function enterProductAddress()
+    public function enterShippingAddress()
     {
         return view('frontend.shoppingCart.card-page-step-2');
+    }
+
+    public function updateShippingAddress(Request $request)
+    {
+        $orderData = [
+            'total_price' => session('Cart')->totalPrice,
+            'full_name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
+            'telephone' => Auth::user()->telephone,
+            'email' => Auth::user()->email
+        ];
+        $order = Order::create($orderData);
+
+        $orderItems = array_map(function ($item) use ($order) {
+            return [
+                'order_id' => $order->id,
+                'product_name' => $item['productInfo']->name,
+                'product_quantity' => $item['quantity'],
+                'product_price' => $item['price'],
+            ];
+        }, session('Cart')->products);
+        OrderItem::insert($orderItems);
+
+        $shippingData = [
+            'order_id' => $order->id,
+            'customer_name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
+            'telephone' => Auth::user()->telephone,
+            'address' => Auth::user()->userAddress->address,
+            'city' => Auth::user()->userAddress->city,
+            'country' => Auth::user()->userAddress->country
+        ];
+        Shipping::create($shippingData);
+
+        return redirect()->route('frontend.cart.confirm-order');
+    }
+
+    public function confirmOrder()
+    {
+        return view('frontend.shoppingCart.confirm-order');
     }
 
 }

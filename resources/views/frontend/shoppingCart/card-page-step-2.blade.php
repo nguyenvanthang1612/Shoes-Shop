@@ -131,26 +131,28 @@ Step 2
                                     </div>
                                     <div id="collapseOne" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <form class="form-horizontal">
-
+                                            <form class="form-horizontal" method="POST" action="{{ route('frontend.cart.update-shipping-address') }}">
+                                                @csrf
+                                                @method('PUT')
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label pd-none">Shipping
-                                                        address:</label>
+                                                    <label class="col-sm-3 control-label pd-none">Shipping address:</label>
                                                     <div class="col-sm-9">
                                                         <span class="text">
                                                             @if (isset(Auth::user()->userAddress->address))
                                                                 {{ Auth::user()->userAddress->address }}
+                                                            @else
+                                                                <a href="{{ route('frontend.user.edit-profile') }}" target="_blank">Update shipping address</a>
                                                             @endif
                                                         </span>
                                                     </div>
                                                 </div>
-
+                                                @if (isset(Auth::user()->userAddress->address))
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-3 col-sm-7">
-                                                        <a href="#"
-                                                            class="sdw-hover btn btn-material btn-yellow ripple-cont">Accept</a>
+                                                        <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">Accept</button>
                                                     </div>
                                                 </div>
+                                                @endif
                                             </form>
                                         </div>
                                     </div>

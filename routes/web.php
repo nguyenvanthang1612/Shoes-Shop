@@ -35,8 +35,10 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::get('deleteCart', [CartController::class, 'deleteListCart']);
     Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reload-products-in-cardpage');
     Route::post('cart/update-quantity', [CartController::class, 'updateCartQuantity'])->name('frontend.cart.updateCartQuantity');
-    Route::get('cart/enter-address', [CartController::class, 'enterProductAddress'])->name('frontend.cart.enter-address');
+    Route::get('cart/enter-address', [CartController::class, 'enterShippingAddress'])->name('frontend.cart.enter-address');
+    Route::put('cart/enter-address', [CartController::class, 'updateShippingAddress'])->name('frontend.cart.update-shipping-address');
 
+    Route::get('cart/confirm', [CartController::class, 'confirmOrder'])->name('frontend.cart.confirm-order');
     //Category
     //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
@@ -52,3 +54,6 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
 });
 
+Route::get('/preview', function () {
+    return view('frontend.shoppingCart.confirm-order');
+});
