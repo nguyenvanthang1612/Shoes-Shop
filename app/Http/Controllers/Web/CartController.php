@@ -102,7 +102,8 @@ class CartController extends Controller
             'telephone' => $request->has('telephone') ? $request->input('telephone') : Auth::user()->telephone,
             'address' => $request->has('address') ? $request->input('address') : Auth::user()->userAddress->address,
             'city' => $request->has('city') ? $request->input('city') : Auth::user()->userAddress->city,
-            'country' => $request->has('country') ? $request->input('country') : Auth::user()->userAddress->country
+            'country' => $request->has('country') ? $request->input('country') : Auth::user()->userAddress->country,
+            'note' => $request->has('note') ? $request->input('note') : '',
         ];
         Shipping::create($shippingData);
 
