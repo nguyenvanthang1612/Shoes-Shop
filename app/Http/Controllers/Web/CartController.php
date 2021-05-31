@@ -98,11 +98,11 @@ class CartController extends Controller
 
         $shippingData = [
             'order_id' => $order->id,
-            'customer_name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
-            'telephone' => Auth::user()->telephone,
-            'address' => Auth::user()->userAddress->address,
-            'city' => Auth::user()->userAddress->city,
-            'country' => Auth::user()->userAddress->country
+            'customer_name' => $request->has('customer_name') ? $request->input('customer_name') : Auth::user()->first_name . ' ' . Auth::user()->last_name,
+            'telephone' => $request->has('telephone') ? $request->input('telephone') : Auth::user()->telephone,
+            'address' => $request->has('address') ? $request->input('address') : Auth::user()->userAddress->address,
+            'city' => $request->has('city') ? $request->input('city') : Auth::user()->userAddress->city,
+            'country' => $request->has('country') ? $request->input('country') : Auth::user()->userAddress->country
         ];
         Shipping::create($shippingData);
 
