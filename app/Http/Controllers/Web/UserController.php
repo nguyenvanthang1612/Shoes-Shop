@@ -14,7 +14,7 @@ class UserController extends Controller
     public function editProfile(Request $request)
     {
         $user = Auth::user();
-        $userAddress = UserAddress::where('user_id', Auth::user()->id)->first();
+        $userAddress = UserAddress::where('user_id', Auth::user()->id)->firstOrNew();
 
         return view('frontend.user.edit-profile', compact('user', 'userAddress'));
     }
@@ -29,11 +29,9 @@ class UserController extends Controller
             ]
         );
 
-        $user = Auth::user();
-        $userAddress = UserAddress::where('user_id', Auth::user()->id)->first();
+        Auth::user()->update($request->only(['first_name', 'last_name', 'email', 'telephone']));
+        UserAddress::updateOrCreate(['user_id' => Auth::user()->id], $request->only(['address', 'city', 'country']));
 
-        $user->update($request->only(['first_name', 'last_name', 'email', 'telephone']));
-        $userAddress->update($request->only(['address', 'city', 'country']));
         return redirect()->route('frontend.index');
     }
 }

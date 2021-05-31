@@ -139,7 +139,7 @@ Update profile
                                                     Address</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="address"
-                                                        name="address" value="{{ old('address', $userAddress->address) }}" />
+                                                        name="address" value="{{ old('address', $userAddress->address)  }}" />
                                                 </div>
                                             </div>
 
