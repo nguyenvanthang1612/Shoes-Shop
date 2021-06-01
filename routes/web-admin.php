@@ -8,6 +8,7 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MailController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Auth;
@@ -32,12 +33,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         //dashboard
         Route::get('/', function () {
-            // $orders = DB::table('orders')->count();
-            // $totalPrice = DB::table('orders')->sum('price');
             $clientAccount = DB::table('users')->where('role', 3)->count();
             return view('backend.index', [
-                // 'orders' => $orders,
-                // 'totalPrice' => $totalPrice,
                 'clientAccount' => $clientAccount
             ]);
         })->name('admin.index');
@@ -77,6 +74,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('product/search/man', [ProductController::class, 'searchMan']);
         Route::post('product/search/woman', [ProductController::class, 'searchWoman']);
         Route::post('product/search/kid', [ProductController::class, 'searchKid']);
+
 
     });
 });
