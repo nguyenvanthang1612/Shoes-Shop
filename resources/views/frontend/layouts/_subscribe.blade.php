@@ -19,10 +19,10 @@
                         <div class="col-md-7">
 
                             <!-- Subscribe form -->
-                            <form class="subscribe sdw">
+                            <form class="subscribe sdw" action="{{ url('/send-subcribe-email') }}" method="post">
                                 <div class="wrap">
 
-                                    <form action="{{ url('/send-subcribe-email') }}" method="post">
+                                    {{-- <form action="{{ url('/send-subcribe-email') }}" method="post"> --}}
                                         @csrf
 
                                         <div class="fields">
@@ -49,7 +49,7 @@
                                                 <i class="icofont icofont-send-mail"></i>
                                             </button>
                                         </div>
-                                    </form>
+                                    {{-- </form> --}}
                                 </div>
                             </form>
                         </div>

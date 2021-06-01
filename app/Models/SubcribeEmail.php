@@ -9,7 +9,7 @@ class SubcribeEmail extends Model
 {
     use HasFactory;
 
-    protected $guard = [];
+    protected $guarded = [];
 
     protected $table = 'subcribe';
 }

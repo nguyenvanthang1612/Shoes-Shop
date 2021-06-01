@@ -23,10 +23,13 @@ class SubcribeEmailController extends Controller
 
         if ($user_create)
         {
-            $user = SubcribeEmail::findAll($request->id);
-            Mail::to($request->user())->send(new SubcribeMail($user));
+            $users = SubcribeEmail::all();
+            foreach ($users as $user)
+            {
+                Mail::to($user->email)->send(new SubcribeMail($user));
+            }
 
-            // return back()->with('message', 'đã gửi mail');
+            return back()->with('message', 'đã gửi mail');
         }
     }
 }
