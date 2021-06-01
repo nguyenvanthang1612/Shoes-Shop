@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\LoginRequest;
 use App\Models\User;
 use App\Models\UserAddress;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class AuthenticateController extends Controller
         return view('frontend.layouts._footer');
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         $canUserLogin = Auth::attempt([
             'role' => '3',
@@ -36,7 +37,6 @@ class AuthenticateController extends Controller
                 return redirect()->back()->with('failure', 'Đăng nhập thất bại');
             }
         }
-
     }
 
     public function showRegisterForm()
@@ -53,24 +53,24 @@ class AuthenticateController extends Controller
                 'last_name' => 'required',
                 'email' => 'required|unique:users,email',
                 'password' => 'required|confirmed',
-                'telephone' => 'required|unique:user_address,telephone',
             ]
         );
 
-        $userData = array_merge($request->except(['address', 'city', 'country']), ['role' => 3]);
+
+        $userData = array_merge($request->except(['address', 'city', 'country', 'password_confirmation']), ['role' => 3]);
         $user = User::create($userData);
-        $addressData = array_merge($request->only(['address', 'city', 'country', 'telephone']), ['user_id' => $user->id]);
+        $addressData = array_merge($request->only(['address', 'city', 'country']), ['user_id' => $user->id]);
         UserAddress::create($addressData);
 
         if ($user) {
             Auth::login($user);
-            return redirect()->route('register');
+            return redirect()->route('frontend.index');
         }
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect()->route('frontend.index');
     }
 }

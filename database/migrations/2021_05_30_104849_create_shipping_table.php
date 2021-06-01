@@ -20,11 +20,11 @@ class CreateShippingTable extends Migration
             $table->string('telephone');
             $table->string('address');
             $table->string('city');
-            $table->string('payment_type');
+            $table->string('country');
+            $table->string('note')->nullable();
             $table->timestamps();
 
-            $table->foreign('order_id')->references('id')
-            ->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
 use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -24,30 +25,24 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
-    Route::get('user/index-page', [IndexController::class, 'mainUserIndex'])->name('frontend.index.main-user-index');
-
-    Route::get('user/edit-page', [IndexController::class, 'edit'])->name('frontend.index.edit');
-    Route::put('user/edit-page', [IndexController::class, 'update'])->name('frontend.index.update');
-
-    Route::get('user/address-edit-page/{id}', [IndexController::class, 'addressEdit']);
-    Route::put('user/address-edit-page/{id}', [IndexController::class, 'addressUpdate']);
+    Route::get('user/edit-profile', [UserController::class, 'editProfile'])->name('frontend.user.edit-profile');
+    Route::put('user/edit-profile', [UserController::class, 'updateProfile'])->name('frontend.user.update-profile');
     //Cart
     Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
     Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart'])->name('frontend.cart.delete-item');
-    Route::get('listCart', [CartController::class, 'showListCart']);
+    Route::get('listCart', [CartController::class, 'showListCart'])->name('frontend.cart.list-cart');
     Route::get('reloadCartItemInBadge', [CartController::class, 'reloadCartItemInBadge'])->name('frontend.cart.reloadCartItemInBadge');
     Route::get('deleteCart', [CartController::class, 'deleteListCart']);
     Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reload-products-in-cardpage');
     Route::post('cart/update-quantity', [CartController::class, 'updateCartQuantity'])->name('frontend.cart.updateCartQuantity');
-    Route::get('cart/enter-address', [CartController::class, 'enterProductAddress'])->name('frontend.cart.enter-address');
+    Route::get('cart/enter-address', [CartController::class, 'enterShippingAddress'])->name('frontend.cart.enter-address');
+    Route::put('cart/enter-address', [CartController::class, 'updateShippingAddress'])->name('frontend.cart.update-shipping-address');
 
+    Route::get('cart/confirm', [CartController::class, 'confirmOrder'])->name('frontend.cart.confirm-order');
     //Category
     //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
 
-    //Product-Cart
-    Route::get('products/addCart/{id}', [ProductController::class, 'addCart']);
-    Route::get('products/deleteItemCart/{id}', [ProductController::class, 'deleteItemCart']);
     //Product show
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
@@ -60,5 +55,5 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 });
 
 Route::get('/preview', function () {
-    return view('frontend.shoppingCart.card-page-step-3');
+    return view('frontend.shoppingCart.confirm-order');
 });

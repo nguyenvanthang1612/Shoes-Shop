@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app');
+@extends('frontend.layouts.app')
 
 @section('title')
 Step 2
@@ -70,14 +70,21 @@ Step 2
                             <form action="{{ route('frontend.authenticate.login') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail2">Username</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail2"
+                                    <label for="username">Username</label>
+                                    <input type="text" name="user_name" class="form-control" id="username"
                                         placeholder="Username">
+                                    @error('username')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="exampleInputPassword2">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword2"
-                                        placeholder="Password">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password"
+                                        placeholder="Password" name="password">
+                                    @error('password')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="checkbox padding">
                                     <input type="checkbox" id="inputCheckBox2">
@@ -111,41 +118,46 @@ Step 2
                         <div class="col-xs-12">
 
                             <div class="panel-group" id="accordion">
-
+                                @if (Auth::check())
                                 <div class="panel panel-default">
                                     <div class="panel-heading" id="headingOne">
                                         <h4 class="panel-title">
                                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseOne">
                                                 <span class="panel-indicator"></span>
-                                                Use addres from your profile
+                                                Use address from your profile
                                             </a>
                                         </h4>
                                     </div>
                                     <div id="collapseOne" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <form class="form-horizontal">
-
+                                            <form class="form-horizontal" method="POST" action="{{ route('frontend.cart.update-shipping-address') }}">
+                                                @csrf
+                                                @method('PUT')
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label pd-none">Shipping
-                                                        address:</label>
+                                                    <label class="col-sm-3 control-label pd-none">Shipping address:</label>
                                                     <div class="col-sm-9">
                                                         <span class="text">
-                                                            12A Questen, Mt Vernon, NY 10550, US
+                                                            @if (isset(Auth::user()->userAddress->address))
+                                                                {{ Auth::user()->userAddress->address }}
+                                                            @else
+                                                                <a href="{{ route('frontend.user.edit-profile') }}" target="_blank">Update shipping address</a>
+                                                            @endif
                                                         </span>
                                                     </div>
                                                 </div>
-
+                                                @if (isset(Auth::user()->userAddress->address))
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-3 col-sm-7">
-                                                        <a href="#"
-                                                            class="sdw-hover btn btn-material btn-yellow ripple-cont">Accept</a>
+                                                        <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">Accept</button>
                                                     </div>
                                                 </div>
+                                                @endif
                                             </form>
                                         </div>
                                     </div>
                                 </div>
+                                @endif
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading" id="headingTwo">
@@ -159,97 +171,67 @@ Step 2
                                     <div id="collapseTwo" class="panel-collapse collapse in">
                                         <div class="panel-body">
 
-                                            <form class="form-horizontal">
+                                            <form class="form-horizontal" action="{{ route('frontend.cart.update-shipping-address') }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                {{-- Customer name --}}
+                                                <div class="form-group pd-none">
+                                                    <label for="route"
+                                                        class="col-sm-3 control-label text-darkness">Customer name</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" name="customer_name" class="form-control" id="route">
+                                                    </div>
+                                                </div>
 
-                                                <!-- Authocompille -->
-                                                <div class="form-group pd-bottom">
-                                                    <label for="autocomplete"
-                                                        class="col-sm-2 control-label">Address</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="autocomplete"
-                                                            placeholder="Enter your address" onFocus="geolocate()">
+                                                {{-- Telephone --}}
+                                                <div class="form-group pd-none">
+                                                    <label for="route"
+                                                        class="col-sm-3 control-label text-darkness">Telephone</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="tel" name="telephone" class="form-control" id="route">
+                                                    </div>
+                                                </div>
+
+                                                {{-- Address --}}
+                                                <div class="form-group pd-none">
+                                                    <label for="route"
+                                                        class="col-sm-3 control-label text-darkness">Address</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="text" name="address" class="form-control" id="route">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group pd-none">
                                                     <label for="route"
-                                                        class="col-sm-3 control-label text-darkness">Street
-                                                        address</label>
+                                                        class="col-sm-3 control-label text-darkness">City</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="route">
+                                                        <input type="text" name="city" class="form-control" id="route">
                                                     </div>
 
                                                 </div>
 
                                                 <div class="form-group pd-none">
                                                     <label for="locality"
-                                                        class="col-sm-3 control-label text-darkness">City</label>
+                                                        class="col-sm-3 control-label text-darkness">Country</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="locality">
+                                                        <input type="text" class="form-control" id="locality" name="country">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group pd-none">
                                                     <label for="administrative_area_level_1"
-                                                        class="col-sm-3 control-label text-darkness">State</label>
+                                                        class="col-sm-3 control-label text-darkness">Note</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control"
-                                                            id="administrative_area_level_1">
+                                                        <textarea type="text" class="form-control" id="administrative_area_level_1" name="note"></textarea>
                                                     </div>
                                                 </div>
-
-                                                <div class="form-group pd-none">
-                                                    <label for="postal_code"
-                                                        class="col-sm-3 control-label text-darkness">Zip code</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="postal_code">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group pd-none">
-                                                    <label for="country"
-                                                        class="col-sm-3 control-label text-darkness">Country</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="country">
-                                                    </div>
-                                                </div>
-                                                <!-- / Authocompille -->
-
-                                                <div class="form-group">
-                                                    <label for="deliveryComp"
-                                                        class="col-sm-3 control-label text-darkness">Select a delivery
-                                                        method</label>
-                                                    <div class="col-sm-8">
-                                                        <select id="deliveryComp" class="select"
-                                                            data-placeholder="Delivery is not selected"></select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="col-sm-offset-3 col-sm-8">
-                                                        <button type="button" class="btn btn-primary btn-material">
-                                                            <span class="body">Calculate shipping</span>
-                                                            <i class="icon icofont icofont-check-circled"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group padding">
-                                                    <label class="col-sm-3 control-label pd-none">Cost delivery:</label>
-                                                    <div class="col-sm-9">
-                                                        <span class="text">
-                                                            <b>$456</b>.00
-                                                        </span>
-                                                    </div>
-                                                </div>
-
 
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-3 col-sm-8">
                                                         <span class="sdw-wrap">
-                                                            <a href="card-page-step-3.html"
+                                                            <button type="submit"
                                                                 class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">Go
-                                                                to next step</a>
+                                                                to next step</button>
                                                             <span class="sdw"></span>
                                                         </span>
                                                     </div>
@@ -266,41 +248,7 @@ Step 2
         </div>
 
         <div class="col-xs-12 col-md-4 col-lg-3 fix-height asside hidden-xs hidden-sm">
-            <div class="product-list float-block">
-                <div class="wrap bg-white">
-
-                    <!-- Asside nav -->
-                    <div class="asside-nav bg-grey-lightness hidden-xs">
-                        <div class="header text-uppercase text-white bg-blue">
-                            Category
-                        </div>
-
-                        <ul class="list-2">
-                            <li>
-                                <span class="head">Number of items:</span>
-                                <span class="sub">09</span>
-                            </li>
-                            <li>
-                                <span class="head">Discount:</span>
-                                <span class="sub">$20.00</span>
-                            </li>
-                            <li>
-                                <span class="head">Total price:</span>
-                                <span class="sub">$2 250.00</span>
-                            </li>
-                        </ul>
-
-                        <div class="asside-btn text-center">
-                            <a href="#" class="btn btn-primary btn-material">
-                                <span class="body">View order</span>
-                                <i class="icon icofont icofont-check-circled"></i>
-                            </a>
-                        </div>
-
-                    </div><!-- / Asside nav -->
-
-                </div>
-            </div>
+            @include('frontend.shoppingCart._cart-sidebar')
         </div>
     </div>
     <!-- END: CONTENT -->

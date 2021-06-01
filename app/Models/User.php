@@ -46,13 +46,12 @@ class User extends Authenticatable
     protected $table = 'users';
 
 
-
-    public function useraddress()
+    public function userAddress()
     {
-        return $this->hasMany(UserAddress::class, 'user_id');
+        return $this->hasOne(UserAddress::class, 'user_id');
     }
 
-    public function userpayment()
+    public function userPayment()
     {
         return $this->hasMany(UserPayment::class, 'user_id');
     }

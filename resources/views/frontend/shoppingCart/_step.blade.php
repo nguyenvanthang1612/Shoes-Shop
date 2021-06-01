@@ -35,9 +35,9 @@
                         3
                     </div>
                     <span>
-                        Select
+                        Confirm
                     </span>
-                    payment method
+                    order
                 </li>
 
                 {{-- <li class="hidden-xs col-lg-3 hidden-sm hidden-md">
