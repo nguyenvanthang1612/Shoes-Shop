@@ -75,6 +75,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('product/search/woman', [ProductController::class, 'searchWoman']);
         Route::post('product/search/kid', [ProductController::class, 'searchKid']);
 
-
+        //route
+        Route::get('order', [OrderController::class, 'showOrder']);
     });
 });

@@ -43,7 +43,12 @@
                 </ul>
             </li>
 
-            <li><a href=""><i class="ti-truck"></i> <span>Order</span></a></li>
+            <li class="menu-list"><a href=""><i class="ti-truck"></i> <span>Order</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="{{ url('/admin/order') }}"> All Order</a></li>
+                    <li><a href=""> Shipping</a></li>
+                </ul>
+            </li>
             <li><a href=""><i class="ti-money"></i> <span>Statistical</span></a></li>
             <li><a href=""><i class="icon-credit-card"></i> <span>Bill</span></a></li>
         </ul>

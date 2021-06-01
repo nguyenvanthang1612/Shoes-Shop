@@ -61,4 +61,4 @@ Route::get('/preview', function () {
 
 // Subcribe Email
 // Route::get('/send-subcribe-email', [SubcribeEmailController::class, 'nameAndEmailToSend']);
-Route::get('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);
+Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);

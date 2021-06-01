@@ -12,15 +12,15 @@ class SubcribeMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    private $subcribe;
+    private $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(SubcribeEmail $subcribe)
+    public function __construct(SubcribeEmail $user)
     {
-        $this->subcribe = $subcribe;
+        $this->user = $user;
     }
 
     /**
@@ -32,8 +32,8 @@ class SubcribeMail extends Mailable implements ShouldQueue
     {
         return $this->view('frontend.mail.sendSubcribeMail')
                     ->with([
-                        'name' => $this->subcribe->name,
-                        'email' => $this->subcribe->email,
+                        'name' => $this->user->name,
+                        'email' => $this->user->email,
                     ]);
     }
 }

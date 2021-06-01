@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(InventorySeeder::class);
         $this->call(ProductSeeder::class);
+        $this->call(OrderSeeder::class);
+        $this->call(OrderItemSeeder::class);
         DB::table('users')->insert([
             [
                 'user_name' => 'admin',

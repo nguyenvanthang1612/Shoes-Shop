@@ -22,7 +22,7 @@
                             <form class="subscribe sdw">
                                 <div class="wrap">
 
-                                    <form action="{{ url('admin/send-subcribe-email') }}" method="get">
+                                    <form action="{{ url('/send-subcribe-email') }}" method="post">
                                         @csrf
 
                                         <div class="fields">
