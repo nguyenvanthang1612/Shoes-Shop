@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
 use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\SubcribeEmailController;
 use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -57,3 +58,7 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 Route::get('/preview', function () {
     return view('frontend.shoppingCart.confirm-order');
 });
+
+// Subcribe Email
+// Route::get('/send-subcribe-email', [SubcribeEmailController::class, 'nameAndEmailToSend']);
+Route::get('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);

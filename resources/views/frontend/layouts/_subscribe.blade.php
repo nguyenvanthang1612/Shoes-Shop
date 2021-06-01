@@ -22,30 +22,34 @@
                             <form class="subscribe sdw">
                                 <div class="wrap">
 
-                                    <div class="fields">
+                                    <form action="{{ url('admin/send-subcribe-email') }}" method="get">
+                                        @csrf
 
-                                        <!-- Name -->
-                                        <div class="name">
-                                            <input type="text" placeholder="Name">
+                                        <div class="fields">
+
+                                            <!-- Name -->
+                                            <div class="name">
+                                                <input type="text" placeholder="Name" name="subcribe_name">
+                                            </div>
+    
+                                            <!-- Email -->
+                                            <div class="email">
+                                                <input type="text" placeholder="Email" name="subcribe_email">
+                                            </div>
+    
+                                            <!-- Divider (dotts) -->
+                                            <div class="divider">
+                                                <span></span>
+                                            </div>
                                         </div>
-
-                                        <!-- Email -->
-                                        <div class="email">
-                                            <input type="text" placeholder="Email">
+    
+                                        <!-- Send btn -->
+                                        <div class="send-btn">
+                                            <button type="submit">
+                                                <i class="icofont icofont-send-mail"></i>
+                                            </button>
                                         </div>
-
-                                        <!-- Divider (dotts) -->
-                                        <div class="divider">
-                                            <span></span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Send btn -->
-                                    <div class="send-btn">
-                                        <button>
-                                            <i class="icofont icofont-send-mail"></i>
-                                        </button>
-                                    </div>
+                                    </form>
                                 </div>
                             </form>
                         </div>
