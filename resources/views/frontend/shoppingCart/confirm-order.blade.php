@@ -41,7 +41,6 @@ Step 4
             CONTENT
             =============================================== -->
     <div class="row block none-padding-top">
-
         <div class="col">
             <div class="sdw-block">
                 <div class="wrap bg-white">
@@ -49,6 +48,12 @@ Step 4
 
                     <div class="row">
                         <h2>Cảm ơn bạn đã đặt hàng</h2>
+                        <form action="{{ route('frontend.cart.continue-shopping') }}" method="POST">
+                            @csrf
+                            <button class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">
+                                Tiếp tục mua hàng
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

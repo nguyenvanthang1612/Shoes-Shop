@@ -115,4 +115,13 @@ class CartController extends Controller
         return view('frontend.shoppingCart.confirm-order');
     }
 
+    public function continueShopping(Request $request)
+    {
+        if ($request->session()->has('Cart')) {
+            $request->session()->forget('Cart');
+        }
+
+        return redirect()->route('frontend.index');
+    }
+
 }

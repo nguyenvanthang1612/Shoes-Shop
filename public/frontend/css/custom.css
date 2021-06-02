@@ -68,3 +68,7 @@
     display: flex;
     align-items: center;
 }
+
+.navbar-default .navbar-nav .profile .info .name {
+    margin-top: 0;
+}
