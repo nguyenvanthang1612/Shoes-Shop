@@ -59,8 +59,5 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
 });
 
 // Subcribe Email
-<<<<<<< HEAD
 // Route::get('/', [SubcribeEmailController::class, 'nameAndEmailToSend']);
-=======
->>>>>>> a22ae2c668a9fc0fcb74ee4aaf8a1a6ad2a19a98
 Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);

@@ -40,27 +40,19 @@
                           <table id="example" class="display table">
                                  <thead>
                                      <tr>
-                                         <th>Id</th>
-                                         <th>Full Name</th>
-                                         <th>Email</th>
-                                         <th>Telephone</th>
-                                         <th>Total Price</th>
-                                         <th>Buy at</th>
-                                         {{-- <th></th> --}}
+                                         <th>Order Id</th>
+                                         <th>Product Name</th>
+                                         <th>Product Price</th>
+                                         <th>Product Quantity</th>
                                      </tr>
                                  </thead>
                                  <tbody>
                                      @foreach ($orders as $order)
                                        <tr>
-                                           <td>{{ $order->id }}</td>
-                                           <td>{{ $order->full_name }}</td>
-                                           <td>{{ $order->email }}</td>
-                                           <td>{{ $order->telephone }}</td>
-                                           <td>{{ number_format($order->total_price) }}</td>
-                                           <td>{{ $order->buy_at }}</td>
-                                           {{-- <td>
-                                               <a href="{{ url("admin/order/order-item/$order->id") }}" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                           </td> --}}
+                                           <td>{{ $order->order_id }}</td>
+                                           <td>{{ $order->product_name }}</td>
+                                           <td>{{ number_format($order->product_price) }}</td>
+                                           <td>{{ $order->product_quantity }}</td>
                                        </tr>
                                      @endforeach
                                  </tbody>

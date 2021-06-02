@@ -76,5 +76,6 @@ Route::group(['prefix' => 'admin'], function () {
 
         //route
         Route::get('order', [OrderController::class, 'showOrder']);
+        Route::get('order/order-item', [OrderController::class, 'showOrderItem']);
     });
 });

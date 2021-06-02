@@ -46,6 +46,7 @@
             <li class="menu-list"><a href=""><i class="ti-truck"></i> <span>Order</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="{{ url('/admin/order') }}"> All Order</a></li>
+                    <li><a href="{{ url('/admin/order/order-item') }}"> All Order Item</a></li>
                     <li><a href=""> Shipping</a></li>
                 </ul>
             </li>
