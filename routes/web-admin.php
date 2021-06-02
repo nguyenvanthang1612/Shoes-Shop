@@ -8,7 +8,6 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\MailController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Auth;

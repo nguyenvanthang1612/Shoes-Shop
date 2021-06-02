@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\SubcribeEmailController;
 use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,12 +54,13 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
     Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
-});
 
-Route::get('/preview', function () {
-    return view('frontend.shoppingCart.confirm-order');
+    Route::post('continue-shopping', [CartController::class, 'continueShopping'])->name('frontend.cart.continue-shopping');
 });
 
 // Subcribe Email
+<<<<<<< HEAD
 // Route::get('/', [SubcribeEmailController::class, 'nameAndEmailToSend']);
+=======
+>>>>>>> a22ae2c668a9fc0fcb74ee4aaf8a1a6ad2a19a98
 Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);

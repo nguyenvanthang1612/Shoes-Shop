@@ -134,6 +134,7 @@ Step 2
                                             <form class="form-horizontal" method="POST" action="{{ route('frontend.cart.update-shipping-address') }}">
                                                 @csrf
                                                 @method('PUT')
+                                                <input type="hidden" name="mode" value="1"/>
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label pd-none">Shipping address:</label>
                                                     <div class="col-sm-9">
@@ -144,6 +145,12 @@ Step 2
                                                                 <a href="{{ route('frontend.user.edit-profile') }}" target="_blank">Update shipping address</a>
                                                             @endif
                                                         </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label pd-none">Note:</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea type="text" class="form-control" id="administrative_area_level_1" name="note"></textarea>
                                                     </div>
                                                 </div>
                                                 @if (isset(Auth::user()->userAddress->address))
@@ -174,12 +181,16 @@ Step 2
                                             <form class="form-horizontal" action="{{ route('frontend.cart.update-shipping-address') }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
+                                                <input type="hidden" name="mode" value="2"/>
                                                 {{-- Customer name --}}
                                                 <div class="form-group pd-none">
                                                     <label for="route"
                                                         class="col-sm-3 control-label text-darkness">Customer name</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" name="customer_name" class="form-control" id="route">
+                                                        @error('customer_name')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
@@ -189,6 +200,9 @@ Step 2
                                                         class="col-sm-3 control-label text-darkness">Telephone</label>
                                                     <div class="col-sm-8">
                                                         <input type="tel" name="telephone" class="form-control" id="route">
+                                                        @error('telephone')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
@@ -197,7 +211,10 @@ Step 2
                                                     <label for="route"
                                                         class="col-sm-3 control-label text-darkness">Address</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" name="address" class="form-control" id="route">
+                                                        <input type="text" name="address" class="form-control" id="route"/>
+                                                        @error('address')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
@@ -206,6 +223,9 @@ Step 2
                                                         class="col-sm-3 control-label text-darkness">City</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" name="city" class="form-control" id="route">
+                                                        @error('city')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
 
                                                 </div>
@@ -215,6 +235,9 @@ Step 2
                                                         class="col-sm-3 control-label text-darkness">Country</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="locality" name="country">
+                                                        @error('country')
+                                                            <div class="text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                 </div>
 

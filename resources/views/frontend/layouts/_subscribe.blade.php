@@ -21,35 +21,32 @@
                             <!-- Subscribe form -->
                             <form class="subscribe sdw" action="{{ url("/send-subcribe-email") }}" method="post">
                                 <div class="wrap">
+                                    @csrf
 
-                                    {{-- <form action="{{ url('/send-subcribe-email') }}" method="post"> --}}
-                                        @csrf
+                                    <div class="fields">
 
-                                        <div class="fields">
-
-                                            <!-- Name -->
-                                            <div class="name">
-                                                <input type="text" placeholder="Name" name="subcribe_name">
-                                            </div>
-    
-                                            <!-- Email -->
-                                            <div class="email">
-                                                <input type="text" placeholder="Email" name="subcribe_email">
-                                            </div>
-    
-                                            <!-- Divider (dotts) -->
-                                            <div class="divider">
-                                                <span></span>
-                                            </div>
+                                        <!-- Name -->
+                                        <div class="name">
+                                            <input type="text" placeholder="Name" name="subcribe_name">
                                         </div>
-    
-                                        <!-- Send btn -->
-                                        <div class="send-btn">
-                                            <button type="submit">
-                                                <i class="icofont icofont-send-mail"></i>
-                                            </button>
+
+                                        <!-- Email -->
+                                        <div class="email">
+                                            <input type="text" placeholder="Email" name="subcribe_email">
                                         </div>
-                                    {{-- </form> --}}
+
+                                        <!-- Divider (dotts) -->
+                                        <div class="divider">
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Send btn -->
+                                    <div class="send-btn">
+                                        <button type="submit">
+                                            <i class="icofont icofont-send-mail"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
