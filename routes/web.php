@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\SubcribeEmailController;
 use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
