@@ -19,7 +19,7 @@
                         <div class="col-md-7">
 
                             <!-- Subscribe form -->
-                            <form class="subscribe sdw" action="{{ url('/send-subcribe-email') }}" method="post">
+                            <form class="subscribe sdw" action="{{ url("/send-subcribe-email") }}" method="post">
                                 <div class="wrap">
 
                                     {{-- <form action="{{ url('/send-subcribe-email') }}" method="post"> --}}
