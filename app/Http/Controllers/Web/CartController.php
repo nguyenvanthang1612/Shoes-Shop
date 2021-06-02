@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Web\LoginRequest;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -14,6 +13,9 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+    private const USE_CURRENT_SHIPPING_ADDRESS = 1;
+    private const USE_DIFFERENT_SHIPPING_ADDRESS = 2;
+
     public function addCart(Request $request, $id)
     {
         $product = Product::find($id);
@@ -78,6 +80,16 @@ class CartController extends Controller
 
     public function updateShippingAddress(Request $request)
     {
+        if ($request->input('mode') == self::USE_DIFFERENT_SHIPPING_ADDRESS) {
+            $request->validate([
+                'customer_name' => 'required',
+                'telephone' => 'required',
+                'address' => 'required',
+                'city' => 'required',
+                'country' => 'required',
+            ]);
+        }
+
         $orderData = [
             'total_price' => session('Cart')->totalPrice,
             'full_name' => Auth::user()->first_name . ' ' . Auth::user()->last_name,
