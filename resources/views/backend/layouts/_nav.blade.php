@@ -28,13 +28,6 @@
                 </ul>
             </li>
             
-            <li class="menu-list"><a href="#"><i class="icon-envelope-open"></i> <span>Mail</span></a>
-                <ul class="sub-menu-list">
-                    <li><a href=""> Inbox</a></li>
-                    <li><a href=""> Compose Mail</a></li>
-                </ul>
-            </li>
-            
             <li class="menu-list"><a href="#"><i class="icon-user"></i> <span>Account</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="{{ url('/admin/account/client_management') }}">Client Management</a></li>
@@ -47,7 +40,7 @@
                 <ul class="sub-menu-list">
                     <li><a href="{{ url('/admin/order') }}"> All Order</a></li>
                     <li><a href="{{ url('/admin/order/order-item') }}"> All Order Item</a></li>
-                    <li><a href=""> Shipping</a></li>
+                    <li><a href="{{ url('/admin/order/shipping') }}"> Shipping</a></li>
                 </ul>
             </li>
             <li><a href=""><i class="ti-money"></i> <span>Statistical</span></a></li>

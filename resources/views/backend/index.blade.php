@@ -42,7 +42,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>1250</p>
+                              <p>{{ $orderItem }}</p>
                               <span>Total Sales </span>
                           </div>
                           <div class="info-icon text-primary ">
@@ -82,7 +82,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>65</p>
+                              <p>{{ $totalEarning }}</p>
                               <span>Total Earning</span>
                           </div>
                           <div class="info-icon text-warning">
@@ -102,7 +102,7 @@
                    <div class="col-md-3 col-sm-6">
                        <div class="info-box-main">
                           <div class="info-stats">
-                              <p>25</p>
+                              <p>{{ $orders }}</p>
                               <span>Pending Orders</span>
                           </div>
                           <div class="info-icon text-danger">
@@ -144,209 +144,7 @@
                 <!--End row-->
                   
                   
-                   <!--Start row-->
-                   <div class="row">
                    
-                    <!-- Start inbox widget-->
-                      <div class="col-md-6">
-                        <div class="white-box">
-                          <h2 class="header-title">Inbox</h2>
-                            <div class="inbox-widget inbox-scroll-list">
-                            
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-2.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-3.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-4.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-5.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-
-                                <div class="inbox-inner">
-                                   <a href="#">
-                                    <div class="inbox-item">
-                                        <div class="inbox-img">
-                                            <img src="{{ asset('backend/assets/images/users/avatar-3.jpg') }}" alt="" />
-                                        </div>
-                                        
-                                        <div class="inbox-item-info">
-                                           <p class="author">John Doe</p>
-                                           <p class="inbox-message">Lorem Ipsum which looks....</p>
-                                           <p class="inbox-date">13:34 PM</p>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </div>
-                                
-                                
-                            </div>    
-                        </div>
-                       </div>
-                      <!-- End inbox widget-->
-                       
-                   <!--Start chat widget-->
-                   <div class="col-md-6">
-                       <div class="white-box">
-                           <h2 class="header-title">Chat</h2>
-                           
-                           <div class="chat-widget">
-                              <ul  class="chat-scroll-list">
-                                <li class="left">
-                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
-                                    <div class="chat-info">
-                                       <a class="name" href="#">Jone Doe</a>
-                                       <span class="datetime">6:12</span>
-                                       <span class="message">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </span>
-                                   </div>
-                                </li>
-                                
-                                <li class="right">
-                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
-                                    <div class="chat-info">
-                                       <a class="name" href="#">Jone Doe</a>
-                                       <span class="datetime">6:12</span>
-                                       <span class="message">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </span>
-                                   </div>
-                                </li>
-                                
-                                <li class="left">
-                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
-                                    <div class="chat-info">
-                                       <a class="name" href="#">Jone Doe</a>
-                                       <span class="datetime">6:12</span>
-                                       <span class="message">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </span>
-                                   </div>
-                                </li>
-                                
-                                <li class="right">
-                                   <img src="{{ asset('backend/assets/images/users/avatar-6.jpg') }}" alt="" />
-                                    <div class="chat-info">
-                                       <a class="name" href="#">Jone Doe</a>
-                                       <span class="datetime">6:12</span>
-                                       <span class="message">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                        </span>
-                                   </div>
-                                </li>
-                           
-                              </ul>
-                           </div>
-                           
-                       <div class="row">
-                        <div class="col-sm-12">
-                          <div class="input-group">
-                            <input class="form-control" placeholder="Say something" type="text">
-                            <span class="input-group-btn">
-                            <button class="btn btn-primary" type="button">Send</button>
-                            </span> </div>
-                        </div>
-                      </div>
-                      
-                       </div>
-                   </div>
-                   <!--End chat widget-->
-    
-             
-                   </div>
-                   <!--End row-->
 			   
 			    </div>
         <!-- End Wrapper-->

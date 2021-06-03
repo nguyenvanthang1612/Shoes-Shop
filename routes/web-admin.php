@@ -33,8 +33,14 @@ Route::group(['prefix' => 'admin'], function () {
         //dashboard
         Route::get('/', function () {
             $clientAccount = DB::table('users')->where('role', 3)->count();
+            $totalEarning = DB::table('orders')->sum('total_price');
+            $orders = DB::table('orders')->count();
+            $orderItem = DB::table('orders_item')->sum('product_quantity');
             return view('backend.index', [
-                'clientAccount' => $clientAccount
+                'clientAccount' => $clientAccount,
+                'totalEarning' => $totalEarning,
+                'orders' => $orders,
+                'orderItem' => $orderItem
             ]);
         })->name('admin.index');
 
@@ -77,5 +83,6 @@ Route::group(['prefix' => 'admin'], function () {
         //route
         Route::get('order', [OrderController::class, 'showOrder']);
         Route::get('order/order-item', [OrderController::class, 'showOrderItem']);
+        Route::get('order/shipping', [OrderController::class, 'showShipping']);
     });
 });

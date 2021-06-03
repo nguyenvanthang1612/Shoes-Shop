@@ -37,4 +37,18 @@ class OrderController extends Controller
 
     }
 
+    public function showShipping()
+    {
+        $orders = DB::table('shipping')
+        ->join('orders', 'orders.id', '=', 'shipping.order_id')
+        ->select('shipping.*', 'orders.id', 'orders.email', 'orders.total_price')
+        ->orderBy('orders.id', 'asc')
+        ->get();
+        
+        return view('backend.order.allShipping', [
+                        'orders' => $orders
+                    ]);
+
+    }
+
 }

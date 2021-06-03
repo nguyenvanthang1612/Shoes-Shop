@@ -19,7 +19,7 @@
                     <a href="#">Order</a>
                 </li>
                 <li class="active">
-                    All order
+                    All Shipping
                 </li>
             </ol>
             <div class="clearfix"></div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <h2 class="header-title" style="text-align: center; font-size: 25px">Order List</h2>
+                        <h2 class="header-title" style="text-align: center; font-size: 25px">Shipping List</h2>
                         <form method="POST" action="{{ url('admin/product/search') }}">
                            @csrf
                            <input type="text" class="form-control" name="search" placeholder="Search here..." 
@@ -41,22 +41,28 @@
                                  <thead>
                                      <tr>
                                          <th>Id</th>
-                                         <th>Full Name</th>
+                                         <th>Customer Name</th>
                                          <th>Email</th>
                                          <th>Telephone</th>
                                          <th>Total Price</th>
-                                         <th>Buy at</th>
+                                         <th>Address</th>
+                                         <th>City</th>
+                                         <th>Country</th>
+                                         <th>Note</th>
                                      </tr>
                                  </thead>
                                  <tbody>
                                      @foreach ($orders as $order)
                                        <tr>
                                            <td>{{ $order->id }}</td>
-                                           <td>{{ $order->full_name }}</td>
+                                           <td>{{ $order->customer_name }}</td>
                                            <td>{{ $order->email }}</td>
                                            <td>{{ $order->telephone }}</td>
                                            <td>{{ number_format($order->total_price) }}</td>
-                                           <td>{{ $order->buy_at }}</td>
+                                           <td>{{ $order->address }}</td>
+                                           <td>{{ $order->city }}</td>
+                                           <td>{{ $order->country }}</td>
+                                           <td>{{ $order->note }}</td>
                                        </tr>
                                      @endforeach
                                  </tbody>
