@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OrderSuccessMail;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -10,6 +11,7 @@ use App\Models\Product;
 use App\Models\Shipping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -118,6 +120,12 @@ class CartController extends Controller
             'note' => $request->has('note') ? $request->input('note') : '',
         ];
         Shipping::create($shippingData);
+
+        if (Shipping::create($shippingData))
+        {
+            $user = Order::findOrFail($order->id);
+            Mail::to($user->email)->send(new OrderSuccessMail($user));
+        }
 
         return redirect()->route('frontend.cart.confirm-order');
     }

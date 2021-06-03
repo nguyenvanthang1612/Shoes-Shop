@@ -31,17 +31,21 @@
                         <td>Hi, {{ $email }}</td>
                     </tr>
                     <tr>
-                        <td>lovev, {{ $name }}</td>
+                        <td>Thank for your subcribed {{ $name }}</td>
                     </tr>
                     <tr>
-                        <td>Thank for your subcribed </td>
+                        <td>
+                            If you have already registered, please visit our website immediately to update more new items
+                        </td>
                     </tr>
                     <tr>
-                        <td><a href="" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">Activate your account</a></td>
+                        <td><a href="" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">
+                            Click This Link 
+                        </a></td>
                     </tr>
                     <tr>
                         <td>Thank you<br>
-                    Meter Admin Theme</td>
+                    Q and T shoes shop</td>
                     </tr>
                 </table>
             </td>

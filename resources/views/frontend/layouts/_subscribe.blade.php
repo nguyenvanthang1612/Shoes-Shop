@@ -28,11 +28,21 @@
                                         <!-- Name -->
                                         <div class="name">
                                             <input type="text" placeholder="Name" name="subcribe_name">
+                                            @error('name')
+                                                <div class="text-danger">
+                                                    <span>{{ $message }}</span>
+                                                </div>
+                                            @enderror
                                         </div>
 
                                         <!-- Email -->
                                         <div class="email">
                                             <input type="text" placeholder="Email" name="subcribe_email">
+                                            @error('email')
+                                                <div class="text-danger">
+                                                    <span>{{ $message }}</span>
+                                                </div>
+                                            @enderror
                                         </div>
 
                                         <!-- Divider (dotts) -->

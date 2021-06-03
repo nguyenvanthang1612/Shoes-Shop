@@ -31,17 +31,13 @@
                         <td>Hi, {{ $email }}</td>
                     </tr>
                     <tr>
-                        <td>lovev, {{ $name }}</td>
-                    </tr>
-                    <tr>
-                        <td>{{ $details['body'] }}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">Activate your account</a></td>
+                        <td>
+                            We have confirmed your order, thanks for trusting our store
+                        </td>
                     </tr>
                     <tr>
                         <td>Thank you<br>
-                    Meter Admin Theme</td>
+                    Q and T shoes shop</td>
                     </tr>
                 </table>
             </td>

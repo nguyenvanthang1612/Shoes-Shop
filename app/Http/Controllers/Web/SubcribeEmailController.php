@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Mail;
 
 class SubcribeEmailController extends Controller
 {
-    // public function nameAndEmailToSend()
-    // {
-    //     return view('frontend.index');
-    // }
     public function sendMail(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email'
+        ]);
         $user_create = SubcribeEmail::create([
             'name' => $request->input('subcribe_name'),
             'email' => $request->input('subcribe_email'),
