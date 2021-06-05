@@ -1,7 +1,7 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    Create Admin Account
+    Change Password
 @endsection
 
 @section('content')

@@ -125,6 +125,7 @@ class AccountController extends Controller
         ]);
     }
 
+    // search client account
     public function searchClient(Request $request)
     {
         $searchText = $request->input('search');

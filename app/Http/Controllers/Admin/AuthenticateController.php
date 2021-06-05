@@ -70,9 +70,6 @@ class AuthenticateController extends Controller
     public function forgotPassword(Request $request)
     {
         $request->validate(['email' => 'required|email']);
-
-        // $user = User::where('email', $request->input('email'))->first();
-        // $token = Password::createToken($user);
         $status = Password::sendResetLink([
             'email' => $request->input('email'),
         ]);

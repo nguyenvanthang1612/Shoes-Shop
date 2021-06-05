@@ -15,10 +15,10 @@
                     <a href="#">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Account</a>
+                    <a href="#">Product</a>
                 </li>
                 <li class="active">
-                    Create Account
+                    Edit Product
                 </li>
             </ol>
               <div class="clearfix"></div>

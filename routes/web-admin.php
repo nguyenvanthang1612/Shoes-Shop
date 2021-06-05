@@ -32,10 +32,15 @@ Route::group(['prefix' => 'admin'], function () {
 
         //dashboard
         Route::get('/', function () {
-            $clientAccount = DB::table('users')->where('role', 3)->count();
-            $totalEarning = DB::table('orders')->sum('total_price');
-            $orders = DB::table('orders')->count();
-            $orderItem = DB::table('orders_item')->sum('product_quantity');
+            $month = date('n');
+            $clientAccount = DB::table('users')->where('role', 3)->whereMonth('updated_at', $month)->count();
+            $totalEarning = DB::table('orders')->whereMonth('updated_at', $month)->sum('total_price');
+            $orders = DB::table('orders')->whereMonth('updated_at', $month)->count();
+            $orderItem = DB::table('orders_item')
+                    ->join('orders', 'orders.id', '=', 'orders_item.order_id')
+                    ->select('orders_item.*', 'orders.updated_at')
+                    ->whereMonth('orders.updated_at', $month)
+                    ->sum('product_quantity');
             return view('backend.index', [
                 'clientAccount' => $clientAccount,
                 'totalEarning' => $totalEarning,
@@ -80,7 +85,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('product/search/woman', [ProductController::class, 'searchWoman']);
         Route::post('product/search/kid', [ProductController::class, 'searchKid']);
 
-        //route
+        //order
         Route::get('order', [OrderController::class, 'showOrder']);
         Route::get('order/order-item', [OrderController::class, 'showOrderItem']);
         Route::get('order/shipping', [OrderController::class, 'showShipping']);

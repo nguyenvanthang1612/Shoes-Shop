@@ -19,7 +19,7 @@
                     <a href="#">Order</a>
                 </li>
                 <li class="active">
-                    All order
+                    All order items
                 </li>
             </ol>
             <div class="clearfix"></div>
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <h2 class="header-title" style="text-align: center; font-size: 25px">Order List</h2>
+                        <h2 class="header-title" style="text-align: center; font-size: 25px">Order Items List</h2>
                         <form method="POST" action="{{ url('admin/product/search') }}">
                            @csrf
                            <input type="text" class="form-control" name="search" placeholder="Search here..." 

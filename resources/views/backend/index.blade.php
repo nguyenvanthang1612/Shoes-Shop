@@ -120,9 +120,7 @@
                 
                   </div>
                   <!--End row-->
-                  
-                             
-                  
+ 
                 <!--Start row-->  
                 <div class="row">
                   <div class="col-md-12">
@@ -134,6 +132,9 @@
                               </li>
                               <li>
                                 <h5><i class="fa fa-circle m-r-5" style="color: #FFAA00;"></i>Section B</h5>
+                              </li>
+                              <li>
+                                <h5><i class="fa fa-circle m-r-5" style="color: black;"></i>Section C</h5>
                               </li>
                             </ul>
                             <div id="morris2"  style="height:300px;"></div>

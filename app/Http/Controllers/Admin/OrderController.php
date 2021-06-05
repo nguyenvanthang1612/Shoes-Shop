@@ -13,7 +13,6 @@ class OrderController extends Controller
     public function showOrder()
     {
         $orders = DB::table('orders')
-            // ->join('orders_item', 'orders.id', '=', 'orders_item.order_id')
             ->select('orders.id', 'orders.email', 'orders.buy_at', 'orders.total_price', 'orders.full_name', 'orders.telephone')
             ->orderBy('id', 'asc')
             ->get();

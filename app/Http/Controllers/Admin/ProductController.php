@@ -85,12 +85,12 @@ class ProductController extends Controller
     // action create form
     public function store(ProductCreate $request)
     {
-        [$file, $fileName] = $this->upload($request);
+        [$files, $fileName] = $this->upload($request);
         $inventory = Inventory::create(['quantity' => $request->input('quantity')]);
         $product = Product::create(array_merge($request->except('quantity'), ['img' => $fileName, 'inventory_id' => $inventory->id]));
         if ($product)
         {
-            $file->storeAs('', $fileName, 'product');
+            $files->storeAs('', $fileName, 'product');
             return redirect('/admin/product');
         }
     }
@@ -109,14 +109,14 @@ class ProductController extends Controller
     // action edit form
     public function update(ProductEdit $request, $id)
     {
-        [$file, $fileName] = $this->upload($request);
+        [$files, $fileName] = $this->upload($request);
         $product = Product::findOrFail($id);
         $product->update(array_merge($request->except('quantity'), ['img' => $fileName]));
         Inventory::findOrFail($product->inventory_id)->update(['quantity' => $request->input('quantity')]);
         if ($product)
         {
             if ($request->hasFile('img')) {
-                $file->storeAs('', $fileName, 'product');
+                $files->storeAs('', $fileName, 'product');
             }
             return redirect('admin/product');
         }
@@ -126,9 +126,11 @@ class ProductController extends Controller
     public function upload(Request $request)
     {
         if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $fileName = $file->getClientOriginalName();
-            return [$file, $fileName];
+            $files = $request->file('img');
+            foreach ($files as $file) {
+                $fileName = $file->getClientOriginalName();
+            }
+            return [$files, $fileName];
         }
         return [null, $request->input('img')];
     }
