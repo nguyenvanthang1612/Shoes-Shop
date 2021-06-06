@@ -119,9 +119,9 @@ class CartController extends Controller
             'country' => $request->has('country') ? $request->input('country') : Auth::user()->userAddress->country,
             'note' => $request->has('note') ? $request->input('note') : '',
         ];
-        Shipping::create($shippingData);
+        $shipping = Shipping::create($shippingData);
 
-        if (Shipping::create($shippingData))
+        if ($shipping)
         {
             $user = Order::findOrFail($order->id);
             Mail::to($user->email)->send(new OrderSuccessMail($user));
