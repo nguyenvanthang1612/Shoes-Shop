@@ -52,7 +52,7 @@
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      {{-- {{dd($products)}} --}}
+                                    
                                      @foreach ($products as $product)
                                          <tr>
                                              <td>{{ $product->id }}</td>
