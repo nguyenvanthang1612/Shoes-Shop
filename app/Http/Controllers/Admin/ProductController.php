@@ -117,17 +117,24 @@ class ProductController extends Controller
     // action edit form
     public function update(ProductEditRequest $request, $id)
     {
-        $images = $request->file('img');
         $imageNames = [];
-        foreach ($images as $image) {
-            $imageNames[] = $image->getClientOriginalName();
+        if ($request->hasFile('img')) {
+            $images = $request->file('img');
+            foreach ($images as $image) {
+                $imageNames[] = $image->getClientOriginalName();
+            }
+        } else {
+            $imageNames = $request->input('img');
         }
+
         $product = Product::findOrFail($id);
         $product->update(array_merge($request->except('quantity'), ['img' => $imageNames]));
         Inventory::findOrFail($product->inventory_id)->update(['quantity' => $request->input('quantity')]);
         if ($product) {
-            foreach ($images as $image) {
-                $image->storeAs('', $image->getClientOriginalName(), 'product');
+            if ($request->hasFile('img')) {
+                foreach ($images as $image) {
+                    $image->storeAs('', $image->getClientOriginalName(), 'product');
+                }
             }
             return redirect('admin/product');
         }
