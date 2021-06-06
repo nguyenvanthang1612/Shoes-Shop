@@ -40,10 +40,11 @@
                                     <div class="item-gallery float-block">
 
                                         <div class="owl-carousel image">
-
-                                            <div class="item">
-                                                <img src="{{ asset('storage/backend/product/'.$product->thumbnail) }}" alt="">
-                                            </div>
+                                            @foreach($product->img as $image)
+                                                <div class="item">
+                                                    <img src="{{ asset('storage/backend/product/'.$image) }}" alt="">
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div><!-- / ITEM GALLERY BLOCK -->
