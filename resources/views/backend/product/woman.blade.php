@@ -33,8 +33,7 @@
                      <div class="white-box">
 
                         <h2 class="header-title" style="text-align: center; font-size: 25px">Woman Collection</h2>
-                        <form method="POST" action="{{ url('admin/product/search/woman') }}">
-                           @csrf
+                        <form method="GET" action="{{ url('admin/product/woman') }}">
                            <input type="text" class="form-control" name="search" placeholder="Search here..."
                            style="width:50%; margin: auto; margin-bottom: 30px"/>
                         </form>

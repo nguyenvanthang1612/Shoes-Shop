@@ -53,7 +53,7 @@
 
                                                 <!-- Image -->
                                                 <div class="image">
-                                                    <img class="main" src="{{ asset('storage/backend/product/'.$product->img) }}" alt="">
+                                                    <img class="main" width="180" height="250" src="{{ asset('storage/backend/product/'.$product->img) }}" alt="">
                                                 </div>
 
                                                 <!-- Caption -->
