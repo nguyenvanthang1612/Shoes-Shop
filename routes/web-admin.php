@@ -8,8 +8,10 @@
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\StatisticalController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -31,25 +33,8 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         //dashboard
-        Route::get('/', function () {
-            $month = date('n');
-            $clientAccount = DB::table('users')->where('role', 3)->whereMonth('updated_at', $month)->count();
-            $totalEarning = DB::table('orders')->whereMonth('updated_at', $month)->sum('total_price');
-            $orders = DB::table('orders')->whereMonth('updated_at', $month)->count();
-            $orderItem = DB::table('orders_item')
-                    ->join('orders', 'orders.id', '=', 'orders_item.order_id')
-                    ->select('orders_item.*', 'orders.updated_at')
-                    ->whereMonth('orders.updated_at', $month)
-                    ->sum('product_quantity');
-            return view('backend.index', [
-                'clientAccount' => $clientAccount,
-                'totalEarning' => $totalEarning,
-                'orders' => $orders,
-                'orderItem' => $orderItem
-            ]);
-        })->name('admin.index');
-
-
+        Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+ 
         // account
         Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('superadmin');
         Route::get('account/client_management', [AccountController::class, 'clientIndex']);
@@ -85,9 +70,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('product/search/woman', [ProductController::class, 'searchWoman']);
         Route::post('product/search/kid', [ProductController::class, 'searchKid']);
 
-        //order
+        // order
         Route::get('order', [OrderController::class, 'showOrder']);
         Route::get('order/order-item', [OrderController::class, 'showOrderItem']);
         Route::get('order/shipping', [OrderController::class, 'showShipping']);
+
+        // statistical
+        Route::get('statistical', [StatisticalController::class, 'showStatistical']);
+
     });
 });
