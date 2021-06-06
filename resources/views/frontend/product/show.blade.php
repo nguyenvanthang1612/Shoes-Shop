@@ -46,6 +46,8 @@
                                                 </div>
                                             @endforeach
                                         </div>
+
+
                                     </div>
                                 </div><!-- / ITEM GALLERY BLOCK -->
 
