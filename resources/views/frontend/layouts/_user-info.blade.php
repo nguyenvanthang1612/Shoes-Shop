@@ -61,7 +61,7 @@
                     <div class="wrap product-item">
                         <!-- Image -->
                         <div class="image">
-                            <img src="{{ asset('storage/backend/product/'. $item['productInfo']->img) }}" alt="">
+                            <img src="{{ asset('storage/backend/product/'. $item['productInfo']->thumbnail) }}" alt="">
                         </div>
 
                         <!-- Caption -->
