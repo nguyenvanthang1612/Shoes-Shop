@@ -175,28 +175,9 @@
                 const viewMode = $(this).data('display');
                 $(".item-wrapper").attr('data-viewmode', viewMode)
             });
-
-            /*function deleteListCart(id)
-            {
-                $.ajax({
-                    url: 'deleteCart/'+id,
-                    type: 'GET',
-                }).done(function(response)
-                {
-                    renderListCart(response);
-                    alertify.success("Đã xóa sản phẩm mới");
-                });
-            }
-
-            function renderListCart(response)
-            {
-                $("#list-cart").empty();
-                $("#list-cart").html(response);
-            }*/
-
         </script>
 
         @stack('js')
     </body>
-    
+
 </html>

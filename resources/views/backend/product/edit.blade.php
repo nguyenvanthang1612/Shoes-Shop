@@ -152,12 +152,13 @@
                             @foreach($product->img as $image)
                                 <img src="{{ asset('storage/backend/product/'.$image) }}" style="width:220px; height:200px" />
                             @endforeach
+
                             <div class="fallback">
+                            <input type="file" name="img[]" multiple>
                             @foreach($product->img as $image)
                                 <input type="hidden" name="img[]" value="{{ $image }}" />
                             @endforeach
 
-                            <input type="file" name="img[]" multiple>
                             @error('img')
                                 <div class="text-danger">
                                 <span>{{ $message }}</span>

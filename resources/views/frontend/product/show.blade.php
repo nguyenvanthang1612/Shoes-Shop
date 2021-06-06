@@ -36,10 +36,17 @@
                             <div class="row shop-item-page">
 
                                 <!-- ITEM GALLERY BLOCK -->
-                                <div class="col-sm-4 col-md-5 fix-height">
+                                <div class="col-sm-4 col-md-5">
                                     <div class="item-gallery float-block">
-
                                         <div class="owl-carousel image">
+                                            @foreach($product->img as $image)
+                                                <div class="item">
+                                                    <img src="{{ asset('storage/backend/product/'.$image) }}" alt="" style="background-position: center">
+                                                </div>
+                                            @endforeach
+                                        </div>
+
+                                        <div class="owl-carousel image-nav hidden-xs">
                                             @foreach($product->img as $image)
                                                 <div class="item">
                                                     <img src="{{ asset('storage/backend/product/'.$image) }}" alt="">
