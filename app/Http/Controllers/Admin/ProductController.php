@@ -125,6 +125,7 @@ class ProductController extends Controller
     // upload image
     public function upload(Request $request)
     {
+        $fileName = "";
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $fileName = $file->getClientOriginalName();
