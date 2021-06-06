@@ -3,9 +3,10 @@
 namespace App\Http\Requests\Admin;
 
 use App\Rules\Admin\CapitalSentenceRule;
+use App\Rules\ImagesRequired;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductCreate extends FormRequest
+class ProductCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +31,7 @@ class ProductCreate extends FormRequest
             'SKU' => 'required',
             'quantity' => 'required|numeric',
             'price' => 'required|numeric',
-            'img' => 'required|image'
+            'img' => [new ImagesRequired]
         ];
     }
 }

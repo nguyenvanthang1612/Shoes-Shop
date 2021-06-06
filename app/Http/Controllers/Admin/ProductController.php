@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\ProductCreate;
+use App\Http\Requests\Admin\ProductCreateRequest;
 use App\Http\Requests\Admin\ProductEdit;
 use App\Models\Category;
 use App\Models\Inventory;
@@ -16,12 +16,7 @@ class ProductController extends Controller
     //all product table
     public function allIndex()
     {
-        $products = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
-            ->select('products.*', 'categories.name_category', 'inventories.quantity')
-            ->orderBy('id', 'asc')
-        ->paginate(10);
+        $products = Product::with('category')->with('inventory')->paginate(10);
         return view('backend.product.all', [
             'products' => $products
         ]);
@@ -30,13 +25,10 @@ class ProductController extends Controller
     // man product table
     public function manIndex()
     {
-        $products = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
-            ->select('products.*', 'categories.name_category', 'inventories.quantity')
-            ->orderBy('id', 'asc')
-            ->where('name_category', '=', 'Men')
-        ->paginate(10);
+        $products = Product::whereHas('category', function ($query) {
+            return $query->where('name_category', 'Men');
+        })->with('inventory')->paginate(10);
+
         return view('backend.product.man', [
             'products' => $products
         ]);
@@ -45,13 +37,10 @@ class ProductController extends Controller
     // woman product table
     public function womanIndex()
     {
-        $products = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
-            ->select('products.*', 'categories.name_category', 'inventories.quantity')
-            ->orderBy('id', 'asc')
-            ->where('name_category', '=', 'Women')
-            ->paginate(10);
+        $products = Product::whereHas('category', function ($query) {
+            return $query->where('name_category', 'Women');
+        })->with('inventory')->paginate(10);
+
         return view('backend.product.woman', [
             'products' => $products
         ]);
@@ -60,13 +49,10 @@ class ProductController extends Controller
     // kid product table
     public function kidIndex()
     {
-        $products = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
-            ->join('inventories', 'products.inventory_id', '=', 'inventories.id')
-            ->select('products.*', 'categories.name_category', 'inventories.quantity')
-            ->orderBy('id', 'asc')
-            ->where('name_category', '=', 'Kid')
-        ->paginate(10);
+        $products = Product::whereHas('category', function ($query) {
+            return $query->where('name_category', 'Kid');
+        })->with('inventory')->paginate(10);
+
         return view('backend.product.kid', [
             'products' => $products
         ]);
@@ -83,14 +69,22 @@ class ProductController extends Controller
     }
 
     // action create form
-    public function store(ProductCreate $request)
+    public function store(ProductCreateRequest $request)
     {
-        [$files, $fileName] = $this->upload($request);
+        // [$files, $fileNames] = $this->upload($request);
+        $images = $request->file('img');
+        $imageNames = [];
+        foreach ($images as $image) {
+            $imageNames[] = $image->getClientOriginalName();
+        }
         $inventory = Inventory::create(['quantity' => $request->input('quantity')]);
-        $product = Product::create(array_merge($request->except('quantity'), ['img' => $fileName, 'inventory_id' => $inventory->id]));
-        if ($product)
-        {
-            $files->storeAs('', $fileName, 'product');
+        $product = Product::create(array_merge($request->except('quantity'), ['img' => $imageNames, 'inventory_id' => $inventory->id]));
+        if ($product) {
+            foreach ($images as $image) {
+                $image->storeAs('', $image->getClientOriginalName(), 'product');
+            }
+        }
+        if ($product && $inventory) {
             return redirect('/admin/product');
         }
     }
@@ -109,7 +103,9 @@ class ProductController extends Controller
     // action edit form
     public function update(ProductEdit $request, $id)
     {
-        [$files, $fileName] = $this->upload($request);
+        $images = $request->file('img');
+        foreach ($images as $image) {
+        }
         $product = Product::findOrFail($id);
         $product->update(array_merge($request->except('quantity'), ['img' => $fileName]));
         Inventory::findOrFail($product->inventory_id)->update(['quantity' => $request->input('quantity')]);
@@ -120,20 +116,6 @@ class ProductController extends Controller
             }
             return redirect('admin/product');
         }
-    }
-
-    // upload image
-    public function upload(Request $request)
-    {
-        $fileName = "";
-        if ($request->hasFile('img')) {
-            $files = $request->file('img');
-            foreach ($files as $file) {
-                $fileName = $file->getClientOriginalName();
-            }
-            return [$files, $fileName];
-        }
-        return [null, $request->input('img')];
     }
 
     // delete product

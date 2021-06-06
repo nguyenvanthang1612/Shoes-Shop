@@ -23,13 +23,13 @@
             </ol>
               <div class="clearfix"></div>
           </div>
-            <!--End Page Title-->          
+            <!--End Page Title-->
       <!--Start row-->
       <div class="row">
           <div class="col-md-12">
             <div class="white-box">
               <h2 class="header-title">Edit Product</h2>
-                
+
                   <form class="form-horizontal" action='{{ url("/admin/product/{$product->id}") }}' method="POST" enctype="multipart/form-data">
                     @method('put')
                     @csrf
@@ -61,7 +61,7 @@
                     {{-- description --}}
                     <div class="form-group">
                       <label class="col-md-2 control-label">Description</label>
-                      
+
                       <div class="col-md-10">
                         <textarea id="ckeditor" cols="30" rows="10" name="desc" value="{{ $product->desc }}">{{ $product->desc }}</textarea>
                         @error('desc')
@@ -71,7 +71,7 @@
                         @enderror
                       </div>
                     </div>
-                    
+
                     {{-- SKU --}}
                     <div class="form-group">
                       <label class="col-md-2 control-label">SKU</label>
@@ -121,7 +121,7 @@
                     <div class="form-group">
                       <label class="col-md-2 control-label">Quantity</label>
                       <div class="col-md-10">
-                          <input class="form-control" type="text" name="quantity" placeholder="quantity" 
+                          <input class="form-control" type="text" name="quantity" placeholder="quantity"
                           value="{{ old('quantity', $product->inventory->quantity) }} ">
                         @error('quantity')
                             <div class="text-danger">
@@ -152,7 +152,7 @@
                             <img src="{{ asset('storage/backend/product/'.$product->img) }}" style="width:220px; height:200px" />
                             <div class="fallback">
                               <input type="hidden" name="img" value="{{ $product->img }}" />
-                              <input type="file" name="img">
+                              <input type="file" name="img" multiple>
                                 @error('img')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -160,10 +160,10 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                       </div>
                     </div>
-                    
+
                     <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-9">
                         <button class="btn btn-primary outline-btn">Submit</button>

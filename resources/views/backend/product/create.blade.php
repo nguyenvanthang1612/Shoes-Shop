@@ -7,7 +7,7 @@
 @section('content')
             <!--body wrapper start-->
             <div class="wrapper">
-              
+
               <!--Start Page Title-->
                 {{-- <div class="white-box"> --}}
                   <div class="page-title-box">
@@ -26,17 +26,17 @@
                       <div class="clearfix"></div>
                   </div>
                 {{-- </div> --}}
-                  <!--End Page Title-->          
-           
-           
+                  <!--End Page Title-->
+
+
              <!--Start row-->
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
                      <h2 class="header-title">Create Product</h2>
-                       
+
                         <form class="form-horizontal" action="{{ url('admin/product') }}" method="POST" enctype="multipart/form-data">
-                          
+
                           @csrf
                           {{-- name --}}
                           <div class="form-group">
@@ -66,7 +66,7 @@
                           {{-- description --}}
                           <div class="form-group">
                             <label class="col-md-2 control-label">Description</label>
-                            
+
                             <div class="col-md-10">
                               <textarea id="ckeditor" cols="30" rows="10" name="desc" value="{{ old('desc') }}"></textarea>
                               @error('desc')
@@ -76,7 +76,7 @@
                               @enderror
                             </div>
                           </div>
-                          
+
                           {{-- SKU --}}
                           <div class="form-group">
                             <label class="col-md-2 control-label">SKU</label>
@@ -154,7 +154,7 @@
                               <label class="col-sm-2 control-label">Image</label>
                               <div class="col-sm-10">
                                   <div class="fallback">
-                                    <input type="file" class="custom-file-input" id="customFile" name="img">
+                                    <input type="file" multiple class="custom-file-input" id="customFile" name="img[]">
                                       @error('img')
                                         <div class="text-danger">
                                           <span>{{ $message }}</span>
