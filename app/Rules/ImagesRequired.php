@@ -25,7 +25,8 @@ class ImagesRequired implements Rule
      */
     public function passes($attribute, $value)
     {
-        return request()->file('img') > 0;
+        dd(request()->all());
+        return $value !== null && count($value) > 0;
     }
 
     /**

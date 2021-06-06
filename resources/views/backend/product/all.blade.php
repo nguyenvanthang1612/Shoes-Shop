@@ -61,7 +61,7 @@
                                              <td>{{ $product->SKU }}</td>
                                              <td>{{ $product->size }}</td>
                                              <td>{{ $product->brand }}</td>
-                                             <td><img style="width: 40px; height: 40px" src="{{ asset("storage/backend/product/{$product->img[0]}") }}" ></td>
+                                             <td><img style="width: 40px; height: 40px" src="{{ asset("storage/backend/product/{$product->thumbnail}") }}" ></td>
                                              <td>{{ $product->inventory->quantity }}</td>
                                              <td>{{ number_format($product->price) }}$</td>
                                              <td>

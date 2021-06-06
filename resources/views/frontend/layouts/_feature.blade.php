@@ -34,7 +34,7 @@
 
                                     <!-- Image -->
                                     <div class="image">
-                                        <img class="main" height="250" src='{{ asset('storage/backend/product/'.$product->img) }}' alt="">
+                                        <img class="main" height="250" src='{{ asset('storage/backend/product/'.$product->thumbnail) }}' alt="">
                                     </div>
 
                                     <!-- Caption -->

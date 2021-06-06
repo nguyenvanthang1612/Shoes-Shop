@@ -40,7 +40,7 @@
 
                                        <!-- Image -->
                                        <div class="img">
-                                           <img src='{{ asset('storage/backend/product/'.$product->img) }}' alt="" >
+                                           <img src='{{ asset('storage/backend/product/'.$product->thumbnail) }}' alt="" >
                                        </div>
 
                                        <!-- Badge -->

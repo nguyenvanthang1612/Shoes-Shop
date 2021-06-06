@@ -9,6 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $attribute = [
+        'img' => '[]'
+    ];
+
     protected $casts = [
         'img' => 'array'
     ];
@@ -26,9 +30,11 @@ class Product extends Model
         return $this->belongsTo(Inventory::class);
     }
 
-    // public function thumbnail()
-    // {
-    //     $thumbnail = $this->img;
-    //     return $thumbnail[0];
-    // }
+    public function getThumbnailAttribute()
+    {
+        if (count($this->img) > 0) {
+            return $this->img[0];
+        }
+        return "";
+    }
 }

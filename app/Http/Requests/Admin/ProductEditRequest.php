@@ -5,7 +5,7 @@ namespace App\Http\Requests\Admin;
 use App\Rules\Admin\CapitalSentenceRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductEdit extends FormRequest
+class ProductEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class ProductEdit extends FormRequest
             'desc' => 'required',
             'SKU' => 'required',
             'quantity' => 'required|numeric',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
         ];
     }
 }

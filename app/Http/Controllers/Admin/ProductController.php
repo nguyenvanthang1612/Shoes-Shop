@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProductCreateRequest;
-use App\Http\Requests\Admin\ProductEdit;
+use App\Http\Requests\Admin\ProductEditRequest;
 use App\Models\Category;
 use App\Models\Inventory;
 use App\Models\Product;
@@ -115,7 +115,7 @@ class ProductController extends Controller
     }
 
     // action edit form
-    public function update(ProductEdit $request, $id)
+    public function update(ProductEditRequest $request, $id)
     {
         $images = $request->file('img');
         $imageNames = [];

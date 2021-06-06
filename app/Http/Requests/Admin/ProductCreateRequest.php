@@ -25,13 +25,14 @@ class ProductCreateRequest extends FormRequest
      */
     public function rules()
     {
+        // dd(request()->all());
         return [
             'name' => ['required', new CapitalSentenceRule],
             'desc' => 'required',
             'SKU' => 'required',
             'quantity' => 'required|numeric',
             'price' => 'required|numeric',
-            'img' => [new ImagesRequired]
+            'img' => ['required', new ImagesRequired]
         ];
     }
 }
