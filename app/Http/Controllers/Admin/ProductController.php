@@ -122,7 +122,8 @@ class ProductController extends Controller
         foreach ($images as $image) {
             $imageNames[] = $image->getClientOriginalName();
         }
-        $product = Product::findOrFail($id)->update(array_merge($request->except('quantity'), ['img' => $imageNames]));
+        $product = Product::findOrFail($id);
+        $product->update(array_merge($request->except('quantity'), ['img' => $imageNames]));
         Inventory::findOrFail($product->inventory_id)->update(['quantity' => $request->input('quantity')]);
         if ($product) {
             foreach ($images as $image) {
@@ -137,6 +138,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $result = $product->delete($id);
-        return  redirect()->route('product.index');
+        return  redirect()->back();
     }
 }

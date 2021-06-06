@@ -146,22 +146,27 @@
 
                     {{-- Image --}}
                     <div class="form-group">
-                      <div class="custom-file">
+                        <div class="custom-file">
                         <label class="col-sm-2 control-label">Image</label>
                         <div class="col-sm-10">
-                            <img src="{{ asset('storage/backend/product/'.$product->img) }}" style="width:220px; height:200px" />
+                            @foreach($product->img as $image)
+                                <img src="{{ asset('storage/backend/product/'.$image) }}" style="width:220px; height:200px" />
+                            @endforeach
                             <div class="fallback">
-                              <input type="hidden" name="img" value="{{ $product->img }}" />
-                              <input type="file" name="img" multiple>
-                                @error('img')
-                                  <div class="text-danger">
-                                    <span>{{ $message }}</span>
-                                  </div>
-                                @enderror
+                            @foreach($product->img as $image)
+                                <input type="hidden" name="img[]" value="{{ $image }}" />
+                            @endforeach
+
+                            <input type="file" name="img[]" multiple>
+                            @error('img')
+                                <div class="text-danger">
+                                <span>{{ $message }}</span>
+                                </div>
+                            @enderror
                             </div>
                         </div>
 
-                      </div>
+                        </div>
                     </div>
 
                     <div class="form-group">

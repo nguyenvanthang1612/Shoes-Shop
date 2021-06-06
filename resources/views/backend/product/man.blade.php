@@ -63,6 +63,11 @@
                                              <td>{{ number_format($product->price) }}$</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success"><i class="fa fa-pencil-square-o" ></i></a>
+                                                <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('product-{{ $product->id }}').submit()"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                <form action="{{ url("admin/product/delete/{$product->id}") }}" method="post" id="product-{{ $product->id }}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
                                             </td>
                                          </tr>
                                      @endforeach
