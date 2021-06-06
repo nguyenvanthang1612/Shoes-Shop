@@ -13,8 +13,8 @@ class SubcribeEmailController extends Controller
     public function sendMail(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email'
+            'subcribe_name' => 'required',
+            'subcribe_email' => 'required|email'
         ]);
         $user_create = SubcribeEmail::create([
             'name' => $request->input('subcribe_name'),
