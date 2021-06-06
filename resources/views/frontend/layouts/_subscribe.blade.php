@@ -28,7 +28,7 @@
                                         <!-- Name -->
                                         <div class="name">
                                             <input type="text" placeholder="Name" name="subcribe_name">
-                                            @error('name')
+                                            @error('subcribe_name')
                                                 <div class="text-danger">
                                                     <span>{{ $message }}</span>
                                                 </div>
@@ -38,7 +38,7 @@
                                         <!-- Email -->
                                         <div class="email">
                                             <input type="text" placeholder="Email" name="subcribe_email">
-                                            @error('email')
+                                            @error('subcribe_email')
                                                 <div class="text-danger">
                                                     <span>{{ $message }}</span>
                                                 </div>
