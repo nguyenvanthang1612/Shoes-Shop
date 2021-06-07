@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
 use App\Models\User;
+use App\ViewComposers\CategoryComposer;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -28,12 +28,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         if (!app()->runningInConsole()) {
-            View::composer(['frontend.layouts._nav', 'frontend.index', 'frontend.product.show', 'frontend.category-product.index'], function ($view) {
-                return $view->with('categories', Category::all());
-            });
+            View::composer([
+                'frontend.layouts._nav',
+                'frontend.index',
+                'frontend.product.show',
+                'frontend.category-product.index'
+            ], CategoryComposer::class);
 
-            $users = User::all();
-            View::share('', compact('users'));
 
             //Paginator
             Paginator::defaultView('frontend.layouts._pagination');
