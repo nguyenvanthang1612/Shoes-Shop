@@ -173,59 +173,48 @@
             <div class="row">
                     <div class="container">
                         <div class="row">
-                        <div class="container space-bottom">
+                            <div class="container space-bottom">
 
-<div class="row">
+                                <div class="row">
 
-    <!-- Counter -->
-    <div class="col-sm-3">
+                                    <!-- Counter -->
+                                    <div class="col-sm-4">
 
-        <div class="counter">
+                                        <div class="counter">
 
-            <div class="wrap text-blue">
-                25 789
-                <span>items sold</span>
-            </div>
-        </div>
-    </div>
+                                            <div class="wrap text-blue" style="text-align: center">
+                                                {{ $itemSold }}
+                                                <span>items sold</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-    <!-- Counter -->
-    <div class="col-sm-3">
+                                    <!-- Counter -->
+                                    <div class="col-sm-4">
 
-        <div class="counter">
+                                        <div class="counter">
 
-            <div class="wrap text-blue">
-                1 580
-                <span>happy customers</span>
-            </div>
-        </div>
-    </div>
+                                            <div class="wrap text-blue" style="text-align: center">
+                                                {{ $allCustomer }}
+                                                <span>customers</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-    <!-- Counter -->
-    <div class="col-sm-3">
+                                    <!-- Counter -->
+                                    <div class="col-sm-4">
 
-        <div class="counter">
+                                        <div class="counter">
 
-            <div class="wrap text-blue">
-                987
-                <span>items in store</span>
-            </div>
-        </div>
-    </div>
+                                            <div class="wrap text-blue" style="text-align: center">
+                                                {{ $allProduct }}
+                                                <span>items in store</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-    <!-- Counter -->
-    <div class="col-sm-3">
-
-        <div class="counter">
-
-            <div class="wrap text-blue">
-                12 580
-                <span>what else</span>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

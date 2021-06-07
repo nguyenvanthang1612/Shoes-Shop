@@ -113,30 +113,6 @@
 
                                 @include('frontend.layouts._category-sidenav')
 
-                                <!-- Block tags -->
-                                <div class="inblock padding-none hidden-xs">
-
-                                    <div class="wrap">
-
-                                        <!-- Header -->
-                                        <h3 class="header text-uppercase">Tags</h3>
-
-                                        <!-- Tags list -->
-                                        <ul class="tags">
-                                            <li><a href="#">e-shop</a></li>
-                                            <li><a href="#">Bootstrap</a></li>
-                                            <li><a href="#">Material</a></li>
-                                            <li><a href="#">SEO</a></li>
-                                            <li><a href="#">WordPress</a></li>
-                                            <li><a href="#">Drupal</a></li>
-                                            <li><a href="#">Creative</a></li>
-                                            <li><a href="#">Web Design</a></li>
-                                            <li><a href="#">Main Blog</a></li>
-                                            <li><a href="#">Landing Page</a></li>
-                                        </ul>
-                                    </div>
-                                </div><!-- Block tags -->
-
                                 <!-- List categories for mobile -->
                                 <div class="inblock padding-none visible-xs">
                                     <div class="mobile-category nav-close">
@@ -308,66 +284,9 @@
             </div><!-- / Parallax wrapper -->
         </div>
         <!-- END: SUBSCRIBE -->
-
         <!--
-        BLOCK COUNTER
-        =============================================== -->
-        <div class="container block">
-
-            <div class="row">
-
-                <!-- Counter -->
-                <div class="col-sm-3">
-
-                    <div class="counter">
-
-                        <div class="wrap text-blue">
-                            25 789
-                            <span>items sold</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Counter -->
-                <div class="col-sm-3">
-
-                    <div class="counter">
-
-                        <div class="wrap text-blue">
-                            1 580
-                            <span>happy customers</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Counter -->
-                <div class="col-sm-3">
-
-                    <div class="counter">
-
-                        <div class="wrap text-blue">
-                            987
-                            <span>items in store</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Counter -->
-                <div class="col-sm-3">
-
-                    <div class="counter">
-
-                        <div class="wrap text-blue">
-                            12 580
-                            <span>what else</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END: COUNTER -->
-
-        <!--
+      
+      <!--
         SUBSTRATE
         =============================================== -->
         <div class="container-fluid">
@@ -379,7 +298,84 @@
                     <div class="substrate-wrap">
 
                         <div class="substrate parallax-block"
-                             style="position: absolute"
+                             data-speed-direction=".3"
+                             data-default-pos="-400"
+                             data-parallax-block="true">
+
+                            <div class="text text-dark">
+                                POPULAR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: SUBSTRATE -->
+
+        <!--
+        BLOCK LATEST ON BLOG
+        =============================================== -->
+        <div class="container-fluid block space-top">
+            <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="container space-bottom">
+
+                                <div class="row">
+
+                                    <!-- Counter -->
+                                    <div class="col-sm-4">
+
+                                        <div class="counter">
+
+                                            <div class="wrap text-blue" style="text-align: center">
+                                                {{ $itemSold }}
+                                                <span>items sold</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Counter -->
+                                    <div class="col-sm-4">
+
+                                        <div class="counter">
+
+                                            <div class="wrap text-blue" style="text-align: center">
+                                                {{ $allCustomer }}
+                                                <span>customers</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Counter -->
+                                    <div class="col-sm-4">
+
+                                        <div class="counter">
+
+                                            <div class="wrap text-blue" style="text-align: center">
+                                                {{ $allProduct }}
+                                                <span>items in store</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="clearfix">
+
+                    <div class="substrate-wrap">
+
+                        <div class="substrate parallax-block"
                              data-speed-direction=".1"
                              data-default-pos="-200"
                              data-parallax-block="true">
@@ -408,58 +404,38 @@
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-01.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/nike.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-02.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/adidas.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-03.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/gucci.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-04.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/converse.png') }}" alt="">
                            </div>
                        </div>
 
                        <!-- Item -->
                        <div class="img-item">
                            <div class="wrap">
-                               <img src="images/brands/img-2-05.png" alt="">
+                               <img src="{{ asset('frontend/images/brands/puma.png') }}" alt="">
                            </div>
                        </div>
 
-                       <!-- Item -->
-                       <div class="img-item">
-                           <div class="wrap">
-                               <img src="images/brands/img-2-06.png" alt="">
-                           </div>
-                       </div>
-
-                       <!-- Item -->
-                       <div class="img-item">
-                           <div class="wrap">
-                               <img src="images/brands/img-2-07.png" alt="">
-                           </div>
-                       </div>
-
-                       <!-- Item -->
-                       <div class="img-item">
-                           <div class="wrap">
-                               <img src="images/brands/img-2-08.png" alt="">
-                           </div>
-                       </div>
                    </div>
                 </div>
             </div>

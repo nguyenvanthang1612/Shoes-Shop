@@ -192,96 +192,6 @@
                                         {{-- Comments --}}
                                         <div role="tabpanel" class="tab-pane comments" id="comments">
                                             <!-- Comments -->
-                                            {{-- <ul class="media-list">
-
-                                                <!-- 1 comments -->
-                                                <li class="media">
-                                                    <div class="media-left">
-                                                        <a href="#">
-                                                            <img class="media-object" src="images/profile/profile-img.jpg" alt="...">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h4 class="media-heading">
-                                                            <a href="#">John Doe</a>
-                                                        </h4>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem a alias aut, aspernatur veritatis eius eligendi! Nam laboriosam, cumque consequuntur corrupti, nisi iusto explicabo iure quia nostrum odio aperiam dolores?
-
-                                                        <span class="media-info">12 dec 2016
-                                                            <a href="#">
-                                                                <i class="icofont icofont-reply"></i>
-                                                            </a>
-                                                        </span>
-
-                                                        <div class="media">
-                                                            <div class="media-left">
-                                                                <a href="#">
-                                                                    <img class="media-object" src="images/profile/profile-img.jpg" alt="...">
-                                                                </a>
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <h4 class="media-heading">
-                                                                    <a href="#">Anna Doe</a>
-                                                                </h4>
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem a alias aut, aspernatur veritatis eius eligendi! Nam laboriosam, cumque consequuntur corrupti, nisi iusto explicabo iure quia nostrum odio aperiam dolores?
-
-                                                                <span class="media-info">12 dec 2016
-                                                                    <a href="#">
-                                                                        <i class="icofont icofont-reply"></i>
-                                                                    </a>
-                                                                </span>
-
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </li>
-
-                                                <!-- 2 comments -->
-                                                <li class="media">
-                                                    <div class="media-left">
-                                                        <a href="#">
-                                                            <img class="media-object" src="images/profile/profile-img.jpg" alt="...">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h4 class="media-heading">
-                                                            <a href="#">Mark Smith</a>
-                                                        </h4>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem a alias aut, aspernatur veritatis eius eligendi! Nam laboriosam, cumque consequuntur corrupti, nisi iusto explicabo iure quia nostrum odio aperiam dolores?
-
-                                                        <span class="media-info">12 dec 2016
-                                                            <a href="#">
-                                                                <i class="icofont icofont-reply"></i>
-                                                            </a>
-                                                        </span>
-
-                                                    </div>
-                                                </li>
-
-                                                <!-- 3 comments -->
-                                                <li class="media">
-                                                    <div class="media-left">
-                                                        <a href="#">
-                                                            <img class="media-object" src="images/profile/profile-img.jpg" alt="...">
-                                                        </a>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h4 class="media-heading">
-                                                            <a href="#">John Doe</a>
-                                                        </h4>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem a alias aut, aspernatur veritatis eius eligendi! Nam laboriosam, cumque consequuntur corrupti, nisi iusto explicabo iure quia nostrum odio aperiam dolores?
-
-                                                        <span class="media-info">12 dec 2016
-                                                            <a href="#">
-                                                                <i class="icofont icofont-reply"></i>
-                                                            </a>
-                                                        </span>
-
-                                                    </div>
-                                                </li>
-                                            </ul> --}}
-
                                             <div class="fb-comments" data-href="{{ route('frontend.product.show', $product->id) }}" data-width="100%" data-numposts="5"></div>
                                         </div>
                                     </div>
@@ -299,30 +209,6 @@
 
                             <!-- Asside nav -->
                             @include('frontend.layouts._category-sidenav')
-
-                            <!-- Block tags -->
-                            <div class="inblock padding-none hidden-xs">
-
-                                <div class="wrap">
-
-                                    <!-- Header -->
-                                    <h3 class="header text-uppercase">Tags</h3>
-
-                                    <!-- Tags list -->
-                                    <ul class="tags">
-                                        <li><a href="#">e-shop</a></li>
-                                        <li><a href="#">Bootstrap</a></li>
-                                        <li><a href="#">Material</a></li>
-                                        <li><a href="#">SEO</a></li>
-                                        <li><a href="#">WordPress</a></li>
-                                        <li><a href="#">Drupal</a></li>
-                                        <li><a href="#">Creative</a></li>
-                                        <li><a href="#">Web Design</a></li>
-                                        <li><a href="#">Main Blog</a></li>
-                                        <li><a href="#">Landing Page</a></li>
-                                    </ul>
-                                </div>
-                            </div><!-- Block tags -->
 
                         </div><!-- ./ Asside -->
 

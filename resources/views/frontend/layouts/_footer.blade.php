@@ -5,77 +5,16 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-sm-6 col-md-3">
-
-                        <h3 class="header text-uppercase">
-                            Buyer information
-                        </h3>
-
-                        <ul class="nav-vrt white opc none-padding">
-                            <li>
-                                <a href="#" class="btn-material">Support service</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Support service</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Affiliate program</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Technical proposals</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Service agreement</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Buyers guide</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">How to Pay</a>
-                            </li>
-                        </ul>
-
+                    <div class="col-md-8">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6676691367893!2d105.802413814883!3d21.00595468601074!2m3!1f0!2f0!3f0!3m2!1i1024!
+                        2i768!4f13.1!3m3!1m2!1s0x313454b5534fb3bf%3A0x3af152649f6b709a!2sItplus%20Academy!5e0!3m2!1svi!2s!4v1623076299784!5m2!1svi!2s" width="600" height="450" 
+                        style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
                     </div>
 
-                    <div class="col-sm-6 col-md-3">
 
-                        <h3 class="header text-uppercase">
-                            Service
-                        </h3>
-
-                        <ul class="nav-vrt white opc none-padding">
-                            <li>
-                                <a href="#" class="btn-material">About us</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Contact us</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">My account</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Orders history</a>
-                            </li>
-
-                            <li>
-                                <a href="#" class="btn-material">Advanced search</a>
-                            </li>
-                        </ul>
-
-                    </div>
-
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-md-4">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
 
                                 <h3 class="header text-uppercase">
                                     Our contacts
@@ -84,7 +23,7 @@
                                 <ul class="list-icon white ">
                                     <li>
                                         <i class="icon icofont icofont-location-pin"></i>
-                                        12A Questen, Mt Vernon, NY 10550, US
+                                        1 Hoang Dao Thuy, Nhan Chinh, Thanh Xuan, Ha Noi
                                     </li>
                                     <li>
                                         <a href="mailto:info@example.com">
@@ -105,49 +44,14 @@
 
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="footer-brand">
-                                    <img src="images/main-brand.png" alt="">
-                                </div>
-
-                                <span class="comp-header st-12 text-uppercase">
-                                    Komotto
-                                    <span>
-                                        Bootstrap theme
-                                    </span>
-                                </span>
-
-                                <p>
-                                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-                                    bibendum auctor nisi elit consequat ipsum, nec sagittis sem nibh id elit.
-                                </p>
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
 
                                 <ul class="social ">
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.facebook.com/Q-and-T-Shoes-Shop-100157308964620">
                                             <i class="icofont icofont-social-facebook"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">
-                                            <i class="icofont icofont-social-google-plus"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">
-                                            <i class="icofont icofont-social-twitter"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">
-                                            <i class="icofont icofont-social-vk"></i>
                                         </a>
                                     </li>
 
@@ -178,7 +82,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <span class="copy">
-                            © 2016 Komotto by ThemeDron. All rights reserved.
+                            © 2021 Shoes Shop Company
                         </span>
                     </div>
 
