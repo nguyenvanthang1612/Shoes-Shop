@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    All order table
+    All shipping table
 @endsection
 
 @section('content')
@@ -31,7 +31,7 @@
                 <div class="col-md-12">
                     <div class="white-box">
                         <h2 class="header-title" style="text-align: center; font-size: 25px">Shipping List</h2>
-                        <form method="POST" action="{{ url('admin/product/search') }}">
+                        <form method="POST" action="{{ url('admin/order/shipping/search') }}">
                            @csrf
                            <input type="text" class="form-control" name="search" placeholder="Search here..." 
                            style="width:50%; margin: auto; margin-bottom: 30px" />
@@ -58,7 +58,7 @@
                                            <td>{{ $order->customer_name }}</td>
                                            <td>{{ $order->email }}</td>
                                            <td>{{ $order->telephone }}</td>
-                                           <td>{{ number_format($order->total_price) }}</td>
+                                           <td>{{ number_format($order->total_price) }}$</td>
                                            <td>{{ $order->address }}</td>
                                            <td>{{ $order->city }}</td>
                                            <td>{{ $order->country }}</td>
@@ -67,6 +67,7 @@
                                      @endforeach
                                  </tbody>
                            </table>  
+                           {{ $orders->links('vendor.pagination.bootstrap-4') }}
                          </div>
                     </div>
                 </div>

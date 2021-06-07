@@ -17,7 +17,8 @@ class ProductController extends Controller
     public function allIndex(Request $request)
     {
         $searchText = $request->query('search');
-        $products = $searchText ? Product::with('category')->with('inventory')->where('name', 'LIKE', "%$searchText%")->paginate(10) : Product::with('category')->with('inventory')->paginate(10);
+        $products = $searchText ? Product::with('category')->with('inventory')
+        ->where('name', 'LIKE', "%$searchText%")->paginate(10) : Product::with('category')->with('inventory')->paginate(10);
         return view('backend.product.all', [
             'products' => $products
         ]);

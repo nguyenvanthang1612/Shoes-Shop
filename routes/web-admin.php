@@ -69,6 +69,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('order', [OrderController::class, 'showOrder']);
         Route::get('order/order-item', [OrderController::class, 'showOrderItem']);
         Route::get('order/shipping', [OrderController::class, 'showShipping']);
+        Route::post('order/search', [OrderController::class, 'searchOrder']);
+        Route::post('order/order-item/search', [OrderController::class, 'searchOrderItem']);
+        Route::post('order/shipping/search', [OrderController::class, 'searchShipping']);
 
         // statistical
         Route::get('statistical', [StatisticalController::class, 'showStatistical']);

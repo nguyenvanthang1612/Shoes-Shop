@@ -31,7 +31,7 @@
                 <div class="col-md-12">
                     <div class="white-box">
                         <h2 class="header-title" style="text-align: center; font-size: 25px">Order List</h2>
-                        <form method="POST" action="{{ url('admin/product/search') }}">
+                        <form method="POST" action="{{ url('admin/order/search') }}">
                            @csrf
                            <input type="text" class="form-control" name="search" placeholder="Search here..." 
                            style="width:50%; margin: auto; margin-bottom: 30px" />
@@ -55,12 +55,13 @@
                                            <td>{{ $order->full_name }}</td>
                                            <td>{{ $order->email }}</td>
                                            <td>{{ $order->telephone }}</td>
-                                           <td>{{ number_format($order->total_price) }}</td>
+                                           <td>{{ number_format($order->total_price) }}$</td>
                                            <td>{{ $order->buy_at }}</td>
                                        </tr>
                                      @endforeach
                                  </tbody>
                            </table>  
+                           {{ $orders->links('vendor.pagination.bootstrap-4') }}
                          </div>
                     </div>
                 </div>
