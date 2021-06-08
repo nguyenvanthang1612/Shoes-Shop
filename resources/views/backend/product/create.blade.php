@@ -17,7 +17,7 @@
                               <a href="#">Dashboard</a>
                           </li>
                           <li>
-                              <a href="#">Account</a>
+                              <a href="#">Product</a>
                           </li>
                           <li class="active">
                               Create Product

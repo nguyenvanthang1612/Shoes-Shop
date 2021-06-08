@@ -19,6 +19,7 @@ class ProductController extends Controller
         $searchText = $request->query('search');
         $products = $searchText ? Product::with('category')->with('inventory')
         ->where('name', 'LIKE', "%$searchText%")->paginate(10) : Product::with('category')->with('inventory')->paginate(10);
+        $products->appends(['search' => $searchText]);
         return view('backend.product.all', [
             'products' => $products
         ]);
@@ -34,7 +35,7 @@ class ProductController extends Controller
             Product::whereHas('category', function ($query) {
                 return $query->where('name_category', 'Men');
             })->with('inventory')->paginate(10);
-
+        $products->appends(['search' => $searchText]);
         return view('backend.product.man', [
             'products' => $products
         ]);
@@ -52,7 +53,7 @@ class ProductController extends Controller
             Product::whereHas('category', function ($query) {
                 return $query->where('name_category', 'Women');
             })->with('inventory')->paginate(10);
-
+        $products->appends(['search' => $searchText]);
         return view('backend.product.woman', [
             'products' => $products
         ]);
@@ -70,7 +71,7 @@ class ProductController extends Controller
             Product::whereHas('category', function ($query) {
                 return $query->where('name_category', 'Kid');
             })->with('inventory')->paginate(10);
-
+        $products->appends(['search' => $searchText]);
         return view('backend.product.kid', [
             'products' => $products
         ]);

@@ -120,6 +120,7 @@ class AccountController extends Controller
                     ->where('role', 2)
                     ->where('user_name', 'LIKE', '%'.$searchText.'%')
                     ->paginate(10);
+        $accounts->appends(['search' => $searchText]);
         return view('backend.account.admin', [
             'accounts' => $accounts
         ]);
@@ -133,6 +134,7 @@ class AccountController extends Controller
                     ->where('role', 3)
                     ->where('user_name', 'LIKE', '%'.$searchText.'%')
                     ->paginate(10);
+        $accounts->appends(['search' => $searchText]);
         return view('backend.account.client', [
             'accounts' => $accounts
         ]);

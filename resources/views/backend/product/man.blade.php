@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Man product table
+    Man Collection
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    All shipping table
+    Shippings
 @endsection
 
 @section('content')

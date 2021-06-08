@@ -24,6 +24,7 @@
     <link href="{{  asset('backend/assets/css/bootstrap.min.css')  }}" rel="stylesheet">
     <link href="{{  asset('backend/assets/css/style.css')  }}" rel="stylesheet">
     <link href="{{  asset('backend/assets/css/responsive.css')  }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     {{-- <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  --}}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

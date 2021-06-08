@@ -36,8 +36,6 @@
                     </div>
                 </div>
 
-
-
             </div>
 
             <!-- Image -->
@@ -72,7 +70,7 @@
                 </ul>
 
                 <!-- Text -->
-                {!! $product->desc !!}
+                {{-- {!! $product->desc !!} --}}
             </div>
         </div>
 
@@ -103,11 +101,7 @@
                 </span>
             </a>
 
-            <!-- Favorite added -->
-            <a href="#" class="favorite-link active">
-                <i class="icofont icofont-star"></i>
-                to favorite
-            </a>
+            
 
             <!-- More link -->
             <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">More info</a>

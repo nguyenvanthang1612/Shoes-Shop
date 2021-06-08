@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    category table
+    Category
 @endsection
 
 @section('content')

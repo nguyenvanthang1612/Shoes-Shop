@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    All order table
+    Orders
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                     <a href="#">Order</a>
                 </li>
                 <li class="active">
-                    All order
+                    All Order
                 </li>
             </ol>
             <div class="clearfix"></div>

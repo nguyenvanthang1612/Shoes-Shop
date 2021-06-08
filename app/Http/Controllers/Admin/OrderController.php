@@ -58,6 +58,7 @@ class OrderController extends Controller
             ->orderBy('id', 'asc')
             ->where('full_name', 'LIKE', '%'.$searchText.'%')
             ->paginate(10);
+        $orders->appends(['search' => $searchText]);
         return view('backend.order.allOrder', [
             'orders' => $orders
         ]);
@@ -72,7 +73,7 @@ class OrderController extends Controller
         ->orderBy('orders.id', 'asc')
         ->where('product_name', 'LIKE', '%'.$searchText.'%')
         ->paginate(10);
-        
+        $orders->appends(['search' => $searchText]);
         return view('backend.order.allOrderItem', [
                         'orders' => $orders
                     ]);
@@ -87,7 +88,7 @@ class OrderController extends Controller
         ->orderBy('orders.id', 'asc')
         ->where('customer_name', 'LIKE', '%'.$searchText.'%')
         ->paginate(10);
-        
+        $orders->appends(['search' => $searchText]);
         return view('backend.order.allShipping', [
                         'orders' => $orders
                     ]);

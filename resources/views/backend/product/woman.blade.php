@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Women product
+    Women Collection
 @endsection
 
 @section('content')

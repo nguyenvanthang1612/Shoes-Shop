@@ -1,7 +1,7 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    Kid product
+    Kid Collection
 @endsection
 
 @section('content')

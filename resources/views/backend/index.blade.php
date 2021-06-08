@@ -12,16 +12,7 @@
               
           <!--Start Page Title-->
            <div class="page-title-box">
-                <h4 class="page-title">Dashboard1 </h4>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="#">Dashboard</a>
-                    </li>
-                    
-                    <li class="active">
-                        Dashboard 1
-                    </li>
-                </ol>
+                <h4 class="page-title">Dashboard </h4>
                 <div class="clearfix"></div>
              </div>
               <!--End Page Title-->          

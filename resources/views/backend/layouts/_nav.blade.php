@@ -3,7 +3,7 @@
 
     <!--logo-->
     <div class="logo">
-        <a href="{{ url('/admin') }}"><img src="{{ asset('backend/assets/images/logo1.png') }}" alt="" style="width: 130px; height: 50px"></a>
+        <a href="{{ url('/admin') }}"><img src="{{ asset('backend/assets/images/logo-fix.png') }}" alt="" width="135px"></a>
     </div>
 
     <div class="logo-icon text-center">

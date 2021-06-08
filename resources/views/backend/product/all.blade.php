@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    All product table
+    All Collection
 @endsection
 
 @section('content')
