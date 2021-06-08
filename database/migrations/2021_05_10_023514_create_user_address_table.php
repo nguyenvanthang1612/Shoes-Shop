@@ -19,7 +19,6 @@ class CreateUserAddressTable extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('country');
-            $table->bigInteger('telephone');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')

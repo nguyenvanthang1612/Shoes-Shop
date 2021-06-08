@@ -11,14 +11,10 @@ class OrderItem extends Model
 
     protected $guarded = [];
 
-    protected $table = 'order_items';
+    protected $table = 'orders_item';
 
-    public function product()
+    public function order()
     {
-        return $this->belongsTo(Product::class);
-    }
-    public function orderdetail()
-    {
-        return $this->hasMany(OrderDetail::class,'order_id');
+        return $this->belongsTo(Order::class);
     }
 }

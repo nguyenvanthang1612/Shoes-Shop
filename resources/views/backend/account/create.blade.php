@@ -10,7 +10,7 @@
               
               <!--Start Page Title-->
                <div class="page-title-box">
-                    <h4 class="page-title">Form Basic</h4>
+                    <h4 class="page-title">Account</h4>
                     <ol class="breadcrumb">
                         <li>
                             <a href="#">Dashboard</a>
@@ -31,14 +31,20 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Select Fields</h2>
+                     <h2 class="header-title">Create Admin </h2>
                        
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="{{ url('admin/account/create_account') }}" method="POST" enctype="multipart/form-data">
+                          @csrf
                           {{-- username --}}
                           <div class="form-group">
                             <label class="col-md-2 control-label">Username</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="user_name" placeholder="username">
+                              <input class="form-control" type="text" name="user_name" placeholder="user name" value="{{ old('user_name') }}">
+                              @error('user_name')
+                                  <div class="text-danger">
+                                    <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
                             </div>
                           </div>
 
@@ -46,7 +52,12 @@
                           <div class="form-group">
                             <label class="col-md-2 control-label">First name</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="first_name" placeholder="first name">
+                              <input class="form-control" type="text" name="first_name" placeholder="first name" value="{{ old('first_name') }}">
+                              @error('first_name')
+                                  <div class="text-danger">
+                                    <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
                             </div>
                           </div>
 
@@ -54,7 +65,12 @@
                           <div class="form-group">
                             <label class="col-md-2 control-label">Last name</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="last_name" placeholder="last name">
+                              <input class="form-control" type="text" name="last_name" placeholder="last name" value="{{ old('last_name') }}">
+                              @error('last_name')
+                                  <div class="text-danger">
+                                    <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
                             </div>
                           </div>
                           
@@ -62,7 +78,12 @@
                           <div class="form-group">
                             <label class="col-md-2 control-label" for="example-email">Email</label>
                             <div class="col-md-10">
-                              <input id="example-email" name="example-email" class="form-control" placeholder="Email" type="email">
+                              <input id="example-email" name="email" class="form-control" placeholder="Email" type="text" value="{{ old('email') }}">
+                              @error('email')
+                                  <div class="text-danger">
+                                    <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
                             </div>
                           </div>
                           
@@ -70,24 +91,49 @@
                           <div class="form-group">
                             <label class="col-md-2 control-label">Password</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="password">
+                              <input class="form-control" type="password" placeholder="Password" name="password" value="{{ old('password') }}">
+                              @error('password')
+                                  <div class="text-danger">
+                                    <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
                             </div>
                           </div>
 
-                          {{-- position --}}
+                          {{-- telephone --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Position</label>
+                            <label class="col-md-2 control-label">Telephone</label>
                             <div class="col-md-10">
-                              <select class="form-control" name="role">
-                                <option value="">Select</option>
-                              </select>
+                              <input class="form-control" type="text" name="telephone" placeholder="Telephone" value="{{ old('telephone') }}">
+                              @error('telephone')
+                                  <div class="text-danger">
+                                    <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
+                            </div>
+                          </div>
+
+                          {{-- Avatar --}}
+                          <div class="form-group">
+                            <div class="custom-file">
+                              <label class="col-sm-2 control-label">Image</label>
+                              <div class="col-sm-10">
+                                  <div class="fallback">
+                                    <input type="file" class="custom-file-input" id="customFile" name="avatar">
+                                    @error('avatar')
+                                        <div class="text-danger">
+                                          <span>{{ $message }}</span>
+                                        </div>
+                                    @enderror
+                                  </div>
+                              </div>
                             </div>
                           </div>
                           
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-9">
                               <button type="submit" class="btn btn-primary outline-btn">Submit</button>
-                              <a href="{{ url('/admin') }}">
+                              <a href="{{ url('/admin/account/admin_management') }}">
                                 <button type="button" class="btn btn-danger outline-btn">Cancel</button>
                               </a>
                             </div>

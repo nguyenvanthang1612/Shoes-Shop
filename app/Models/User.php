@@ -6,6 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use App\Notifications\ResetPasswordNotification;
 
 class User extends Authenticatable
 {
@@ -16,11 +20,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -41,16 +42,30 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $guarded = [];
 
     protected $table = 'users';
 
-    public function useraddress()
+
+    public function userAddress()
     {
-        return $this->hasMany(UserAddress::class, 'user_id');
+        return $this->hasOne(UserAddress::class, 'user_id');
     }
-    public function userpayment()
+
+    public function userPayment()
     {
         return $this->hasMany(UserPayment::class, 'user_id');
     }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = Hash::make($password);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $url = route('backend.password.resetPasswordForm', ['token' => $token]);
+
+        $this->notify(new ResetPasswordNotification($url));
+    }
+
 }

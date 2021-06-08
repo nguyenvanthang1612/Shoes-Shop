@@ -11,6 +11,8 @@ class UserAddress extends Model
 
     protected $table = 'user_address';
 
+    protected $guarded = [];
+
     public function users()
     {
         return $this->belongsTo(Users::class);

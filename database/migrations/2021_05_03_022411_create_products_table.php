@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->mediumText('desc');
             $table->string('SKU', 100);
             $table->integer('size');
-            $table->integer('gender');
-            $table->string('img');
+            $table->string('brand', 100);
+            $table->json('img');
             $table->integer('category_id')->unsigned();
             $table->integer('inventory_id')->unsigned();
             $table->bigInteger('price');

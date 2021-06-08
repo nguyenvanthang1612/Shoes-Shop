@@ -22,13 +22,13 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
+            'name' => ucfirst($this->faker->word()),
             'desc' => $this->faker->sentence(2, true),
             'SKU' => $this->faker->ean13(),
             'size' => rand(1,10),
-            'gender' => rand(1,2),
-            'img' => $this->faker->sentence(1, true),
-            'category_id' => rand(1,10),
+            'brand' => $this->faker->word(),
+            'img' => [$this->faker->imageUrl($width = 253, $height = 347)],
+            'category_id' => rand(1,3),
             'inventory_id' => rand(1,10),
             'price' =>rand(1,10)
         ];

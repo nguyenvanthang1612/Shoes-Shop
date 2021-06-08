@@ -4,26 +4,23 @@
     Morris.Bar({
         element: 'morris2',
         data: [
-            { year: '2010', a: 30, b: 25 },
-            { year: '2011', a: 60, b: 40 },
-            { year: '2012', a: 85, b: 65 },
-            { year: '2013', a: 100, b: 90 },
-            { year: '2014', a: 60, b: 50 },
-            { year: '2015', a: 75, b: 65 },
-            { year: '2016', a: 100, b: 90 } 
+            { year: '2010', a: 30, b: 25, c: 20},
+            { year: '2011', a: 60, b: 40, c: 20},
+            { year: '2012', a: 85, b: 65, c: 20},
+            { year: '2013', a: 100, b: 90, c: 20},
+            { year: '2014', a: 60, b: 50, c: 20},
+            { year: '2015', a: 75, b: 65, c: 20},
+            { year: '2016', a: 100, b: 90, c: 20} 
         ],
         xkey: 'year',
-        ykeys: ['a', 'b'],
-        labels: ['Section A', 'Section B'],
+        ykeys: ['a', 'b', 'c'],
+        labels: ['Section A', 'Section B', 'Section C'],
         barRatio: 0.4,
         xLabelAngle: 0,
         hideHover: 'auto',
-        barColors: ['#03A9F3','#FFAA00'],
+        barColors: ['#03A9F3','#FFAA00', '#001'],
         resize: true
     });	
-	
-	
-	
 
 });
   Morris.Area({

@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\AccountController as AdminAccountController;
-use App\Http\Controllers\Admin\AuthenticateController as AdminAuthenticateController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\AuthenticateController;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\Web\IndexController as WebIndexController;
-use Illuminate\Routing\RouteAction;
+use App\Http\Controllers\Web\AuthenticateController;
+use App\Http\Controllers\Web\CartController;
+use App\Http\Controllers\Web\CategoryProductController;
+use App\Http\Controllers\Web\IndexController;
+use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\SubcribeEmailController;
+use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,23 +23,41 @@ use Illuminate\Support\Facades\Route;
 /**
  * Frontend routes here
  */
-Route::group(['prefix' => '/'], function () {
-    Route::get('/', [WebIndexController::class, 'index']);
-});
-/**
- * Admin route here (Backend)
- */
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', function () {
-        return view('backend.index');
-    });
+Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
+
+    Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
+    //index - register - edit
+    Route::get('user/edit-profile', [UserController::class, 'editProfile'])->name('frontend.user.edit-profile');
+    Route::put('user/edit-profile', [UserController::class, 'updateProfile'])->name('frontend.user.update-profile');
+    //Cart
+    Route::get('addCart/{id}', [CartController::class, 'addCart'])->name('frontend.cart.add-cart');
+    Route::get('deleteItemCart/{id}', [CartController::class, 'deleteItemCart'])->name('frontend.cart.delete-item');
+    Route::get('listCart', [CartController::class, 'showListCart'])->name('frontend.cart.list-cart');
+    Route::get('reloadCartItemInBadge', [CartController::class, 'reloadCartItemInBadge'])->name('frontend.cart.reloadCartItemInBadge');
+    Route::get('deleteCart', [CartController::class, 'deleteListCart']);
+    Route::get('cart/products', [CartController::class, 'reloadProductsInCardPage'])->name('frontend.cart.reload-products-in-cardpage');
+    Route::post('cart/update-quantity', [CartController::class, 'updateCartQuantity'])->name('frontend.cart.updateCartQuantity');
+    Route::get('cart/enter-address', [CartController::class, 'enterShippingAddress'])->name('frontend.cart.enter-address');
+    Route::put('cart/enter-address', [CartController::class, 'updateShippingAddress'])->name('frontend.cart.update-shipping-address');
+
+    Route::get('cart/confirm', [CartController::class, 'confirmOrder'])->name('frontend.cart.confirm-order');
+    //Category
+    //Product-category
+    Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
+
+    //Product show
+    Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
-    Route::get('auth/login', [AdminAuthenticateController::class, 'showLoginForm']);
-    Route::post('auth/login', [AdminAuthenticateController::class, 'login']);
+    Route::get('login', [AuthenticateController::class, 'showLoginForm']);
+    Route::post('login', [AuthenticateController::class, 'login'])->name('frontend.authenticate.login');
+    Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
+    Route::post('register', [AuthenticateController::class, 'register'])->name('register');
 
-    // account
-    Route::get('account/create_account', [AdminAccountController::class, 'showCreateAccountForm']);
+    Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
 
-    //category
-    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+    Route::post('continue-shopping', [CartController::class, 'continueShopping'])->name('frontend.cart.continue-shopping');
 });
+
+// Subcribe Email
+// Route::get('/', [SubcribeEmailController::class, 'nameAndEmailToSend']);
+Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);

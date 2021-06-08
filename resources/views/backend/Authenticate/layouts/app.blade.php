@@ -7,7 +7,7 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="{!! asset('backend/assets/images/favicon.png') !!}" type="image/png">
+  <link rel="icon" href="{!! asset('backend/assets/images/logo-icon1.png') !!}" type="image/png">
   <title>@yield('title')</title>
   <link href="{!! asset('backend/assets/css/icons.css') !!}" rel="stylesheet">
   <link href="{!! asset('backend/assets/css/bootstrap.min.css') !!}" rel="stylesheet">
