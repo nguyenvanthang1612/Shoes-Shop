@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Language\LocalizationController;
 use App\Http\Controllers\Web\AuthenticateController;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\SubcribeEmailController;
 use App\Http\Controllers\Web\UserController;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * Frontend routes here
  */
-Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
+Route::group(['prefix' => '/', 'middleware' => ['must-be-user','localization']], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
@@ -56,8 +58,14 @@ Route::group(['prefix' => '/', 'middleware' => 'must-be-user'], function () {
     Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
 
     Route::post('continue-shopping', [CartController::class, 'continueShopping'])->name('frontend.cart.continue-shopping');
+
+    Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
 });
 
 // Subcribe Email
-// Route::get('/', [SubcribeEmailController::class, 'nameAndEmailToSend']);
 Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);
+
+// Route::group(['prefix' => '/', 'middleware' => 'localization'], function () {
+//     Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
+// });
+

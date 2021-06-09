@@ -13,8 +13,8 @@ Update profile
         <div class="col-xs-12">
 
             <ol class="breadcrumb bg-blue">
-                <li><a href="{{ url('/') }}">Homepage</a></li>
-                <li class="active">Register</li>
+                <li><a href="{{ url('/') }}">{{ __('Homepage') }}</a></li>
+                <li class="active">{{ __('Register') }}</li>
             </ol>
 
         </div>
@@ -41,7 +41,7 @@ Update profile
 
                             <!-- Header -->
                             <h1 class="header text-uppercase">
-                                Edit profile
+                                {{ __('Edit profile') }}
                             </h1>
                         </div>
                     </div>
@@ -59,7 +59,7 @@ Update profile
                                             <a data-toggle="collapse" data-parent="#accordion"
                                                 href="#bankTransrerColl">
                                                 <span class="panel-indicator"></span>
-                                                Profile info
+                                                {{ __('Profile info') }}
                                             </a>
                                         </h4>
                                     </div>
@@ -68,8 +68,8 @@ Update profile
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="frName"
-                                                    class="col-sm-3 control-label text-darkness">Your first
-                                                    name</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Your first name') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="frName"
                                                         name="first_name" value="{{ old('first_name',$user->first_name) }}"/>
@@ -81,8 +81,8 @@ Update profile
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="lnName"
-                                                    class="col-sm-3 control-label text-darkness">Your last
-                                                    name</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Your last name') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="lnName"
                                                         name="last_name" value="{{ old('last_name', $user->last_name) }}"/>
@@ -94,8 +94,8 @@ Update profile
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="email"
-                                                    class="col-sm-3 control-label text-darkness">Enter your
-                                                    email</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Enter your email') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email"
                                                         name="email" value="{{ old('email', $user->email) }}">
@@ -107,8 +107,8 @@ Update profile
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="telephone"
-                                                    class="col-sm-3 control-label text-darkness">Enter your
-                                                    Telephone</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Enter your Telephone') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="telephone"
                                                         name="telephone" value="{{ old('telephone', $user->telephone) }}">
@@ -128,7 +128,7 @@ Update profile
                                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseTwo">
                                                 <span class="panel-indicator"></span>
-                                                Address
+                                                {{ __('Address') }}
                                             </a>
                                         </h4>
                                     </div>
@@ -136,7 +136,7 @@ Update profile
                                         <div class="panel-body">
                                             <div class="form-group pd-none register-field">
                                                 <label for="route" class="col-sm-3 control-label text-darkness">
-                                                    Address</label>
+                                                    {{ __('Address') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="address"
                                                         name="address" value="{{ old('address', $userAddress->address)  }}" />
@@ -145,14 +145,14 @@ Update profile
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="locality"
-                                                    class="col-sm-3 control-label text-darkness">City</label>
+                                                    class="col-sm-3 control-label text-darkness">{{ __('City') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="city" name="city" value="{{ old('city', $userAddress->city) }}">
                                                 </div>
                                             </div>
                                             <div class="form-group pd-none register-field">
                                                 <label for="country"
-                                                    class="col-sm-3 control-label text-darkness">Country</label>
+                                                    class="col-sm-3 control-label text-darkness">{{ __('Country') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="country"
                                                         name="country" value="{{ old('country', $userAddress->country) }}">
@@ -167,7 +167,7 @@ Update profile
                                 <div class="col-sm-offset-3 col-sm-7">
                                     <button type="submit"
                                         class="sdw-hover btn btn-material btn-yellow ripple-cont">
-                                        Update profile
+                                        {{ __('Update profile') }}
                                     </button>
                                 </div>
                             </div>

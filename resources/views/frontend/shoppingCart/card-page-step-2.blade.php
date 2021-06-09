@@ -22,9 +22,9 @@ Step 2
         <div class="col-xs-12">
 
             <ol class="breadcrumb bg-blue">
-                <li><a href="#">Homepage</a></li>
-                <li><a href="#">Blog category</a></li>
-                <li class="active">This item</li>
+                <li><a href="#">{{ __('Homepage') }}</a></li>
+                <li><a href="#">{{ __('Blog category') }}</a></li>
+                <li class="active">{{ __('This item') }}</li>
             </ol>
 
         </div>
@@ -58,9 +58,9 @@ Step 2
 
                             <!-- Header -->
                             <h1 class="header text-uppercase">
-                                Authentication
+                               {{ __(' Authentication') }}
                                 <span>
-                                    required
+                                    {{ __('required') }}
                                 </span>
                             </h1>
 
@@ -70,18 +70,18 @@ Step 2
                             <form action="{{ route('frontend.authenticate.login') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="username">Username</label>
+                                    <label for="username">{{ __('Username') }}</label>
                                     <input type="text" name="user_name" class="form-control" id="username"
-                                        placeholder="Username">
+                                        placeholder="{{ __('Username') }}">
                                     @error('username')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">Password</label>
+                                    <label for="password">{{ __('Password') }}</label>
                                     <input type="password" class="form-control" id="password"
-                                        placeholder="Password" name="password">
+                                        placeholder="{{ __('Password') }}" name="password">
                                     @error('password')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -93,19 +93,19 @@ Step 2
                                             <span class="off">off</span>
                                             <span class="on">on</span>
                                         </span>
-                                        remember password
+                                        {{ __('remember password') }}
                                     </label>
                                 </div>
 
                                 <span class="sdw-wrap">
                                     <button type="submit"
-                                        class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">Login</button>
+                                        class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">{{ __('Login') }}</button>
                                     <span class="sdw"></span>
                                 </span>
 
                                 <ul class="addon-login-btn">
                                     <li>
-                                        <a href="{{ route('register') }}">register</a>
+                                        <a href="{{ route('register') }}">{{ __('register') }}</a>
                                     </li>
                                 </ul>
                             </form>
@@ -125,7 +125,7 @@ Step 2
                                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseOne">
                                                 <span class="panel-indicator"></span>
-                                                Use address from your profile
+                                                {{ __('Use address from your profile') }}
                                             </a>
                                         </h4>
                                     </div>
@@ -136,19 +136,19 @@ Step 2
                                                 @method('PUT')
                                                 <input type="hidden" name="mode" value="1"/>
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label pd-none">Shipping address:</label>
+                                                    <label class="col-sm-3 control-label pd-none">{{ __('Shipping address') }}:</label>
                                                     <div class="col-sm-9">
                                                         <span class="text">
                                                             @if (isset(Auth::user()->userAddress->address))
                                                                 {{ Auth::user()->userAddress->address }}
                                                             @else
-                                                                <a href="{{ route('frontend.user.edit-profile') }}" target="_blank">Update shipping address</a>
+                                                                <a href="{{ route('frontend.user.edit-profile') }}" target="_blank">{{ __('Update shipping address') }}</a>
                                                             @endif
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-3 control-label pd-none">Note:</label>
+                                                    <label class="col-sm-3 control-label pd-none">{{ __('Note') }}:</label>
                                                     <div class="col-sm-9">
                                                         <textarea type="text" class="form-control" id="administrative_area_level_1" name="note"></textarea>
                                                     </div>
@@ -156,7 +156,7 @@ Step 2
                                                 @if (isset(Auth::user()->userAddress->address))
                                                 <div class="form-group">
                                                     <div class="col-sm-offset-3 col-sm-7">
-                                                        <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">Accept</button>
+                                                        <button type="submit" class="sdw-hover btn btn-material btn-yellow ripple-cont">{{ __('Accept') }}</button>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -171,7 +171,7 @@ Step 2
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                                                 <span class="panel-indicator"></span>
-                                                Use the new address
+                                                {{ __('Use the new address') }}
                                             </a>
                                         </h4>
                                     </div>
@@ -185,7 +185,7 @@ Step 2
                                                 {{-- Customer name --}}
                                                 <div class="form-group pd-none">
                                                     <label for="route"
-                                                        class="col-sm-3 control-label text-darkness">Customer name</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('Customer name') }}</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" name="customer_name" class="form-control" id="route">
                                                         @error('customer_name')
@@ -197,7 +197,7 @@ Step 2
                                                 {{-- Telephone --}}
                                                 <div class="form-group pd-none">
                                                     <label for="route"
-                                                        class="col-sm-3 control-label text-darkness">Telephone</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('Telephone') }}</label>
                                                     <div class="col-sm-8">
                                                         <input type="tel" name="telephone" class="form-control" id="route">
                                                         @error('telephone')
@@ -209,7 +209,7 @@ Step 2
                                                 {{-- Address --}}
                                                 <div class="form-group pd-none">
                                                     <label for="route"
-                                                        class="col-sm-3 control-label text-darkness">Address</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('Address') }}</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" name="address" class="form-control" id="route"/>
                                                         @error('address')
@@ -220,7 +220,7 @@ Step 2
 
                                                 <div class="form-group pd-none">
                                                     <label for="route"
-                                                        class="col-sm-3 control-label text-darkness">City</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('City') }}</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" name="city" class="form-control" id="route">
                                                         @error('city')
@@ -232,7 +232,7 @@ Step 2
 
                                                 <div class="form-group pd-none">
                                                     <label for="locality"
-                                                        class="col-sm-3 control-label text-darkness">Country</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('Country') }}</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="locality" name="country">
                                                         @error('country')
@@ -243,7 +243,7 @@ Step 2
 
                                                 <div class="form-group pd-none">
                                                     <label for="administrative_area_level_1"
-                                                        class="col-sm-3 control-label text-darkness">Note</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('City') }}</label>
                                                     <div class="col-sm-8">
                                                         <textarea type="text" class="form-control" id="administrative_area_level_1" name="note"></textarea>
                                                     </div>
@@ -253,8 +253,8 @@ Step 2
                                                     <div class="col-sm-offset-3 col-sm-8">
                                                         <span class="sdw-wrap">
                                                             <button type="submit"
-                                                                class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">Go
-                                                                to next step</button>
+                                                                class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">
+                                                                {{ __('Go to next step') }}</button>
                                                             <span class="sdw"></span>
                                                         </span>
                                                     </div>

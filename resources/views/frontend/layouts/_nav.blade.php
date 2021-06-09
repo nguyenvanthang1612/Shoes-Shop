@@ -32,12 +32,12 @@
                         <ul class="list-btn-group">
                             <li>
                                 <a href='' data-toggle="modal" data-target="#myModal">
-                                    Sign in
+                                    {{ __('Sign In') }}
                                 </a>
                             </li>
                             <li>
                                 <a href='{{ route('register') }}'>
-                                    <b>Sign up</b>
+                                    <b>{{ __('Sign Up') }}</b>
                                 </a>
                             </li>
                         </ul>
@@ -52,12 +52,12 @@
             <ul class="nav navbar-nav">
                 <li class="active">
                     <a href="{{ url('/') }}">
-                        Home
+                        {{ __('Home') }}
                     </a>
                 </li>
                 <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Categories <i class="icofont icofont-curved-down"></i>
+                        {{ __('Categories') }} <i class="icofont icofont-curved-down"></i>
                     </a>
                     <ul class="dropdown-menu">
                         @foreach($categories as $category)
@@ -65,6 +65,15 @@
                             <a href='{{ route('frontend.category-product.index', $category->id) }}'>{{$category->name_category}}</a>
                         </li>
                         @endforeach
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{ __('Languages') }} <i class="icofont icofont-curved-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li> <a href="{!! route('change-language', ['en']) !!}">English</a></li>
+                        <li><a href="{!! route('change-language', ['vi']) !!}">Vietnam</a></li>
                     </ul>
                 </li>
             </ul>

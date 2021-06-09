@@ -1,6 +1,6 @@
 <div class="asside-nav bg-white hidden-xs">
     <div class="header text-uppercase text-white bg-blue">
-        Category
+        {{ __('Category') }}
     </div>
 
     <ul class="nav-vrt bg-white">

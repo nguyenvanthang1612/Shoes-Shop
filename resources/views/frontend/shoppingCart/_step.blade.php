@@ -7,9 +7,9 @@
                         1
                     </div>
                     <span>
-                        Confirm
+                        {{ __('Confirm') }}
                     </span>
-                    products list
+                    {{ __('products list') }}
 
                     <span class="dir-icon hidden-xs">
                         <i class="icofont icofont-stylish-right {{ $step == 1 ? 'text-yellow': '' }}"></i>
@@ -21,9 +21,9 @@
                         2
                     </div>
                     <span>
-                        Enter
+                        {{ __('Enter') }}
                     </span>
-                    your address
+                    {{ __('your address') }}
 
                     <span class="dir-icon">
                         <i class="icofont icofont-stylish-right {{ $step == 2 ? 'text-yellow': '' }}"></i>
@@ -35,9 +35,9 @@
                         3
                     </div>
                     <span>
-                        Confirm
+                        {{ __('Confirm') }}
                     </span>
-                    order
+                    {{ __('order') }}
                 </li>
 
                 {{-- <li class="hidden-xs col-lg-3 hidden-sm hidden-md">

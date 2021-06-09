@@ -7,7 +7,7 @@
 
                     <div class="block-header text-uppercase">
 
-                        <h2 class="header">Features</h2>
+                        <h2 class="header">{{ __('Features') }}</h2>
                     </div>
                 </div>
             </div>
@@ -39,55 +39,22 @@
 
                                     <!-- Caption -->
                                     <div class="caption">
-                                        <!-- Rate -->
-                                        <div class="rate">
-
-                                            <ul class="stars">
-                                                <li class="active">
-                                                    <i class="icofont icofont-star"></i>
-                                                </li>
-                                                <li class="active">
-                                                    <i class="icofont icofont-star"></i>
-                                                </li>
-                                                <li class="active">
-                                                    <i class="icofont icofont-star"></i>
-                                                </li>
-                                                <li class="active">
-                                                    <i class="icofont icofont-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="icofont icofont-star"></i>
-                                                </li>
-                                            </ul>
-
-                                            <div class="rate-info">
-                                                24 members
-                                                <span>like it</span>
-                                            </div>
-                                        </div>
-
-
 
                                         <!-- Features list -->
                                         <ul class="features">
                                             <li>
                                                 <i class="icofont icofont-shield"></i>
-                                                <span>24 days. Money Back Guarantee</span>
+                                                <span>{{ __('24 days. Money Back Guarantee') }}</span>
                                             </li>
                                             <li>
                                                 <i class="icofont icofont-ship"></i>
-                                                <span>Free shipping</span>
+                                                <span>{{ __('Free shipping') }}</span>
                                             </li>
                                             <li>
                                                 <i class="icofont icofont-hand"></i>
-                                                <span>Free help and setup</span>
+                                                <span>{{ __('Free help and setup') }}</span>
                                             </li>
                                         </ul>
-
-                                        <!-- Text -->
-                                        <p class="text">
-                                            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                        </p>
                                     </div>
                                 </div>
 
@@ -113,8 +80,6 @@
                                             </span>
                                         </span>
 
-
-
                                         <!-- Icon card -->
                                         <span class="icon-card">
                                             <i class="icofont icofont-cart-alt"></i>
@@ -122,13 +87,13 @@
                                     </a>
 
                                     <!-- Favorite added -->
-                                    <a href="#" class="favorite-link active">
+                                    <span class="favorite-link active">
                                         <i class="icofont icofont-star"></i>
-                                        to favorite
-                                    </a>
+                                        {{ __('favorite') }}
+                                    </span>
 
                                     <!-- More link -->
-                                    <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">More info</a>
+                                    <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">{{ __('More info') }}</a>
                                 </div>
                             </div>
                         </div>

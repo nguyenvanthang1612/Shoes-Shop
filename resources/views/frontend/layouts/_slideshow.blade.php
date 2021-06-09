@@ -23,14 +23,14 @@
                                         <span class="btn-panel">
 
                                             <span class="sdw-wrap">
-                                                <a href="{{ route('frontend.product.show', $product->id) }}" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">More info</span></a>
+                                                <a href="{{ route('frontend.product.show', $product->id) }}" class="sdw-hover btn btn-lg btn-material btn-default"><span class="body">{{ __('More info') }}</span></a>
                                                 <span class="sdw"></span>
                                             </span>
 
                                             <span class="hor-divider"></span>
 
                                             <span class="sdw-wrap">
-                                                <a onclick='addCart("{{$product->id}}")'  href="javascript:" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">Buy now</span></a>
+                                                <a onclick='addCart("{{$product->id}}")'  href="javascript:" class="sdw-hover btn btn-lg btn-material btn-primary"><i class="icon icofont icofont-basket"></i><span class="body">{{ __('Buy now') }}</span></a>
                                                 <span class="sdw"></span>
                                             </span>
                                         </span>

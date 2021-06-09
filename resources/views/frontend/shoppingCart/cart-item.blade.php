@@ -31,12 +31,12 @@
     </li>
     @endforeach
     <li>
-        <h5>Total: ${{ Session::get('Cart')->totalPrice }}</h5>
+        <h5>{{ __('Total') }}: ${{ Session::get('Cart')->totalPrice }}</h5>
         </li>
     <input hidden id="total-quantity-cart" type="number" value="{{ count(Session::get('Cart')->products) }}"/>
     <li class="more-btn sdw">
         <a href="{{ url('/listCart') }}" class="btn-material btn-primary">
-            View order <i class="icofont icofont-check-circled"></i>
+            {{ __('View order') }} <i class="icofont icofont-check-circled"></i>
         </a>
     </li>
 @endif

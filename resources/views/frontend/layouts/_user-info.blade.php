@@ -23,8 +23,8 @@
             <span class="info">
                 <!-- Name -->
                 <span class="name text-uppercase" value="">{{ Auth::user()->user_name }}</span>
-                <a href='{{ route('frontend.user.edit-profile') }}'>Edit profile</a>
-                <a href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">Logout</a>
+                <a href='{{ route('frontend.user.edit-profile') }}'>{{ __('Edit profile') }}</a>
+                <a href="javascript:void(0)" onclick="document.getElementById('logout-form').submit()">{{ __('Logout') }}</a>
                 <form class="d-inline" action="{{ route('logout') }}" id="logout-form" method="POST">
                     @csrf
                 </form>
@@ -47,7 +47,7 @@
 
         <a href="#" class="visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="icofont icofont-cart-alt"></i>
-            Shopping cart
+            {{ __('Shopping cart') }}
         </a>
         </a>
         <!-- Dropdown items list -->
@@ -90,11 +90,11 @@
                 </li>
                 @endforeach
                 <li>
-                    <h5>Total: ${{Session::get('Cart')->totalPrice}}</h5>
+                    <h5>{{ __('Total') }}: ${{Session::get('Cart')->totalPrice}}</h5>
                 </li>
                 <li class="more-btn sdw">
                     <a href="{{ url('/listCart') }}" class="btn-material btn-primary">
-                        View order <i class="icofont icofont-check-circled"></i>
+                        {{ __('View order') }} <i class="icofont icofont-check-circled"></i>
                     </a>
                 </li>
                 @endif

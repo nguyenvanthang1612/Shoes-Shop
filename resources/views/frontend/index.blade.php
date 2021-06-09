@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-    index
+    {{ __('index') }}
 @endsection
 
 @section('content')
@@ -72,7 +72,7 @@
                                     <!-- Button -->
                                     <p>
                                         <span class="sdw-wrap">
-                                            <a href="#" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">View New Products</a>
+                                            <a href="#" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">{{ __('View New Products') }}</a>
                                             <span class="sdw"></span>
                                         </span>
                                     </p>
@@ -184,7 +184,7 @@
 
                                             <div class="wrap text-blue" style="text-align: center">
                                                 {{ $itemSold }}
-                                                <span>items sold</span>
+                                                <span>{{ __('items sold') }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +196,7 @@
 
                                             <div class="wrap text-blue" style="text-align: center">
                                                 {{ $allCustomer }}
-                                                <span>customers</span>
+                                                <span>{{ __('customers') }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
 
                                             <div class="wrap text-blue" style="text-align: center">
                                                 {{ $allProduct }}
-                                                <span>items in store</span>
+                                                <span>{{ __('items in store') }}</span>
                                             </div>
                                         </div>
                                     </div>

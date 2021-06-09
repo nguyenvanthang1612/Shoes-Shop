@@ -10,8 +10,8 @@
 
                             <!-- Header -->
                             <span class="comp-header st-18 text-uppercase">
-                                Subscribe <br>
-                                <span class="text-white">on latest news</span>
+                                {{ __('Subscribe') }} <br>
+                                <span class="text-white">{{ __('on latest news') }}</span>
                             </span>
                         </div>
 
@@ -27,7 +27,7 @@
 
                                         <!-- Name -->
                                         <div class="name">
-                                            <input type="text" placeholder="Name" name="subcribe_name">
+                                            <input type="text" placeholder="{{ __('Name') }}" name="subcribe_name">
                                             @error('subcribe_name')
                                                 <div class="text-danger">
                                                     <span>{{ $message }}</span>

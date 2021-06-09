@@ -39,7 +39,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">
+                        <td><a href="{{ route('frontend.index') }}" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">
                             Click This Link 
                         </a></td>
                     </tr>

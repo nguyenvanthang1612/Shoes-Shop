@@ -6,9 +6,11 @@
                 <div class="row">
 
                     <div class="col-md-8">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6676691367893!2d105.802413814883!3d21.00595468601074!2m3!1f0!2f0!3f0!3m2!1i1024!
-                        2i768!4f13.1!3m3!1m2!1s0x313454b5534fb3bf%3A0x3af152649f6b709a!2sItplus%20Academy!5e0!3m2!1svi!2s!4v1623076299784!5m2!1svi!2s" width="600" height="450" 
-                        style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5252356825777!2d105.84551011488307!3d21.
+                        011659986007622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8bc402bd27%3A0x125318f068f125c9!2zVHJ1bmcgdMOi
+                        bSBUaMawxqFuZyBt4bqhaSB2w6AgVsSDbiBwaMOybmcgVsOibiBI4buTLCA1MSBQaOG7kSBMw6ogxJDhuqFpIEjDoG5oLCBMw6ogxJDhuqFpIEjDoG5oLCBIYWkgQs
+                        OgIFRyxrBuZywgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1623233948626!5m2!1svi!2s" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
 
 
@@ -17,18 +19,18 @@
                             <div class="col-md-12">
 
                                 <h3 class="header text-uppercase">
-                                    Our contacts
+                                    {{ __('Our contacts') }}
                                 </h3>
 
                                 <ul class="list-icon white ">
                                     <li>
                                         <i class="icon icofont icofont-location-pin"></i>
-                                        1 Hoang Dao Thuy, Nhan Chinh, Thanh Xuan, Ha Noi
+                                        51 Phố Lê Đại Hành, Lê Đại Hành, Hai Bà Trưng, Hà Nội
                                     </li>
                                     <li>
                                         <a href="mailto:info@example.com">
                                             <i class="icon icofont icofont-email"></i>
-                                            shoesshop12@gmail.com
+                                            shoesshop1268@gmail.com
                                         </a>
                                     </li>
                                     <li>
@@ -37,8 +39,7 @@
                                     </li>
                                     <li>
                                         <i class="icon icofont icofont-clock-time"></i>
-                                        Working Days/Hours:
-                                        Mon - Sun / 9:00AM - 8:00PM
+                                        {{ __('Working Days/Hours:Mon - Sun / 9:00AM - 8:00PM') }}
                                     </li>
                                 </ul>
 
@@ -128,9 +129,9 @@
                     </span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    Authorization
+                    {{ __('Authorization') }}
                     <span>
-                        required
+                        {{ __('required') }}
                     </span>
                 </h4>
             </div>
@@ -145,14 +146,14 @@
 
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">User Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name"
+                            <label for="exampleInputEmail1">{{ __('User Name') }}</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="{{ __('User Name') }}"
                                 name="user_name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="exampleInputPassword1">{{ __('Password') }}</label>
                             <input type="password" class="form-control" id="exampleInputPassword1"
-                                placeholder="Password" name="password">
+                                placeholder="{{ __('Password') }}" name="password">
                         </div>
                         <div class="checkbox padding">
                             <input type="checkbox" id="inputCheckBox">
@@ -161,22 +162,22 @@
                                     <span class="off">off</span>
                                     <span class="on">on</span>
                                 </span>
-                                remember password
+                                {{ __('remember password') }}
                             </label>
                         </div>
                         <span class="sdw-wrap">
                             <button type="submit" class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont"
-                                name="login">Login</button>
+                                name="login">{{ __('Login') }}</button>
                             <span class="sdw"></span>
                         </span>
 
                         <ul class="addon-login-btn">
                             <li>
-                                <a href='{{ route('register') }}'>register</a>
+                                <a href='{{ route('register') }}'>{{ __('register') }}</a>
                             </li>
                             <li>or</li>
                             <li>
-                                <a href="#">restore password</a>
+                                <a href="#">{{ __('restore password') }}</a>
                             </li>
                         </ul>
                     </form>

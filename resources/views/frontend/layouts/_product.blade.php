@@ -10,32 +10,6 @@
 
                 <a href="{{ route('frontend.product.show', $product->id) }}">{{$product->name}}</a>
 
-                <!-- Rate -->
-                <div class="rate">
-
-                    <ul class="stars">
-                        <li class="active">
-                            <i class="icofont icofont-star"></i>
-                        </li>
-                        <li class="active">
-                            <i class="icofont icofont-star"></i>
-                        </li>
-                        <li class="active">
-                            <i class="icofont icofont-star"></i>
-                        </li>
-                        <li class="active">
-                            <i class="icofont icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont icofont-star"></i>
-                        </li>
-                    </ul>
-
-                    <div class="rate-info">
-                        24 members rate it
-                    </div>
-                </div>
-
             </div>
 
             <!-- Image -->
@@ -49,7 +23,7 @@
                 <!-- Rate -->
                 <div class="rate">
                     <div class="rate-info">
-                        BRAND
+                        {{ __('BRAND') }}
                         <span>{{$product->brand}}</span>
                     </div>
                 </div>
@@ -57,15 +31,15 @@
                 <ul class="features">
                     <li>
                         <i class="icofont icofont-shield"></i>
-                        <span>24 days. Money Back Guarantee</span>
+                        <span>{{ __('24 days. Money Back Guarantee') }}</span>
                     </li>
                     <li>
                         <i class="icofont icofont-ship"></i>
-                        <span>Free shipping</span>
+                        <span>{{ __('Free shipping') }}</span>
                     </li>
                     <li>
                         <i class="icofont icofont-hand"></i>
-                        <span>Free help and setup</span>
+                        <span>{{ __('Free help and setup') }}</span>
                     </li>
                 </ul>
 
@@ -104,7 +78,7 @@
             
 
             <!-- More link -->
-            <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">More info</a>
+            <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">{{ __('More info') }}</a>
         </div>
     </div>
 </div>

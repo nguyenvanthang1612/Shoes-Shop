@@ -22,9 +22,9 @@ Step 4
         <div class="col-xs-12">
 
             <ol class="breadcrumb bg-blue">
-                <li><a href="#">Homepage</a></li>
-                <li><a href="#">Blog category</a></li>
-                <li class="active">This item</li>
+                <li><a href="#">{{ __('Homepage') }}</a></li>
+                <li><a href="#">{{ __('Blog category') }}</a></li>
+                <li class="active">{{ __('This item') }}</li>
             </ol>
 
         </div>
@@ -47,11 +47,11 @@ Step 4
                     <!-- / Authirize form -->
 
                     <div class="row">
-                        <h2>Cảm ơn bạn đã đặt hàng</h2>
+                        <h2>{{ __('Thank you for your order') }}</h2>
                         <form action="{{ route('frontend.cart.continue-shopping') }}" method="POST">
                             @csrf
                             <button class="sdw-hover btn btn-material btn-yellow btn-lg ripple-cont">
-                                Tiếp tục mua hàng
+                                {{ __('Continue Shopping') }}
                             </button>
                         </form>
                     </div>

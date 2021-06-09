@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-    Shop Items
+    {{ __('Shop Items') }}
 @endsection
 
 @section('content')
@@ -13,9 +13,9 @@
                 <div class="col-xs-12">
 
                     <ol class="breadcrumb bg-blue">
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li class="active">This item</li>
+                        <li><a href="#">{{ __('Homepage') }}</a></li>
+                        <li><a href="#">{{ __('Product') }}</a></li>
+                        <li class="active">{{ __('This item') }}</li>
                     </ol>
 
                 </div>
@@ -90,7 +90,7 @@
                                         <!-- Price & rating -->
                                         <div class="col-md-12">
 
-                                            <span class="head">Price</span>
+                                            <span class="head">{{ __('Price') }}</span>
 
                                             <span class="price">
 
@@ -151,8 +151,8 @@
 
                                                 <!-- Btns -->
                                                 <div class="btns-wrap btn-material bg-white">
-                                                    <a href="#">Buy now</a>
-                                                    <a class="text-blue" onclick='addCart("{{$product->id}}")'  href="javascript:" >Put in cart</a>
+                                                    <a href="#">{{ __('Buy now') }}</a>
+                                                    <a class="text-blue" onclick='addCart("{{$product->id}}")'  href="javascript:" >{{ __('Put in cart') }}</a>
                                                 </div>
                                             </div>
 
@@ -176,11 +176,11 @@
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs hidden-xs" role="tablist">
                                         <li role="presentation" class="active">
-                                            <a href="#description" data-toggle="tab">Description</a>
+                                            <a href="#description" data-toggle="tab">{{ __('Description') }}</a>
                                         </li>
 
                                         <li role="presentation">
-                                            <a href="#comments" data-toggle="tab">Comments</a>
+                                            <a href="#comments" data-toggle="tab">{{ __('Comments') }}</a>
                                         </li>
                                     </ul>
 

@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\Admin\AuthenticatedAsAdmin;
+use App\Http\Middleware\Localization;
 use App\Http\Middleware\MustBeUser;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -68,6 +69,7 @@ class Kernel extends HttpKernel
         'logged-out' => \App\Http\Middleware\Admin\LoggedOut::class,
         'superadmin' => \App\Http\Middleware\Admin\MustBeSuperAdmin::class,
         'authenticated-as-admin' => AuthenticatedAsAdmin::class,
-        'must-be-user' => MustBeUser::class
+        'must-be-user' => MustBeUser::class,
+        'localization' => Localization::class
     ];
 }

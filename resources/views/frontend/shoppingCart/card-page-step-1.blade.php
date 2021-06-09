@@ -13,9 +13,9 @@ Step 1
         <div class="col-xs-12">
 
             <ol class="breadcrumb bg-blue">
-                <li><a href="#">Homepage</a></li>
-                <li><a href="#">Blog category</a></li>
-                <li class="active">This item</li>
+                <li><a href="#">{{ __('Homepage') }}</a></li>
+                <li><a href="#">{{ __('Blog category') }}</a></li>
+                <li class="active">{{ __('This item') }}</li>
             </ol>
 
         </div>
@@ -41,23 +41,23 @@ Step 1
 
                     <div class="list-header text-uppercase">
                         <div class="product">
-                            Product
+                            {{ __('Product') }}
                         </div>
 
                         <div class="price hidden-xs hidden-sm">
-                            Price
+                            {{ __('Price') }}
                         </div>
 
                         <div class="qnt hidden-xs hidden-sm">
-                            Quantity
+                            {{ __('Quantity') }}
                         </div>
 
                         <div class="total hidden-xs hidden-sm">
-                            Total
+                            {{ __('Total') }}
                         </div>
 
                         <div class="rmv hidden-xs hidden-sm">
-                            Remove
+                            {{ __('Remove') }}
                         </div>
                     </div><!-- / Header -->
 

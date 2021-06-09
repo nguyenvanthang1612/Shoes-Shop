@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-Register
+    {{ __('Register') }}
 @endsection
 
 @section('content')
@@ -13,8 +13,8 @@ Register
         <div class="col-xs-12">
 
             <ol class="breadcrumb bg-blue">
-                <li><a href="{{ url('/') }}">Homepage</a></li>
-                <li class="active">Register</li>
+                <li><a href="{{ url('/') }}">{{ __('Homepage') }}</a></li>
+                <li class="active">{{ __('Register') }}</li>
             </ol>
 
         </div>
@@ -41,9 +41,9 @@ Register
 
                             <!-- Header -->
                             <h1 class="header text-uppercase">
-                                New user
+                                {{ __('New user') }}
                                 <span>
-                                    registration
+                                    {{ __('registration') }}
                                 </span>
                             </h1>
                         </div>
@@ -61,7 +61,7 @@ Register
                                             <a data-toggle="collapse" data-parent="#accordion"
                                                 href="#bankTransrerColl">
                                                 <span class="panel-indicator"></span>
-                                                Profile info
+                                                {{ __('Profile info') }}
                                             </a>
                                         </h4>
                                     </div>
@@ -69,8 +69,8 @@ Register
                                         <div class="panel-body">
 
                                             <div class="form-group pd-none register-field">
-                                                <label for="text" class="col-sm-3 control-label text-darkness">Your
-                                                    User Name</label>
+                                                <label for="text" class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Your User Name') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="user_name"
                                                         name="user_name" value="{{ old('user_name') }}">
@@ -83,8 +83,9 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="password"
-                                                    class="col-sm-3 control-label text-darkness">Enter your
-                                                    password</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Enter your password') }}
+                                                </label>
                                                 <div class="col-sm-8">
                                                     <input type="password" class="form-control" id="password"
                                                         name="password">
@@ -96,8 +97,8 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="password"
-                                                    class="col-sm-3 control-label text-darkness">Enter confirmation
-                                                    password</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Enter confirmation password') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="password" class="form-control" id="password"
                                                         name="password_confirmation">
@@ -108,8 +109,8 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="frName"
-                                                    class="col-sm-3 control-label text-darkness">Your first
-                                                    name</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Your first name') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="frName"
                                                         name="first_name" value="{{ old('first_name') }}"/>
@@ -121,8 +122,8 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="lnName"
-                                                    class="col-sm-3 control-label text-darkness">Your last
-                                                    name</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Your last name') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="lnName"
                                                         name="last_name" value="{{ old('last_name') }}">
@@ -134,8 +135,8 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="email"
-                                                    class="col-sm-3 control-label text-darkness">Enter your
-                                                    email</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Enter your email') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email"
                                                         name="email" value="{{ old('email') }}">
@@ -147,8 +148,8 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="telephone"
-                                                    class="col-sm-3 control-label text-darkness">Enter your
-                                                    telephone</label>
+                                                    class="col-sm-3 control-label text-darkness">
+                                                    {{ __('Enter your telephone') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="tel" class="form-control" id="telephone"
                                                         name="telephone" value="{{ old('telephone') }}">
@@ -168,7 +169,7 @@ Register
                                             <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
                                                 href="#collapseTwo">
                                                 <span class="panel-indicator"></span>
-                                                Address
+                                                {{ __('Address') }}
                                             </a>
                                         </h4>
                                     </div>
@@ -176,7 +177,7 @@ Register
                                         <div class="panel-body">
                                             <div class="form-group pd-none register-field">
                                                 <label for="route" class="col-sm-3 control-label text-darkness">
-                                                    Address</label>
+                                                    {{ __('Address') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="address"
                                                         name="address" value="{{ old('address') }}">
@@ -185,14 +186,14 @@ Register
 
                                             <div class="form-group pd-none register-field">
                                                 <label for="locality"
-                                                    class="col-sm-3 control-label text-darkness">City</label>
+                                                    class="col-sm-3 control-label text-darkness">{{ __('City') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
                                                 </div>
                                             </div>
                                             <div class="form-group pd-none register-field">
                                                 <label for="country"
-                                                    class="col-sm-3 control-label text-darkness">Country</label>
+                                                    class="col-sm-3 control-label text-darkness">{{ __('Country') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="country"
                                                         name="country" value="{{ old('country') }}">
@@ -208,7 +209,7 @@ Register
                                                                 <span class="off">yes</span>
                                                                 <span class="on">no</span>
                                                             </span>
-                                                            this delively addres is valid
+                                                            {{ __('this delively address is valid') }}
                                                         </label>
                                                     </div>
                                                 </div>
@@ -222,7 +223,7 @@ Register
                                 <div class="col-sm-offset-3 col-sm-7">
                                     <button type="submit"
                                         class="sdw-hover btn btn-material btn-yellow ripple-cont">
-                                        Create
+                                        {{ __('Create') }}
                                     </button>
                                 </div>
                             </div>

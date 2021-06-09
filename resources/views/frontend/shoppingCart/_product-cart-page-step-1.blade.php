@@ -60,14 +60,14 @@
             <a href="{{ route('frontend.cart.enter-address') }}" class="btn btn-default btn-material">
                 <i class="icofont icofont-cart-alt"></i>
                 <h4>$ {{ number_format(Session::get('Cart')->totalPrice) }}</h4>
-                <span class="body">Make a purchase</span>
+                <span class="body">{{ __('Make a purchase') }}</span>
             </a>
             <a href="#" class="btn btn-text-white">
-                <span class="body">remove selected</span>
+                <span class="body">{{ __('remove selected') }}</span>
             </a>
         </div><!-- / Footer -->
 @else
     <div class="product">
-        Không có sản phẩm trong giỏ hàng
+        {{ __('There are no products in the cart') }}
     </div>
 @endif
