@@ -14,7 +14,7 @@
     <div class="left-side-inner">
         <!--Sidebar nav-->
         <ul class="nav nav-pills nav-stacked custom-nav">
-            <li><a href="{{ url('/admin') }}"><i class="icon-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="{{ route('admin.index') }}"><i class="icon-home"></i> <span>Dashboard</span></a></li>
 
             <li ><a href="{{ url('/admin/categories') }}"><i class="fa fa-list" aria-hidden="true"></i> <span>Category</span></a></li>
 
@@ -27,7 +27,7 @@
                     <li><a href="{{ url('/admin/product/kid') }}">Kid</a></li>
                 </ul>
             </li>
-            
+
             <li class="menu-list"><a href="#"><i class="icon-user"></i> <span>Account</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="{{ url('/admin/account/client_management') }}">Client Management</a></li>

@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         //dashboard
-        Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.index');
 
         // account
         Route::get('account/admin_management', [AccountController::class, 'adminIndex'])->middleware('superadmin');

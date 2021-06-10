@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware\Admin;
 
-use App\Constants;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +19,7 @@ class LoggedOut
     {
         if (Auth::check())
         {
-            return redirect(route('admin.index'));
+            return redirect()->route('admin.index');
         }
         return $next($request);
     }
