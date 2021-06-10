@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\StatisticalController;
+use App\Http\Controllers\Language\LocalizationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         // statistical
         Route::get('statistical', [StatisticalController::class, 'showStatistical']);
+
+        // change language
+        // Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
 
     });
 });

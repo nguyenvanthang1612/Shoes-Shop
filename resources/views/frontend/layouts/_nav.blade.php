@@ -73,7 +73,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li> <a href="{!! route('change-language', ['en']) !!}">English</a></li>
-                        <li><a href="{!! route('change-language', ['vi']) !!}">Vietnam</a></li>
+                        <li><a href="{!! route('change-language', ['vi']) !!}">Vietnamese</a></li>
                     </ul>
                 </li>
             </ul>

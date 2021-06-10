@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * Frontend routes here
  */
-Route::group(['prefix' => '/', 'middleware' => ['must-be-user','localization']], function () {
+Route::group(['prefix' => '/', 'middleware' => ['must-be-user', 'localization']], function () {
 
     Route::get('/', [IndexController::class, 'index'])->name('frontend.index');
     //index - register - edit
@@ -65,7 +65,5 @@ Route::group(['prefix' => '/', 'middleware' => ['must-be-user','localization']],
 // Subcribe Email
 Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);
 
-// Route::group(['prefix' => '/', 'middleware' => 'localization'], function () {
-//     Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
-// });
+
 
