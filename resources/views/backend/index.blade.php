@@ -39,12 +39,7 @@
                           <div class="info-icon text-primary ">
                               <i class="mdi mdi-cart"></i>
                           </div>
-                          <div class="info-box-progress">
-                             <div class="progress">
-                              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
-                             </div>
-                          </div>
-                          </div>
+                          
                        </div>
                    </div>
                    <!--End info box-->
@@ -58,12 +53,6 @@
                           </div>
                           <div class="info-icon text-info">
                              <i class="mdi mdi-account-multiple"></i>	
-                          </div>
-                          <div class="info-box-progress">
-                             <div class="progress">
-                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
-                             </div>
-                          </div>
                           </div>
                        </div>
                    </div>
@@ -79,12 +68,6 @@
                           <div class="info-icon text-warning">
                               <i class="fa fa-dollar"></i>
                           </div>
-                          <div class="info-box-progress">
-                             <div class="progress">
-                              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
-                              </div>
-                          </div>
-                          </div>
                        </div>
                    </div>
                    <!--End info box-->
@@ -98,12 +81,6 @@
                           </div>
                           <div class="info-icon text-danger">
                               <i class="mdi mdi-weight"></i>
-                          </div>
-                          <div class="info-box-progress">
-                             <div class="progress">
-                              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 48%;">
-                             </div>
-                          </div>
                           </div>
                        </div>
                    </div>
