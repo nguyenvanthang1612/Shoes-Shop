@@ -1,7 +1,7 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    index admin
+    {{ __('Index') }}
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
               
           <!--Start Page Title-->
            <div class="page-title-box">
-                <h4 class="page-title">Dashboard </h4>
+                <h4 class="page-title">{{ __('Dashboard') }}</h4>
                 <div class="clearfix"></div>
              </div>
               <!--End Page Title-->          
@@ -34,7 +34,7 @@
                        <div class="info-box-main">
                           <div class="info-stats">
                               <p>{{ $orderItem }}</p>
-                              <span>Total Sales </span>
+                              <span>{{ __('Total Sales') }}</span>
                           </div>
                           <div class="info-icon text-primary ">
                               <i class="mdi mdi-cart"></i>
@@ -54,7 +54,7 @@
                        <div class="info-box-main">
                           <div class="info-stats">
                               <p>{{ $clientAccount }}</p>
-                              <span>Daily visitors</span>
+                              <span>{{ __('Customers') }}</span>
                           </div>
                           <div class="info-icon text-info">
                              <i class="mdi mdi-account-multiple"></i>	
@@ -74,7 +74,7 @@
                        <div class="info-box-main">
                           <div class="info-stats">
                               <p>{{ $totalEarning }}</p>
-                              <span>Total Earning</span>
+                              <span>{{ __('Total Earning') }}</span>
                           </div>
                           <div class="info-icon text-warning">
                               <i class="fa fa-dollar"></i>
@@ -94,7 +94,7 @@
                        <div class="info-box-main">
                           <div class="info-stats">
                               <p>{{ $orders }}</p>
-                              <span>Pending Orders</span>
+                              <span>{{ __('Orders') }}</span>
                           </div>
                           <div class="info-icon text-danger">
                               <i class="mdi mdi-weight"></i>

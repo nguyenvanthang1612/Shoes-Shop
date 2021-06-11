@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Admin Management
+    {{ __('Admin Management') }}
 @endsection
 
 @section('content')
@@ -10,16 +10,16 @@
               
         <!--Start Page Title-->
          <div class="page-title-box">
-              <h4 class="page-title">Account</h4>
+              <h4 class="page-title">{{ __('Account') }}</h4>
               <ol class="breadcrumb">
                   <li>
-                      <a href="#">Dashboard</a>
+                      <a href="#">{{ __('Dashboard') }}</a>
                   </li>
                   <li>
-                      <a href="#">Account</a>
+                      <a href="#">{{ __('Account') }}</a>
                   </li>
                   <li class="active">
-                      Admin Management
+                      {{ __('Admin Management') }}
                   </li>
               </ol>
               <div class="clearfix"></div>
@@ -31,10 +31,10 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                        <h2 class="header-title" style="text-align: center; font-size: 25px">Admin Management</h2>
+                        <h2 class="header-title" style="text-align: center; font-size: 25px">{{ __('Admin Management') }}</h2>
                         <form method="POST" action="{{ url('admin/account/search/admin') }}">
                            @csrf
-                           <input type="text" class="form-control" name="search" placeholder="Search here..." 
+                           <input type="text" class="form-control" name="search" placeholder="{{ __('Search here') }}..." 
                            style="width:50%; margin: auto; margin-bottom: 30px" />
                         </form>
                           <div class="table-responsive">
@@ -42,9 +42,9 @@
                                   <thead>
                                       <tr>
                                           <th>Id</th>
-                                          <th>Name</th>
-                                          <th>Email</th>
-                                          <th>Telephone</th>
+                                          <th>{{ __('Name') }}</th>
+                                          <th>{{ __('Email') }}</th>
+                                          <th>{{ __('Telephone') }}</th>
                                           <th></th>
                                       </tr>
                                   </thead>

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app');
 
 @section('title')
-    Edit Account
+    {{ __('Edit Admin Account') }}
 @endsection
 
 @section('content')
@@ -10,16 +10,16 @@
               
               <!--Start Page Title-->
                <div class="page-title-box">
-                    <h4 class="page-title">Account</h4>
+                    <h4 class="page-title">{{ __('Account') }}</h4>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="#">Dashboard</a>
+                            <a href="#">{{ __('Dashboard') }}</a>
                         </li>
                         <li>
-                            <a href="#">Account</a>
+                            <a href="#">{{ __('Account') }}</a>
                         </li>
                         <li class="active">
-                            Edit Account
+                            {{ __('Edit Admin Account') }}
                         </li>
                     </ol>
                     <div class="clearfix"></div>
@@ -31,16 +31,16 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Edit Admin </h2>
+                     <h2 class="header-title">{{ __('Edit Admin Account') }}</h2>
                        
                         <form class="form-horizontal" action='{{ url("/admin/account/edit/$account->id") }}' method="POST" enctype="multipart/form-data">
                           @method('PUT')
                           @csrf
                           {{-- username --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Username</label>
+                            <label class="col-md-2 control-label">{{ __('Username') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="user_name" placeholder="user name" value="{{ old('user_name', $account->user_name) }}">
+                              <input class="form-control" type="text" name="user_name" placeholder="{{ __('Username') }}" value="{{ old('user_name', $account->user_name) }}">
                               @error('user_name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -51,9 +51,9 @@
 
                           {{-- firstname --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">First name</label>
+                            <label class="col-md-2 control-label">{{ __('First name') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="first_name" placeholder="first name" value="{{ old('first_name', $account->first_name) }}">
+                              <input class="form-control" type="text" name="first_name" placeholder="{{ __('First name') }}" value="{{ old('first_name', $account->first_name) }}">
                               @error('first_name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -64,9 +64,9 @@
 
                           {{-- lastname --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Last name</label>
+                            <label class="col-md-2 control-label">{{ __('Last name') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="last_name" placeholder="last name" value="{{ old('last_name', $account->last_name) }}">
+                              <input class="form-control" type="text" name="last_name" placeholder="{{ __('Last name') }}" value="{{ old('last_name', $account->last_name) }}">
                               @error('last_name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -90,9 +90,9 @@
 
                           {{-- telephone --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Telephone</label>
+                            <label class="col-md-2 control-label">{{ __('Telephone') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="telephone" placeholder="Telephone" value="{{ old('telephone', $account->telephone) }}">
+                              <input class="form-control" type="text" name="telephone" placeholder="{{ __('Telephone') }}" value="{{ old('telephone', $account->telephone) }}">
                               @error('telephone')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -104,7 +104,7 @@
                           {{-- Avatar --}}
                           <div class="form-group">
                             <div class="custom-file">
-                              <label class="col-sm-2 control-label">Avatar</label>
+                              <label class="col-sm-2 control-label">{{ __('Avatar') }}</label>
                               <div class="col-sm-10">
                                   <img src="{{ asset('storage/backend/account/'.$account->avatar) }}" style="width:200px; height:200px"/>
                                   <div class="fallback">
@@ -122,9 +122,9 @@
                           
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-9">
-                              <button type="submit" class="btn btn-primary outline-btn">Submit</button>
+                              <button type="submit" class="btn btn-primary outline-btn">{{ __('Submit') }}</button>
                               <a href="{{ url('/admin/account/admin_management') }}">
-                                <button type="button" class="btn btn-danger outline-btn">Cancel</button>
+                                <button type="button" class="btn btn-danger outline-btn">{{ __('Cancel') }}</button>
                               </a>
                             </div>
                           </div>

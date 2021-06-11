@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    All Collection
+    {{ __('All Collection') }}
 @endsection
 
 @section('content')
@@ -10,16 +10,16 @@
 
         <!--Start Page Title-->
         <div class="page-title-box">
-            <h4 class="page-title">Product</h4>
+            <h4 class="page-title">{{ __('Product') }}</h4>
             <ol class="breadcrumb">
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="#">{{ __('Dashboard') }}</a>
                 </li>
                 <li>
-                    <a href="#">Product</a>
+                    <a href="#">{{ __('Product') }}</a>
                 </li>
                 <li class="active">
-                    All Collection
+                    {{ __('All Collection') }}
                 </li>
             </ol>
             <div class="clearfix"></div>
@@ -32,7 +32,7 @@
                      <div class="white-box">
                          <h2 class="header-title" style="text-align: center; font-size: 25px">All Collection</h2>
                          <form method="GET" action="{{ url('admin/product') }}">
-                            <input type="text" class="form-control" name="search" placeholder="Search here..."
+                            <input type="text" class="form-control" name="search" placeholder="{{ __('Search here') }}..."
                             style="width:50%; margin: auto; margin-bottom: 30px" />
                          </form>
                           <div class="table-responsive">
@@ -40,14 +40,14 @@
                                   <thead>
                                       <tr>
                                           <th>Id</th>
-                                          <th>Name</th>
-                                          <th>Category Name</th>
-                                          <th>SKU</th>
-                                          <th>size</th>
-                                          <th>brand</th>
-                                          <th>image</th>
-                                          <th>quantity</th>
-                                          <th>price</th>
+                                          <th>{{ __('Name') }}</th>
+                                          <th>{{ __('Category Name') }}</th>
+                                          <th>{{ __('SKU') }}</th>
+                                          <th>{{ __('Size') }}</th>
+                                          <th>{{ __('Brand') }}</th>
+                                          <th>{{ __('Image') }}</th>
+                                          <th>{{ __('Quantity') }}</th>
+                                          <th>{{ __('Price') }}</th>
                                           <th></th>
                                       </tr>
                                   </thead>

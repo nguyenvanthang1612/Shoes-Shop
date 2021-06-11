@@ -17,9 +17,9 @@
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                  <li> <a href='{{ url("admin/account/edit") }}'> <i class="fa fa-user"></i> Edit Profile </a> </li>
-                  <li> <a href='{{ url("admin/account/change-password") }}'><i class="fa fa-lock"></i>Change Password</a> </li>
-                  <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-sign-out"></i> Logout </a> </li>
+                  <li> <a href='{{ url("admin/account/edit") }}'> <i class="fa fa-user"></i> {{ __('Edit profile') }} </a> </li>
+                  <li> <a href='{{ url("admin/account/change-password") }}'><i class="fa fa-lock"></i>{{ __('Change password') }}</a> </li>
+                  <li> <a href="{{ url('admin/auth/logout') }}"> <i class="fa fa-sign-out"></i> {{ __('Logout') }} </a> </li>
                 </ul>
             </li>
         </ul>

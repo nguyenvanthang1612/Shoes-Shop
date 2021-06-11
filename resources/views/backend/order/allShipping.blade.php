@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Shippings
+    {{ __('Shipping') }}
 @endsection
 
 @section('content')
@@ -10,16 +10,16 @@
                        
         <!--Start Page Title-->
         <div class="page-title-box">
-            <h4 class="page-title">Order</h4>
+            <h4 class="page-title">{{ __('Order') }}</h4>
             <ol class="breadcrumb">
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="#">{{ __('Dashboard') }}</a>
                 </li>
                 <li>
-                    <a href="#">Order</a>
+                    <a href="#">{{ __('Order') }}</a>
                 </li>
                 <li class="active">
-                    All Shipping
+                    {{ __('All Shipping') }}
                 </li>
             </ol>
             <div class="clearfix"></div>
@@ -30,10 +30,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <h2 class="header-title" style="text-align: center; font-size: 25px">Shipping List</h2>
+                        <h2 class="header-title" style="text-align: center; font-size: 25px">{{ __('Shipping') }}</h2>
                         <form method="POST" action="{{ url('admin/order/shipping/search') }}">
                            @csrf
-                           <input type="text" class="form-control" name="search" placeholder="Search here..." 
+                           <input type="text" class="form-control" name="search" placeholder="{{ __('Search here') }}..." 
                            style="width:50%; margin: auto; margin-bottom: 30px" />
                         </form>
                          <div class="table-responsive">
@@ -41,14 +41,14 @@
                                  <thead>
                                      <tr>
                                          <th>Id</th>
-                                         <th>Customer Name</th>
-                                         <th>Email</th>
-                                         <th>Telephone</th>
-                                         <th>Total Price</th>
-                                         <th>Address</th>
-                                         <th>City</th>
-                                         <th>Country</th>
-                                         <th>Note</th>
+                                         <th>{{ __('Customer Name') }}</th>
+                                         <th>{{ __('Email') }}</th>
+                                         <th>{{ __('Telephone') }}</th>
+                                         <th>{{ __('Total Price') }}</th>
+                                         <th>{{ __('Address') }}</th>
+                                         <th>{{ __('City') }}</th>
+                                         <th>{{ __('Country') }}</th>
+                                         <th>{{ __('Note') }}</th>
                                      </tr>
                                  </thead>
                                  <tbody>

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Create Product
+  {{ __('Create Product') }}
 @endsection
 
 @section('content')
@@ -11,18 +11,18 @@
               <!--Start Page Title-->
                 {{-- <div class="white-box"> --}}
                   <div class="page-title-box">
-                      <h4 class="page-title">Product</h4>
-                      <ol class="breadcrumb">
-                          <li>
-                              <a href="#">Dashboard</a>
-                          </li>
-                          <li>
-                              <a href="#">Product</a>
-                          </li>
-                          <li class="active">
-                              Create Product
-                          </li>
-                      </ol>
+                    <h4 class="page-title">{{ __('Product') }}</h4>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="#">{{ __('Dashboard') }}</a>
+                        </li>
+                        <li>
+                            <a href="#">{{ __('Product') }}</a>
+                        </li>
+                        <li class="active">
+                            {{ __('Create Product') }}
+                        </li>
+                    </ol>
                       <div class="clearfix"></div>
                   </div>
                 {{-- </div> --}}
@@ -33,16 +33,16 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">Create Product</h2>
+                     <h2 class="header-title">{{ __('Create Product') }}</h2>
 
                         <form class="form-horizontal" action="{{ url('admin/product') }}" method="POST" enctype="multipart/form-data">
 
                           @csrf
                           {{-- name --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Name</label>
+                            <label class="col-md-2 control-label">{{ __('Name') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="name" placeholder="name" value="{{ old('name') }}">
+                              <input class="form-control" type="text" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}">
                               @error('name')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -53,7 +53,7 @@
 
                           {{-- name category --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Name Category</label>
+                            <label class="col-md-2 control-label">{{ __('Category Name') }}</label>
                             <div class="col-md-10">
                               <select class="form-control" name="category_id">
                                 @foreach ($categories as $category)
@@ -65,7 +65,7 @@
 
                           {{-- description --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Description</label>
+                            <label class="col-md-2 control-label">{{ __('Description') }}</label>
 
                             <div class="col-md-10">
                               <textarea id="ckeditor" cols="30" rows="10" name="desc" value="{{ old('desc') }}"></textarea>
@@ -79,9 +79,9 @@
 
                           {{-- SKU --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">SKU</label>
+                            <label class="col-md-2 control-label">{{ __('SKU') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="SKU" placeholder="SKU" value="{{ old('SKU') }}">
+                              <input class="form-control" type="text" name="SKU" placeholder="{{ __('SKU') }}" value="{{ old('SKU') }}">
                               @error('SKU')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -92,7 +92,7 @@
 
                           {{-- Size --}}
                           <div class="form-group">
-                            <label class="col-sm-2 control-label">Size</label>
+                            <label class="col-sm-2 control-label">{{ __('Size') }}</label>
                             <div class="col-sm-10">
                               <select class="form-control" name="size">
                                 <option value="35">35</option>
@@ -110,7 +110,7 @@
 
                           {{-- Brand --}}
                           <div class="form-group">
-                            <label class="col-sm-2 control-label">Brand</label>
+                            <label class="col-sm-2 control-label">{{ __('Brand') }}</label>
                             <div class="col-sm-10">
                               <select class="form-control" name="brand">
                                 <option value="Nike">Nike</option>
@@ -124,9 +124,9 @@
 
                           {{-- quantity --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Quantity</label>
+                            <label class="col-md-2 control-label">{{ __('Quantity') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="quantity" placeholder="quantity" value="{{ old('quantity') }}">
+                              <input class="form-control" type="text" name="quantity" placeholder="{{ __('Quantity') }}" value="{{ old('quantity') }}">
                               @error('quantity')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -137,9 +137,9 @@
 
                           {{-- price --}}
                           <div class="form-group">
-                            <label class="col-md-2 control-label">Price</label>
+                            <label class="col-md-2 control-label">{{ __('Price') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="price" placeholder="price" value="{{ old('price') }}">
+                              <input class="form-control" type="text" name="price" placeholder="{{ __('Price') }}" value="{{ old('price') }}">
                               @error('price')
                                   <div class="text-danger">
                                     <span>{{ $message }}</span>
@@ -151,7 +151,7 @@
                           {{-- Image --}}
                           <div class="form-group">
                             <div class="custom-file">
-                              <label class="col-sm-2 control-label">Image</label>
+                              <label class="col-sm-2 control-label">{{ __('Image') }}</label>
                               <div class="col-sm-10">
                                   <div class="fallback">
                                     <input type="file" multiple class="custom-file-input" id="customFile" name="img[]">
@@ -167,9 +167,9 @@
 
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-9">
-                              <button class="btn btn-primary outline-btn">Submit</button>
+                              <button class="btn btn-primary outline-btn">{{ __('Submit') }}</button>
                               <a href="{{ url('/admin/categories') }}">
-                                <button type="button" class="btn btn-danger outline-btn">Cancel</button>
+                                <button type="button" class="btn btn-danger outline-btn">{{ __('Cancel') }}</button>
                               </a>
                             </div>
                           </div>

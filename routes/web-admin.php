@@ -27,7 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('auth/reset-password/{token}', [AuthenticateController::class, 'resetPasswordForm'])->name('backend.password.resetPasswordForm');
     Route::put('auth/reset-password', [AuthenticateController::class, 'resetPassword'])->name('backend.password.reset');
 
-    Route::group(['middleware' => 'authenticated-as-admin'], function () {
+    Route::group(['middleware' => ['authenticated-as-admin', 'localization']], function () {
         Route::get('auth/logout', function () {
             Auth::logout();
             return redirect(route('admin.login'));
@@ -78,7 +78,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('statistical', [StatisticalController::class, 'showStatistical']);
 
         // change language
-        // Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
+        Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
 
     });
 });

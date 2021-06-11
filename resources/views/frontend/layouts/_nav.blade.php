@@ -72,8 +72,8 @@
                         {{ __('Languages') }} <i class="icofont icofont-curved-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li> <a href="{!! route('change-language', ['en']) !!}">English</a></li>
-                        <li><a href="{!! route('change-language', ['vi']) !!}">Vietnamese</a></li>
+                        <li> <a href="{!! route('change-language', ['en']) !!}">{{ __('English') }}</a></li>
+                        <li><a href="{!! route('change-language', ['vi']) !!}">{{ __('Vietnamese') }}</a></li>
                     </ul>
                 </li>
             </ul>

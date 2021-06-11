@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    Statistical
+    {{ __('Statistical') }}
 @endsection
 
 @section('content')
@@ -10,16 +10,13 @@
               
         <!--Start Page Title-->
          <div class="page-title-box">
-              <h4 class="page-title">Statistical</h4>
+              <h4 class="page-title">{{ __('Statistical') }}</h4>
               <ol class="breadcrumb">
                   <li>
-                      <a href="#">Dashboard</a>
-                  </li>
-                  <li>
-                      <a href="#">Statistical</a>
+                      <a href="#">{{ __('Dashboard') }}</a>
                   </li>
                   <li class="active">
-                    Statistical List
+                      <a href="#">{{ __('Statistical') }}</a>
                   </li>
               </ol>
               <div class="clearfix"></div>
@@ -31,13 +28,13 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                         <h2 class="header-title">Statistical List</h2>
+                         <h2 class="header-title">{{ __('Statistical') }}</h2>
                           <div class="table-responsive">
                            <table id="example" class="display table">
                                   <thead>
                                       <tr>
-                                          <th>Month</th>
-                                          <th>Total Price</th>
+                                          <th>{{ __('Month') }}</th>
+                                          <th>{{ __('Total') }}</th>
                                       </tr>
                                   </thead>
                                   <tbody>
