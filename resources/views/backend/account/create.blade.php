@@ -13,7 +13,7 @@
                     <h4 class="page-title">{{ __('Account') }}</h4>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="#">{{ __('Dashboard') }}</a>
+                            <a href="{{ route('admin.index') }}">{{ __('Dashboard') }}</a>
                         </li>
                         <li>
                             <a href="#">{{ __('Account') }}</a>

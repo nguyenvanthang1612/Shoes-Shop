@@ -111,10 +111,6 @@
                   </div>
                 </div>
                 <!--End row-->
-                  
-                  
-                   
-			   
 			    </div>
         <!-- End Wrapper-->
       <!--End main content -->

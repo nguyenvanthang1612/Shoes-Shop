@@ -13,7 +13,7 @@
               <h4 class="page-title">{{ __('Category') }}</h4>
               <ol class="breadcrumb">
                   <li>
-                      <a href="#">{{ __('Dashboard') }}</a>
+                      <a href="{{ route('admin.index') }}">{{ __('Dashboard') }}</a>
                   </li>
                   <li class="active">
                       <a href="#">{{ __('Category') }}</a>
