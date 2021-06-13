@@ -100,7 +100,7 @@ class AccountController extends Controller
     public function showChangePasswordForm()
     {
        $account = User::findOrFail(auth()->id());
-       return view('backend.account.changePassword', [
+       return view('backend.account.change-password', [
         'account' => $account
        ]);
     }
