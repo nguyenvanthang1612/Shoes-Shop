@@ -48,8 +48,8 @@
 
             <li class="menu-list"><a href="#"><i class="fa fa-language" aria-hidden="true"></i> <span>{{ __('Language') }}</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="{{ route('change-language', ['en']) }}">{{ __('English') }}</a></li>
-                    <li><a href="{{ route('change-language', ['vi']) }}">{{ __('Vietnamese') }}</a></li>
+                    <li><a href="{{ route('change-language-admin', ['en']) }}">{{ __('English') }}</a></li>
+                    <li><a href="{{ route('change-language-admin', ['vi']) }}">{{ __('Vietnamese') }}</a></li>
                 </ul>
             </li>
         </ul>

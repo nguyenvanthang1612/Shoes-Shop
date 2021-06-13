@@ -78,7 +78,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('statistical', [StatisticalController::class, 'showStatistical']);
 
         // change language
-        Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
+        Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language-admin');
 
     });
 });
