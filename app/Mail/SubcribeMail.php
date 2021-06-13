@@ -30,7 +30,7 @@ class SubcribeMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('frontend.mail.sendSubcribeMail')
+        return $this->view('frontend.mail.send-subcribe-mail')
                     ->with([
                         'name' => $this->user->name,
                         'email' => $this->user->email,

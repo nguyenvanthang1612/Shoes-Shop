@@ -30,7 +30,7 @@ class OrderSuccessMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('frontend.mail.sendClientMail')
+        return $this->view('frontend.mail.send-client-mail')
                     ->with([
                         'email' => $this->user->email
                     ]);
