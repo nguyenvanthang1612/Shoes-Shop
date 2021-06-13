@@ -181,6 +181,9 @@
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="address"
                                                         name="address" value="{{ old('address') }}">
+                                                    @error('address')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
@@ -189,6 +192,9 @@
                                                     class="col-sm-3 control-label text-darkness">{{ __('City') }}</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}">
+                                                    @error('city')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                             <div class="form-group pd-none register-field">
@@ -197,6 +203,9 @@
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="country"
                                                         name="country" value="{{ old('country') }}">
+                                                    @error('country')
+                                                        <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
