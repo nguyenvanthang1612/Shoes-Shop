@@ -53,6 +53,9 @@ class AuthenticateController extends Controller
                 'last_name' => 'required',
                 'email' => 'required|unique:users,email',
                 'password' => 'required|confirmed',
+                'address' => 'required',
+                'city' => 'required',
+                'country' => 'required'
             ]
         );
 
