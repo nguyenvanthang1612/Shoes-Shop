@@ -1,4 +1,4 @@
-@extends('backend.Authenticate.layouts.app')
+@extends('backend.authenticate.layouts.app')
 
 @section('title')
     Reset Password

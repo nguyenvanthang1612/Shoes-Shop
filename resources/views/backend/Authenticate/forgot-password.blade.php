@@ -1,4 +1,4 @@
-@extends('backend.Authenticate.layouts.app');
+@extends('backend.authenticate.layouts.app');
 
 @section('title')
     Forgot Password
@@ -20,7 +20,7 @@
 
                     <form method="POST" action="{{ url('admin/auth/forgot-password') }}">
                       @csrf
-                      
+
                       {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
                       <label class="text-center m-b-25">Enter your email address below to reset your password</label>
                         <div class="form-group">
@@ -31,20 +31,20 @@
                                 </div>
                             @enderror
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="submit" value="Submit" class="btn btn-primary btn-block" >
                         </div>
-                        
+
                     </form>
-                    
-                     <div class="copy-text"> 
+
+                     <div class="copy-text">
                       <p class="m-0">2017 &copy; Meter admin</p>
                      </div>
-                 
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
