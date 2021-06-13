@@ -17,7 +17,7 @@ class OrderController extends Controller
             ->orderBy('id', 'asc')
             ->paginate(10);
 
-        return view('backend.order.allOrder', [
+        return view('backend.order.all-order', [
             'orders' => $orders
         ]);
     }
@@ -30,7 +30,7 @@ class OrderController extends Controller
         ->orderBy('orders.id', 'asc')
         ->paginate(10);
         
-        return view('backend.order.allOrderItem', [
+        return view('backend.order.all-order-item', [
                         'orders' => $orders
                     ]);
 
@@ -44,7 +44,7 @@ class OrderController extends Controller
         ->orderBy('orders.id', 'asc')
         ->paginate(10);
         
-        return view('backend.order.allShipping', [
+        return view('backend.order.all-shipping', [
                         'orders' => $orders
                     ]);
 
@@ -59,7 +59,7 @@ class OrderController extends Controller
             ->where('full_name', 'LIKE', '%'.$searchText.'%')
             ->paginate(10);
         $orders->appends(['search' => $searchText]);
-        return view('backend.order.allOrder', [
+        return view('backend.order.all-order', [
             'orders' => $orders
         ]);
     }
@@ -74,7 +74,7 @@ class OrderController extends Controller
         ->where('product_name', 'LIKE', '%'.$searchText.'%')
         ->paginate(10);
         $orders->appends(['search' => $searchText]);
-        return view('backend.order.allOrderItem', [
+        return view('backend.order.all-order-item', [
                         'orders' => $orders
                     ]);
     }
@@ -89,7 +89,7 @@ class OrderController extends Controller
         ->where('customer_name', 'LIKE', '%'.$searchText.'%')
         ->paginate(10);
         $orders->appends(['search' => $searchText]);
-        return view('backend.order.allShipping', [
+        return view('backend.order.all-shipping', [
                         'orders' => $orders
                     ]);
     }
