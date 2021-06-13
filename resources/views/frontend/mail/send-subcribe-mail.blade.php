@@ -35,17 +35,17 @@
                     </tr>
                     <tr>
                         <td>
-                            If you have already registered, please visit our website immediately to update more new items
+                            If you have already registered, please visit our facebook immediately to update more new items
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="{{ route('frontend.index') }}" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">
+                        <td><a href="https://www.facebook.com/DC-Shoes-Shop-100157308964620/" style="display:inline-block;text-decoration:none;background:#00a8ff;border:1px solid #00a8ff;border-radius:2px;color:#FFF;font-size:14px;font-weight:400;padding:13px 22px;border-radius: 25px;" target="_blank">
                             Click This Link 
                         </a></td>
                     </tr>
                     <tr>
                         <td>Thank you<br>
-                    Q and T shoes shop</td>
+                    DC shoes shop</td>
                     </tr>
                 </table>
             </td>
