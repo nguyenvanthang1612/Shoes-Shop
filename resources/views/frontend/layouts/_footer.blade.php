@@ -28,7 +28,7 @@
                                         51 Phố Lê Đại Hành, Lê Đại Hành, Hai Bà Trưng, Hà Nội
                                     </li>
                                     <li>
-                                        <a href="mailto:info@example.com">
+                                        <a href="mailto:shoesshop1268@gmail.com">
                                             <i class="icon icofont icofont-email"></i>
                                             shoesshop1268@gmail.com
                                         </a>
@@ -51,20 +51,14 @@
 
                                 <ul class="social ">
                                     <li>
-                                        <a href="https://www.facebook.com/Q-and-T-Shoes-Shop-100157308964620">
+                                        <a href="https://www.facebook.com/DC-Shoes-Shop-100157308964620/">
                                             <i class="icofont icofont-social-facebook"></i>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/shoes_shop_dc/">
                                             <i class="icofont icofont-social-instagram"></i>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#">
-                                            <i class="icofont icofont-social-youtube-play"></i>
                                         </a>
                                     </li>
                                 </ul>
