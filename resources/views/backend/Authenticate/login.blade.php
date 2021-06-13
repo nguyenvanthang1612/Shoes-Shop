@@ -1,4 +1,4 @@
-@extends('backend.Authenticate.layouts.app')
+@extends('backend.authenticate.layouts.app')
 
 @section('title')
     login
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="login-wrapper">
                 <div class="login-inner">
- 
+
                     <h2 class="header-title text-center">Login</h2>
 
                     @if ( Session::has('error') )
@@ -50,13 +50,13 @@
                             </button>
                         </div>
                     @endif
-                     
+
                     <form method="post" action="{{ url('admin/auth/login') }}">
                         @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}"/>
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="password" class="form-control"  placeholder="Password" name="password" />
                         </div>
@@ -68,27 +68,27 @@
                                 <label for="checkbox-2">Remember me</label>
                             </div>
                             </div>
-                            
+
                             <div class="pull-right">
                                 <a href="{{ url('admin/auth/forgot-password') }}" class="a-link">
                                     <i class="fa fa-unlock-alt"></i> Forgot password?
                                 </a>
                             </div>
                         </div>
-                       
+
                         <div class="form-group">
                             <input type="submit" value="Login" class="btn btn-primary btn-block" >
                         </div>
 
                     </form>
-                    
-                     <div class="copy-text"> 
+
+                     <div class="copy-text">
                         <p class="m-0">2017 &copy; Meter admin</p>
                      </div>
-                 
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
