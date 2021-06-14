@@ -39,7 +39,7 @@
                     </form>
 
                      <div class="copy-text">
-                      <p class="m-0">2017 &copy; Meter admin</p>
+                      <p class="m-0">2021 &copy; Shoes Shop Company.</p>
                      </div>
 
                 </div>

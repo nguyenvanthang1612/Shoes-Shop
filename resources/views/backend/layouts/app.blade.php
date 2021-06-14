@@ -65,41 +65,12 @@
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{  asset('backend/assets/plugins/summernote-master/summernote.min.js')  }}"></script>
     <script src="{{  asset('backend/assets/pages/compose.js')  }}"></script>
-    <!--End Page Level Plugin-->
-    <script src={{ url('ckeditor/ckeditor.js') }}></script>
-    <script>
+     <!--End Page Level Plugin, sao lai url thay vi asset nó sẵn thế ạ-->
+     <script src={{ url('ckeditor/ckeditor.js') }}></script>
+     <script>
         CKEDITOR.replace('ckeditor');
     </script>
-    <script>
-        var xValues = @json($monthData) ;
-        var yValues = @json($totalEarningData) ;
-        var barColors = ['rgba(255, 99, 132, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(255, 205, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(201, 203, 207, 0.2)']
-
-        new Chart("chart", {
-            labels: 'hahah',
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                    display: true,
-                    text: "Uchihahaha"
-                }
-            }
-        })
-    </script>
+    @yield('js')
 
 </body>
 

@@ -94,11 +94,7 @@
                   <div class="col-md-12">
                       <div class="white-box">
                           <h2 class="header-title">Total Revenue </h2>
-                            <ul class="list-inline text-center m-t-10">
-                              <li>
-                                <h5><i class="fa fa-circle m-r-5" style="color:#03A9F3;"></i>Section A</h5>
-                              </li>
-                            </ul>
+                            
                             <canvas id="chart"  style="height:300px;"></canvas>
                             
                       </div>
@@ -108,4 +104,37 @@
 			    </div>
         <!-- End Wrapper-->
       <!--End main content -->
+@endsection
+
+@section('js')
+    <script>
+        var xValues = @json($monthData) ;
+        var yValues = @json($totalEarningData) ;
+        var barColors = [
+            'rgba(255, 99, 132, 0.2)', //1
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(209, 203, 207, 0.7)',
+            'rgba(250, 125, 143, 0.2)',
+            'rgba(151, 160, 140, 0.2)',
+            'rgba(204, 203, 207, 0.2)',
+            'rgba(205, 203, 207, 0.2)',
+            'rgba(206, 203, 207, 0.2)'  //12
+        ]
+
+        new Chart("chart", {
+            type: "bar",
+            data: {
+                labels: xValues, 
+                datasets: [{
+                    label: "Doanh thu trong năm",
+                    data: yValues,
+                    backgroundColor: barColors
+                }]
+            }
+        })
+    </script>
 @endsection

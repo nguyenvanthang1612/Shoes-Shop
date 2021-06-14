@@ -23,19 +23,24 @@ class DashboardController extends Controller
             ->whereMonth('orders.updated_at', $month)
             ->sum('product_quantity');
         // chart
-        $monthData = Order::select(DB::raw("MONTH(buy_at) as month"))
+
+        $chartData = Order::select([DB::raw("MONTH(buy_at) as month"), DB::raw("SUM(total_price) as total_price")])
                     ->whereYear('buy_at', $year)
-                    ->groupBy(DB::raw("MONTH(buy_at)"))
-                    ->pluck('month');
-                    
-        $totalEarningData = Order::select(DB::raw("SUM(total_price) as total_price"))
-                    ->whereYear('buy_at', $year)
-                    ->groupBy(DB::raw("MONTH(buy_at)"))
-                    ->pluck('total_price');
-        // view
+                    ->groupBy(DB::raw("MONTH(buy_at)"))->get()->toArray();
+        $data = array_column($chartData, 'total_price', 'month');
+ 
+        $monthWithEarnings = [];
+        for ($i = 1; $i <= 12; $i++) {
+            if (in_array($i, array_keys($data))) {
+                $monthWithEarnings[$i] = $data[$i];
+            } else {
+                $monthWithEarnings[$i] = 0;
+            }
+        }
+        
         return view('backend.index', [
-            'monthData' => $monthData,
-            'totalEarningData' => $totalEarningData,
+            'monthData' => array_keys($monthWithEarnings),
+            'totalEarningData' => array_values($monthWithEarnings),
             'clientAccount' => $clientAccount,
             'totalEarning' => $totalEarning,
             'orders' => $orders,
