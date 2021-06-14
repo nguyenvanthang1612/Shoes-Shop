@@ -30,7 +30,7 @@
                      <div class="white-box">
                          <h2 class="header-title">{{ __('Statistical') }}</h2>
                           <div class="table-responsive">
-                           <table id="example" class="display table">
+                           <table class="display table">
                                   <thead>
                                       <tr>
                                           <th>{{ __('Month') }}</th>

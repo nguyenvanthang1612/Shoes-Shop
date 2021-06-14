@@ -39,7 +39,7 @@
                         </form>
 
                           <div class="table-responsive">
-                           <table id="example" class="display table">
+                           <table class="display table">
                                 <thead>
                                     <tr>
                                         <th>Id</th>

@@ -9,6 +9,9 @@
   {{-- add thêm --}}
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="shortcut icon" href="{{ asset('backend/assets/images/logo-icon1.png') }}" type="image/png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.js" 
+    integrity="sha512-CAv0l04Voko2LIdaPmkvGjH3jLsH+pmTXKFoyh5TIimAME93KjejeP9j7wSeSRXqXForv73KUZGJMn8/P98Ifg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>@yield('title')</title>
 
     <!--Begin  Page Level  CSS -->
@@ -53,10 +56,9 @@
     <!-- End core plugin -->
 
     <!--Begin Page Level Plugin-->
-    <script src="{{  asset('backend/assets/plugins/morris-chart/morris.js')  }}"></script>
-    <script src="{{  asset('backend/assets/plugins/morris-chart/raphael-min.js')  }}"></script>
+    {{-- <script src="{{  asset('backend/assets/plugins/morris-chart/morris.js')  }}"></script>
+    <script src="{{  asset('backend/assets/plugins/morris-chart/raphael-min.js')  }}"></script> --}}
     <script src="{{  asset('backend/assets/plugins/jquery-sparkline/jquery.sparkline.min.js')  }}"></script>
-    <script src="{{  asset('backend/assets/pages/dashboard.js')  }}"></script>
     <!--Begin Page Level Plugin-->
     <script src="{{  asset('backend/assets/plugins/datatables/js/jquery.dataTables.min.js')  }}"></script>
     <script src="{{  asset('backend/assets/pages/table-data.js')  }}"></script>
@@ -68,6 +70,37 @@
     <script>
         CKEDITOR.replace('ckeditor');
     </script>
+    <script>
+        var xValues = @json($monthData) ;
+        var yValues = @json($totalEarningData) ;
+        var barColors = ['rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(201, 203, 207, 0.2)']
+
+        new Chart("chart", {
+            labels: 'hahah',
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                    display: true,
+                    text: "Uchihahaha"
+                }
+            }
+        })
+    </script>
+
 </body>
 
 </html>

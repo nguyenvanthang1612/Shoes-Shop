@@ -38,7 +38,7 @@
                            style="width:50%; margin: auto; margin-bottom: 30px" />
                         </form>
                           <div class="table-responsive">
-                           <table id="example" class="display table">
+                           <table class="display table">
                                   <thead>
                                       <tr>
                                           <th>Id</th>
