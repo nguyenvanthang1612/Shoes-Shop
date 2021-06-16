@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\StatisticalController;
+use App\Http\Controllers\Admin\SubcribeController;
 use App\Http\Controllers\Language\LocalizationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -76,6 +77,10 @@ Route::group(['prefix' => 'admin'], function () {
 
         // statistical
         Route::get('statistical', [StatisticalController::class, 'showStatistical']);
+
+        // subcribe
+        Route::get('subcribe', [SubcribeController::class, 'index']);
+        Route::get('subcribe/search', [SubcribeController::class, 'search']);
 
         // change language
         Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language-admin');

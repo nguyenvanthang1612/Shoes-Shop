@@ -21,7 +21,7 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet"/>
-
+        
         <!-- Icons -->
         <link href="{!! asset('frontend/assets/fonts/icofont/icofont.min.css') !!}" rel="stylesheet"/>
 
@@ -128,7 +128,7 @@
             {
                 get(route('frontend.cart.add-cart', id), function(res) {
                     reloadCartItemInBadge()
-                    alertify.success("Đã thêm sản phẩm mới");
+                    alertify.success("{{ __('New Product Added') }}");
                 }, function(err) {
                     console.error(err)
                 })
@@ -152,7 +152,7 @@
                 get(route("frontend.cart.delete-item", productId), function() {
                     reloadCartItemInBadge();
                     reloadProductInCartPage();
-                    alertify.success('Đã xoá thành công sản phẩm');
+                    alertify.success("{{ __('Product has been deleted') }}");
                 })
             }
 

@@ -30,7 +30,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="white-box">
-                         <h2 class="header-title" style="text-align: center; font-size: 25px">All Collection</h2>
+                         <h2 class="header-title" style="text-align: center; font-size: 25px">{{ __('All Collection') }}</h2>
                          <form method="GET" action="{{ url('admin/product') }}">
                             <input type="text" class="form-control" name="search" placeholder="{{ __('Search here') }}..."
                             style="width:50%; margin: auto; margin-bottom: 30px" />

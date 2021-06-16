@@ -138,7 +138,7 @@
                                                     class="col-sm-3 control-label text-darkness">
                                                     {{ __('Enter your email') }}</label>
                                                 <div class="col-sm-8">
-                                                    <input type="email" class="form-control" id="email"
+                                                    <input type="text" class="form-control" id="email"
                                                         name="email" value="{{ old('email') }}">
                                                     @error('email')
                                                         <div class="text-danger">{{ $message }}</div>

@@ -51,11 +51,12 @@ class AuthenticateController extends Controller
                 'user_name' => 'required',
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'email' => 'required|unique:users,email',
+                'email' => 'required|unique:users,email|email',
                 'password' => 'required|confirmed',
                 'address' => 'required',
                 'city' => 'required',
-                'country' => 'required'
+                'country' => 'required',
+                'telephone' => 'required|numeric'
             ]
         );
 

@@ -1,6 +1,6 @@
 <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4 shop-item hover-sdw timer" data-timer-date="2018, 2, 5, 0, 0, 0">
 
-    <div class="wrap">
+    <div class="wrap" >
 
         <!-- Image & Caption -->
         <div class="body">
@@ -74,11 +74,11 @@
                     <i class="icofont icofont-cart-alt"></i>
                 </span>
             </a>
-
             
+            
+            <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">{{ __('More info') }}</a>
 
             <!-- More link -->
-            <a href='{{  route('frontend.product.show', $product->id) }}' class="more-link">{{ __('More info') }}</a>
         </div>
     </div>
 </div>

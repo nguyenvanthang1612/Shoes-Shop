@@ -243,7 +243,7 @@ Step 2
 
                                                 <div class="form-group pd-none">
                                                     <label for="administrative_area_level_1"
-                                                        class="col-sm-3 control-label text-darkness">{{ __('City') }}</label>
+                                                        class="col-sm-3 control-label text-darkness">{{ __('Note') }}</label>
                                                     <div class="col-sm-8">
                                                         <textarea type="text" class="form-control" id="administrative_area_level_1" name="note"></textarea>
                                                     </div>

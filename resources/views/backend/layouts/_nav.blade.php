@@ -46,6 +46,8 @@
 
             <li><a href="{{ url('/admin/statistical') }}"><i class="ti-money"></i> <span>{{ __('Statistical') }}</span></a></li>
 
+            <li><a href="{{ url('/admin/subcribe') }}"><i class="fa fa-bell"></i> <span>{{ __('Subcribe List') }}</span></a></li>
+
             <li class="menu-list"><a href="#"><i class="fa fa-language" aria-hidden="true"></i> <span>{{ __('Language') }}</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="{{ route('change-language-admin', ['en']) }}">{{ __('English') }}</a></li>

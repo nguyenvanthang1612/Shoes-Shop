@@ -93,7 +93,7 @@
                 <div class="row">
                   <div class="col-md-12">
                       <div class="white-box">
-                          <h2 class="header-title">Total Revenue </h2>
+                          <h2 class="header-title">{{ __('Revenue chart for the year') }}</h2>
                             
                             <canvas id="chart"  style="height:300px;"></canvas>
                             

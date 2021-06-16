@@ -72,3 +72,8 @@
 .navbar-default .navbar-nav .profile .info .name {
     margin-top: 0;
 }
+
+.info {
+    position: relative;
+    z-index: 8;
+}

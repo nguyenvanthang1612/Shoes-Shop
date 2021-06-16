@@ -169,10 +169,6 @@
                             <li>
                                 <a href='{{ route('register') }}'>{{ __('register') }}</a>
                             </li>
-                            <li>or</li>
-                            <li>
-                                <a href="#">{{ __('restore password') }}</a>
-                            </li>
                         </ul>
                     </form>
                 </div>
