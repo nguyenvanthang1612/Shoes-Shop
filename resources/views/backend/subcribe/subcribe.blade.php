@@ -40,6 +40,7 @@
                                           <th>Id</th>
                                           <th>{{ __('Name') }}</th>
                                           <th>{{ __('Email') }}</th>
+                                          <th>{{ __('Subcribed At') }}</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -48,6 +49,7 @@
                                             <td>{{ $subcribe->id }}</td>
                                             <td>{{ $subcribe->name }}</td>
                                             <td>{{ $subcribe->email }}</td>
+                                            <td>{{ $subcribe->created_at }}</td>
                                         </tr>
                                       @endforeach
                                   </tbody>
