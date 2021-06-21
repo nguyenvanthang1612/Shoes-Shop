@@ -32,7 +32,7 @@ class ProductCreateRequest extends FormRequest
             'SKU' => 'required',
             'quantity' => 'required|numeric',
             'price' => 'required|numeric',
-            'img' => 'required|image'
+            'img' => 'required'
         ];
     }
 }
