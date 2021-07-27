@@ -27,6 +27,12 @@
                         039 365 60 99
                 </div>
 
+                <form class="search bg-grey-light btn-material" method="GET" action="{{ url('categories/search-products') }}">
+                    @csrf
+                    <input type="text" class="search-form" id="top-search" name="search">
+                    <label for="top-search">search</label>
+                </form>
+
                 @if (!Auth::check())
                     <div class="btn-cols">
                         <ul class="list-btn-group">

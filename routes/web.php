@@ -47,7 +47,10 @@ Route::group(['prefix' => '/', 'middleware' => ['must-be-user', 'localization']]
     //Category
     //Product-category
     Route::get('categories/{category}/products', [CategoryProductController::class, 'index'])->name('frontend.category-product.index');
-
+    
+    //search product
+    Route::get('categories/search-products', [CategoryProductController::class, 'search']);
+    
     //Product show
     Route::get('products/{product}', [ProductController::class, 'show'])->name('frontend.product.show');
     // authenticate
