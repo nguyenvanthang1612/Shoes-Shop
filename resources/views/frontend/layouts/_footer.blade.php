@@ -164,6 +164,13 @@
                                 name="login">{{ __('Login') }}</button>
                             <span class="sdw"></span>
                         </span>
+                        <span class="sdw-wrap">
+                            <a class="btn" href="{{ url('auth/facebook') }}"
+                            style="background: #3B5499; color: #ffffff; width: 100%; text-align: center; display: block; border-radius:3px;">
+                            <i class="icon icofont icofont-social-facebook"></i>Facebook
+                            </a>
+                            <span class="sdw"></span>
+                        </span>
 
                         <ul class="addon-login-btn">
                             <li>

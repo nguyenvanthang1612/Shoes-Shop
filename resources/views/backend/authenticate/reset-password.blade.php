@@ -36,7 +36,7 @@
                         <input type="hidden" name="token" value="{{ $token }}"/>
 
                         <div class="form-group">
-                            <input type="email" class="form-control"  placeholder="Email.." name="email" />
+                            <input type="email" class="form-control"  placeholder="Email.." name="email" value="{{ $email ?? old('email') }}" autofocus/>
                             @error('email')
                                 <div class="text-danger">
                                     {{ $message }}

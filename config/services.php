@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'client_id' => '631849287776857',
+        'client_secret' => '6b95f26aa24d6a35324f3bfa6d45c87f',
+        'redirect' => 'http://shoesshop.net/auth/facebook/callback',
+    ],
 ];
