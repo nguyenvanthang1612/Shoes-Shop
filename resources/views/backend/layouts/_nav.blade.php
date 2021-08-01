@@ -44,6 +44,13 @@
                 </ul>
             </li>
 
+            <li class="menu-list"><a href=""><i class="ti-pencil-alt"></i> <span>Blog</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="{{ url('/admin/dashboard/blog') }}">{{ __('Blog Management') }}</a></li>
+                    <li><a href="{{ url('/admin/dashboard/blog/create') }}"> {{ __('Create Blog') }}</a></li>
+                </ul>
+            </li>
+
             <li><a href="{{ url('/admin/statistical') }}"><i class="ti-money"></i> <span>{{ __('Statistical') }}</span></a></li>
 
             <li><a href="{{ url('/admin/subcribe') }}"><i class="fa fa-bell"></i> <span>{{ __('Subcribe List') }}</span></a></li>

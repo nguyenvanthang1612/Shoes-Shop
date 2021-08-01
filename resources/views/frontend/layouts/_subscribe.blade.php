@@ -65,7 +65,7 @@
 
                 <!-- Parallax block -->
                 <div class="parallax bg-grey-light opc-7"
-                     data-parallax-image="images/blocks/bg-02.jpg"
-                     data-speed-direction="-.2"></div><!-- / Parallax block -->
+                     data-parallax-image="{{ asset('frontend/images/blocks/sneak.png') }}"
+                     data-speed-direction="-.2" style="background-size: cover"></div><!-- / Parallax block -->
             </div><!-- / Parallax wrapper -->
         </div>

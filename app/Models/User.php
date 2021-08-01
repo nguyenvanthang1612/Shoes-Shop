@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->hasMany(UserPayment::class, 'user_id');
     }
 
+    public function blogs()
+    {
+        return $this->hasMany(Blogs::class, 'user_id');
+    }
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);

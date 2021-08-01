@@ -141,6 +141,12 @@
         <!-- END: SUBSCRIBE -->
 
         <!--
+        BLOCK BLOG
+        =============================================== -->
+        @include('frontend.layouts._blog')
+        <!-- END: BLOG -->
+
+        <!--
         SUBSTRATE
         =============================================== -->
         <div class="container-fluid">
@@ -294,6 +300,7 @@
                 </div>
             </div>
         </div>
+
         <!-- END: BRANDS -->
 @endsection
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateUsersTable extends Migration
+class EditBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class UpdateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('first_name')->nullable()->change();
-            $table->string('last_name')->nullable()->change();
-            $table->string('telephone')->nullable()->change();
+        Schema::table('blogs', function (Blueprint $table) {
+            $table->longText('content')->change();
         });
     }
 
@@ -27,7 +25,7 @@ class UpdateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('blogs', function (Blueprint $table) {
             //
         });
     }

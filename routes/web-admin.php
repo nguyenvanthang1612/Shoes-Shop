@@ -7,6 +7,7 @@
 
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController;
@@ -85,5 +86,10 @@ Route::group(['prefix' => 'admin'], function () {
         // change language
         Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language-admin');
 
+        // blogs
+        Route::get('dashboard/blog', [BlogController::class, 'blogIndex']);
+        Route::get('dashboard/blog/create', [BlogController::class, 'create']);
+        Route::post('dashboard/blog', [BlogController::class, 'store']);
+        Route::get('dashboard/status-update/{id}', [BlogController::class, 'status_update']);
     });
 });

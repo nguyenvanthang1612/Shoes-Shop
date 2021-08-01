@@ -74,6 +74,11 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="#">
+                        Blog
+                    </a>
+                </li>
+                <li>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         {{ __('Languages') }} <i class="icofont icofont-curved-down"></i>
                     </a>

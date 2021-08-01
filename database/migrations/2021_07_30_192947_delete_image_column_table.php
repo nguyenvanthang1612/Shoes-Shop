@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddEmailNullableUsersTable extends Migration
+class DeleteImageColumnTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddEmailNullableUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('email')->nullable()->change();
+        Schema::table('blogs', function (Blueprint $table) {
+            $table->dropColumn('image');
         });
     }
 
@@ -25,7 +25,7 @@ class AddEmailNullableUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('blogs', function (Blueprint $table) {
             //
         });
     }
