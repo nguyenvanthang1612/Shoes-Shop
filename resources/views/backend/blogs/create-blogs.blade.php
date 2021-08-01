@@ -72,8 +72,8 @@
                             <label class="col-md-2 control-label">{{ __('Status') }}</label>
                             <div class="col-md-10">
                               <select class="form-control" name="status">
-                                <option value="0">yes</option>
-                                <option value="1">no</option>
+                                <option value="0">Yes</option>
+                                <option value="1">No</option>
                               </select>
                             </div>
                           </div>
