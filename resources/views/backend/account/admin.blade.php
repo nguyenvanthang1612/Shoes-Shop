@@ -58,8 +58,7 @@
                                             <td>
                                                 <a class="btn btn-danger" data-id="{{ $account->id }}" name="delete" href="javascript:void(0)" 
                                                     onclick="document.getElementById('account-{{ $account->id }}').submit()"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                <form action="
-                                                delete/{{ $account->id }}" method="post" id="account-{{ $account->id }}">
+                                                <form action="delete/{{ $account->id }}" method="post" id="account-{{ $account->id }}">
                                                     @method('DELETE')
                                                     @csrf
                                                 </form>

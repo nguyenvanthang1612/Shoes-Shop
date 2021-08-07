@@ -154,16 +154,16 @@
                             @endforeach
 
                             <div class="fallback">
-                            <input type="file" name="img[]" multiple>
-                            @foreach($product->img as $image)
-                                <input type="hidden" name="img[]" value="{{ $image }}" />
-                            @endforeach
+                              <input type="file" name="img[]" multiple>
+                              @foreach($product->img as $image)
+                                  <input type="hidden" name="img[]" value="{{ $image }}" />
+                              @endforeach
 
-                            @error('img')
-                                <div class="text-danger">
-                                <span>{{ $message }}</span>
-                                </div>
-                            @enderror
+                              @error('img')
+                                  <div class="text-danger">
+                                  <span>{{ $message }}</span>
+                                  </div>
+                              @enderror
                             </div>
                         </div>
 

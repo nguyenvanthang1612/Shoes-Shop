@@ -74,7 +74,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('frontend.blogs') }}">
                         Blog
                     </a>
                 </li>

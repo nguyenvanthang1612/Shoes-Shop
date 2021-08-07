@@ -31,7 +31,7 @@
                 <div class="col-md-12">
                     <div class="white-box">
                         <h2 class="header-title" style="text-align: center; font-size: 25px">{{ __('Blog List') }}</h2>
-                        <form method="POST" action="{{ url('admin/order/search') }}">
+                        <form method="POST" action="{{ url('admin/dashboard/blog/search') }}">
                            @csrf
                            <input type="text" class="form-control" name="search" placeholder="{{ __('Search here') }}..." 
                            style="width:50%; margin: auto; margin-bottom: 30px" />
@@ -44,6 +44,7 @@
                                          <th>{{ __('Title') }}</th>
                                          <th>{{ __('Actor') }}</th>
                                          <th>{{ __('Status') }}</th>
+                                         <th>{{ __('Image') }}</th>
                                          <th>{{ __('Created at') }}</th>
                                          <th></th>
                                      </tr>
@@ -61,11 +62,15 @@
                                             <td><a href="{{url('admin/dashboard/status-update',$blog->id)}}" class="btn btn-danger"><i class="ti-close"></i></a></td>
                                            <?php } ?>
 
+                                           <td><img style="width: 40px; height: 40px" src="{{ asset("storage/backend/blog/{$blog->image}") }}" ></td>
                                            <td>{{ $blog->created_at }}</td>
                                            <td>
+                                                <a href='{{ url("admin/dashboard/blog/$blog->id/show") }}' class="btn btn-primary"><i class="fa fa-eye" ></i></a>
                                                 <a href='{{ url("admin/dashboard/blog/$blog->id/edit") }}' class="btn btn-success"><i class="fa fa-pencil-square-o" ></i></a>
-                                                <a class="btn btn-danger" data-id="{{ $blog->id }}" name="delete" href="javascript:void(0)" onclick="document.getElementById('blog-{{ $blog->id }}').submit()"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                <form action="dashboard/blog/delete/{{ $blog->id }}" method="post" id="blog-{{ $blog->id }}">
+                                                <a class="btn btn-danger" data-id="{{ $blog->id }}" name="delete" href="javascript:void(0)" 
+                                                onclick="document.getElementById('blog-{{ $blog->id }}').submit()" >
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" id="blog-{{ $blog->id }}">
                                                     @method('DELETE')
                                                     @csrf
                                                 </form>

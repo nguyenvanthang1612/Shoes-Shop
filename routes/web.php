@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Language\LocalizationController;
 use App\Http\Controllers\Web\AuthenticateController;
+use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
 use App\Http\Controllers\Web\IndexController;
@@ -66,7 +67,14 @@ Route::group(['prefix' => '/', 'middleware' => ['must-be-user', 'localization']]
     Route::post('continue-shopping', [CartController::class, 'continueShopping'])->name('frontend.cart.continue-shopping');
 
     Route::get('{language}', [LocalizationController::class, 'changeLanguage'])->name('change-language');
+
+    // blog
+    Route::get('blogs/all', [BlogController::class, 'index'])->name('frontend.blogs');
+    Route::get('blogs/blog-detail/{id}', [BlogController::class, 'blogDetail'])->name('frontend.blog.blog-detail');
+
 });
+
+
 
 // Subcribe Email
 Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);

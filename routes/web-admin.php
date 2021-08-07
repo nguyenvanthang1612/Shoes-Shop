@@ -91,5 +91,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('dashboard/blog/create', [BlogController::class, 'create']);
         Route::post('dashboard/blog', [BlogController::class, 'store']);
         Route::get('dashboard/status-update/{id}', [BlogController::class, 'status_update']);
+        Route::get('dashboard/blog/{id}/show', [BlogController::class, 'show']);
+        Route::get('dashboard/blog/{id}/edit', [BlogController::class, 'edit']);
+        Route::put('dashboard/blog/{id}', [BlogController::class, 'update']);
+        Route::delete('blog/delete/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+        Route::post('dashboard/blog/search', [BlogController::class, 'search']);
     });
 });

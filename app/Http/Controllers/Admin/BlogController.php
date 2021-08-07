@@ -26,7 +26,7 @@ class BlogController extends Controller
 
     public function create()
     {
-        $users = User::all()->where('role', '2');
+        $users = DB::table('users')->select('users.*')->where('role', '1')->orWhere('role', '2')->get();
         return view('backend.blogs.create-blogs', [
             'users' => $users
         ]);
@@ -34,8 +34,88 @@ class BlogController extends Controller
 
     public function store(BlogCreate $request)
     {
-        $blogs = Blog::create($request->input());
-        return redirect('/admin/dashboard/blog');
+        [$file, $fileName] = $this->upload($request);
+        $blogs = Blog::create(array_merge(['image' => $fileName], $request->input()));
+        if ($blogs)
+        {
+            $file->storeAs('', $fileName, 'blog');
+            return redirect('/admin/dashboard/blog');
+        }
+    }
+
+    public function upload(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = $file->getClientOriginalName();
+            return [$file, $fileName];
+        }
+        return [null, $request->input('image')];
+    }
+
+    public function show($id)
+    {
+        $users = DB::table('users')->select('users.*')->where('role', '1')->orWhere('role', '2')->get();
+        $blog = DB::table('blogs')
+                ->join('users', 'users.id', '=', 'blogs.user_id')
+                ->select('blogs.*', 'users.user_name')
+                ->where('blogs.id', $id)
+                ->first();
+        return view('backend.blogs.show-blogs', [
+            'users' => $users,
+            'blog' => $blog
+        ]);
+    }
+
+    public function edit($id)
+    {
+        $users = DB::table('users')->select('users.*')->where('role', '1')->orWhere('role', '2')->get();
+        $blog = DB::table('blogs')
+                ->join('users', 'users.id', '=', 'blogs.user_id')
+                ->select('blogs.*', 'users.user_name')
+                ->where('blogs.id', $id)
+                ->first();
+        return view('backend.blogs.edit-blogs', [
+            'users' => $users,
+            'blog' => $blog
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $imageName = $request->input('image');
+        $image = $request->file('image');
+        $blog = Blog::findOrfail($id);
+        $blog->update(array_merge($request->input(), ['image' => $imageName]));
+        if ($blog)
+        {
+            if ($request->hasFile('image')) 
+            {
+                $image->storeAs('', $image->getClientOriginalName(), 'blog');
+            }
+            return redirect('/admin/dashboard/blog');
+        }
+    }
+
+    public function destroy($id)
+    {
+        $blog = Blog::findOrFail($id);
+        $result = $blog->delete($id);
+        return  redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+        $searchText = $request->input('search');
+        $blogs = DB::table('blogs')
+            ->select('orders.*')
+            ->orderBy('id', 'asc')
+            ->where('title', 'LIKE', '%'.$searchText.'%')
+            ->paginate(10);
+        $blogs->appends(['search' => $searchText]);
+        return view('backend.blogs.all-blogs', [
+            'blogs' => $blogs
+        ]);
     }
 
     public function status_update($id)

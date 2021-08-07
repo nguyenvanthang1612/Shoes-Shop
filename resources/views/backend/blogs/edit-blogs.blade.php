@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-  {{ __('Create Blog') }}
+  {{ __('Edit Blog') }}
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
                             <a href="#">{{ __('Blog') }}</a>
                         </li>
                         <li class="active">
-                            {{ __('Create Blog') }}
+                            {{ __('Edit Blog') }}
                         </li>
                     </ol>
                       <div class="clearfix"></div>
@@ -33,16 +33,16 @@
              <div class="row">
                  <div class="col-md-12">
                    <div class="white-box">
-                     <h2 class="header-title">{{ __('Create Blog') }}</h2>
+                     <h2 class="header-title">{{ __('Edit Blog') }}</h2>
 
-                        <form class="form-horizontal" action="{{ url('admin/dashboard/blog') }}" method="POST" enctype="multipart/form-data">
-
+                        <form class="form-horizontal" action='{{ url("admin/dashboard/blog/{$blog->id}") }}' method="POST" enctype="multipart/form-data">
+                          @method('put')
                           @csrf
                           {{-- title --}}
                           <div class="form-group">
                             <label class="col-md-2 control-label">{{ __('Title') }}</label>
                             <div class="col-md-10">
-                              <input class="form-control" type="text" name="title" placeholder="{{ __('Title') }}" value="{{ old('title') }}">
+                              <input class="form-control" type="text" name="title" placeholder="{{ __('Title') }}" value="{{ old('title', $blog->title) }}">
                               
                             </div>
                           </div>
@@ -53,7 +53,7 @@
                             <div class="col-md-10">
                               <select class="form-control" name="user_id">
                                 @foreach ($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->user_name }}</option>
+                                    <option value="{{ $user->id }}" {{ $user->id == $blog->user_id ? 'selected' : '' }}>{{ $user->user_name }}</option>
                                 @endforeach
                               </select>
                             </div>
@@ -63,7 +63,7 @@
                           <div class="form-group">
                             <label class="col-md-2 control-label">{{ __('Content') }}</label>
                             <div class="col-md-10">
-                              <textarea id="ckeditor" cols="30" rows="10" name="content" value="{{ old('content') }}"></textarea>
+                              <textarea id="ckeditor" cols="30" rows="10" name="content" value="{{ $blog->content }}">{{ $blog->content }}</textarea>
                             </div>
                           </div>
 
@@ -72,8 +72,8 @@
                             <label class="col-md-2 control-label">{{ __('Status') }}</label>
                             <div class="col-md-10">
                               <select class="form-control" name="status">
-                                <option value="0">Yes</option>
-                                <option value="1">No</option>
+                                <option value="0" {{ $blog->status == 0 ? 'selected' : '' }}>Yes</option>
+                                <option value="1" {{ $blog->status == 1 ? 'selected' : '' }}>No</option>
                               </select>
                             </div>
                           </div>
@@ -83,8 +83,10 @@
                             <div class="custom-file">
                               <label class="col-sm-2 control-label">{{ __('Image') }}</label>
                               <div class="col-sm-10">
+                                <img src="{{ asset('storage/backend/blog/'.$blog->image) }}" style="width:220px; height:200px" />
                                   <div class="fallback">
                                     <input type="file" class="custom-file-input" id="customFile" name="image">
+                                    <input type="hidden" name="image" value="{{ $blog->image }}" />
                                   </div>
                               </div>
                             </div>

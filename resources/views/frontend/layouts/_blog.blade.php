@@ -24,7 +24,7 @@
                                 
                                 <div class="inblock padding-none hidden-xs">
                                     <span class="sdw-wrap">
-                                        <a href="#" class="sdw-hover btn btn-material btn-yellow btn-lg">
+                                        <a href="{{ url('/blogs') }}" class="sdw-hover btn btn-material btn-yellow btn-lg">
                                             <span class="body">
                                                 View all categories
                                             </span>
@@ -76,425 +76,69 @@
                             <div class="col-md-8 col-lg-9">
                                 <div class="owl-carousel owl-default latest-on-blog nav-bottom-right">
                                     
-                                    <!-- Item 1 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-01.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
+                                    @foreach ($featureBlogs as $blog)
+                                        @if ($blog->status === 0)
+                                            <!-- Item 1 -->
+                                            <div class="blog-item">
+                                                <div class="wrap" style="width:261.59px; height:365.8px">
                                                     
-                                                    <span class="text-uppercase">
-                                                        Paper Bag
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
+                                                    <!-- Image -->
+                                                    <div class="image">
+                                                        <img style="width: 261px; height: 147px" src="{{ asset("storage/backend/blog/{$blog->image}") }}" >
+                                                    </div>
+                                                    
+                                                    <!-- Caption -->
+                                                    <div class="caption">
+                                                        
+                                                        <!-- Header -->
+                                                        <h3 class="header">
+                                                        
+                                                            <!-- Date -->
+                                                            <span class="date">
+                                                                {{ $blog->created_at }}
+                                                            </span>
+                                                            
+                                                            <span class="text-uppercase">
+                                                                {{ $blog->title }}
+                                                            </span>
+                                                        </h3>
+                                                        
+                                                        {{-- <!-- Text -->
+                                                        <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p> --}}
+                                                        
+                                                        <!-- More link -->
+                                                        <a href="{{ route('frontend.blog.blog-detail', $blog->id) }}" class="more-info">More info</a>
+                                                        
+                                                        {{-- <!-- Rate -->
+                                                        <div class="rate inline">
 
-                                                    <ul class="stars">
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
+                                                            <ul class="stars">
+                                                                <li class="active">
+                                                                    <i class="icofont icofont-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="icofont icofont-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="icofont icofont-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="icofont icofont-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="icofont icofont-star"></i>
+                                                                </li>
+                                                            </ul>
 
-                                                    <div class="rate-info">
-                                                        23 members
+                                                            <div class="rate-info">
+                                                                23 members
+                                                            </div>
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Item 2 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-02.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
-                                                    
-                                                    <span class="text-uppercase">
-                                                        Paper book
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
-
-                                                    <ul class="stars">
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
-
-                                                    <div class="rate-info">
-                                                        24 members
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Item 3 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-03.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
-                                                    
-                                                    <span class="text-uppercase">
-                                                        T-Shirt
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
-
-                                                    <ul class="stars">
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
-
-                                                    <div class="rate-info">
-                                                        56 members
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Item 4 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-04.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
-                                                    
-                                                    <span class="text-uppercase">
-                                                        Business card
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
-
-                                                    <ul class="stars">
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
-
-                                                    <div class="rate-info">
-                                                        11 members
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Item 5 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-05.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
-                                                    
-                                                    <span class="text-uppercase">
-                                                        Card holder
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
-
-                                                    <ul class="stars">
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
-
-                                                    <div class="rate-info">
-                                                        24 members
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Item 6 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-06.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
-                                                    
-                                                    <span class="text-uppercase">
-                                                        Label mockup
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
-
-                                                    <ul class="stars">
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
-
-                                                    <div class="rate-info">
-                                                        not yet rated
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Item 7 -->
-                                    <div class="blog-item">
-                                        <div class="wrap">
-                                            
-                                            <!-- Image -->
-                                            <div class="image">
-                                                <img src="images/blog/img-07.jpg" alt="">
-                                            </div>
-                                            
-                                            <!-- Caption -->
-                                            <div class="caption">
-                                                
-                                                <!-- Header -->
-                                                <h3 class="header">
-                                                   
-                                                    <!-- Date -->
-                                                    <span class="date">
-                                                        10 january 2017
-                                                    </span>
-                                                    
-                                                    <span class="text-uppercase">
-                                                        Note booke
-                                                    </span>
-                                                </h3>
-                                                
-                                                <!-- Text -->
-                                                <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p>
-                                                
-                                                <!-- More link -->
-                                                <a href="blog-item.html" class="more-info">More info</a>
-                                                
-                                                <!-- Rate -->
-                                                <div class="rate inline">
-
-                                                    <ul class="stars">
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li class="active">
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="icofont icofont-star"></i>
-                                                        </li>
-                                                    </ul>
-
-                                                    <div class="rate-info">
-                                                        24 members
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endif
+                                    @endforeach
                                     
                                 </div>
                             </div><!-- ./ Item list -->
