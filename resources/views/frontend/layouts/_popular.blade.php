@@ -128,7 +128,6 @@
 
 
                         </div>
-
                         {{ $products->links() }}
 
                     </div><!-- ./ Item list -->

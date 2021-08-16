@@ -9,6 +9,7 @@ use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\SocialController;
 use App\Http\Controllers\Web\SubcribeEmailController;
 use App\Http\Controllers\Web\UserController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
 
@@ -68,5 +69,6 @@ Route::group(['prefix' => '/', 'middleware' => ['must-be-user', 'localization']]
 // Subcribe Email
 Route::post('/send-subcribe-email', [SubcribeEmailController::class, 'sendMail']);
 
-
-
+Route::get('/sample', function () {
+    return Product::orderBy('id')->cursorPaginate(10);
+});
