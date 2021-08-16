@@ -33,16 +33,14 @@ class AppServiceProvider extends ServiceProvider
         if (!app()->runningInConsole()) {
             View::composer([
                 'frontend.layouts._nav',
-                'frontend.index',
-                'frontend.product.show',
-                'frontend.category-product.index'
+                'frontend.layouts._category-sidenav',
             ], CategoryComposer::class);
 
             View::composer([
                 'frontend.index',
                 'frontend.category-product.index'
             ], OrderComposer::class);
-            
+
             View::composer([
                 'frontend.index',
                 'frontend.category-product.index'

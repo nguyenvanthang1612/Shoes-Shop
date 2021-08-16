@@ -53,7 +53,7 @@ Route::group(['prefix' => '/', 'middleware' => ['must-be-user', 'localization']]
     // authenticate
     Route::get('login', [AuthenticateController::class, 'showLoginForm']);
     Route::post('login', [AuthenticateController::class, 'login'])->name('frontend.authenticate.login');
-    Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('register');
+    Route::get('register', [AuthenticateController::class, 'showRegisterForm'])->name('frontend.showRegisterForm');
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
     Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
     Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
