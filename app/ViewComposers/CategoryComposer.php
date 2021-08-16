@@ -10,7 +10,7 @@ class CategoryComposer
 {
     public function compose(View $view)
     {
-        $categories = Cache::remember('categories', 24 * 60, function () {
+        $categories = Cache::remember('categories', 24 * 60 * 60, function () {
             return Category::all();
         });
         return $view->with('categories', $categories);

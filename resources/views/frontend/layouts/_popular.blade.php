@@ -8,7 +8,7 @@
                     <!-- Asside -->
                     <div class="col-md-4 col-lg-3 asside">
 
-                        
+
 
                         <!-- Asside nav -->
                         @include('frontend.layouts._category-sidenav')

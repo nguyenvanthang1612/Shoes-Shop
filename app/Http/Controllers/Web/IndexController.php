@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Web;
 
+use App\Helpers\CollectionPaginator;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 
@@ -8,9 +9,10 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->paginate(10);
-        $featureProducts = Product::latest()->take(10)->get();
-        $latestProducts = Product::latest()->take(5)->with('category')->get();
+        $allLatestProducts = Product::latest()->get();
+        $products = CollectionPaginator::paginate($allLatestProducts);
+        $featureProducts = $allLatestProducts->take(10);
+        $latestProducts = $allLatestProducts->take(5)->load('category');
         return view('frontend.index', compact('products', 'latestProducts', 'featureProducts'));
     }
 }

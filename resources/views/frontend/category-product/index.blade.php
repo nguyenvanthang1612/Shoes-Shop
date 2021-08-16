@@ -25,6 +25,7 @@
 
                                     <!-- Shop item 1 / timer -->
                                     @foreach($products as $product)
+
                                         @include('frontend.layouts._product')
                                     @endforeach
                                     <!-- / Shop item -->
@@ -152,7 +153,7 @@
         =============================================== -->
         @include('frontend.layouts._subscribe')
         <!-- END: SUBSCRIBE -->
-        
+
         <!--
         SUBSTRATE
         =============================================== -->
