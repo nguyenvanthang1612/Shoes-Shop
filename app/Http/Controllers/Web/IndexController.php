@@ -7,10 +7,10 @@ use App\Models\Product;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(CollectionPaginator $collectionPaginator)
     {
         $allLatestProducts = Product::latest()->get();
-        $products = CollectionPaginator::paginate($allLatestProducts);
+        $products = $collectionPaginator->paginate($allLatestProducts);
         $featureProducts = $allLatestProducts->take(10);
         $latestProducts = $allLatestProducts->take(5)->load('category');
         return view('frontend.index', compact('products', 'latestProducts', 'featureProducts'));

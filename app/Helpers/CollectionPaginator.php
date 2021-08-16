@@ -7,7 +7,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class CollectionPaginator
 {
-    public static function paginate($enumerable, $perPage = 10)
+    public function paginate($enumerable, $perPage = 10)
     {
         $offsetPage = request()->query('page', 1) - 1;
 
