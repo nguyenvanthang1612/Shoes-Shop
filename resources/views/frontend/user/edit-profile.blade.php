@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title')
-Update profile
+{{ __('Update profile') }}
 @endsection
 
 @section('content')

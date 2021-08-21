@@ -58,7 +58,7 @@
                                            <td>{{ $order->customer_name }}</td>
                                            <td>{{ $order->email }}</td>
                                            <td>{{ $order->telephone }}</td>
-                                           <td>{{ number_format($order->total_price) }}$</td>
+                                           <td>{{ number_format($order->total_price) }}đ</td>
                                            <td>{{ $order->address }}</td>
                                            <td>{{ $order->city }}</td>
                                            <td>{{ $order->country }}</td>

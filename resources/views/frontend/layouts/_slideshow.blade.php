@@ -51,7 +51,7 @@
                                <!-- Price -->
                                <span class="price hidden-xs">
                                    <span class="wrap text-red">
-                                       {{$product->price}} $
+                                    {{ number_format($product->price) }} đ
                                    </span>
                                </span>
 

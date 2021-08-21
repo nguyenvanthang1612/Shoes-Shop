@@ -55,7 +55,7 @@
                                            <td>{{ $order->full_name }}</td>
                                            <td>{{ $order->email }}</td>
                                            <td>{{ $order->telephone }}</td>
-                                           <td>{{ number_format($order->total_price) }}$</td>
+                                           <td>{{ number_format($order->total_price) }}đ</td>
                                            <td>{{ $order->buy_at }}</td>
                                        </tr>
                                      @endforeach

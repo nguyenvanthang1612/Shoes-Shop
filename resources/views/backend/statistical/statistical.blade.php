@@ -40,7 +40,7 @@
                                   <tbody>
                                         <tr>
                                             <td>{{ $month }}</td>
-                                            <td>{{ $totalEarning }}</td>
+                                            <td>{{ $totalEarning }}đ</td>
                                         </tr>
                                   </tbody>
                             </table>  

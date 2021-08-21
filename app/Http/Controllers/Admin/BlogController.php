@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BlogCreate;
+use App\Http\Requests\Admin\BlogEdit;
 use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -81,7 +82,7 @@ class BlogController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(BlogEdit $request, $id)
     {
         $imageName = $request->input('image');
         $image = $request->file('image');
@@ -108,7 +109,8 @@ class BlogController extends Controller
     {
         $searchText = $request->input('search');
         $blogs = DB::table('blogs')
-            ->select('orders.*')
+            ->join('users', 'users.id', '=', 'blogs.user_id')
+            ->select('blogs.*', 'users.user_name')
             ->orderBy('id', 'asc')
             ->where('title', 'LIKE', '%'.$searchText.'%')
             ->paginate(10);

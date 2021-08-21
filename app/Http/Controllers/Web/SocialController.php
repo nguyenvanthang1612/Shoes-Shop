@@ -52,4 +52,47 @@ class SocialController extends Controller
             dd($exception->getMessage());
         }
     }
+
+    public function gitRedirect()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+       
+
+    public function gitCallback()
+    {
+        try {
+     
+            $gitUser = Socialite::driver('github')->user();
+      
+            $searchUser = User::where('github_id', $gitUser->id)->first();
+      
+            if($searchUser){
+      
+                Auth::login($searchUser);
+     
+                return redirect('/');
+      
+            }else{
+                $createUser = User::create([
+                    'role' => 3,
+                    'user_name' => $gitUser->nickname,
+                    'email' => $gitUser->email,
+                    'github_id'=> $gitUser->id,
+                    'auth_type'=> 'github',
+                    'password' => encrypt('git123'),
+                    'first_name' => $gitUser->nickname,
+                    'last_name' => $gitUser->nickname,
+                    'telephone' => null
+                ]);
+     
+                Auth::login($createUser);
+      
+                return redirect('/');
+            }
+     
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+    }
 }

@@ -65,7 +65,7 @@
                                              <td>{{ $product->brand }}</td>
                                              <td><img style="width: 40px; height: 40px" src="{{ asset('storage/backend/product/'.$product->thumbnail) }}"></td>
                                             <td>{{ $product->inventory->quantity }}</td>
-                                             <td>{{ number_format($product->price) }}$</td>
+                                             <td>{{ number_format($product->price) }}đ</td>
                                              <td>
                                                 <a href='{{ url("admin/product/$product->id/edit") }}' class="btn btn-success"><i class="fa fa-pencil-square-o" ></i></a>
                                                 <a class="btn btn-danger" data-id="{{ $product->id }}" name="delete" href="javascript:void(0)" 

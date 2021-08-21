@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogCreate extends FormRequest
+class BlogEdit extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,7 @@ class BlogCreate extends FormRequest
     {
         return [
             'title' => 'required',
-            'content' => 'required',
-            'image' => 'required|image'
+            'content' => 'required'
         ];
     }
 }

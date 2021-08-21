@@ -35,4 +35,10 @@ return [
         'client_secret' => '6b95f26aa24d6a35324f3bfa6d45c87f',
         'redirect' => 'http://shoesshop.net/auth/facebook/callback',
     ],
+
+    'github' => [
+        'client_id' => 'd93029739879bdd6acce',
+        'client_secret' => '31f31062eb6eddc1fef405a10d50bc9c929be303',
+        'redirect' => 'http://shoesshop.net/auth/github/callback',
+    ],
 ];

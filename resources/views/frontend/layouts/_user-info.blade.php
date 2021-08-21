@@ -76,7 +76,7 @@
                             </span>
 
                             <span class="price">
-                                <span class="text-grey-dark">$</span>
+                                <span class="text-grey-dark">đ</span>
                                 {{$item['productInfo']->price}} x {{$item['quantity']}}
                             </span>
 
@@ -90,7 +90,7 @@
                 </li>
                 @endforeach
                 <li>
-                    <h5>{{ __('Total') }}: ${{Session::get('Cart')->totalPrice}}</h5>
+                    <h5>{{ __('Total') }}: {{Session::get('Cart')->totalPrice}} đ</h5>
                 </li>
                 <li class="more-btn sdw">
                     <a href="{{ url('/listCart') }}" class="btn-material btn-primary">

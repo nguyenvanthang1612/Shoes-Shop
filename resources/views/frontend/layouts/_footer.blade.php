@@ -171,6 +171,13 @@
                             </a>
                             <span class="sdw"></span>
                         </span>
+                        <span class="sdw-wrap">
+                            <a class="btn" href="{{ url('auth/github') }}"
+                            style="background: #313131; color: #ffffff; width: 100%; text-align: center; display: block; border-radius:3px;">
+                            <i class="icon icofont icofont-social-github"></i>GitHub
+                            </a>
+                            <span class="sdw"></span>
+                        </span>
 
                         <ul class="addon-login-btn">
                             <li>

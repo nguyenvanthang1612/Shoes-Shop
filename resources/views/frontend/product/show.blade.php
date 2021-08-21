@@ -99,8 +99,8 @@
                                                 <span class="price">
 
                                                     <!-- Currency -->
-                                                    <span class="curr">$</span>
-                                                    {{$product->price}}<small>.00</small>
+                                                    <span class="curr">đ</span>
+                                                    {{ number_format($product->price) }}
                                                 </span>
                                             </span>
 

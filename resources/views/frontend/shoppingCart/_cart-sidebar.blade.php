@@ -14,7 +14,7 @@
                 </li>
                 <li>
                     <span class="head">{{ __('Total price') }}:</span>
-                    <span class="sub">$ {{ session('Cart')->totalPrice }}</span>
+                    <span class="sub">{{ session('Cart')->totalPrice }} đ</span>
                 </li>
             </ul>
 

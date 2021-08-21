@@ -59,11 +59,11 @@
 
                     <!-- Currency -->
                     <span class="curr">
-                        $
+                        đ
                     </span>
                     <!-- Price -->
                     <span class="price">
-                        {{$product->price}}
+                        {{ number_format($product->price) }}
                     </span>
                 </span>
 

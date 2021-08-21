@@ -14,9 +14,9 @@
                                     <div class="wrap">
                                 
                                         <span class="comp-header st-16 text-uppercase">
-                                            Latest
+                                            {{ __('Latest') }}
                                             <span class="text-grey">
-                                                on blog
+                                                {{ __('on blog') }}
                                             </span>
                                         </span>
                                     </div>
@@ -26,7 +26,7 @@
                                     <span class="sdw-wrap">
                                         <a href="{{ url('/blogs') }}" class="sdw-hover btn btn-material btn-yellow btn-lg">
                                             <span class="body">
-                                                View all categories
+                                                {{ __('View all blogs') }}
                                             </span>
                                         </a>
                                         <span class="sdw"></span>
@@ -107,7 +107,7 @@
                                                         <p class="text">Fugiat mollitia vero, id eligendi non suscipit <span class="hidden-xs">laboriosam maiores, perspiciatis ullam eveniet molestiae, nesciunt est ipsa veniam consequuntur in totam.</span></p> --}}
                                                         
                                                         <!-- More link -->
-                                                        <a href="{{ route('frontend.blog.blog-detail', $blog->id) }}" class="more-info">More info</a>
+                                                        <a href="{{ route('frontend.blog.blog-detail', $blog->id) }}" class="more-info">{{ __('More info') }}</a>
                                                         
                                                         {{-- <!-- Rate -->
                                                         <div class="rate inline">

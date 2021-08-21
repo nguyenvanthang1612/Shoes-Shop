@@ -31,6 +31,13 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'laravel/nexmo-notification-channel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Illuminate\\Notifications\\NexmoChannelServiceProvider',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -61,6 +68,17 @@
     'providers' => 
     array (
       0 => 'Carbon\\Laravel\\ServiceProvider',
+    ),
+  ),
+  'nexmo/laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Nexmo\\Laravel\\NexmoServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Nexmo' => 'Nexmo\\Laravel\\Facade\\Nexmo',
     ),
   ),
   'nunomaduro/collision' => 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\LoginRequest;
 use App\Models\User;
 use App\Models\UserAddress;
+use App\Rules\Web\NoSpecialCharactersRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,7 +49,7 @@ class AuthenticateController extends Controller
     {
         $request->validate(
             [
-                'user_name' => 'required',
+                'user_name' => ['required', new NoSpecialCharactersRule],
                 'first_name' => 'required',
                 'last_name' => 'required',
                 'email' => 'required|unique:users,email|email',

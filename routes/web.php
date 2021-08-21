@@ -5,6 +5,7 @@ use App\Http\Controllers\Web\AuthenticateController;
 use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\CategoryProductController;
+use App\Http\Controllers\Web\GitHubController;
 use App\Http\Controllers\Web\IndexController;
 use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\SocialController;
@@ -61,6 +62,8 @@ Route::group(['prefix' => '/', 'middleware' => ['must-be-user', 'localization']]
     Route::post('register', [AuthenticateController::class, 'register'])->name('register');
     Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
     Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+    Route::get('auth/github', [SocialController::class, 'gitRedirect']);
+    Route::get('auth/github/callback', [SocialController::class, 'gitCallback']);
 
     Route::post('logout', [AuthenticateController::class, 'logout'])->name('logout');
 

@@ -51,7 +51,7 @@
                                        <tr>
                                            <td>{{ $order->order_id }}</td>
                                            <td>{{ $order->product_name }}</td>
-                                           <td>{{ number_format($order->product_price) }}$</td>
+                                           <td>{{ number_format($order->product_price) }}đ</td>
                                            <td>{{ $order->product_quantity }}</td>
                                        </tr>
                                      @endforeach

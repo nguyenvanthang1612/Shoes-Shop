@@ -43,7 +43,11 @@
                             <label class="col-md-2 control-label">{{ __('Title') }}</label>
                             <div class="col-md-10">
                               <input class="form-control" type="text" name="title" placeholder="{{ __('Title') }}" value="{{ old('title') }}">
-                              
+                              @error('title')
+                                <div class="text-danger">
+                                  <span>{{ $message }}</span>
+                                </div>
+                              @enderror
                             </div>
                           </div>
 
@@ -64,6 +68,11 @@
                             <label class="col-md-2 control-label">{{ __('Content') }}</label>
                             <div class="col-md-10">
                               <textarea id="ckeditor" cols="30" rows="10" name="content" value="{{ old('content') }}"></textarea>
+                              @error('content')
+                                <div class="text-danger">
+                                  <span>{{ $message }}</span>
+                                </div>
+                              @enderror
                             </div>
                           </div>
 
@@ -85,6 +94,11 @@
                               <div class="col-sm-10">
                                   <div class="fallback">
                                     <input type="file" class="custom-file-input" id="customFile" name="image">
+                                    @error('image')
+                                      <div class="text-danger">
+                                        <span>{{ $message }}</span>
+                                      </div>
+                                    @enderror
                                   </div>
                               </div>
                             </div>

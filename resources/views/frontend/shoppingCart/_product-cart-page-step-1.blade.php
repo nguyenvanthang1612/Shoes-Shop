@@ -59,7 +59,7 @@
         <div class="list-footer bg-blue">
             <a href="{{ route('frontend.cart.enter-address') }}" class="btn btn-default btn-material">
                 <i class="icofont icofont-cart-alt"></i>
-                <h4>$ {{ number_format(Session::get('Cart')->totalPrice) }}</h4>
+                <h4>{{ number_format(Session::get('Cart')->totalPrice) }} đ</h4>
                 <span class="body">{{ __('Make a purchase') }}</span>
             </a>
             <a href="#" class="btn btn-text-white">

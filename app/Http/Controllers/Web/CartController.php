@@ -10,8 +10,11 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\Shipping;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Vonage\Client;
+use Vonage\Client\Credentials\Basic;
 
 class CartController extends Controller
 {
@@ -112,7 +115,8 @@ class CartController extends Controller
 
         $shippingData = [
             'order_id' => $order->id,
-            'customer_name' => $request->has('customer_name') ? $request->input('customer_name') : Auth::user()->first_name . ' ' . Auth::user()->last_name,
+            'customer_name' => $request->has('customer_name') ? $request->input('customer_name') : 
+            Auth::user()->first_name . ' ' . Auth::user()->last_name,
             'telephone' => $request->has('telephone') ? $request->input('telephone') : Auth::user()->telephone,
             'address' => $request->has('address') ? $request->input('address') : Auth::user()->userAddress->address,
             'city' => $request->has('city') ? $request->input('city') : Auth::user()->userAddress->city,
@@ -123,6 +127,18 @@ class CartController extends Controller
 
         if ($shipping)
         {
+            // $basic  = new Basic(getenv("NEXMO_KEY"), getenv("NEXMO_SECRET"));
+            // $client = new Client($basic);
+  
+            // $receiverNumber = "+84582233082";
+            // $message = "Hello How Are You ?";
+  
+            // $message = $client->message()->send([
+            //     'to' => $receiverNumber,
+            //     'from' => 'Vonage APIs',
+            //     'text' => $message
+            // ]);
+
             $user = Order::findOrFail($order->id);
             Mail::to($user->email)->send(new OrderSuccessMail($user));
         }
